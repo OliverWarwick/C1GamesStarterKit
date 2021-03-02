@@ -72,6 +72,9 @@ class AlgoStrategy(gamelib.AlgoCore):
         for [x1,y1] in turrent_list:
             self.structure_queue.append(building(name=TURRET, x=x1, y=y1))
 
+        # Recording of which building we had in the previous iteration.
+        self.last_round_stationary_units = []
+
 
     def on_turn(self, turn_state):
         """
@@ -107,9 +110,17 @@ class AlgoStrategy(gamelib.AlgoCore):
         if game_state.turn_number == 0:
             self.build_intial_defences(game_state)
 
-        self.random_scout(game_state)
+        if game_state.turn_number % 2 == 0:
+            self.clever_scouts(game_state)
 
-       
+        if game_state > 0:
+            self.find_destroyed_buildings(game_state)
+        
+        # Last call of the round which is used to figure out what was destroyed.
+        self.last_round_stationary_units = self.get_current_stationary_units(game_state)
+
+
+
 
     def build_intial_defences(self, game_state):
         """
@@ -131,41 +142,50 @@ class AlgoStrategy(gamelib.AlgoCore):
             if number_placed == 1:
                 # Find the cost from the config info.
                 total_structural_credits -= self.config["unitInformation"][self.enum_to_index_map[placement.name]]["cost1"]
-        
+    
+    def rebuild_lost_defenses(self, game_state):
+
+        rebuild_list = self.find_destroyed_buildings(game_state)
+        for item in rebuild_list:
+            self.structure_queue.appendleft(building(name=item[0], x=item[1][0], y=item[1][1]))
 
 
-    def random_scout(self, game_state):
+
+    def update_defences(self, game_state):
+        '''
+        uses the queue to execute the building of the new defenses.
+        The ideas is to have one function reponible for building defenses, rather than several, so helper functions add to the queue, and hand over to this function to execute
+        + allows for easier to plan a little
+        '''
+        total_structural_credits = game_state.get_resource(resource_type=SP, player_index=0)
+        while(len(self.structure_queue) > 0 and total_structural_credits > 4):
+            placement = self.structure_queue.popleft()
+            number_placed = game_state.attempt_spawn(placement.name, [placement.x, placement.y])
+            gamelib.debug_write('Attempting to spawn {} at location ({}, {}). SP left: {}'.format(placement.name, placement.x, placement.y, total_structural_credits))
+            if number_placed == 1:
+                # Find the cost from the config info.
+                total_structural_credits -= self.config["unitInformation"][self.enum_to_index_map[placement.name]]["cost1"]
+
+
+
+
+    def clever_scouts(self, game_state):
+
+        # Figure out how many sprits we can form.
+        units_at_each_location = int(game_state.number_affordable(SCOUT) / 2)
         # List of where we can spawn our sprites as must be on an outer edge.
         friendly_edges = game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_LEFT) + game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_RIGHT)
-
         # Remove locations that are blocked by our own structures 
         # since we can't deploy units there.
+        allowed_locations = self.filter_blocked_locations(friendly_edges, game_state)
+        # Pick the best two from expected damage.
+        best_two_locations = self.least_damage_spawn_locations(game_state=game_state, location_options=allowed_locations, number_of_returns=2)
 
-        dep_locs_to_spawn = random.choices(self.filter_blocked_locations(friendly_edges, game_state), k=2)
-        units_at_each_location = int(game_state.number_affordable(SCOUT) / 2)
-        game_state.attempt_spawn(SCOUT, locations=dep_locs_to_spawn, num=units_at_each_location)
+        game_state.attempt_spawn(SCOUT, locations=best_two_locations, num=units_at_each_location)
 
 
-
-    def least_damage_spawn_location(self, game_state, location_options):
-        """
-        This function will help us guess which location is the safest to spawn moving units from.
-        It gets the path the unit will take then checks locations on that path to 
-        estimate the path's damage risk.
-        """
-        damages = []
-        # Get the damage estimate each path will take
-        for location in location_options:
-            path = game_state.find_path_to_edge(location)
-            damage = 0
-            for path_location in path:
-                # Get number of enemy turrets that can attack each location and multiply by turret damage
-                damage += len(game_state.get_attackers(path_location, 0)) * gamelib.GameUnit(TURRET, game_state.config).damage_i
-            damages.append(damage)
-        
-        # Now just return the location that takes the least damage
-        return location_options[damages.index(min(damages))]
-
+    # ----------------------------------------------------------------
+    # HELPER FUNCTIONS
     def detect_enemy_unit(self, game_state, unit_type=None, valid_x = None, valid_y = None):
         total_units = 0
         for location in game_state.game_map:
@@ -181,6 +201,59 @@ class AlgoStrategy(gamelib.AlgoCore):
             if not game_state.contains_stationary_unit(location):
                 filtered.append(location)
         return filtered
+
+    
+    def get_current_stationary_units(self, game_state):
+        '''
+        returns a list of our stationary units in the form [type, [location_x, location_y]]
+        Used for keeping track of what was destroyed in the previous round
+        '''
+        stationary_units = []
+        for location in game_state.game_map:
+            if game_state.contains_stationary_unit(location):
+                for unit in game_state.game_map[location]:
+                    if unit.player_index == 0:
+                        stationary_units.append(unit.unit_type, location)
+        return location
+                        
+
+    def find_destroyed_buildings(self, game_state):
+        ''' 
+        returns locations and what was destroyed in the form [type, [location_x, location_y]]
+        Used to figure out what was lost between this round and the last round.
+        '''
+        current_stationary_units = self.get_current_stationary_units(game_state)
+        return set(self.last_round_stationary_units) - set(current_stationary_units)
+
+
+    def least_damage_spawn_locations(self, game_state, location_options, number_of_returns):
+        """
+        This function will help us guess which location is the safest to spawn moving units from.
+        It gets the path the unit will take then checks locations on that path to 
+        estimate the path's damage risk.
+        """
+        location_damage_map = {}
+        # Get the damage estimate each path will take
+        for location in location_options:
+            path = game_state.find_path_to_edge(location)
+            damage = 0
+            for path_location in path:
+                # Get number of enemy turrets that can attack each location and multiply by turret damage
+                damage += len(game_state.get_attackers(path_location, 0)) * gamelib.GameUnit(TURRET, game_state.config).damage_i
+
+            location_damage_map[location] = damage
+
+        # Sort by the values in decendending order, get the first N many values and then get the locations of these.
+        return [y[0] for y in sorted(location_damage_map.items(), key=lambda x: x[1])[0:number_of_returns]]
+  
+
+
+
+
+
+    # ----------
+    # DO NOT EDIT
+    # ----------    
 
     def on_action_frame(self, turn_string):
         """

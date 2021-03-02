@@ -1,2 +1,8 @@
 Keeping track of the changes we make, and algo designs.
 OW.
+
+
+Denfensive-Algos
+
+Initally build up a wall down LHS with also wall up RHS, 2 supports at the bottom and turrent on the RHS and LHS. This funnels oppo to attack down one channel on the RHS.
+Queue a bunch of upgrades and buildings to strength defenses. If any buildings are destroyed then replace them and queue the upgrade.
