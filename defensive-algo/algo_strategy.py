@@ -326,9 +326,10 @@ class AlgoStrategy(gamelib.AlgoCore):
         # game_state.attempt_spawn(DEMOLISHER, locations=[[17, 3]], num=2)
 
         # Scouts, use as many as we can afford.
-        game_state.attempt_spawn(SCOUT, locations=[[11, 2], [12, 1]], num=int(game_state.get_resource(resource_type=MP, player_index=0) / 2))
+        game_state.attempt_spawn(SCOUT, locations=[12, 1], num=5)
+        game_state.attempt_spawn(SCOUT, locations=[11, 2], num=game_state.get_resource(resource_type=MP, player_index=0) - 5)
 
-        # 5 and 15? 
+        # TODO - In future we should optimise this for weather we will get blocked, and how much we can risk etc.
 
         # Interceptor to clean up afterwards.
         # game_state.attempt_spawn(INTERCEPTOR, locations=[[14, 0]], num=2)
