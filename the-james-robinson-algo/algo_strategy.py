@@ -5,7 +5,10 @@ import warnings
 from sys import maxsize
 import json
 from collections import deque, namedtuple
-import random
+import copy
+from gamelib.util import get_command
+from gamelib.navigation import ShortestPathFinder
+
 
 """
 Most of the algo code you write will be in this file unless you create new
@@ -21,6 +24,7 @@ Advanced strategy tips:
 """
 
 building = namedtuple('Building', ['name', 'x', 'y'])
+attacker = namedtuple('Attacker', ['name', 'x', 'y', 'num'])
 
 
 class AlgoStrategy(gamelib.AlgoCore):
@@ -126,27 +130,129 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Build defences - first rebuild what we lost and then add to what we have
             self.repair_critcal_items(game_state)
             self.queue_rebuild_lost_defenses(game_state)
+
             gamelib.debug_write('Current Queue: ' + str(self.structure_queue[0]))
 
             self.build_new_defences(game_state)
 
             # Create attack.
-            if self.should_thunder_strike(game_state) and self.play_thunder == -1:
-                self.prepare_thunder_attack(game_state)
-                self.play_thunder = 0
-            elif self.play_thunder == 0:
-                self.play_thunder_strike(game_state)
-                self.play_thunder = 1
-            elif self.play_thunder == 1:
-                self.rebuild_after_thunder_strike(game_state)
-                self.play_thunder = -1
-            else:
-                # Pick standard attack.
-                self.play_standard_attack(game_state)
+            # if self.should_thunder_strike(game_state) and self.play_thunder == -1:
+            #     self.prepare_thunder_attack(game_state)
+            #     self.play_thunder = 0
+            # elif self.play_thunder == 0:
+            #     self.play_thunder_strike(game_state)
+            #     self.play_thunder = 1
+            # elif self.play_thunder == 1:
+            #     self.rebuild_after_thunder_strike(game_state)
+            #     self.play_thunder = -1
+            # else:
+            #     # Pick standard attack.
+            #     # self.play_standard_attack(game_state)
+            #     our_attackers = [attacker(name=SCOUT, x=11, y=2, num=game_state.number_affordable(SCOUT))]
+            #     self.roll_out_attackers_play(game_state, our_attackers, [])
+
+            our_attackers = [attacker(name=SCOUT, x=11, y=2, num=game_state.number_affordable(SCOUT))]
+            gamelib.debug_write('Previous number of scouts afffordable: {}'.format(game_state.number_affordable(SCOUT)))
+            self.roll_out_attackers_play(game_state, our_attackers, [])
+            gamelib.debug_write('Current energy health points: {}'.format(game_state.enemy_health))
+            gamelib.debug_write('Current number of scouts afffordable: {}'.format(game_state.number_affordable(SCOUT)))
+            for att in our_attackers:
+                game_state.attempt_spawn(SCOUT, locations=[[11,2]], num=game_state.number_affordable(SCOUT))
 
         # Last call of the round which is used to figure out what was destroyed.
         self.last_round_stationary_units = self.get_current_stationary_units(game_state)
         gamelib.debug_write('Previous stationary units - post call: ' + str(self.last_round_stationary_units))
+
+
+    def roll_out_attackers_play(self, game_state, our_attackers_list, oppo_attackers_list):
+        ''' This will simulate a roll out of the attackers once place. This assume at the moment that the map hasn't been altered 
+        attackers_list: List[attacker] where attack is a named tuple of [name, x, y, num] '''
+
+        # Create a copy of the game_state so we can modify it.
+        game_state_rollout = copy.deepcopy(game_state)
+        for att in our_attackers_list:
+            game_state_rollout.attempt_spawn(unit_type=att.name, locations=[[att.x, att.y]], num=att.num)
+        # Place the opponents attackers.
+        for att in oppo_attackers_list:
+            game_state_rollout.attempt_spawn(unit_type=att.name, locations=[[att.x, att.y]], num=att.num)
+
+        game_state_rollout.submit_turn()
+
+        # Wait for the result of the run.
+        game_state_string = get_command()
+
+        if "turnInfo" in game_state_string:
+            new_state = gamelib.GameState(self.config, game_state_string)
+
+            gamelib.debug_write('Old Resource : {}  New resources: {}'.format(game_state.get_resource(MP), new_state.get_resource(MP)))
+
+            list_of_old_buildings = []
+            list_of_new_buildings = []
+            for i in range(0,28):
+                for j in range(0,28):
+                    if game_state.game_map.in_arena_bounds([i,j]) and game_state.contains_stationary_unit([i,j]):
+                        list_of_old_buildings.append([i,j])
+                    if new_state.game_map.in_arena_bounds([i,j]) and new_state.contains_stationary_unit([i,j]): 
+                        list_of_new_buildings.append([i,j])
+
+            if(len(list_of_old_buildings) != len(list_of_new_buildings)):
+                gamelib.debug_write('Old Buildings : {}  \nNew buildings: {}'.format(str(list_of_old_buildings), str(list_of_new_buildings)))
+            
+            gamelib.debug_write('Before enermy health {}  After energy health: {}'.format(game_state.enemy_health, new_state.enemy_health))
+
+            gamelib.debug_write('Old Map:\n')
+            for i in range(0,28):
+                row_str = "" 
+                for j in range(0,28):
+                    if game_state.game_map.in_arena_bounds([i,j]):
+                        if len(game_state.game_map[i,j]) > 0:
+                            row_str += (str(game_state.game_map[i,j][0].unit_type) + " " + str(game_state.game_map[i,j][0].health) + (6-len(str(game_state.game_map[i,j][0].unit_type) + str(game_state.game_map[i,j][0].health))) * " ")
+                            # gamelib.debug_write(type(new_state.game_map[i,j][0]))
+                        else: 
+                            row_str += "      "
+                    else:
+                        row_str += "------"
+                gamelib.debug_write(row_str)
+
+
+            gamelib.debug_write('Old Map:\n')
+            for i in range(0,28):
+                row_str = "" 
+                for j in range(0,28):
+                    if new_state.game_map.in_arena_bounds([i,j]):
+                        if len(game_state.game_map[i,j]) > 0:
+                            row_str += (str(new_state.game_map[i,j][0].unit_type) + " " + str(new_state.game_map[i,j][0].health) + (6-len(str(new_state.game_map[i,j][0].unit_type) + str(new_state.game_map[i,j][0].health))) * " ")
+                            # gamelib.debug_write(type(new_state.game_map[i,j][0]))
+                        else: 
+                            row_str += "      "
+                    else:
+                        row_str += "------"
+                gamelib.debug_write(row_str)
+
+            # self.shortest_path_finder = ShortestPathFinder()
+            # gamelib.debug_write('Old Map')
+            # self.shortest_path_finder.initialize_map(game_state)
+            # self.shortest_path_finder.print_map()
+            # gamelib.debug_write('New Map')
+            # self.shortest_path_finder.initialize_map(new_state)
+            # self.shortest_path_finder.print_map()
+
+        
+            
+        # # Check how the game map has now changed.
+        # original_game_map = game_state.game_map.__dict__
+        # # gamelib.debug_write('Game map of original: ' + str(original_game_map['_GameMap__map'][0]))
+        # roll_out_game_map = game_state_rollout.game_map.__dict__
+        # # gamelib.debug_write('Game map of roll_out: ' + str(roll_out_game_map['_GameMap__map'][0]))
+        # for i in range(0, len(original_game_map['_GameMap__map'])):
+        #     for j in range(0, len(original_game_map['_GameMap__map'][i])):
+        #         if(original_game_map['_GameMap__map'][i][j] != roll_out_game_map['_GameMap__map'][i][j]):
+        #             gamelib.debug_write(str(i) + " " + str(j))
+        #             gamelib.debug_write('Game map of original: ' + str(original_game_map['_GameMap__map'][i][j]))
+        #             gamelib.debug_write('Game map of rollout: ' + str(roll_out_game_map['_GameMap__map'][i][j]))
+
+
+
 
         
 
@@ -180,12 +286,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         for up in upgrades:
             self.structure_queue.append(building(name="upgrade", x= up[0], y=up[1]))
 
-        # Upgrades to do.
-        # RHS turrets
-        # RHS walls
-        # LHS turrets
-        # Supports.
-        
         # TODO - Come up with some logic about how to decide what to put next.
         
 
@@ -294,8 +394,10 @@ class AlgoStrategy(gamelib.AlgoCore):
         '''
         Just a normal attack using 2 scouts, more to see if we can do damage and expliot weekness
         '''
-        if(game_state.get_resource(resource_type=MP, player_index=0) > 8 and game_state.turn_number % 4 == 0):
-            game_state.attempt_spawn(DEMOLISHER, [[11, 2]], 1)
+        # if(game_state.get_resource(resource_type=MP, player_index=0) > 8 and game_state.turn_number % 4 == 0):
+        #     game_state.attempt_spawn(DEMOLISHER, [[11, 2]], 1)
+        game_state.attempt_spawn(SCOUT, [11, 2], game_state.number_affordable(SCOUT))
+
 
 
 
@@ -359,17 +461,12 @@ class AlgoStrategy(gamelib.AlgoCore):
         # game_state.attempt_spawn(INTERCEPTOR, locations=[[14, 0]], num=2)
 
         game_state.attempt_remove([[22, 10]])
-            
-    # def build_reactive_defense(self, game_state):
-    #     """
-    #     This function builds reactive defenses based on where the enemy scored on us from.
-    #     We can track where the opponent scored by looking at events in action frames 
-    #     as shown in the on_action_frame function
-    #     """
-    #     for location in self.scored_on_locations:
-    #         # Build turret one space above so that it doesn't block our own edge spawn locations
-    #         build_location = [location[0], location[1]+1]
-    #         game_state.attempt_spawn(TURRET, build_location)
+     
+
+
+
+
+
 
     
 

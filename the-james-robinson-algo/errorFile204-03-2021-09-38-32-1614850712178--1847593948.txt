@@ -1,0 +1,99 @@
+Random seed: 2872079734325511983
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Critcal Infra: [Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13), Building(name='FF', x=3, y=12), Building(name='FF', x=24, y=12), Building(name='FF', x=4, y=11), Building(name='FF', x=23, y=11), Building(name='FF', x=5, y=10), Building(name='FF', x=6, y=9), Building(name='FF', x=21, y=9), Building(name='FF', x=7, y=8), Building(name='FF', x=20, y=8), Building(name='FF', x=8, y=7), Building(name='FF', x=19, y=7), Building(name='FF', x=9, y=6), Building(name='FF', x=18, y=6), Building(name='FF', x=10, y=5), Building(name='FF', x=17, y=5), Building(name='FF', x=11, y=4), Building(name='FF', x=12, y=4), Building(name='FF', x=13, y=4), Building(name='FF', x=14, y=4), Building(name='FF', x=15, y=4), Building(name='FF', x=16, y=4), Building(name='DF', x=2, y=13), Building(name='DF', x=3, y=13), Building(name='DF', x=4, y=12), Building(name='DF', x=21, y=12), Building(name='DF', x=22, y=11), Building(name='DF', x=20, y=10)]
+Performing turn 0 of your custom algo strategy
+Performing starter stratergy 0 of your custom algo strategy
+Previous stationary units - pre call: set()
+Queue size: 32
+Number of SP: 40.0
+Attempting to spawn FF at location (0, 13). Number placed: 1
+Number of SP: 39.0
+Attempting to spawn FF at location (1, 13). Number placed: 1
+Number of SP: 38.0
+Attempting to spawn FF at location (25, 13). Number placed: 1
+Number of SP: 37.0
+Attempting to spawn FF at location (26, 13). Number placed: 1
+Number of SP: 36.0
+Attempting to spawn FF at location (27, 13). Number placed: 1
+Number of SP: 35.0
+Attempting to spawn FF at location (3, 12). Number placed: 1
+Number of SP: 34.0
+Attempting to spawn FF at location (24, 12). Number placed: 1
+Number of SP: 33.0
+Attempting to spawn FF at location (4, 11). Number placed: 1
+Number of SP: 32.0
+Attempting to spawn FF at location (23, 11). Number placed: 1
+Number of SP: 31.0
+Attempting to spawn FF at location (5, 10). Number placed: 1
+Number of SP: 30.0
+Attempting to spawn FF at location (6, 9). Number placed: 1
+Number of SP: 29.0
+Attempting to spawn FF at location (21, 9). Number placed: 1
+Number of SP: 28.0
+Attempting to spawn FF at location (7, 8). Number placed: 1
+Number of SP: 27.0
+Attempting to spawn FF at location (20, 8). Number placed: 1
+Number of SP: 26.0
+Attempting to spawn FF at location (8, 7). Number placed: 1
+Number of SP: 25.0
+Attempting to spawn FF at location (19, 7). Number placed: 1
+Number of SP: 24.0
+Attempting to spawn FF at location (9, 6). Number placed: 1
+Number of SP: 23.0
+Attempting to spawn FF at location (18, 6). Number placed: 1
+Number of SP: 22.0
+Attempting to spawn FF at location (10, 5). Number placed: 1
+Number of SP: 21.0
+Attempting to spawn FF at location (17, 5). Number placed: 1
+Number of SP: 20.0
+Attempting to spawn FF at location (11, 4). Number placed: 1
+Number of SP: 19.0
+Attempting to spawn FF at location (12, 4). Number placed: 1
+Number of SP: 18.0
+Attempting to spawn FF at location (13, 4). Number placed: 1
+Number of SP: 17.0
+Attempting to spawn FF at location (14, 4). Number placed: 1
+Number of SP: 16.0
+Attempting to spawn FF at location (15, 4). Number placed: 1
+Number of SP: 15.0
+Attempting to spawn FF at location (16, 4). Number placed: 1
+Number of SP: 14.0
+Attempting to spawn DF at location (2, 13). Number placed: 1
+Number of SP: 12.0
+Attempting to spawn DF at location (3, 13). Number placed: 1
+Number of SP: 10.0
+Attempting to spawn DF at location (4, 12). Number placed: 1
+Number of SP: 8.0
+Attempting to spawn DF at location (21, 12). Number placed: 1
+Number of SP: 6.0
+Attempting to spawn DF at location (22, 11). Number placed: 1
+Number of SP: 4.0
+Attempting to spawn DF at location (20, 10). Number placed: 1
+Previous stationary units - post call: {('FF', 4, 11), ('FF', 17, 5), ('FF', 3, 12), ('DF', 4, 12), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 10, 5), ('DF', 22, 11), ('FF', 15, 4), ('DF', 21, 12), ('FF', 26, 13), ('DF', 3, 13), ('FF', 18, 6), ('FF', 8, 7), ('FF', 9, 6), ('FF', 23, 11), ('FF', 24, 12), ('FF', 19, 7), ('FF', 20, 8), ('FF', 7, 8), ('DF', 20, 10), ('FF', 12, 4), ('FF', 1, 13), ('DF', 2, 13), ('FF', 14, 4), ('FF', 16, 4), ('FF', 6, 9), ('FF', 27, 13), ('FF', 25, 13), ('FF', 5, 10), ('FF', 21, 9)}
+Performing turn 1 of your custom algo strategy
+Performing starter stratergy 1 of your custom algo strategy
+Previous stationary units - pre call: {('FF', 4, 11), ('FF', 17, 5), ('FF', 3, 12), ('DF', 4, 12), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 10, 5), ('DF', 22, 11), ('FF', 15, 4), ('DF', 21, 12), ('FF', 26, 13), ('DF', 3, 13), ('FF', 18, 6), ('FF', 8, 7), ('FF', 9, 6), ('FF', 23, 11), ('FF', 24, 12), ('FF', 19, 7), ('FF', 20, 8), ('FF', 7, 8), ('DF', 20, 10), ('FF', 12, 4), ('FF', 1, 13), ('DF', 2, 13), ('FF', 14, 4), ('FF', 16, 4), ('FF', 6, 9), ('FF', 27, 13), ('FF', 25, 13), ('FF', 5, 10), ('FF', 21, 9)}
+Current Station Units: {('FF', 4, 11), ('FF', 17, 5), ('FF', 3, 12), ('DF', 4, 12), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 10, 5), ('DF', 22, 11), ('FF', 15, 4), ('DF', 21, 12), ('FF', 26, 13), ('DF', 3, 13), ('FF', 18, 6), ('FF', 8, 7), ('FF', 9, 6), ('FF', 23, 11), ('FF', 24, 12), ('FF', 19, 7), ('FF', 20, 8), ('FF', 7, 8), ('DF', 20, 10), ('FF', 12, 4), ('FF', 1, 13), ('DF', 2, 13), ('FF', 14, 4), ('FF', 16, 4), ('FF', 6, 9), ('FF', 27, 13), ('FF', 25, 13), ('FF', 5, 10), ('FF', 21, 9)}
+Last rounds stationary Units: {('FF', 4, 11), ('FF', 17, 5), ('FF', 3, 12), ('DF', 4, 12), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 10, 5), ('DF', 22, 11), ('FF', 15, 4), ('DF', 21, 12), ('FF', 26, 13), ('DF', 3, 13), ('FF', 18, 6), ('FF', 8, 7), ('FF', 9, 6), ('FF', 23, 11), ('FF', 24, 12), ('FF', 19, 7), ('FF', 20, 8), ('FF', 7, 8), ('DF', 20, 10), ('FF', 12, 4), ('FF', 1, 13), ('DF', 2, 13), ('FF', 14, 4), ('FF', 16, 4), ('FF', 6, 9), ('FF', 27, 13), ('FF', 25, 13), ('FF', 5, 10), ('FF', 21, 9)}
+Diffence: set()
+Thunderstike, saving wall: set()
+Rebuild listset()
+Current Queue: Building(name='DF', x=24, y=13)
+Queue size: 76
+Previous number of scouts afffordable: 7
+Old Resource : 7.3  New resources: 0.3
+Before enermy health 40.0  After energy health: 40.0
+Old Map
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/algo_strategy.py", line 571, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/gamelib/algocore.py", line 74, in start
+    self.on_turn(game_state_string)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/algo_strategy.py", line 104, in on_turn
+    self.starter_strategy(game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/algo_strategy.py", line 156, in starter_strategy
+    self.roll_out_attackers_play(game_state, our_attackers, [])
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/algo_strategy.py", line 205, in roll_out_attackers_play
+    self.shortest_path_finder.initialize_map(game_state).print_map()
+AttributeError: 'NoneType' object has no attribute 'print_map'

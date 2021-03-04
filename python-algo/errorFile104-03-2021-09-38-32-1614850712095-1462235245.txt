@@ -1,0 +1,21 @@
+Random seed: 3865155578185411004
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Performing turn 1 of your custom algo strategy
+Got scored on at: [3, 10]
+All locations: [[3, 10]]
+Got scored on at: [3, 10]
+All locations: [[3, 10], [3, 10]]
+Got scored on at: [3, 10]
+All locations: [[3, 10], [3, 10], [3, 10]]
+Got scored on at: [3, 10]
+All locations: [[3, 10], [3, 10], [3, 10], [3, 10]]
+Got scored on at: [3, 10]
+All locations: [[3, 10], [3, 10], [3, 10], [3, 10], [3, 10]]
+Got scored on at: [3, 10]
+All locations: [[3, 10], [3, 10], [3, 10], [3, 10], [3, 10], [3, 10]]
+Got scored on at: [3, 10]
+All locations: [[3, 10], [3, 10], [3, 10], [3, 10], [3, 10], [3, 10], [3, 10]]
+Performing turn 2 of your custom algo strategy
+Got end state, game over. Stopping algo.

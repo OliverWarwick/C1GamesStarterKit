@@ -1,0 +1,4 @@
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/defensive-algo/algo_strategy.py", line 78
+    self.critcal_infra = [building(name=WALL, x=ele[0], y=ele[1]) for ele in wall_list if ele[1] != 13 or (ele[0]=22, ele[1]=10)] + [building(name=TURRET, x=ele[0], y=ele[1]) for ele in turrent_list] 
+                                                                                                                 ^
+SyntaxError: invalid syntax
