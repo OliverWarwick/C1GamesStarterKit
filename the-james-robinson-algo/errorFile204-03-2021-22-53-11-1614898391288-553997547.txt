@@ -1,0 +1,427 @@
+Random seed: 5770813987991796411
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Critcal Infra: [Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13), Building(name='FF', x=3, y=12), Building(name='FF', x=24, y=12), Building(name='FF', x=4, y=11), Building(name='FF', x=23, y=11), Building(name='FF', x=5, y=10), Building(name='FF', x=6, y=9), Building(name='FF', x=21, y=9), Building(name='FF', x=7, y=8), Building(name='FF', x=20, y=8), Building(name='FF', x=8, y=7), Building(name='FF', x=19, y=7), Building(name='FF', x=9, y=6), Building(name='FF', x=18, y=6), Building(name='FF', x=10, y=5), Building(name='FF', x=17, y=5), Building(name='FF', x=11, y=4), Building(name='FF', x=12, y=4), Building(name='FF', x=13, y=4), Building(name='FF', x=14, y=4), Building(name='FF', x=15, y=4), Building(name='FF', x=16, y=4), Building(name='DF', x=2, y=13), Building(name='DF', x=3, y=13), Building(name='DF', x=4, y=12), Building(name='DF', x=21, y=12), Building(name='DF', x=22, y=11), Building(name='DF', x=20, y=10)]
+Original State Value: 0
+Performing turn 0 of your custom algo strategy
+Performing starter stratergy 0 of your custom algo strategy
+Previous stationary units - pre call: set()
+Queue size: 32
+Number of SP: 40.0
+Attempting to spawn FF at location (0, 13). Number placed: 1
+Number of SP: 39.0
+Attempting to spawn FF at location (1, 13). Number placed: 1
+Number of SP: 38.0
+Attempting to spawn FF at location (25, 13). Number placed: 1
+Number of SP: 37.0
+Attempting to spawn FF at location (26, 13). Number placed: 1
+Number of SP: 36.0
+Attempting to spawn FF at location (27, 13). Number placed: 1
+Number of SP: 35.0
+Attempting to spawn FF at location (3, 12). Number placed: 1
+Number of SP: 34.0
+Attempting to spawn FF at location (24, 12). Number placed: 1
+Number of SP: 33.0
+Attempting to spawn FF at location (4, 11). Number placed: 1
+Number of SP: 32.0
+Attempting to spawn FF at location (23, 11). Number placed: 1
+Number of SP: 31.0
+Attempting to spawn FF at location (5, 10). Number placed: 1
+Number of SP: 30.0
+Attempting to spawn FF at location (6, 9). Number placed: 1
+Number of SP: 29.0
+Attempting to spawn FF at location (21, 9). Number placed: 1
+Number of SP: 28.0
+Attempting to spawn FF at location (7, 8). Number placed: 1
+Number of SP: 27.0
+Attempting to spawn FF at location (20, 8). Number placed: 1
+Number of SP: 26.0
+Attempting to spawn FF at location (8, 7). Number placed: 1
+Number of SP: 25.0
+Attempting to spawn FF at location (19, 7). Number placed: 1
+Number of SP: 24.0
+Attempting to spawn FF at location (9, 6). Number placed: 1
+Number of SP: 23.0
+Attempting to spawn FF at location (18, 6). Number placed: 1
+Number of SP: 22.0
+Attempting to spawn FF at location (10, 5). Number placed: 1
+Number of SP: 21.0
+Attempting to spawn FF at location (17, 5). Number placed: 1
+Number of SP: 20.0
+Attempting to spawn FF at location (11, 4). Number placed: 1
+Number of SP: 19.0
+Attempting to spawn FF at location (12, 4). Number placed: 1
+Number of SP: 18.0
+Attempting to spawn FF at location (13, 4). Number placed: 1
+Number of SP: 17.0
+Attempting to spawn FF at location (14, 4). Number placed: 1
+Number of SP: 16.0
+Attempting to spawn FF at location (15, 4). Number placed: 1
+Number of SP: 15.0
+Attempting to spawn FF at location (16, 4). Number placed: 1
+Number of SP: 14.0
+Attempting to spawn DF at location (2, 13). Number placed: 1
+Number of SP: 12.0
+Attempting to spawn DF at location (3, 13). Number placed: 1
+Number of SP: 10.0
+Attempting to spawn DF at location (4, 12). Number placed: 1
+Number of SP: 8.0
+Attempting to spawn DF at location (21, 12). Number placed: 1
+Number of SP: 6.0
+Attempting to spawn DF at location (22, 11). Number placed: 1
+Number of SP: 4.0
+Attempting to spawn DF at location (20, 10). Number placed: 1
+Previous stationary units - post call: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Original State Value: 0
+Performing turn 1 of your custom algo strategy
+Performing starter stratergy 1 of your custom algo strategy
+Previous stationary units - pre call: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Current Station Units: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Last rounds stationary Units: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Diffence: set()
+Thunderstike, saving wall: set()
+Rebuild listset()
+Current Queue: Building(name='DF', x=24, y=13)
+Queue size: 76
+Previous number of scouts afffordable: 7
+Before Turn number 1
+Submitting turn
+Getting from turn
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [1, 1, 0, 70]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [6, 9, 75.0, '21'], [21, 9, 75.0, '22'], [7, 8, 75.0, '23'], [20, 8, 75.0, '24'], [8, 7, 75.0, '25'], [19, 7, 75.0, '26'], [9, 6, 75.0, '27'], [18, 6, 75.0, '28'], [10, 5, 75.0, '29'], [17, 5, 75.0, '30'], [11, 4, 75.0, '31'], [12, 4, 75.0, '32'], [13, 4, 75.0, '33'], [14, 4, 75.0, '34'], [15, 4, 75.0, '35'], [16, 4, 75.0, '36'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [[11, 3, 15.0, '62'], [11, 3, 15.0, '63'], [11, 3, 15.0, '64'], [11, 3, 15.0, '65'], [11, 3, 15.0, '66'], [11, 3, 15.0, '67'], [11, 3, 15.0, '68']], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56']]]
+p2units: [[[19, 15, 150.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6']], [], [], [[7, 21, 40.0, '57'], [7, 21, 40.0, '58'], [9, 23, 40.0, '59'], [17, 24, 40.0, '60'], [3, 17, 40.0, '61']], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+events: {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [[[11, 2], [11, 3], [27, 27], 3, '62', 1], [[11, 2], [11, 3], [27, 27], 3, '63', 1], [[11, 2], [11, 3], [27, 27], 3, '64', 1], [[11, 2], [11, 3], [27, 27], 3, '65', 1], [[11, 2], [11, 3], [27, 27], 3, '66', 1], [[11, 2], [11, 3], [27, 27], 3, '67', 1], [[11, 2], [11, 3], [27, 27], 3, '68', 1]], 'spawn': [[[0, 13], 7, '50', 1], [[1, 13], 7, '51', 1], [[3, 12], 7, '52', 1], [[24, 12], 7, '53', 1], [[4, 11], 7, '54', 1], [[23, 11], 7, '55', 1], [[5, 10], 7, '56', 1], [[7, 21], 5, '57', 2], [[7, 21], 5, '58', 2], [[9, 23], 5, '59', 2], [[17, 24], 5, '60', 2], [[3, 17], 5, '61', 2], [[11, 2], 3, '62', 1], [[11, 2], 3, '63', 1], [[11, 2], 3, '64', 1], [[11, 2], 3, '65', 1], [[11, 2], 3, '66', 1], [[11, 2], 3, '67', 1], [[11, 2], 3, '68', 1]], 'death': [], 'attack': [], 'melee': []}
+State Type: 1
+After Turn number 1
+Olly Debug
+Old Resource : 7.3  New resources: 0.3
+Before enermy health 40.0  After energy health: 40.0
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Final state
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [0, 2, -1, 163]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [6, 9, 75.0, '21'], [21, 9, 75.0, '22'], [7, 8, 75.0, '23'], [20, 8, 75.0, '24'], [8, 7, 75.0, '25'], [19, 7, 75.0, '26'], [9, 6, 75.0, '27'], [18, 6, 75.0, '28'], [10, 5, 75.0, '29'], [17, 5, 75.0, '30'], [11, 4, 75.0, '31'], [12, 4, 75.0, '32'], [13, 4, 75.0, '33'], [14, 4, 75.0, '34'], [15, 4, 75.0, '35'], [16, 4, 75.0, '36'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56']]]
+p2units: [[[19, 15, 66.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6']], [], [], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+p1stats: [40.0, 12.0, 5.2, 12]
+p2stats: [33.0, 34.0, 5.0, 6]
+events: {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [], 'spawn': [], 'death': [], 'attack': [], 'melee': []}
+Finished the round. OW
+Current energy health points: 40.0
+Current number of scouts afffordable: 7
+Previous stationary units - post call: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Original State Value: 0
+Performing turn 3 of your custom algo strategy
+Performing starter stratergy 3 of your custom algo strategy
+Previous stationary units - pre call: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Current Station Units: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Last rounds stationary Units: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Diffence: set()
+Thunderstike, saving wall: set()
+Rebuild listset()
+Current Queue: Building(name='DF', x=24, y=13)
+Queue size: 76
+Number of SP: 1.0
+Attempting to spawn DF at location (24, 13). Number placed: 0
+Previous number of scouts afffordable: 5
+Before Turn number 3
+Submitting turn
+Getting from turn
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [1, 3, 0, 254]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56'], [6, 9, 150.0, '80'], [21, 9, 150.0, '81'], [7, 8, 150.0, '82'], [20, 8, 150.0, '83'], [8, 7, 150.0, '84'], [19, 7, 150.0, '85'], [9, 6, 150.0, '86'], [18, 6, 150.0, '87'], [10, 5, 150.0, '88'], [17, 5, 150.0, '89'], [11, 4, 150.0, '90'], [12, 4, 150.0, '91'], [13, 4, 150.0, '92'], [14, 4, 150.0, '93'], [15, 4, 150.0, '94'], [16, 4, 150.0, '95']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [[11, 3, 15.0, '101'], [11, 3, 15.0, '102'], [11, 3, 15.0, '103'], [11, 3, 15.0, '104'], [11, 3, 15.0, '105']], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56'], [6, 9, 0.0, '80'], [21, 9, 0.0, '81'], [7, 8, 0.0, '82'], [20, 8, 0.0, '83'], [8, 7, 0.0, '84'], [19, 7, 0.0, '85'], [9, 6, 0.0, '86'], [18, 6, 0.0, '87'], [10, 5, 0.0, '88'], [17, 5, 0.0, '89'], [11, 4, 0.0, '90'], [12, 4, 0.0, '91'], [13, 4, 0.0, '92'], [14, 4, 0.0, '93'], [15, 4, 0.0, '94'], [16, 4, 0.0, '95']]]
+p2units: [[[19, 15, 66.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6'], [24, 16, 90.0, '69']], [], [], [[19, 22, 40.0, '96'], [18, 23, 40.0, '97'], [11, 25, 40.0, '98'], [6, 20, 40.0, '99'], [25, 16, 40.0, '100']], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+events: {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [[[11, 2], [11, 3], [27, 27], 3, '101', 1], [[11, 2], [11, 3], [27, 27], 3, '102', 1], [[11, 2], [11, 3], [27, 27], 3, '103', 1], [[11, 2], [11, 3], [27, 27], 3, '104', 1], [[11, 2], [11, 3], [27, 27], 3, '105', 1]], 'spawn': [[[6, 9], 7, '80', 1], [[21, 9], 7, '81', 1], [[7, 8], 7, '82', 1], [[20, 8], 7, '83', 1], [[8, 7], 7, '84', 1], [[19, 7], 7, '85', 1], [[9, 6], 7, '86', 1], [[18, 6], 7, '87', 1], [[10, 5], 7, '88', 1], [[17, 5], 7, '89', 1], [[11, 4], 7, '90', 1], [[12, 4], 7, '91', 1], [[13, 4], 7, '92', 1], [[14, 4], 7, '93', 1], [[15, 4], 7, '94', 1], [[16, 4], 7, '95', 1], [[19, 22], 5, '96', 2], [[18, 23], 5, '97', 2], [[11, 25], 5, '98', 2], [[6, 20], 5, '99', 2], [[25, 16], 5, '100', 2], [[11, 2], 3, '101', 1], [[11, 2], 3, '102', 1], [[11, 2], 3, '103', 1], [[11, 2], 3, '104', 1], [[11, 2], 3, '105', 1]], 'death': [], 'attack': [], 'melee': []}
+State Type: 1
+After Turn number 3
+Olly Debug
+Old Resource : 5.2  New resources: 0.2
+Before enermy health 33.0  After energy health: 33.0
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Final state
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [0, 4, -1, 343]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56'], [6, 9, 150.0, '80'], [21, 9, 150.0, '81'], [7, 8, 150.0, '82'], [20, 8, 150.0, '83'], [8, 7, 150.0, '84'], [19, 7, 150.0, '85'], [9, 6, 150.0, '86'], [18, 6, 150.0, '87'], [10, 5, 150.0, '88'], [17, 5, 150.0, '89'], [11, 4, 150.0, '90'], [12, 4, 150.0, '91'], [13, 4, 150.0, '92'], [14, 4, 150.0, '93'], [15, 4, 150.0, '94'], [16, 4, 150.0, '95']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56'], [6, 9, 0.0, '80'], [21, 9, 0.0, '81'], [7, 8, 0.0, '82'], [20, 8, 0.0, '83'], [8, 7, 0.0, '84'], [19, 7, 0.0, '85'], [9, 6, 0.0, '86'], [18, 6, 0.0, '87'], [10, 5, 0.0, '88'], [17, 5, 0.0, '89'], [11, 4, 0.0, '90'], [12, 4, 0.0, '91'], [13, 4, 0.0, '92'], [14, 4, 0.0, '93'], [15, 4, 0.0, '94'], [16, 4, 0.0, '95']]]
+p2units: [[[19, 15, 42.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6'], [24, 16, 84.0, '69']], [], [], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+p1stats: [40.0, 6.0, 5.2, 18]
+p2stats: [33.0, 42.0, 5.0, 5]
+events: {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [], 'spawn': [], 'death': [], 'attack': [], 'melee': []}
+Finished the round. OW
+Current energy health points: 33.0
+Current number of scouts afffordable: 5
+Previous stationary units - post call: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Original State Value: 0
+Performing turn 5 of your custom algo strategy
+Performing starter stratergy 5 of your custom algo strategy
+Previous stationary units - pre call: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Current Station Units: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Last rounds stationary Units: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Diffence: set()
+Thunderstike, saving wall: set()
+Rebuild listset()
+Current Queue: Building(name='DF', x=24, y=13)
+Queue size: 76
+Number of SP: 3.0
+Attempting to spawn DF at location (24, 13). Number placed: 1
+Number of SP: 1.0
+Attempting to spawn DF at location (20, 12). Number placed: 0
+Previous number of scouts afffordable: 5
+Before Turn number 5
+Submitting turn
+Getting from turn
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [1, 5, 0, 420]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56'], [6, 9, 150.0, '80'], [21, 9, 150.0, '81'], [7, 8, 150.0, '82'], [20, 8, 150.0, '83'], [8, 7, 150.0, '84'], [19, 7, 150.0, '85'], [9, 6, 150.0, '86'], [18, 6, 150.0, '87'], [10, 5, 150.0, '88'], [17, 5, 150.0, '89'], [11, 4, 150.0, '90'], [12, 4, 150.0, '91'], [13, 4, 150.0, '92'], [14, 4, 150.0, '93'], [15, 4, 150.0, '94'], [16, 4, 150.0, '95']], [], [[4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42'], [2, 13, 90.0, '132'], [3, 13, 84.0, '133'], [24, 13, 90.0, '134']], [[11, 3, 15.0, '136'], [11, 3, 15.0, '137'], [11, 3, 15.0, '138'], [11, 3, 15.0, '139'], [11, 3, 15.0, '140']], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56'], [6, 9, 0.0, '80'], [21, 9, 0.0, '81'], [7, 8, 0.0, '82'], [20, 8, 0.0, '83'], [8, 7, 0.0, '84'], [19, 7, 0.0, '85'], [9, 6, 0.0, '86'], [18, 6, 0.0, '87'], [10, 5, 0.0, '88'], [17, 5, 0.0, '89'], [11, 4, 0.0, '90'], [12, 4, 0.0, '91'], [13, 4, 0.0, '92'], [14, 4, 0.0, '93'], [15, 4, 0.0, '94'], [16, 4, 0.0, '95'], [2, 13, 0.0, '132'], [3, 13, 0.0, '133']]]
+p2units: [[[19, 15, 32.0, '9'], [8, 15, 150.0, '10'], [2, 16, 75.0, '116'], [3, 16, 75.0, '117'], [4, 16, 75.0, '118'], [5, 16, 75.0, '119'], [6, 16, 75.0, '120'], [7, 16, 75.0, '121'], [9, 16, 75.0, '122'], [10, 16, 75.0, '123'], [11, 16, 75.0, '124'], [12, 16, 75.0, '125'], [15, 16, 75.0, '126'], [16, 16, 75.0, '127'], [17, 16, 75.0, '128'], [18, 16, 75.0, '129'], [20, 16, 75.0, '130'], [21, 16, 75.0, '131']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6'], [24, 16, 84.0, '69']], [], [[3, 17, 5.0, '135']], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+events: {'selfDestruct': [], 'breach': [], 'damage': [[[3, 13], 6.0, 2, '133', 1]], 'shield': [], 'move': [[[11, 2], [11, 3], [27, 27], 3, '136', 1], [[11, 2], [11, 3], [27, 27], 3, '137', 1], [[11, 2], [11, 3], [27, 27], 3, '138', 1], [[11, 2], [11, 3], [27, 27], 3, '139', 1], [[11, 2], [11, 3], [27, 27], 3, '140', 1]], 'spawn': [[[2, 16], 0, '116', 2], [[3, 16], 0, '117', 2], [[4, 16], 0, '118', 2], [[5, 16], 0, '119', 2], [[6, 16], 0, '120', 2], [[7, 16], 0, '121', 2], [[9, 16], 0, '122', 2], [[10, 16], 0, '123', 2], [[11, 16], 0, '124', 2], [[12, 16], 0, '125', 2], [[15, 16], 0, '126', 2], [[16, 16], 0, '127', 2], [[17, 16], 0, '128', 2], [[18, 16], 0, '129', 2], [[20, 16], 0, '130', 2], [[21, 16], 0, '131', 2], [[2, 13], 7, '132', 1], [[3, 13], 7, '133', 1], [[24, 13], 2, '134', 1], [[3, 17], 4, '135', 2], [[11, 2], 3, '136', 1], [[11, 2], 3, '137', 1], [[11, 2], 3, '138', 1], [[11, 2], 3, '139', 1], [[11, 2], 3, '140', 1]], 'death': [], 'attack': [[[3, 17], [3, 13], 6.0, 4, '135', '133', 2]], 'melee': []}
+State Type: 1
+After Turn number 5
+Olly Debug
+Old Resource : 5.2  New resources: 0.2
+Before enermy health 33.0  After energy health: 33.0
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Blip
+Final state
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [0, 6, -1, 466]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56'], [6, 9, 150.0, '80'], [21, 9, 150.0, '81'], [7, 8, 150.0, '82'], [20, 8, 150.0, '83'], [8, 7, 150.0, '84'], [19, 7, 150.0, '85'], [9, 6, 150.0, '86'], [18, 6, 150.0, '87'], [10, 5, 150.0, '88'], [17, 5, 150.0, '89'], [11, 4, 150.0, '90'], [12, 4, 150.0, '91'], [13, 4, 150.0, '92'], [14, 4, 150.0, '93'], [15, 4, 150.0, '94'], [16, 4, 150.0, '95']], [], [[4, 12, 90.0, '39'], [21, 12, 72.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42'], [2, 13, 90.0, '132'], [3, 13, 60.0, '133'], [24, 13, 54.0, '134']], [], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56'], [6, 9, 0.0, '80'], [21, 9, 0.0, '81'], [7, 8, 0.0, '82'], [20, 8, 0.0, '83'], [8, 7, 0.0, '84'], [19, 7, 0.0, '85'], [9, 6, 0.0, '86'], [18, 6, 0.0, '87'], [10, 5, 0.0, '88'], [17, 5, 0.0, '89'], [11, 4, 0.0, '90'], [12, 4, 0.0, '91'], [13, 4, 0.0, '92'], [14, 4, 0.0, '93'], [15, 4, 0.0, '94'], [16, 4, 0.0, '95'], [2, 13, 0.0, '132'], [3, 13, 0.0, '133']]]
+p2units: [[[19, 15, 2.0, '9'], [8, 15, 150.0, '10'], [2, 16, 75.0, '116'], [3, 16, 75.0, '117'], [4, 16, 75.0, '118'], [5, 16, 75.0, '119'], [6, 16, 75.0, '120'], [7, 16, 75.0, '121'], [9, 16, 75.0, '122'], [10, 16, 75.0, '123'], [11, 16, 75.0, '124'], [12, 16, 75.0, '125'], [15, 16, 75.0, '126'], [16, 16, 75.0, '127'], [17, 16, 75.0, '128'], [18, 16, 75.0, '129'], [20, 16, 75.0, '130'], [21, 16, 45.0, '131']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6'], [24, 16, 48.0, '69']], [], [], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+p1stats: [40.0, 10.0, 5.2, 13]
+p2stats: [29.0, 36.0, 6.5, 13]
+events: {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [], 'spawn': [], 'death': [], 'attack': [], 'melee': []}
+Finished the round. OW
+Current energy health points: 33.0
+Current number of scouts afffordable: 5
+Previous stationary units - post call: {('FF', 7, 8), ('DF', 20, 10), ('FF', 14, 4), ('FF', 4, 11), ('DF', 2, 13), ('FF', 5, 10), ('DF', 24, 13), ('FF', 27, 13), ('FF', 21, 9), ('FF', 17, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 13, 4), ('FF', 3, 12), ('FF', 18, 6), ('FF', 10, 5), ('FF', 15, 4), ('FF', 23, 11), ('FF', 26, 13), ('FF', 9, 6), ('DF', 4, 12), ('FF', 8, 7), ('FF', 25, 13), ('DF', 3, 13), ('FF', 19, 7), ('FF', 20, 8), ('FF', 12, 4), ('DF', 21, 12), ('DF', 22, 11), ('FF', 1, 13), ('FF', 24, 12), ('FF', 16, 4), ('FF', 6, 9)}
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/algo_strategy.py", line 671, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/gamelib/algocore.py", line 59, in start
+    game_state_string = get_command()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/gamelib/util.py", line 12, in get_command
+    ret = sys.stdin.readline()
+KeyboardInterrupt

@@ -98,6 +98,9 @@ class AlgoStrategy(gamelib.AlgoCore):
         unit deployments, and transmitting your intended deployments to the
         game engine.
         """
+        state = json.loads(turn_state)
+        stateType = int(state.get("turnInfo")[0])
+        gamelib.debug_write('Original State Value: ' + str(stateType))
         game_state = gamelib.GameState(self.config, turn_state)
         gamelib.debug_write('Performing turn {} of your custom algo strategy'.format(game_state.turn_number))
         game_state.suppress_warnings(True)  #Comment or remove this line to enable warnings.
@@ -173,73 +176,166 @@ class AlgoStrategy(gamelib.AlgoCore):
         for att in our_attackers_list:
             game_state_rollout.attempt_spawn(unit_type=att.name, locations=[[att.x, att.y]], num=att.num)
         # Place the opponents attackers.
-        for att in oppo_attackers_list:
-            game_state_rollout.attempt_spawn(unit_type=att.name, locations=[[att.x, att.y]], num=att.num)
-
+        
+        
+        # Simulate on_turn.
+        gamelib.debug_write("Submitting turn")
         game_state_rollout.submit_turn()
 
         # Wait for the result of the run.
+        gamelib.debug_write("Getting from turn")
         game_state_string = get_command()
 
+        state = json.loads(game_state_string)
+        stateType = int(state.get("turnInfo")[0])
+        gamelib.debug_write("State Type: " + str(stateType))
+
+        while stateType == 1:
+            gamelib.debug_write("Blip")
+            game_state_string = get_command()
+            next_state = json.loads(game_state_string)
+            stateType = int(next_state.get("turnInfo")[0])
+
+
+
+
+
+
+        # for att in oppo_attackers_list:
+        #     game_state_rollout.attempt_spawn(unit_type=att.name, locations=[[att.x, att.y]], num=att.num)
+
+        gamelib.debug_write("Before Turn number " + str(game_state.turn_number))
+
+        # StateType = 0.
+        gamelib.debug_write("Submitting turn")
+        game_state_rollout.submit_turn()
+
+        # Wait for the result of the run.
+        gamelib.debug_write("Getting from turn")
+        game_state_string = get_command()
+
+        # In the algo core version we have
         if "turnInfo" in game_state_string:
-            new_state = gamelib.GameState(self.config, game_state_string)
+            state = json.loads(game_state_string)
+            gamelib.debug_write("State to string: " + str(state.keys()))
+            gamelib.debug_write("turnInfo: " + str(state['turnInfo']))
+            gamelib.debug_write("p1units: " + str(state['p1Units']))
+            gamelib.debug_write("p2units: " + str(state['p2Units']))
+            gamelib.debug_write("events: " + str(state['events']))
 
-            gamelib.debug_write('Old Resource : {}  New resources: {}'.format(game_state.get_resource(MP), new_state.get_resource(MP)))
+            stateType = int(state.get("turnInfo")[0])
+            gamelib.debug_write("State Type: " + str(stateType))
 
-            list_of_old_buildings = []
-            list_of_new_buildings = []
-            for i in range(0,28):
-                for j in range(0,28):
-                    if game_state.game_map.in_arena_bounds([i,j]) and game_state.contains_stationary_unit([i,j]):
-                        list_of_old_buildings.append([i,j])
-                    if new_state.game_map.in_arena_bounds([i,j]) and new_state.contains_stationary_unit([i,j]): 
-                        list_of_new_buildings.append([i,j])
+            if stateType == 0:
+                # self.on_turn(game_state_string)
+                # Recover the game state:
+                updated_game_state = gamelib.GameState(self.config, game_state_string)
+                gamelib.debug_write("After Turn number " + str(updated_game_state.turn_number))
 
-            if(len(list_of_old_buildings) != len(list_of_new_buildings)):
-                gamelib.debug_write('Old Buildings : {}  \nNew buildings: {}'.format(str(list_of_old_buildings), str(list_of_new_buildings)))
-            
-            gamelib.debug_write('Before enermy health {}  After energy health: {}'.format(game_state.enemy_health, new_state.enemy_health))
 
-            gamelib.debug_write('Old Map:\n')
-            for i in range(0,28):
-                row_str = "" 
-                for j in range(0,28):
-                    if game_state.game_map.in_arena_bounds([i,j]):
-                        if len(game_state.game_map[i,j]) > 0:
-                            row_str += (str(game_state.game_map[i,j][0].unit_type) + " " + str(game_state.game_map[i,j][0].health) + (6-len(str(game_state.game_map[i,j][0].unit_type) + str(game_state.game_map[i,j][0].health))) * " ")
-                            # gamelib.debug_write(type(new_state.game_map[i,j][0]))
-                        else: 
-                            row_str += "      "
+                # Then try and yield info.
+            elif stateType == 1:
+                # self.on_action_frame(game_state_string)
+                updated_game_state = gamelib.GameState(self.config, game_state_string)
+                gamelib.debug_write("After Turn number " + str(updated_game_state.turn_number))
+                state = json.loads(game_state_string)
+                events = state["events"]
+                breaches = events["breach"]
+                gamelib.debug_write("Olly Debug")
+                for breach in breaches:
+                    location = breach[0]
+                    unit_owner_self = True if breach[4] == 1 else False
+                    # When parsing the frame data directly, 
+                    # 1 is integer for yourself, 2 is opponent (StarterKit code uses 0, 1 as player_index instead)
+                    if not unit_owner_self:
+                        gamelib.debug_write("Olly - Got scored on at: {}".format(location))
+                        self.scored_on_locations.append(location)
+                        gamelib.debug_write("Olly - All locations: {}".format(self.scored_on_locations))
                     else:
-                        row_str += "------"
-                gamelib.debug_write(row_str)
-
-
-            gamelib.debug_write('Old Map:\n')
-            for i in range(0,28):
-                row_str = "" 
-                for j in range(0,28):
-                    if new_state.game_map.in_arena_bounds([i,j]):
-                        if len(game_state.game_map[i,j]) > 0:
-                            row_str += (str(new_state.game_map[i,j][0].unit_type) + " " + str(new_state.game_map[i,j][0].health) + (6-len(str(new_state.game_map[i,j][0].unit_type) + str(new_state.game_map[i,j][0].health))) * " ")
-                            # gamelib.debug_write(type(new_state.game_map[i,j][0]))
-                        else: 
-                            row_str += "      "
-                    else:
-                        row_str += "------"
-                gamelib.debug_write(row_str)
-
-            # self.shortest_path_finder = ShortestPathFinder()
-            # gamelib.debug_write('Old Map')
-            # self.shortest_path_finder.initialize_map(game_state)
-            # self.shortest_path_finder.print_map()
-            # gamelib.debug_write('New Map')
-            # self.shortest_path_finder.initialize_map(new_state)
-            # self.shortest_path_finder.print_map()
-
-        
+                        gamelib.debug_write("Olly - Scored on oppo: {}".format(location))
             
-        # # Check how the game map has now changed.
+            if stateType == 0 or stateType == 1:
+                gamelib.debug_write('Old Resource : {}  New resources: {}'.format(game_state.get_resource(MP), updated_game_state.get_resource(MP)))
+                gamelib.debug_write('Before enermy health {}  After energy health: {}'.format(game_state.enemy_health, updated_game_state.enemy_health))
+
+            # Run another get command. See what we get this time.
+            while stateType == 1:
+                gamelib.debug_write("Blip")
+                game_state_string = get_command()
+                next_state = json.loads(game_state_string)
+                stateType = int(next_state.get("turnInfo")[0])
+
+            gamelib.debug_write("Final state")
+            # game_state_string = get_command()
+            # next_state = json.loads(game_state_string)
+            # stateType = int(next_state.get("turnInfo")[0])
+            gamelib.debug_write("State to string: " + str(next_state.keys()))
+            gamelib.debug_write("turnInfo: " + str(next_state['turnInfo']))
+            gamelib.debug_write("p1units: " + str(next_state['p1Units']))
+            gamelib.debug_write("p2units: " + str(next_state['p2Units']))
+            gamelib.debug_write("p1stats: " + str(next_state['p1Stats']))
+            gamelib.debug_write("p2stats: " + str(next_state['p2Stats']))
+            gamelib.debug_write("events: " + str(next_state['events']))
+
+            gamelib.debug_write("Finished the round. OW")
+
+            gamelib.debug_write("Predicted next round health: " + str(next_state['p2Stats'][0]))
+           
+
+
+
+        # if "turnInfo" in game_state_string:
+        #     gamelib.debug_write("Updated State Value: " + str(stateType))
+        #     # StateType is now 1.
+        #     self.on_action_frame(game_state_string)
+        #     new_state = gamelib.GameState(self.config, game_state_string)
+            
+        #     gamelib.debug_write('Old Resource : {}  New resources: {}'.format(game_state.get_resource(MP), new_state.get_resource(MP)))
+
+        #     list_of_old_buildings = []
+        #     list_of_new_buildings = []
+        #     for i in range(0,28):
+        #         for j in range(0,28):
+        #             if game_state.game_map.in_arena_bounds([i,j]) and game_state.contains_stationary_unit([i,j]):
+        #                 list_of_old_buildings.append([i,j])
+        #             if new_state.game_map.in_arena_bounds([i,j]) and new_state.contains_stationary_unit([i,j]): 
+        #                 list_of_new_buildings.append([i,j])
+
+        #     if(len(list_of_old_buildings) != len(list_of_new_buildings)):
+        #         gamelib.debug_write('Old Buildings : {}  \nNew buildings: {}'.format(str(list_of_old_buildings), str(list_of_new_buildings)))
+            
+        #     gamelib.debug_write('Before enermy health {}  After energy health: {}'.format(game_state.enemy_health, new_state.enemy_health))
+
+        #     gamelib.debug_write('Old Map:\n')
+        #     for i in range(0,28):
+        #         row_str = "" 
+        #         for j in range(0,28):
+        #             if game_state.game_map.in_arena_bounds([i,j]):
+        #                 if len(game_state.game_map[i,j]) > 0:
+        #                     row_str += (str(game_state.game_map[i,j][0].player_index) + str(game_state.game_map[i,j][0].unit_type) + " " + str(game_state.game_map[i,j][0].health) + (7-len(str(game_state.game_map[i,j][0].unit_type) + str(game_state.game_map[i,j][0].health))) * " ")
+        #                     # gamelib.debug_write(type(new_state.game_map[i,j][0]))
+        #                 else: 
+        #                     row_str += "         "
+        #             else:
+        #                 row_str += "---------"
+        #         gamelib.debug_write(row_str)
+
+
+        #     gamelib.debug_write('New Map:\n')
+        #     for i in range(0,28):
+        #         row_str = "" 
+        #         for j in range(0,28):
+        #             if new_state.game_map.in_arena_bounds([i,j]):
+        #                 if len(new_state.game_map[i,j]) > 0:
+        #                     row_str += (str(new_state.game_map[i,j][0].player_index) + str(new_state.game_map[i,j][0].unit_type) + " " + str(new_state.game_map[i,j][0].health) + (7-len(str(new_state.game_map[i,j][0].unit_type) + str(new_state.game_map[i,j][0].health))) * " ")
+        #                     # gamelib.debug_write(type(new_state.game_map[i,j][0]))
+        #                 else: 
+        #                     row_str += "         "
+        #             else:
+        #                 row_str += "---------"
+        #         gamelib.debug_write(row_str)
+
+        # Check how the game map has now changed.
         # original_game_map = game_state.game_map.__dict__
         # # gamelib.debug_write('Game map of original: ' + str(original_game_map['_GameMap__map'][0]))
         # roll_out_game_map = game_state_rollout.game_map.__dict__
@@ -253,8 +349,6 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
 
-
-        
 
     def build_intial_defences(self, game_state):
         """
