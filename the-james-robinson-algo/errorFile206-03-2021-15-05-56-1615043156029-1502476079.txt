@@ -1,0 +1,332 @@
+Random seed: 6385117319050168335
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Critcal Infra: [Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13), Building(name='FF', x=3, y=12), Building(name='FF', x=24, y=12), Building(name='FF', x=4, y=11), Building(name='FF', x=23, y=11), Building(name='FF', x=5, y=10), Building(name='FF', x=6, y=9), Building(name='FF', x=21, y=9), Building(name='FF', x=7, y=8), Building(name='FF', x=20, y=8), Building(name='FF', x=8, y=7), Building(name='FF', x=19, y=7), Building(name='FF', x=9, y=6), Building(name='FF', x=18, y=6), Building(name='FF', x=10, y=5), Building(name='FF', x=17, y=5), Building(name='FF', x=11, y=4), Building(name='FF', x=12, y=4), Building(name='FF', x=13, y=4), Building(name='FF', x=14, y=4), Building(name='FF', x=15, y=4), Building(name='FF', x=16, y=4), Building(name='DF', x=2, y=13), Building(name='DF', x=3, y=13), Building(name='DF', x=4, y=12), Building(name='DF', x=21, y=12), Building(name='DF', x=22, y=11), Building(name='DF', x=20, y=10)]
+Original State Value: 0
+Performing turn 0 of your custom algo strategy
+Performing starter stratergy 0 of your custom algo strategy
+Previous stationary units - pre call: set()
+Queue size: 32
+Number of SP: 40.0
+Attempting to spawn FF at location (0, 13). Number placed: 1
+Number of SP: 39.0
+Attempting to spawn FF at location (1, 13). Number placed: 1
+Number of SP: 38.0
+Attempting to spawn FF at location (25, 13). Number placed: 1
+Number of SP: 37.0
+Attempting to spawn FF at location (26, 13). Number placed: 1
+Number of SP: 36.0
+Attempting to spawn FF at location (27, 13). Number placed: 1
+Number of SP: 35.0
+Attempting to spawn FF at location (3, 12). Number placed: 1
+Number of SP: 34.0
+Attempting to spawn FF at location (24, 12). Number placed: 1
+Number of SP: 33.0
+Attempting to spawn FF at location (4, 11). Number placed: 1
+Number of SP: 32.0
+Attempting to spawn FF at location (23, 11). Number placed: 1
+Number of SP: 31.0
+Attempting to spawn FF at location (5, 10). Number placed: 1
+Number of SP: 30.0
+Attempting to spawn FF at location (6, 9). Number placed: 1
+Number of SP: 29.0
+Attempting to spawn FF at location (21, 9). Number placed: 1
+Number of SP: 28.0
+Attempting to spawn FF at location (7, 8). Number placed: 1
+Number of SP: 27.0
+Attempting to spawn FF at location (20, 8). Number placed: 1
+Number of SP: 26.0
+Attempting to spawn FF at location (8, 7). Number placed: 1
+Number of SP: 25.0
+Attempting to spawn FF at location (19, 7). Number placed: 1
+Number of SP: 24.0
+Attempting to spawn FF at location (9, 6). Number placed: 1
+Number of SP: 23.0
+Attempting to spawn FF at location (18, 6). Number placed: 1
+Number of SP: 22.0
+Attempting to spawn FF at location (10, 5). Number placed: 1
+Number of SP: 21.0
+Attempting to spawn FF at location (17, 5). Number placed: 1
+Number of SP: 20.0
+Attempting to spawn FF at location (11, 4). Number placed: 1
+Number of SP: 19.0
+Attempting to spawn FF at location (12, 4). Number placed: 1
+Number of SP: 18.0
+Attempting to spawn FF at location (13, 4). Number placed: 1
+Number of SP: 17.0
+Attempting to spawn FF at location (14, 4). Number placed: 1
+Number of SP: 16.0
+Attempting to spawn FF at location (15, 4). Number placed: 1
+Number of SP: 15.0
+Attempting to spawn FF at location (16, 4). Number placed: 1
+Number of SP: 14.0
+Attempting to spawn DF at location (2, 13). Number placed: 1
+Number of SP: 12.0
+Attempting to spawn DF at location (3, 13). Number placed: 1
+Number of SP: 10.0
+Attempting to spawn DF at location (4, 12). Number placed: 1
+Number of SP: 8.0
+Attempting to spawn DF at location (21, 12). Number placed: 1
+Number of SP: 6.0
+Attempting to spawn DF at location (22, 11). Number placed: 1
+Number of SP: 4.0
+Attempting to spawn DF at location (20, 10). Number placed: 1
+Previous stationary units - post call: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Original State Value: 0
+Performing turn 1 of your custom algo strategy
+Performing starter stratergy 1 of your custom algo strategy
+Previous stationary units - pre call: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Current Station Units: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Last rounds stationary Units: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Diffence: set()
+Thunderstike, saving wall: set()
+Rebuild listset()
+Current Queue: Building(name='DF', x=24, y=13)
+Queue size: 76
+Previous number of scouts afffordable: 7
+START OF ROLL OUT
+Game State current turn number: 1
+Turn Info of original game before:  [0, 1, -1, 88]
+{'p2Units': [[[19, 15, 150.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6']], [], [], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]], 'turnInfo': [0, 1, -1, 88], 'p1Stats': [40.0, 7.0, 7.3, 9], 'p1Units': [[[0, 13, 75.0, '11'], [1, 13, 75.0, '12'], [25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [3, 12, 75.0, '16'], [24, 12, 75.0, '17'], [4, 11, 75.0, '18'], [23, 11, 75.0, '19'], [5, 10, 75.0, '20'], [6, 9, 75.0, '21'], [21, 9, 75.0, '22'], [7, 8, 75.0, '23'], [20, 8, 75.0, '24'], [8, 7, 75.0, '25'], [19, 7, 75.0, '26'], [9, 6, 75.0, '27'], [18, 6, 75.0, '28'], [10, 5, 75.0, '29'], [17, 5, 75.0, '30'], [11, 4, 75.0, '31'], [12, 4, 75.0, '32'], [13, 4, 75.0, '33'], [14, 4, 75.0, '34'], [15, 4, 75.0, '35'], [16, 4, 75.0, '36']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [], [], [], [], []], 'p2Stats': [40.0, 29.0, 5.0, 2], 'events': {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [], 'spawn': [], 'death': [], 'attack': [], 'melee': []}}
+Submitting turn
+Turn Info after submitting turn:  [0, 1, -1, 88]
+Getting from turn
+Turn Info after get command:  [1, 1, 0, 89]
+Turn Info after while get:  [1, 1, 1, 90]
+Turn Info after while get:  [1, 1, 2, 91]
+Turn Info after while get:  [1, 1, 3, 92]
+Turn Info after while get:  [1, 1, 4, 93]
+Turn Info after while get:  [1, 1, 5, 94]
+Turn Info after while get:  [1, 1, 6, 95]
+Turn Info after while get:  [1, 1, 7, 96]
+Turn Info after while get:  [1, 1, 8, 97]
+Turn Info after while get:  [1, 1, 9, 98]
+Turn Info after while get:  [1, 1, 10, 99]
+Turn Info after while get:  [1, 1, 11, 100]
+Turn Info after while get:  [1, 1, 12, 101]
+Turn Info after while get:  [1, 1, 13, 102]
+Turn Info after while get:  [1, 1, 14, 103]
+Turn Info after while get:  [1, 1, 15, 104]
+Turn Info after while get:  [1, 1, 16, 105]
+Turn Info after while get:  [1, 1, 17, 106]
+Turn Info after while get:  [1, 1, 18, 107]
+Turn Info after while get:  [1, 1, 19, 108]
+Turn Info after while get:  [1, 1, 20, 109]
+Turn Info after while get:  [1, 1, 21, 110]
+Turn Info after while get:  [1, 1, 22, 111]
+Turn Info after while get:  [1, 1, 23, 112]
+Turn Info after while get:  [1, 1, 24, 113]
+Turn Info after while get:  [1, 1, 25, 114]
+Turn Info after while get:  [1, 1, 26, 115]
+Turn Info after while get:  [1, 1, 27, 116]
+Turn Info after while get:  [1, 1, 28, 117]
+Turn Info after while get:  [1, 1, 29, 118]
+Turn Info after while get:  [1, 1, 30, 119]
+Turn Info after while get:  [1, 1, 31, 120]
+Turn Info after while get:  [1, 1, 32, 121]
+Turn Info after while get:  [1, 1, 33, 122]
+Turn Info after while get:  [1, 1, 34, 123]
+Turn Info after while get:  [1, 1, 35, 124]
+Turn Info after while get:  [1, 1, 36, 125]
+Turn Info after while get:  [1, 1, 37, 126]
+Turn Info after while get:  [1, 1, 38, 127]
+Turn Info after while get:  [1, 1, 39, 128]
+Turn Info after while get:  [1, 1, 40, 129]
+Turn Info after while get:  [1, 1, 41, 130]
+Turn Info after while get:  [1, 1, 42, 131]
+Turn Info after while get:  [1, 1, 43, 132]
+Turn Info after while get:  [1, 1, 44, 133]
+Turn Info after while get:  [1, 1, 45, 134]
+Turn Info after while get:  [1, 1, 46, 135]
+Turn Info after while get:  [1, 1, 47, 136]
+Turn Info after while get:  [1, 1, 48, 137]
+Turn Info after while get:  [1, 1, 49, 138]
+Turn Info after while get:  [1, 1, 50, 139]
+Turn Info after while get:  [1, 1, 51, 140]
+Turn Info after while get:  [1, 1, 52, 141]
+Turn Info after while get:  [1, 1, 53, 142]
+Turn Info after while get:  [1, 1, 54, 143]
+Turn Info after while get:  [1, 1, 55, 144]
+Turn Info after while get:  [1, 1, 56, 145]
+Turn Info after while get:  [1, 1, 57, 146]
+Turn Info after while get:  [1, 1, 58, 147]
+Turn Info after while get:  [1, 1, 59, 148]
+Turn Info after while get:  [1, 1, 60, 149]
+Turn Info after while get:  [1, 1, 61, 150]
+Turn Info after while get:  [1, 1, 62, 151]
+Turn Info after while get:  [1, 1, 63, 152]
+Turn Info after while get:  [1, 1, 64, 153]
+Turn Info after while get:  [1, 1, 65, 154]
+Turn Info after while get:  [1, 1, 66, 155]
+Turn Info after while get:  [1, 1, 67, 156]
+Turn Info after while get:  [1, 1, 68, 157]
+Turn Info after while get:  [1, 1, 69, 158]
+Turn Info after while get:  [1, 1, 70, 159]
+Turn Info after while get:  [1, 1, 71, 160]
+Turn Info after while get:  [1, 1, 72, 161]
+Turn Info after while get:  [1, 1, 73, 162]
+Turn Info after while get:  [1, 1, 74, 163]
+Turn Info after while get:  [1, 1, 75, 164]
+Turn Info after while get:  [1, 1, 76, 165]
+Turn Info after while get:  [1, 1, 77, 166]
+Turn Info after while get:  [1, 1, 78, 167]
+Turn Info after while get:  [1, 1, 79, 168]
+Turn Info after while get:  [1, 1, 80, 169]
+Turn Info after while get:  [1, 1, 81, 170]
+Turn Info after while get:  [1, 1, 82, 171]
+Turn Info after while get:  [1, 1, 83, 172]
+Turn Info after while get:  [1, 1, 84, 173]
+Turn Info after while get:  [1, 1, 85, 174]
+Turn Info after while get:  [1, 1, 86, 175]
+Turn Info after while get:  [0, 2, -1, 176]
+Finished the round. OW
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [0, 2, -1, 176]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [6, 9, 75.0, '21'], [21, 9, 75.0, '22'], [7, 8, 75.0, '23'], [20, 8, 75.0, '24'], [8, 7, 75.0, '25'], [19, 7, 75.0, '26'], [9, 6, 75.0, '27'], [18, 6, 75.0, '28'], [10, 5, 75.0, '29'], [17, 5, 75.0, '30'], [11, 4, 75.0, '31'], [12, 4, 75.0, '32'], [13, 4, 75.0, '33'], [14, 4, 75.0, '34'], [15, 4, 75.0, '35'], [16, 4, 75.0, '36'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56']]]
+p2units: [[[19, 15, 104.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6']], [], [], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+p1stats: [40.0, 7.0, 5.2, 12]
+p2stats: [38.0, 34.0, 5.0, 6]
+events: {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [], 'spawn': [], 'death': [], 'attack': [], 'melee': []}
+Predicted next round health: 38.0
+StateType: 0
+Roll out states health predictor: 38.0
+Game State current turn number: 1
+Turn Info of original afterwards  [0, 1, -1, 88]
+Current energy health points: 40.0
+Current number of scouts afffordable: 7
+Previous stationary units - post call: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Original State Value: 0
+Performing turn 3 of your custom algo strategy
+Performing starter stratergy 3 of your custom algo strategy
+Previous stationary units - pre call: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Current Station Units: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Last rounds stationary Units: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Diffence: set()
+Thunderstike, saving wall: set()
+Rebuild listset()
+Current Queue: Building(name='DF', x=24, y=13)
+Queue size: 76
+Previous number of scouts afffordable: 5
+START OF ROLL OUT
+Game State current turn number: 3
+Turn Info of original game before:  [0, 3, -1, 267]
+{'p2Units': [[[19, 15, 94.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6'], [24, 16, 90.0, '69']], [], [], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]], 'turnInfo': [0, 3, -1, 267], 'p1Stats': [40.0, 12.0, 5.2, 7], 'p1Units': [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [6, 9, 75.0, '21'], [21, 9, 75.0, '22'], [7, 8, 75.0, '23'], [20, 8, 75.0, '24'], [8, 7, 75.0, '25'], [19, 7, 75.0, '26'], [9, 6, 75.0, '27'], [18, 6, 75.0, '28'], [10, 5, 75.0, '29'], [17, 5, 75.0, '30'], [11, 4, 75.0, '31'], [12, 4, 75.0, '32'], [13, 4, 75.0, '33'], [14, 4, 75.0, '34'], [15, 4, 75.0, '35'], [16, 4, 75.0, '36'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56']]], 'p2Stats': [38.0, 37.0, 5.0, 6], 'events': {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [], 'spawn': [], 'death': [], 'attack': [], 'melee': []}}
+Submitting turn
+Turn Info after submitting turn:  [0, 3, -1, 267]
+Getting from turn
+Turn Info after get command:  [1, 3, 0, 268]
+Turn Info after while get:  [1, 3, 1, 269]
+Turn Info after while get:  [1, 3, 2, 270]
+Turn Info after while get:  [1, 3, 3, 271]
+Turn Info after while get:  [1, 3, 4, 272]
+Turn Info after while get:  [1, 3, 5, 273]
+Turn Info after while get:  [1, 3, 6, 274]
+Turn Info after while get:  [1, 3, 7, 275]
+Turn Info after while get:  [1, 3, 8, 276]
+Turn Info after while get:  [1, 3, 9, 277]
+Turn Info after while get:  [1, 3, 10, 278]
+Turn Info after while get:  [1, 3, 11, 279]
+Turn Info after while get:  [1, 3, 12, 280]
+Turn Info after while get:  [1, 3, 13, 281]
+Turn Info after while get:  [1, 3, 14, 282]
+Turn Info after while get:  [1, 3, 15, 283]
+Turn Info after while get:  [1, 3, 16, 284]
+Turn Info after while get:  [1, 3, 17, 285]
+Turn Info after while get:  [1, 3, 18, 286]
+Turn Info after while get:  [1, 3, 19, 287]
+Turn Info after while get:  [1, 3, 20, 288]
+Turn Info after while get:  [1, 3, 21, 289]
+Turn Info after while get:  [1, 3, 22, 290]
+Turn Info after while get:  [1, 3, 23, 291]
+Turn Info after while get:  [1, 3, 24, 292]
+Turn Info after while get:  [1, 3, 25, 293]
+Turn Info after while get:  [1, 3, 26, 294]
+Turn Info after while get:  [1, 3, 27, 295]
+Turn Info after while get:  [1, 3, 28, 296]
+Turn Info after while get:  [1, 3, 29, 297]
+Turn Info after while get:  [1, 3, 30, 298]
+Turn Info after while get:  [1, 3, 31, 299]
+Turn Info after while get:  [1, 3, 32, 300]
+Turn Info after while get:  [1, 3, 33, 301]
+Turn Info after while get:  [1, 3, 34, 302]
+Turn Info after while get:  [1, 3, 35, 303]
+Turn Info after while get:  [1, 3, 36, 304]
+Turn Info after while get:  [1, 3, 37, 305]
+Turn Info after while get:  [1, 3, 38, 306]
+Turn Info after while get:  [1, 3, 39, 307]
+Turn Info after while get:  [1, 3, 40, 308]
+Turn Info after while get:  [1, 3, 41, 309]
+Turn Info after while get:  [1, 3, 42, 310]
+Turn Info after while get:  [1, 3, 43, 311]
+Turn Info after while get:  [1, 3, 44, 312]
+Turn Info after while get:  [1, 3, 45, 313]
+Turn Info after while get:  [1, 3, 46, 314]
+Turn Info after while get:  [1, 3, 47, 315]
+Turn Info after while get:  [1, 3, 48, 316]
+Turn Info after while get:  [1, 3, 49, 317]
+Turn Info after while get:  [1, 3, 50, 318]
+Turn Info after while get:  [1, 3, 51, 319]
+Turn Info after while get:  [1, 3, 52, 320]
+Turn Info after while get:  [1, 3, 53, 321]
+Turn Info after while get:  [1, 3, 54, 322]
+Turn Info after while get:  [1, 3, 55, 323]
+Turn Info after while get:  [1, 3, 56, 324]
+Turn Info after while get:  [1, 3, 57, 325]
+Turn Info after while get:  [1, 3, 58, 326]
+Turn Info after while get:  [1, 3, 59, 327]
+Turn Info after while get:  [1, 3, 60, 328]
+Turn Info after while get:  [1, 3, 61, 329]
+Turn Info after while get:  [1, 3, 62, 330]
+Turn Info after while get:  [1, 3, 63, 331]
+Turn Info after while get:  [1, 3, 64, 332]
+Turn Info after while get:  [1, 3, 65, 333]
+Turn Info after while get:  [1, 3, 66, 334]
+Turn Info after while get:  [1, 3, 67, 335]
+Turn Info after while get:  [1, 3, 68, 336]
+Turn Info after while get:  [1, 3, 69, 337]
+Turn Info after while get:  [1, 3, 70, 338]
+Turn Info after while get:  [1, 3, 71, 339]
+Turn Info after while get:  [1, 3, 72, 340]
+Turn Info after while get:  [1, 3, 73, 341]
+Turn Info after while get:  [1, 3, 74, 342]
+Turn Info after while get:  [1, 3, 75, 343]
+Turn Info after while get:  [1, 3, 76, 344]
+Turn Info after while get:  [1, 3, 77, 345]
+Turn Info after while get:  [1, 3, 78, 346]
+Turn Info after while get:  [1, 3, 79, 347]
+Turn Info after while get:  [1, 3, 80, 348]
+Turn Info after while get:  [1, 3, 81, 349]
+Turn Info after while get:  [1, 3, 82, 350]
+Turn Info after while get:  [1, 3, 83, 351]
+Turn Info after while get:  [1, 3, 84, 352]
+Turn Info after while get:  [1, 3, 85, 353]
+Turn Info after while get:  [1, 3, 86, 354]
+Turn Info after while get:  [1, 3, 87, 355]
+Turn Info after while get:  [1, 3, 88, 356]
+Turn Info after while get:  [1, 3, 89, 357]
+Turn Info after while get:  [1, 3, 90, 358]
+Turn Info after while get:  [0, 4, -1, 359]
+Finished the round. OW
+State to string: dict_keys(['p2Units', 'turnInfo', 'p1Stats', 'p1Units', 'p2Stats', 'events'])
+turnInfo: [0, 4, -1, 359]
+p1units: [[[25, 13, 75.0, '13'], [26, 13, 75.0, '14'], [27, 13, 75.0, '15'], [13, 4, 75.0, '33'], [14, 4, 75.0, '34'], [15, 4, 75.0, '35'], [16, 4, 75.0, '36'], [0, 13, 150.0, '50'], [1, 13, 150.0, '51'], [3, 12, 150.0, '52'], [24, 12, 150.0, '53'], [4, 11, 150.0, '54'], [23, 11, 150.0, '55'], [5, 10, 150.0, '56'], [6, 9, 150.0, '80'], [21, 9, 150.0, '81'], [7, 8, 150.0, '82'], [20, 8, 150.0, '83'], [8, 7, 150.0, '84'], [19, 7, 150.0, '85'], [9, 6, 150.0, '86'], [18, 6, 150.0, '87'], [10, 5, 150.0, '88'], [17, 5, 150.0, '89'], [11, 4, 150.0, '90'], [12, 4, 150.0, '91']], [], [[2, 13, 90.0, '37'], [3, 13, 90.0, '38'], [4, 12, 90.0, '39'], [21, 12, 90.0, '40'], [22, 11, 90.0, '41'], [20, 10, 90.0, '42']], [], [], [], [], [[0, 13, 0.0, '50'], [1, 13, 0.0, '51'], [3, 12, 0.0, '52'], [24, 12, 0.0, '53'], [4, 11, 0.0, '54'], [23, 11, 0.0, '55'], [5, 10, 0.0, '56'], [6, 9, 0.0, '80'], [21, 9, 0.0, '81'], [7, 8, 0.0, '82'], [20, 8, 0.0, '83'], [8, 7, 0.0, '84'], [19, 7, 0.0, '85'], [9, 6, 0.0, '86'], [18, 6, 0.0, '87'], [10, 5, 0.0, '88'], [17, 5, 0.0, '89'], [11, 4, 0.0, '90'], [12, 4, 0.0, '91']]]
+p2units: [[[19, 15, 94.0, '9'], [8, 15, 150.0, '10']], [], [[27, 14, 90.0, '1'], [0, 14, 90.0, '2'], [19, 16, 90.0, '3'], [8, 16, 90.0, '4'], [14, 16, 90.0, '5'], [13, 16, 90.0, '6'], [24, 16, 90.0, '69']], [], [], [], [], [[19, 15, 0.0, '9'], [8, 15, 0.0, '10']]]
+p1stats: [40.0, 5.0, 5.2, 11]
+p2stats: [38.0, 42.0, 5.0, 6]
+events: {'selfDestruct': [], 'breach': [], 'damage': [], 'shield': [], 'move': [], 'spawn': [], 'death': [], 'attack': [], 'melee': []}
+Predicted next round health: 38.0
+StateType: 0
+Roll out states health predictor: 38.0
+Game State current turn number: 3
+Turn Info of original afterwards  [0, 3, -1, 267]
+Current energy health points: 38.0
+Current number of scouts afffordable: 5
+Previous stationary units - post call: {('FF', 21, 9), ('FF', 17, 5), ('FF', 3, 12), ('FF', 4, 11), ('DF', 22, 11), ('DF', 21, 12), ('FF', 10, 5), ('FF', 11, 4), ('FF', 0, 13), ('FF', 15, 4), ('FF', 18, 6), ('DF', 20, 10), ('FF', 26, 13), ('FF', 9, 6), ('FF', 13, 4), ('FF', 25, 13), ('FF', 23, 11), ('FF', 8, 7), ('FF', 19, 7), ('DF', 2, 13), ('FF', 24, 12), ('FF', 1, 13), ('FF', 7, 8), ('FF', 20, 8), ('FF', 12, 4), ('FF', 14, 4), ('FF', 5, 10), ('FF', 6, 9), ('FF', 27, 13), ('DF', 3, 13), ('DF', 4, 12), ('FF', 16, 4)}
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/algo_strategy.py", line 746, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/gamelib/algocore.py", line 59, in start
+    game_state_string = get_command()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/the-james-robinson-algo/gamelib/util.py", line 12, in get_command
+    ret = sys.stdin.readline()
+KeyboardInterrupt
