@@ -494,6 +494,30 @@ class GameState:
         end_points = self.game_map.get_edge_locations(target_edge)
         return self._shortest_path_finder.navigate_multiple_endpoints(start_location, end_points, self)
 
+    def find_path_based_on_initial(self, unit):
+
+        ''' 
+        OW EDIT.
+        The idea here is to 
+
+        unit: GameUnit. Unit currently as it is placed on the map.
+
+        returns: List[int, int]       from the current location to the end goal.
+        '''
+
+        # Using the initial location of the unit we can look up which target edge it would be pointed too.
+        target_edge = self.get_target_edge([unit.initial_x, unit.initial_y])
+
+        end_points = self.game_map.get_edge_locations(target_edge)
+
+        current_location = [unit.x, unit.y]
+
+        return self._shortest_path_finder.navigate_multiple_endpoints(current_location, end_points, self)
+
+
+
+
+
     def contains_stationary_unit(self, location):
         """Check if a location is blocked, return structures unit if it is
 

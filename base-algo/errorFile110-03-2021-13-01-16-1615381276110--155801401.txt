@@ -1,4 +1,4 @@
-Random seed: 7202365076712281920
+Random seed: 5355690674883213533
 ---------------- Starting Your Algo --------------------
 Configuring your custom algo strategy...
 Turn: [0, 0, -1, 0]
@@ -7,7 +7,6 @@ Starting on_turn
 My Health: 40.0 Enermy Health: 40.0
 Performing turn 0 of your custom algo strategy
 Starting base
-Building List: []
 Finished base
 Calling submit turn
 Turn: [1, 0, 0, 1]
@@ -71,10 +70,9 @@ Calling on_action_frame
 Turn: [0, 1, -1, 30]
 Calling on_turn
 Starting on_turn
-My Health: 40.0 Enermy Health: 35.0
+My Health: 40.0 Enermy Health: 36.0
 Performing turn 1 of your custom algo strategy
 Starting base
-Building List: [[14, 6]]
 Finished base
 Calling submit turn
 Turn: [1, 1, 0, 31]
@@ -138,10 +136,9 @@ Calling on_action_frame
 Turn: [0, 2, -1, 60]
 Calling on_turn
 Starting on_turn
-My Health: 40.0 Enermy Health: 30.0
+My Health: 40.0 Enermy Health: 32.0
 Performing turn 2 of your custom algo strategy
 Starting base
-Building List: [[14, 6]]
 Finished base
 Calling submit turn
 Turn: [1, 2, 0, 61]
@@ -205,10 +202,9 @@ Calling on_action_frame
 Turn: [0, 3, -1, 90]
 Calling on_turn
 Starting on_turn
-My Health: 40.0 Enermy Health: 25.0
+My Health: 40.0 Enermy Health: 28.0
 Performing turn 3 of your custom algo strategy
 Starting base
-Building List: [[14, 6]]
 Finished base
 Calling submit turn
 Turn: [1, 3, 0, 91]
@@ -272,148 +268,13 @@ Calling on_action_frame
 Turn: [0, 4, -1, 120]
 Calling on_turn
 Starting on_turn
-My Health: 40.0 Enermy Health: 20.0
+My Health: 40.0 Enermy Health: 24.0
 Performing turn 4 of your custom algo strategy
 Starting base
-Building List: [[14, 6]]
-Finished base
-Calling submit turn
-Turn: [1, 4, 0, 121]
-Calling on_action_frame
-Turn: [1, 4, 1, 122]
-Calling on_action_frame
-Turn: [1, 4, 2, 123]
-Calling on_action_frame
-Turn: [1, 4, 3, 124]
-Calling on_action_frame
-Turn: [1, 4, 4, 125]
-Calling on_action_frame
-Turn: [1, 4, 5, 126]
-Calling on_action_frame
-Turn: [1, 4, 6, 127]
-Calling on_action_frame
-Turn: [1, 4, 7, 128]
-Calling on_action_frame
-Turn: [1, 4, 8, 129]
-Calling on_action_frame
-Turn: [1, 4, 9, 130]
-Calling on_action_frame
-Turn: [1, 4, 10, 131]
-Calling on_action_frame
-Turn: [1, 4, 11, 132]
-Calling on_action_frame
-Turn: [1, 4, 12, 133]
-Calling on_action_frame
-Turn: [1, 4, 13, 134]
-Calling on_action_frame
-Turn: [1, 4, 14, 135]
-Calling on_action_frame
-Turn: [1, 4, 15, 136]
-Calling on_action_frame
-Turn: [1, 4, 16, 137]
-Calling on_action_frame
-Turn: [1, 4, 17, 138]
-Calling on_action_frame
-Turn: [1, 4, 18, 139]
-Calling on_action_frame
-Turn: [1, 4, 19, 140]
-Calling on_action_frame
-Turn: [1, 4, 20, 141]
-Calling on_action_frame
-Turn: [1, 4, 21, 142]
-Calling on_action_frame
-Turn: [1, 4, 22, 143]
-Calling on_action_frame
-Turn: [1, 4, 23, 144]
-Calling on_action_frame
-Turn: [1, 4, 24, 145]
-Calling on_action_frame
-Turn: [1, 4, 25, 146]
-Calling on_action_frame
-Turn: [1, 4, 26, 147]
-Calling on_action_frame
-Turn: [1, 4, 27, 148]
-Calling on_action_frame
-Turn: [1, 4, 28, 149]
-Calling on_action_frame
-Turn: [0, 5, -1, 150]
-Calling on_turn
-Starting on_turn
-My Health: 40.0 Enermy Health: 15.0
-Performing turn 5 of your custom algo strategy
-Starting base
-Building List: [[14, 6]]
-Finished base
-Calling submit turn
-Turn: [1, 5, 0, 151]
-Calling on_action_frame
-Turn: [1, 5, 1, 152]
-Calling on_action_frame
-Turn: [1, 5, 2, 153]
-Calling on_action_frame
-Turn: [1, 5, 3, 154]
-Calling on_action_frame
-Turn: [1, 5, 4, 155]
-Calling on_action_frame
-Turn: [1, 5, 5, 156]
-Calling on_action_frame
-Turn: [1, 5, 6, 157]
-Calling on_action_frame
-Turn: [1, 5, 7, 158]
-Calling on_action_frame
-Turn: [1, 5, 8, 159]
-Calling on_action_frame
-Turn: [1, 5, 9, 160]
-Calling on_action_frame
-Turn: [1, 5, 10, 161]
-Calling on_action_frame
-Turn: [1, 5, 11, 162]
-Calling on_action_frame
-Turn: [1, 5, 12, 163]
-Calling on_action_frame
-Turn: [1, 5, 13, 164]
-Calling on_action_frame
-Turn: [1, 5, 14, 165]
-Calling on_action_frame
-Turn: [1, 5, 15, 166]
-Calling on_action_frame
-Turn: [1, 5, 16, 167]
-Calling on_action_frame
-Turn: [1, 5, 17, 168]
-Calling on_action_frame
-Turn: [1, 5, 18, 169]
-Calling on_action_frame
-Turn: [1, 5, 19, 170]
-Calling on_action_frame
-Turn: [1, 5, 20, 171]
-Calling on_action_frame
-Turn: [1, 5, 21, 172]
-Calling on_action_frame
-Turn: [1, 5, 22, 173]
-Calling on_action_frame
-Turn: [1, 5, 23, 174]
-Calling on_action_frame
-Turn: [1, 5, 24, 175]
-Calling on_action_frame
-Turn: [1, 5, 25, 176]
-Calling on_action_frame
-Turn: [1, 5, 26, 177]
-Calling on_action_frame
-Turn: [1, 5, 27, 178]
-Calling on_action_frame
-Turn: [1, 5, 28, 179]
-Calling on_action_frame
-Turn: [0, 6, -1, 180]
-Calling on_turn
-Starting on_turn
-My Health: 40.0 Enermy Health: 10.0
-Performing turn 6 of your custom algo strategy
-Starting base
-Building List: [[14, 6]]
 Finished base
 Calling submit turn
 Traceback (most recent call last):
-  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/algo_strategy.py", line 162, in <module>
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/algo_strategy.py", line 163, in <module>
     algo.start()
   File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/gamelib/algocore.py", line 59, in start
     game_state_string = get_command()

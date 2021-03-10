@@ -1,4 +1,4 @@
-Random seed: 5262774057405765293
+Random seed: 4953377781060322210
 ---------------- Starting Your Algo --------------------
 Configuring your custom algo strategy...
 Turn: [0, 0, -1, 0]
@@ -70,7 +70,7 @@ Calling on_action_frame
 Turn: [0, 1, -1, 30]
 Calling on_turn
 Starting on_turn
-My Health: 40.0 Enermy Health: 35.0
+My Health: 40.0 Enermy Health: 36.0
 Performing turn 1 of your custom algo strategy
 Starting base
 Finished base
@@ -136,7 +136,7 @@ Calling on_action_frame
 Turn: [0, 2, -1, 60]
 Calling on_turn
 Starting on_turn
-My Health: 40.0 Enermy Health: 30.0
+My Health: 40.0 Enermy Health: 32.0
 Performing turn 2 of your custom algo strategy
 Starting base
 Finished base
@@ -202,7 +202,7 @@ Calling on_action_frame
 Turn: [0, 3, -1, 90]
 Calling on_turn
 Starting on_turn
-My Health: 40.0 Enermy Health: 25.0
+My Health: 40.0 Enermy Health: 28.0
 Performing turn 3 of your custom algo strategy
 Starting base
 Finished base
@@ -257,105 +257,17 @@ Turn: [1, 3, 23, 114]
 Calling on_action_frame
 Turn: [1, 3, 24, 115]
 Calling on_action_frame
-Turn: [1, 3, 25, 116]
-Calling on_action_frame
-Turn: [1, 3, 26, 117]
-Calling on_action_frame
-Turn: [1, 3, 27, 118]
-Calling on_action_frame
-Turn: [1, 3, 28, 119]
-Calling on_action_frame
-Turn: [0, 4, -1, 120]
-Calling on_turn
-Starting on_turn
-My Health: 40.0 Enermy Health: 20.0
-Performing turn 4 of your custom algo strategy
-Starting base
-Finished base
-Calling submit turn
-Turn: [1, 4, 0, 121]
-Calling on_action_frame
-Turn: [1, 4, 1, 122]
-Calling on_action_frame
-Turn: [1, 4, 2, 123]
-Calling on_action_frame
-Turn: [1, 4, 3, 124]
-Calling on_action_frame
-Turn: [1, 4, 4, 125]
-Calling on_action_frame
-Turn: [1, 4, 5, 126]
-Calling on_action_frame
-Turn: [1, 4, 6, 127]
-Calling on_action_frame
-Turn: [1, 4, 7, 128]
-Calling on_action_frame
-Turn: [1, 4, 8, 129]
-Calling on_action_frame
-Turn: [1, 4, 9, 130]
-Calling on_action_frame
-Turn: [1, 4, 10, 131]
-Calling on_action_frame
-Turn: [1, 4, 11, 132]
-Calling on_action_frame
-Turn: [1, 4, 12, 133]
-Calling on_action_frame
-Turn: [1, 4, 13, 134]
-Calling on_action_frame
-Turn: [1, 4, 14, 135]
-Calling on_action_frame
-Turn: [1, 4, 15, 136]
-Calling on_action_frame
-Turn: [1, 4, 16, 137]
-Calling on_action_frame
-Turn: [1, 4, 17, 138]
-Calling on_action_frame
-Turn: [1, 4, 18, 139]
-Calling on_action_frame
-Turn: [1, 4, 19, 140]
-Calling on_action_frame
-Turn: [1, 4, 20, 141]
-Calling on_action_frame
-Turn: [1, 4, 21, 142]
-Calling on_action_frame
-Turn: [1, 4, 22, 143]
-Calling on_action_frame
-Turn: [1, 4, 23, 144]
-Calling on_action_frame
-Turn: [1, 4, 24, 145]
-Calling on_action_frame
-Turn: [1, 4, 25, 146]
-Calling on_action_frame
-Turn: [1, 4, 26, 147]
-Calling on_action_frame
-Turn: [1, 4, 27, 148]
-Calling on_action_frame
-Turn: [1, 4, 28, 149]
-Calling on_action_frame
-Turn: [0, 5, -1, 150]
-Calling on_turn
-Starting on_turn
-My Health: 40.0 Enermy Health: 15.0
-Performing turn 5 of your custom algo strategy
-Starting base
-Finished base
-Calling submit turn
-Turn: [1, 5, 0, 151]
-Calling on_action_frame
-Turn: [1, 5, 1, 152]
-Calling on_action_frame
-Turn: [1, 5, 2, 153]
-Calling on_action_frame
-Turn: [1, 5, 3, 154]
-Calling on_action_frame
-Turn: [1, 5, 4, 155]
-Calling on_action_frame
-Turn: [1, 5, 5, 156]
-Calling on_action_frame
 Traceback (most recent call last):
   File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/algo_strategy.py", line 163, in <module>
     algo.start()
-  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/gamelib/algocore.py", line 59, in start
-    game_state_string = get_command()
-  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/gamelib/util.py", line 12, in get_command
-    ret = sys.stdin.readline()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/gamelib/algocore.py", line 82, in start
+    self.on_action_frame(game_state_string)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/algo_strategy.py", line 143, in on_action_frame
+    state = json.loads(turn_string)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 356, in raw_decode
+    return obj, end
 KeyboardInterrupt

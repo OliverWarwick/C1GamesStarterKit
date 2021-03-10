@@ -6,6 +6,7 @@ from sys import maxsize
 import json
 from collections import deque, namedtuple
 from queue import PriorityQueue
+import copy
 
 """
 Most of the algo code you write will be in this file unless you create new
@@ -51,6 +52,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.p_queue = PriorityQueue()
         self.defence_priority_map = dict()
         self.should_thunder_strike = -1
+        self.critical_infra = []
         
     def on_turn(self, turn_state):
         """
@@ -90,28 +92,88 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Add the inital defences to queue.
             self.add_intial_defences_to_queue(game_state)
 
-    
+
         # Build defences
         self.build_defences(game_state)
+
+        game_state.attempt_spawn(INTERCEPTOR, [21, 7], num=1)
+        game_state.attempt_spawn(INTERCEPTOR, [6, 7], num=1)
 
     
     def add_intial_defences_to_queue(self, game_state):
 
-        inital_turrets = [[3, 13], [24, 13], [4, 12], [22, 12], [21, 11], [22, 11], [19, 9], [20, 9], [23, 12]]
-        inital_walls = [[2, 13], [3, 12], [4, 11], [5, 10], [6, 9], [7, 8], [19, 8], [8, 7], [18, 7], [9, 6], [17, 6], [10, 5], [16, 5], [11, 4], [15, 4], [12, 3], [13, 3], [14, 3], [0, 13], [1, 13], [25, 13], [26, 13], [27, 13]]
+        inital_turrets = [[3, 12], [24, 12], [11, 4], [16, 4]]
+        inital_walls = [[3, 13], [24, 13], [11, 5], [16, 5]]
+
+        # TODO - OW: Add the rest of critcal infra.
+
+        self.critical_infra += inital_turrets
+        self.critical_infra += inital_walls
 
         # Place these into the prioity queue.
         for turret in inital_turrets:
             self.p_queue.put((-1, building(name=TURRET, x=turret[0], y=turret[1])))
+            self.p_queue.put((-1, building(name='upgrade', x=turret[0], y=turret[1])))
         for wall in inital_walls:
             self.p_queue.put((-1, building(name=WALL, x=wall[0], y=wall[1])))
 
+        # Round 3
+        next_turrets = [[7, 8], [20, 8]]
+        self.critical_infra += next_turrets
+        for turr in next_turrets:
+            self.p_queue.put((-0.5, building(name=TURRET, x=turr[0], y=turr[1])))
+            self.p_queue.put((-0.4, building(name='upgrade', x=turr[0], y=turr[1])))
+        
+        # Round 5
+        next_walls = [[4, 13], [23, 13], [4, 12], [23, 12], [7, 9], [20, 9], [8, 8], [19, 8]]
+        self.critical_infra += next_walls
+        for wall in next_walls:
+            self.p_queue.put((-0.3, building(name=WALL, x=wall[0], y=wall[1])))
+
+        next_2_turrets = [[4, 11], [23, 11]]
+        self.critical_infra += next_2_turrets
+        next_2_walls = [[5, 11], [22, 11]]
+        self.critical_infra += next_2_walls
+        for turr in next_2_turrets:
+            self.p_queue.put((-0.25, building(name=TURRET, x=turr[0], y=turr[1])))
+            self.p_queue.put((-0.15, building(name='upgrade', x=turr[0], y=turr[1])))
+        for wall in next_2_walls:
+            self.p_queue.put((-0.2, building(name=WALL, x=wall[0], y=wall[1])))
+        
+        next_3_turrets = [[6, 9], [21, 9]]
+        self.critical_infra += next_3_turrets
+        next_3_walls = [[7, 10], [20, 10], [8, 8], [19, 8]]
+        self.critical_infra += next_3_walls
+        for turr in next_3_turrets:
+            self.p_queue.put((-0.1, building(name=TURRET, x=turr[0], y=turr[1])))
+            self.p_queue.put((-0.02, building(name='upgrade', x=turr[0], y=turr[1])))
+        for wall in next_3_walls:
+            self.p_queue.put((-0.05, building(name=WALL, x=wall[0], y=wall[1])))
+
+        across_middle_walls = [[0, 13], [1, 13], [2, 13], [25, 13], [26, 13], [27, 13]]
+        self.critical_infra += across_middle_walls
+        for wall in across_middle_walls:
+            self.p_queue.put((-0.01, building(name=WALL, x=wall[0], y=wall[1])))
+
+        close_up_walls = [[6, 10], [9, 7], [18, 7], [10, 6], [17, 6], [12, 4], [13, 4], [14, 4], [15, 4]]
+        self.critical_infra += close_up_walls
+        for wall in close_up_walls:
+            self.p_queue.put((-0.01, building(name=WALL, x=wall[0], y=wall[1])))
+
+        next_3_turrets = [[25, 12], [19, 7]]
+        self.critical_infra += next_3_turrets
+        for turr in next_3_turrets:
+            self.p_queue.put((-0, building(name=TURRET, x=turr[0], y=turr[1])))
+            self.p_queue.put((0.01, building(name='upgrade', x=turr[0], y=turr[1])))
+
+        
+        
 
     def build_defences(self, game_state):
         number_placed = 1
-        self.updated_p_queue = PriorityQueue()
+        should_be_able_to_place = True
         # Takes what on p queue.
-        while(not self.p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0) > 0):
+        while(not self.p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0)):
             defence_value, defence = self.p_queue.get()        # building object
             gamelib.debug_write("Popped off the queue: P_Value: {}  Item: {}".format(defence_value, defence))
 
@@ -120,7 +182,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             # Need to careful here whether we decide to upgrade or build a new defence.
             if(defence.name == 'upgrade'):
-                should_be_able_to_place = True
+                # should_be_able_to_place = True
                 number_placed = game_state.attempt_upgrade([defence.x, defence.y])
             else: 
                 should_be_able_to_place = game_state.can_spawn(defence.name, [defence.x, defence.y])
@@ -128,11 +190,39 @@ class AlgoStrategy(gamelib.AlgoCore):
             
             if number_placed == 0 and should_be_able_to_place:
                 # Need to add back into the queue if we failed to build this.
-                self.updated_p_queue.put((defence_value, defence))
+                self.p_queue.put((defence_value, defence))
+                break
 
             gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
-        self.p_queue = self.updated_p_queue
 
+
+    
+
+
+    def queue_repair_of_critical(self, game_state):
+
+        current_stationary_units = self.get_current_stationary_units(game_state)
+
+        # Loop through the critical objects, if we cannot find then 
+        for item in self.critical_infra:
+            if building(name=WALL, x=item[0], y=item[1]) not in current_stationary_units:
+                self.p_queue.put((0, building(name=WALL, x=item[0], y=item[1])))
+        for item in self.critical_turrents:
+            if building(name=TURRET, x=item[0], y=item[1]) not in current_stationary_units:
+                self.p_queue.put((0, building(name=TURRET, x=item[0], y=item[1])))
+
+    def get_current_stationary_units(self, game_state):
+        '''
+        returns a list of our stationary units in the form [type, [location_x, location_y]]
+        Used for keeping track of what was destroyed in the previous round
+        '''
+        stationary_units = set()
+        for location in game_state.game_map:
+            if game_state.contains_stationary_unit(location):
+                for unit in game_state.game_map[location]:
+                    if unit.player_index == 0:
+                        stationary_units.add((unit.unit_type, location[0], location[1]))
+        return stationary_units
     
     ''' 
     --------------------------------------------------------

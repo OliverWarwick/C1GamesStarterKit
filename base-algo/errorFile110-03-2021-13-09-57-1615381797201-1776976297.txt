@@ -1,4 +1,4 @@
-Random seed: 79853270431325453
+Random seed: 5544011559192616481
 ---------------- Starting Your Algo --------------------
 Configuring your custom algo strategy...
 Turn: [0, 0, -1, 0]
@@ -7,7 +7,6 @@ Starting on_turn
 My Health: 40.0 Enermy Health: 40.0
 Performing turn 0 of your custom algo strategy
 Starting base
-Building List: []
 Finished base
 Calling submit turn
 Turn: [1, 0, 0, 1]
@@ -62,8 +61,22 @@ Turn: [1, 0, 24, 25]
 Calling on_action_frame
 Turn: [1, 0, 25, 26]
 Calling on_action_frame
+Turn: [1, 0, 26, 27]
+Calling on_action_frame
+Turn: [1, 0, 27, 28]
+Calling on_action_frame
+Turn: [1, 0, 28, 29]
+Calling on_action_frame
+Turn: [0, 1, -1, 30]
+Calling on_turn
+Starting on_turn
+My Health: 40.0 Enermy Health: 36.0
+Performing turn 1 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
 Traceback (most recent call last):
-  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/algo_strategy.py", line 162, in <module>
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/algo_strategy.py", line 163, in <module>
     algo.start()
   File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/gamelib/algocore.py", line 59, in start
     game_state_string = get_command()

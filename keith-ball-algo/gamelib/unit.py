@@ -46,6 +46,11 @@ class GameUnit:
         self.__serialize_type()
         self.health = self.max_health if not health else health
 
+        # Extra fields used by roll out algo.
+        self.current_path = None
+        self.initial_x = None
+        self.initial_y = None
+
     def __serialize_type(self):
         from .game_state import STRUCTURE_TYPES, UNIT_TYPE_TO_INDEX, SUPPORT
         type_config = self.config["unitInformation"][UNIT_TYPE_TO_INDEX[self.unit_type]]
@@ -72,6 +77,12 @@ class GameUnit:
         self.shieldPerUnit = type_config.get("shieldPerUnit", self.shieldPerUnit)
         self.cost = [type_config.get("cost1", 0) + self.cost[0], type_config.get("cost2", 0) + self.cost[1]]
         self.upgraded = True
+
+    # OW - EDIT.
+    def set_extra_conditions(self, path, x, y):
+        self.current_path = path
+        self.initial_x = x
+        self.initial_y = y
 
 
     def __toString(self):
