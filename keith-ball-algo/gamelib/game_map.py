@@ -172,6 +172,19 @@ class GameMap:
             self.__map[x][y].append(new_unit)
         else:
             self.__map[x][y] = [new_unit]
+
+
+    def add_existing_unit(self, unit, location):
+
+        ''' For use by the updating function in algo_strat for when creating a new map '''
+        x, y = location
+        if not unit.stationary:
+            self.__map[x][y].append(unit)
+        else:
+            self.__map[x][y] = [unit]
+
+        return True
+
     
     def move_unit(self, unit, location, player_index=0):
         ''' 
@@ -213,7 +226,10 @@ class GameMap:
 
         if not self.in_arena_bounds(location):
             self._invalid_coordinates(location)
+
         x, y = location
+        debug_write("Attempting to remove at location ({}, {}) unit: {}".format(location[0], location[1], unit))
+        debug_write("Current List of Units: {}".format(self.__map[x][y]))
         if(unit in self.__map[x][y]):
             self.__map[x][y].remove(unit)
             return True
