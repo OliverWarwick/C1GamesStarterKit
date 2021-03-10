@@ -88,6 +88,9 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
 
+    def prepare_attacker_list
+
+
     ''' START OF ROLL OUT CODE '''
     ''' OW '''
 

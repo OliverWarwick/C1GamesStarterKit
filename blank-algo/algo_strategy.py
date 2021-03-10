@@ -53,6 +53,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.defence_priority_map = dict()
         self.should_thunder_strike = -1
         self.critical_infra = []
+
+        self.throw_interceptors = True
         
     def on_turn(self, turn_state):
         """
@@ -96,8 +98,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Build defences
         self.build_defences(game_state)
 
-        game_state.attempt_spawn(INTERCEPTOR, [21, 7], num=1)
-        game_state.attempt_spawn(INTERCEPTOR, [6, 7], num=1)
+        self.place_attackers(game_state)
 
     
     def add_intial_defences_to_queue(self, game_state):
@@ -109,7 +110,6 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         self.critical_infra += inital_turrets
         self.critical_infra += inital_walls
-
         # Place these into the prioity queue.
         for turret in inital_turrets:
             self.p_queue.put((-1, building(name=TURRET, x=turret[0], y=turret[1])))
@@ -118,28 +118,23 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.p_queue.put((-1, building(name=WALL, x=wall[0], y=wall[1])))
 
         # Round 3
-        next_turrets = [[7, 8], [20, 8]]
+        next_walls = [[0, 13], [1, 13], [2, 13], [25, 13], [26, 13], [27, 13], [4, 12], [23, 12]]
+        self.critical_infra += next_walls
+        for wall in next_walls:
+            self.p_queue.put((-0.6, building(name=WALL, x=wall[0], y=wall[1])))
+
+        # Round 5
+        next_turrets = [[4, 11], [23, 11], [7, 8], [20, 8]]
         self.critical_infra += next_turrets
         for turr in next_turrets:
             self.p_queue.put((-0.5, building(name=TURRET, x=turr[0], y=turr[1])))
             self.p_queue.put((-0.4, building(name='upgrade', x=turr[0], y=turr[1])))
         
-        # Round 5
-        next_walls = [[4, 13], [23, 13], [4, 12], [23, 12], [7, 9], [20, 9], [8, 8], [19, 8]]
-        self.critical_infra += next_walls
-        for wall in next_walls:
+        couples_walls = [[5, 11], [22, 11], [7, 9], [20, 9], [8, 8], [19, 8]]
+        self.critical_infra += couples_walls
+        for wall in couples_walls:
             self.p_queue.put((-0.3, building(name=WALL, x=wall[0], y=wall[1])))
 
-        next_2_turrets = [[4, 11], [23, 11]]
-        self.critical_infra += next_2_turrets
-        next_2_walls = [[5, 11], [22, 11]]
-        self.critical_infra += next_2_walls
-        for turr in next_2_turrets:
-            self.p_queue.put((-0.25, building(name=TURRET, x=turr[0], y=turr[1])))
-            self.p_queue.put((-0.15, building(name='upgrade', x=turr[0], y=turr[1])))
-        for wall in next_2_walls:
-            self.p_queue.put((-0.2, building(name=WALL, x=wall[0], y=wall[1])))
-        
         next_3_turrets = [[6, 9], [21, 9]]
         self.critical_infra += next_3_turrets
         next_3_walls = [[7, 10], [20, 10], [8, 8], [19, 8]]
@@ -150,23 +145,17 @@ class AlgoStrategy(gamelib.AlgoCore):
         for wall in next_3_walls:
             self.p_queue.put((-0.05, building(name=WALL, x=wall[0], y=wall[1])))
 
-        across_middle_walls = [[0, 13], [1, 13], [2, 13], [25, 13], [26, 13], [27, 13]]
+        upper_turrets = [[1, 12], [2, 12], [25, 12], [26, 12]]
+        for turr in upper_turrets:
+            self.p_queue.put((-0.01, building(name=TURRET, x=turr[0], y=turr[1])))
+
+        across_middle_walls = [[6, 10], [9, 7], [18, 7], [10, 6], [17, 6], [12, 5], [13, 5], [14, 5], [15, 5]]
         self.critical_infra += across_middle_walls
         for wall in across_middle_walls:
-            self.p_queue.put((-0.01, building(name=WALL, x=wall[0], y=wall[1])))
-
-        close_up_walls = [[6, 10], [9, 7], [18, 7], [10, 6], [17, 6], [12, 4], [13, 4], [14, 4], [15, 4]]
-        self.critical_infra += close_up_walls
-        for wall in close_up_walls:
-            self.p_queue.put((-0.01, building(name=WALL, x=wall[0], y=wall[1])))
-
-        next_3_turrets = [[25, 12], [19, 7]]
-        self.critical_infra += next_3_turrets
-        for turr in next_3_turrets:
-            self.p_queue.put((-0, building(name=TURRET, x=turr[0], y=turr[1])))
-            self.p_queue.put((0.01, building(name='upgrade', x=turr[0], y=turr[1])))
+            self.p_queue.put((-0.001, building(name=WALL, x=wall[0], y=wall[1])))
 
         
+
         
 
     def build_defences(self, game_state):
@@ -229,6 +218,17 @@ class AlgoStrategy(gamelib.AlgoCore):
     Attack Code.
     --------------------------------------------------------
     '''
+
+
+    def place_attackers(self, game_state):
+
+        if game_state.contains_stationary_unit([7, 8]) and game_state.contains_stationary_unit([20, 8]):
+            self.throw_interceptors = False
+        
+        if self.throw_interceptors:
+            game_state.attempt_spawn(INTERCEPTOR, [21, 7], num=1)
+            game_state.attempt_spawn(INTERCEPTOR, [6, 7], num=1)
+        
 
     def on_action_frame(self, turn_string):
         """
