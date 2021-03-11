@@ -168,6 +168,11 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Get the cost of the object if this is greater than the amount of SP points, then place back onto the queue and break.
             # Add this to the dictionary of defences to prioities.
             self.defence_priority_map[defence] = defence_value
+            if defence_value > -0.25:
+                self.throw_interceptors = False
+            if defence_value < -0.75:
+                self.throw_interceptors = True
+
 
             # Need to careful here whether we decide to upgrade or build a new defence.
             if(defence.name == 'upgrade'):

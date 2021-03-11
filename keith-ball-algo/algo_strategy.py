@@ -63,6 +63,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.critical_supports_hammer = []
 
         self.throw_interceptors = True
+        self.thunder_striking = False
 
         self.verbose = False
 
@@ -93,8 +94,11 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         if game_state.turn_number == 0:
             self.inital_add_to_p_queue(game_state)
+
+        self.queue_repair_of_critical(game_state)  
         
         self.build_queued_defences(game_state)
+
         if self.throw_interceptors:
             copied_game_state = copy.deepcopy(game_state)
             interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
@@ -150,7 +154,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.p_queue.put((-0.55, building(name=WALL, x=wall[0], y=wall[1])))
 
         # Upgrade those next_turrets
-        for turret in next_turrets:
+        for turret in next_turrets[0:2]:
             self.p_queue.put((-0.5, building(name='upgrade', x=turret[0], y=turret[1])))
 
         next_turrets = [[1, 12], [26, 12], [8, 7], [2, 12], [25, 12], [19, 7]] 
@@ -164,19 +168,26 @@ class AlgoStrategy(gamelib.AlgoCore):
         for wall in next_walls:
             self.p_queue.put((-0.4, building(name=WALL, x=wall[0], y=wall[1])))
 
-        for turr in [[8, 7], [19, 7]]:
-            self.p_queue.put((-0.35, building(name='upgrade', x=turr[0], y=turr[1])))
-        
+        for turret in next_turrets:
+            self.p_queue.put((-0.35, building(name='upgrade', x=turret[0], y=turret[1])))
+        for wall in [[0, 13], [1, 13], [26, 13], [27, 13] , [2, 13], [25, 13]]:
+            self.p_queue.put((-0.35, building(name='upgrade', x=wall[0], y=wall[1])))
 
-        supports = [[12, 3], [13, 3], [14, 3], [15, 3], [13, 2], [14, 2]]
+        supports = [[12, 3], [13, 3], [14, 3], [15, 3]]
         self.critical_supports_non_hammer += supports
         for supp in supports:
             self.p_queue.put((-0.3, building(name=SUPPORT, x=supp[0], y=supp[1])))
+
             
         extra_turrets = [[22, 12], [6, 11], [20, 10], [8, 9]]
         self.critical_turrets_non_hammer += extra_turrets
         for turret in extra_turrets:
             self.p_queue.put((-0.25, building(name=TURRET, x=turret[0], y=turret[1])))
+
+        extra_supports = [[13, 2], [14, 2]]
+        self.critical_supports_non_hammer += extra_supports
+        for supp in extra_supports:
+            self.p_queue.put((-0.225, building(name=SUPPORT, x=supp[0], y=supp[1])))
 
 
         extra_walls = [[21, 12], [7, 11], [19, 11], [9, 10], [19, 10], [9, 9]]
@@ -184,14 +195,64 @@ class AlgoStrategy(gamelib.AlgoCore):
         for wall in next_walls:
             self.p_queue.put((-0.2, building(name=WALL, x=wall[0], y=wall[1])))
 
+        for turr in extra_turrets:
+            self.p_queue.put((-0.15, building(name='upgrade', x=turr[0], y=turr[1])))
+
+
+        # Upgrade the walls and turrets near the front
+        walls_to_upgrade = [[3, 13], [24, 13], [7, 9], [20, 9]]
+        for wall in walls_to_upgrade:
+            self.p_queue.put((-0.15, building(name='upgrade', x=wall[0], y=wall[1])))
+
         
 
+    def queue_repair_of_critical(self, game_state):
+
+        current_stationary_units = self.get_current_stationary_units(game_state)
+        if not self.thunder_striking:
+            walls = self.critical_walls_hammer + self.crtical_walls_non_hammer
+            turrets = self.critical_turrets_hammer + self.critical_supports_non_hammer
+            supports = self.critical_supports_hammer + self.critical_supports_non_hammer
+        else:
+            walls = self.crtical_walls_non_hammer
+            turrets = self.critical_supports_non_hammer
+            supports = self.critical_supports_non_hammer
+
+        # Loop through the critical objects, if we cannot find then 
+        for item in walls:
+            if building(name=WALL, x=item[0], y=item[1]) not in current_stationary_units and self.defence_priority_map.get(building(name=WALL, x=item[0], y=item[1]), False):
+                # Look for it in the map.
+                if self.verbose: gamelib.debug_write(self.defence_priority_map)
+                value = self.defence_priority_map.get(building(name=WALL, x=item[0], y=item[1]), 0)
+                if self.verbose: gamelib.debug_write("Placing back into prioity queue: {}".format(value))
+                self.p_queue.put((value, building(name=WALL, x=item[0], y=item[1])))
+
+        for item in turrets:
+            if building(name=TURRET, x=item[0], y=item[1]) not in current_stationary_units and self.defence_priority_map.get(building(name=TURRET, x=item[0], y=item[1]), False):
+                value = self.defence_priority_map.get(building(name=TURRET, x=item[0], y=item[1]), 0)
+                if self.verbose: gamelib.debug_write("Placing back into prioity queue: {}".format(value))
+                self.p_queue.put((value, building(name=TURRET, x=item[0], y=item[1])))
+                self.p_queue.put((value, building(name='upgrade', x=item[0], y=item[1])))
+
+        for item in supports:
+            if building(name=SUPPORT, x=item[0], y=item[1]) not in current_stationary_units and self.defence_priority_map.get(building(name=SUPPORT, x=item[0], y=item[1]), False):
+                value = self.defence_priority_map.get(building(name=SUPPORT, x=item[0], y=item[1]), 0)
+                if self.verbose: gamelib.debug_write("Placing back into prioity queue: {}".format(value))
+                self.p_queue.put((value, building(name=SUPPORT, x=item[0], y=item[1])))
 
 
-
-
-        
-
+    def get_current_stationary_units(self, game_state):
+        '''
+        returns a list of our stationary units in the form [type, [location_x, location_y]]
+        Used for keeping track of what was destroyed in the previous round
+        '''
+        stationary_units = set()
+        for location in game_state.game_map:
+            if game_state.contains_stationary_unit(location):
+                for unit in game_state.game_map[location]:
+                    if unit.player_index == 0:
+                        stationary_units.add((unit.unit_type, location[0], location[1]))
+        return stationary_units
 
 
     def build_queued_defences(self, game_state):
@@ -200,7 +261,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Takes what on p queue.
         while(not self.p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0) > 0):
             defence_value, defence = self.p_queue.get()        # building object
-            gamelib.debug_write("Popped off the queue: P_Value: {}  Item: {}".format(defence_value, defence))
+            if self.verbose: gamelib.debug_write("Popped off the queue: P_Value: {}  Item: {}".format(defence_value, defence))
 
             # Get the cost of the object if this is greater than the amount of SP points, then place back onto the queue and break.
             # Add this to the dictionary of defences to prioities.
@@ -227,7 +288,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                         gamelib.debug_write("An error has occured here, where we should have been able to place and had credit but didn't. If so break the loop.")
                         break
 
-            gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
+            if self.verbose: gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
 
     def place_attackers(self, game_state, attacker_list):
         '''
@@ -284,8 +345,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         for i in self.p_queue.queue: 
             copied_p_queue.put(i)
 
-        gamelib.debug_write("Original P Queue: {}".format(self.p_queue.queue))
-        gamelib.debug_write("New P Queue: {}".format(copied_p_queue.queue))
+        if self.verbose: gamelib.debug_write("Original P Queue: {}".format(self.p_queue.queue))
+        if self.verbose: gamelib.debug_write("New P Queue: {}".format(copied_p_queue.queue))
 
 
         # Add to the defender list till we run out of credit.
@@ -303,7 +364,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             if(number_placed==0 and should_be_able_to_place):
                 break
         # Game state should now contain as many elements as we can place ready to look at what attacks could be thrown.
-        gamelib.debug_write("After adding our next p queue elements")
+        if self.verbose: gamelib.debug_write("After adding our next p queue elements")
         self.print_map(game_state)
 
 
