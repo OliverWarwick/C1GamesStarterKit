@@ -159,32 +159,39 @@ class AlgoStrategy(gamelib.AlgoCore):
         for wall in across_middle_walls:
             self.p_queue.put((-0.001, building(name=WALL, x=wall[0], y=wall[1])))
 
-        
-
 
     def build_defences(self, game_state):
         number_placed = 1
         should_be_able_to_place = True
         # Takes what on p queue.
-        while(not self.p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0)):
+        while(not self.p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0) > 0):
             defence_value, defence = self.p_queue.get()        # building object
             gamelib.debug_write("Popped off the queue: P_Value: {}  Item: {}".format(defence_value, defence))
 
+            # Get the cost of the object if this is greater than the amount of SP points, then place back onto the queue and break.
             # Add this to the dictionary of defences to prioities.
             self.defence_priority_map[defence] = defence_value
 
             # Need to careful here whether we decide to upgrade or build a new defence.
             if(defence.name == 'upgrade'):
                 # should_be_able_to_place = True
-                number_placed = game_state.attempt_upgrade([defence.x, defence.y])
+                if(game_state.type_cost(unit_type=game_state.game_map[defence.x, defence.y][0].unit_type, upgrade=True)[0] > game_state.get_resource(resource_type=SP, player_index=0)):
+                    # We cannot afford place back onto the queue and break.
+                    self.p_queue.put((defence_value, defence))
+                    break
+                else:
+                    number_placed = game_state.attempt_upgrade([defence.x, defence.y])
             else: 
-                should_be_able_to_place = game_state.can_spawn(defence.name, [defence.x, defence.y])
-                number_placed = game_state.attempt_spawn(defence.name, [defence.x, defence.y])
-            
-            if number_placed == 0 and should_be_able_to_place:
-                # Need to add back into the queue if we failed to build this.
-                self.p_queue.put((defence_value, defence))
-                break
+                if(game_state.type_cost(unit_type=defence.name)[0] > game_state.get_resource(resource_type=SP, player_index=0)):
+                    self.p_queue.put((defence_value, defence))
+                    break
+                else:
+                    should_be_able_to_place = game_state.can_spawn(defence.name, [defence.x, defence.y])
+                    number_placed = game_state.attempt_spawn(defence.name, [defence.x, defence.y])
+                    if(number_placed==0 and should_be_able_to_place):
+                        self.p_queue.put((defence_value, defence))
+                        gamelib.debug_write("An error has occured here, where we should have been able to place and had credit but didn't. If so break the loop.")
+                        break
 
             gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
 

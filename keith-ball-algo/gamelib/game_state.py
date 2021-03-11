@@ -303,6 +303,26 @@ class GameState:
 
         return cost_base
 
+    
+    def get_number_of_stationary_units_of_type(self, unit_type):
+        ''' 
+        args: unit_type is shorthand for the units
+        return [my_count, oppo_count] 
+        '''
+        my_count = 0
+        oppo_count = 0
+        for loc in self.game_map:
+            if self.game_map.in_arena_bounds(loc) and self.contains_stationary_unit(loc):
+                if self.game_map[loc][0].unit_type == unit_type and self.game_map[loc][0].player_index == 0:
+                    my_count += 1
+                if self.game_map[loc][0].unit_type == unit_type and self.game_map[loc][0].player_index == 1:
+                    oppo_count += 1
+        return [my_count, oppo_count]
+    
+
+
+
+
 
     def can_spawn(self, unit_type, location, num=1):
         """Check if we can spawn a unit at a location. 

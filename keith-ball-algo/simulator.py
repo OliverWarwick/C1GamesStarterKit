@@ -7,6 +7,7 @@ import json
 from gamelib.unit import GameUnit
 import copy
 from collections import deque, namedtuple
+import time
 
 class Simulator:
 
@@ -24,13 +25,15 @@ class Simulator:
         DEMOLISHER = config["unitInformation"][4]["shorthand"]
         INTERCEPTOR = config["unitInformation"][5]["shorthand"]
 
+        self.start_time = None
+
 
     def reset(self):
 
         self.simulated_game_state = copy.deepcopy(self.original_game_state)
 
 
-    def roll_out_one_turn(self, our_attacker_list, our_building_list, oppo_attacker_list, oppo_building_list):
+    def roll_out_one_turn(self, our_attacker_list, oppo_attacker_list, our_building_list, oppo_building_list):
 
         ''' 
         This will roll out a play give a set of placements of our attackers, our defenders, oppo attackers, oppo defenders
@@ -46,9 +49,10 @@ class Simulator:
 
         gamelib.debug_write("Before start of sim")
         self.print_map(self.simulated_game_state)
+        self.start_time = time.time()
         
         # Add the units.
-        self.add_proposed_units_to_map(self.simulated_game_state, our_attacker_list, our_building_list, oppo_attacker_list, oppo_building_list)
+        self.add_proposed_units_to_map(self.simulated_game_state, our_attacker_list, oppo_attacker_list, our_building_list, oppo_building_list)
 
         # Set up inital coords and movement paths.
         self.set_movement_paths(self.simulated_game_state)
@@ -59,8 +63,35 @@ class Simulator:
         gamelib.debug_write("Finished roll out")
         self.print_map(self.simulated_game_state)
 
+        # Here we return important data.
+        game_state_info = dict()
 
-    def add_proposed_units_to_map(self, game_state, our_attacker_list, our_building_list, oppo_attacker_list, oppo_building_list):
+        # Abstract away into function.
+
+        game_state_info["my_health"] = self.simulated_game_state.my_health
+        game_state_info["enemy_health"] = self.simulated_game_state.enemy_health
+        my_wall_count, oppo_wall_count = self.simulated_game_state.get_number_of_stationary_units_of_type(WALL)
+        game_state_info["my_wall_count"] = my_wall_count
+        game_state_info["oppo_wall_count"] = oppo_wall_count
+        my_turret_count, oppo_turret_count = self.simulated_game_state.get_number_of_stationary_units_of_type(TURRET)
+        game_state_info['my_turret_count'] = my_turret_count
+        game_state_info['oppo_turret_count'] = oppo_turret_count
+        my_support_count, oppo_support_count = self.simulated_game_state.get_number_of_stationary_units_of_type(SUPPORT)
+        game_state_info['my_support_count'] = my_support_count
+        game_state_info['oppo_support_count'] = oppo_support_count
+
+        final_score = self.eval_updated_game_state(game_state_info)
+        gamelib.debug_write("Final Score: {}".format(final_score))
+        return final_score
+
+
+
+    def eval_updated_game_state(self, game_state_info):
+        ''' This is a dictionary of the important elements '''
+        return game_state_info['my_health'] - game_state_info['enemy_health'] + 0.5 * (game_state_info['my_turret_count'] - game_state_info['oppo_turret_count']) + 0.25 * (game_state_info['my_support_count'] - game_state_info['oppo_support_count']) + 0.1 * (game_state_info['my_wall_count'] - game_state_info['oppo_wall_count'])
+
+
+    def add_proposed_units_to_map(self, game_state, our_attacker_list, oppo_attacker_list, our_building_list, oppo_building_list):
 
         # Pass to the helper function.
         for att in our_attacker_list:
@@ -81,16 +112,19 @@ class Simulator:
         if style == 'attacker':
             # This will be an 
             # attacker = namedtuple('Attacker', ['name', 'x', 'y', 'num'])
-            for i in range(0, element.num):
+            for _ in range(0, element.num):
                 # Can only add one at a time.
-                if element.name != 'upgrade':
-                    game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
-                else:
-                    # Need to handle the upgrades
-                    game_state.game_map[element.x, element.y].upgrade()
+                gamelib.debug_write("Doing add of attacker {} to ({}, {})".format(element.name, element.x, element.y))
+                game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
         else:
             # building = namedtuple('Building', ['name', 'x', 'y'])
-            game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
+            if element.name != 'upgrade':
+                gamelib.debug_write("Doing add of defender {} to ({}, {})".format(element.name, element.x, element.y))
+                game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
+            else:
+                gamelib.debug_write("Doing upgrade at ({}, {})".format(element.x, element.y))
+                gamelib.debug_write("Current Unit: {}".format(game_state.game_map[element.x, element.y]))
+                game_state.game_map[element.x, element.y][0].upgrade()
 
 
         
@@ -130,7 +164,8 @@ class Simulator:
             current_frame_num, not_done, buildings_destroyed = self.simulate_one_action_frame(game_state, current_frame_num, buildings_destroyed)
             self.print_map(game_state=game_state)
 
-        raise StopIteration
+        gamelib.debug_write("Time elpased: {}".format(time.time() - self.start_time))
+
 
 
     def simulate_one_action_frame(self, game_state, frame_num, buildings_destroyed):

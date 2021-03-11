@@ -8,6 +8,7 @@ from gamelib.unit import GameUnit
 import copy
 from collections import deque, namedtuple
 from simulator import Simulator
+from queue import PriorityQueue
 
 """
 Most of the algo code you write will be in this file unless you create new
@@ -50,6 +51,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         SP = 0
         # This is a good place to do initial setup
         self.scored_on_locations = []
+        self.p_queue = PriorityQueue()
 
     def on_turn(self, turn_state):
         """
@@ -75,297 +77,364 @@ class AlgoStrategy(gamelib.AlgoCore):
 
     def base_strategy(self, game_state):
 
-        our_attackers = [attacker(name=SCOUT, x=6, y=7, num=3), attacker(name=INTERCEPTOR, x=13, y=0, num=1)]
-        oppo_attackers = []
+        if game_state.turn_number == 0:
+            self.inital_add_to_p_queue(game_state)
 
-        our_defences = []
-        oppo_defences = [building(name=WALL, x=i, y=14) for i in range(0, 28)]
+        # our_attackers = [attacker(name=SCOUT, x=6, y=7, num=1), attacker(name=DEMOLISHER, x=13, y=0, num=1)]
+        # oppo_attackers = []
+
+        # our_defences = []
+        # oppo_defences = [building(name=WALL, x=i, y=14) for i in range(0, 28) if i not in [13, 14, 15]]
+        # oppo_defences += [building(name=TURRET, x=20, y=20), building(name='upgrade', x=20,y=20)]
+
+        # gamelib.debug_write("Oppo Defences: {}".format(oppo_defences))
 
         # self.roll_out_one_turn(game_state, our_attackers, oppo_attackers, our_defences, oppo_defences)
+        # sim = Simulator(game_state, self.config)
+        # sim.roll_out_one_turn(our_attackers, oppo_attackers, our_defences, oppo_defences)
+        # sim.reset()
+        copied_game_state = copy.deepcopy(game_state)
+        self.update_game_state_while_p_queue_unloading(copied_game_state)
+        self.prepare_attack_sets_for_oppo_during_first_stage(copied_game_state)
+
+    def inital_add_to_p_queue(self, game_state):
+
+        inital_turrets = [[3, 12], [24, 12], [11, 4], [16, 4]]
+        inital_walls = [[3, 13], [24, 13], [7, 8], [20, 8]]
+
+        for turret in inital_turrets:
+            self.p_queue.put((-1, building(name=TURRET, x=turret[0], y=turret[1])))
+            self.p_queue.put((-1, building(name='upgrade', x=turret[0], y=turret[1])))
+        for wall in inital_walls:
+            self.p_queue.put((-1, building(name=WALL, x=wall[0], y=wall[1])))
+
+
+
+    def update_game_state_while_p_queue_unloading(self, game_state):
+
+        # Copy the p_queue.
+        copied_p_queue = PriorityQueue()
+        for i in self.p_queue.queue: 
+            copied_p_queue.put(i)
+
+        gamelib.debug_write("Original P Queue: {}".format(self.p_queue.queue))
+        gamelib.debug_write("New P Queue: {}".format(copied_p_queue.queue))
+
+
+        # Add to the defender list till we run out of credit.
+        while(not copied_p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0) > 0):
+
+            defence_value, defence = copied_p_queue.get()
+
+            if(defence.name == 'upgrade'):
+                should_be_able_to_place = True
+                number_placed = game_state.attempt_upgrade([defence.x, defence.y])
+            else: 
+                should_be_able_to_place = game_state.can_spawn(defence.name, [defence.x, defence.y])
+                number_placed = game_state.attempt_spawn(defence.name, [defence.x, defence.y])
+            
+            if(number_placed==0 and should_be_able_to_place):
+                break
+        # Game state should now contain as many elements as we can place ready to look at what attacks could be thrown.
+
+
+    def prepare_attack_sets_for_oppo_during_first_stage(self, game_state):
+
+        # This will take in the game state from the updated_game_state_while... function which will have added what we would do in the next round.
+        # We can then prepare some attckers and check whether they are feasible.
+
+        oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
+        attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], []]
+
         sim = Simulator(game_state, self.config)
-        sim.roll_out_one_turn(our_attackers, oppo_attackers, our_defences, oppo_defences)
+        sim.roll_out_one_turn([], attack_set_list[0], [], [])
         sim.reset()
+        sim.roll_out_one_turn([], attack_set_list[1], [], [])
+        
 
 
 
-    def prepare_attacker_list
+            
 
 
     ''' START OF ROLL OUT CODE '''
     ''' OW '''
 
-    def roll_out_one_turn(self, game_state, our_attacker_list, our_building_list, oppo_attacker_list, oppo_building_list):
-        ''' 
-        This will roll out a play give a set of placements of our attackers, our defenders, oppo attackers, oppo defenders
-        return:
-            (float, float): my_health, enemy_health
-        '''
+    # def roll_out_one_turn(self, game_state, our_attacker_list, oppo_attacker_list, our_building_list, oppo_building_list):
+    #     ''' 
+    #     This will roll out a play give a set of placements of our attackers, our defenders, oppo attackers, oppo defenders
+    #     return:
+    #         (float, float): my_health, enemy_health
+    #     '''
 
-        # Can use the can_spawn function.
-        # Need to ensure that we create new units to place in the game map.
+    #     # Can use the can_spawn function.
+    #     # Need to ensure that we create new units to place in the game map.
 
-        # Create a copy of the game state.
-        gamelib.debug_write("Beginning roll out")
-        copied_game_state = copy.deepcopy(game_state)
+    #     # Create a copy of the game state.
+    #     gamelib.debug_write("Beginning roll out")
+    #     copied_game_state = copy.deepcopy(game_state)
 
-        gamelib.debug_write("Before start of sim")
-        self.print_map(copied_game_state)
+    #     gamelib.debug_write("Before start of sim")
+    #     self.print_map(copied_game_state)
         
-        # Add the units.
-        self.add_proposed_units_to_map(copied_game_state, our_attacker_list, our_building_list, oppo_attacker_list, oppo_building_list)
+    #     # Add the units.
+    #     self.add_proposed_units_to_map(copied_game_state, our_attacker_list, oppo_attacker_list, our_building_list, oppo_building_list)
 
-        # Set up inital coords and movement paths.
-        self.set_movement_paths(copied_game_state)
+    #     # Set up inital coords and movement paths.
+    #     self.set_movement_paths(copied_game_state)
 
-        # Simulate turn
-        self.simulate_one_turn(copied_game_state)
+    #     # Simulate turn
+    #     self.simulate_one_turn(copied_game_state)
 
-        gamelib.debug_write("Finished roll out")
-        self.print_map(copied_game_state)
-
-
+    #     gamelib.debug_write("Finished roll out")
+    #     self.print_map(copied_game_state)
 
 
-    def add_proposed_units_to_map(self, game_state, our_attacker_list, our_building_list, oppo_attacker_list, oppo_building_list):
 
-        # Pass to the helper function.
-        for att in our_attacker_list:
-            self.add_single_location_of_units(game_state, 'attacker', att, player_index=0)
-        for att in oppo_attacker_list:
-            self.add_single_location_of_units(game_state, 'attacker', att, player_index=1)
-        for defence in our_building_list:
-            self.add_single_location_of_units(game_state, 'building', defence, player_index=0)
-        for defence in oppo_building_list:
-            self.add_single_location_of_units(game_state, 'building', defence, player_index=1)
+
+    # def add_proposed_units_to_map(self, game_state, our_attacker_list, oppo_attacker_list, our_building_list, oppo_building_list):
+
+    #     # Pass to the helper function.
+    #     for att in our_attacker_list:
+    #         self.add_single_location_of_units(game_state, 'attacker', att, player_index=0)
+    #     for att in oppo_attacker_list:
+    #         self.add_single_location_of_units(game_state, 'attacker', att, player_index=1)
+    #     for defence in our_building_list:
+    #         self.add_single_location_of_units(game_state, 'building', defence, player_index=0)
+    #     for defence in oppo_building_list:
+    #         self.add_single_location_of_units(game_state, 'building', defence, player_index=1)
         
     
-    def add_single_location_of_units(self, game_state, style, element, player_index):
-        ''' 
-        style whether attack or stationary, element is just the tuple and player index 0 / 1 as above. 
-        This should be a valid allocation based on what the oppo has.
-        '''
-        if style == 'attacker':
-            # This will be an 
-            # attacker = namedtuple('Attacker', ['name', 'x', 'y', 'num'])
-            for i in range(0, element.num):
-                # Can only add one at a time.
-                if element.name != 'upgrade':
-                    game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
-                else:
-                    # Need to handle the upgrades
-                    game_state.game_map[element.x, element.y].upgrade()
-        else:
-            # building = namedtuple('Building', ['name', 'x', 'y'])
-            game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
+    # def add_single_location_of_units(self, game_state, style, element, player_index):
+    #     ''' 
+    #     style whether attack or stationary, element is just the tuple and player index 0 / 1 as above. 
+    #     This should be a valid allocation based on what the oppo has.
+    #     '''
+    #     if style == 'attacker':
+    #         # This will be an 
+    #         # attacker = namedtuple('Attacker', ['name', 'x', 'y', 'num'])
+    #         for _ in range(0, element.num):
+    #             # Can only add one at a time.
+    #             gamelib.debug_write("Doing add of attacker {} to ({}, {})".format(element.name, element.x, element.y))
+    #             game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
+    #     else:
+    #         # building = namedtuple('Building', ['name', 'x', 'y'])
+    #         if element.name != 'upgrade':
+    #             gamelib.debug_write("Doing add of defender {} to ({}, {})".format(element.name, element.x, element.y))
+    #             game_state.game_map.add_unit(unit_type=element.name, location=[element.x, element.y], player_index=player_index)
+    #         else:
+    #             gamelib.debug_write("Doing upgrade at ({}, {})".format(element.x, element.y))
+    #             gamelib.debug_write("Current Unit: {}".format(game_state.game_map[element.x, element.y]))
+    #             game_state.game_map[element.x, element.y].upgrade()
 
 
         
 
-    def set_movement_paths(self, game_state):
+    # def set_movement_paths(self, game_state):
 
-        # After adding the units, run across the game map and set the path for each of units.
-        # The inital coords will be used for mapping in the future.
-        for x in range(0,28):
-            for y in range(0,28):
-                loc = [x, y]
-                if game_state.game_map.in_arena_bounds(loc):
-                    for unit in game_state.game_map[loc]:
-                        if not unit.stationary:
-                            # Get the initial path.
-                            path = game_state.find_path_to_edge(loc)
-                            # This is a mobile unit so set the path, initial_x, and initial_y
-                            unit.set_extra_conditions(path=path, x=loc[0], y=loc[1])
-                        else:
-                            path = None
-                            unit.set_extra_conditions(path=path, x=loc[0], y=loc[1])
-
-
-
-    def simulate_one_turn(self, game_state):
-        ''' 
-        Pre Condition: Valid board configuation and that "RESTORE" has already happened and "DEPLOY" phase has been simed.
-        This rolls out one play based on a game state which is in it's final modifed state before the first action frame
-        return:
-            GameState: with the game state at the end of the turn from our perspective.
-        '''
-        not_done = True
-        buildings_destroyed = False
-        current_frame_num = 0
-        gamelib.debug_write("Simulating one play forward.")
-        while(current_frame_num < 1000 and not_done):
-            current_frame_num, not_done, buildings_destroyed = self.simulate_one_action_frame(game_state, current_frame_num, buildings_destroyed)
-            self.print_map(game_state=game_state)
-
-        raise StopIteration
+    #     # After adding the units, run across the game map and set the path for each of units.
+    #     # The inital coords will be used for mapping in the future.
+    #     for x in range(0,28):
+    #         for y in range(0,28):
+    #             loc = [x, y]
+    #             if game_state.game_map.in_arena_bounds(loc):
+    #                 for unit in game_state.game_map[loc]:
+    #                     if not unit.stationary:
+    #                         # Get the initial path.
+    #                         path = game_state.find_path_to_edge(loc)
+    #                         # This is a mobile unit so set the path, initial_x, and initial_y
+    #                         unit.set_extra_conditions(path=path, x=loc[0], y=loc[1])
+    #                     else:
+    #                         path = None
+    #                         unit.set_extra_conditions(path=path, x=loc[0], y=loc[1])
 
 
-    def simulate_one_action_frame(self, game_state, frame_num, buildings_destroyed):
-        ''' 
-        Pre Condition: Valid board configuation.
-        Roll out one action frame using the game logic and return this
-        return: 
-            GameState: after movements
-        '''
 
-        # To hold the new values 
-        updated_game_map = gamelib.GameMap(self.config)
+    # def simulate_one_turn(self, game_state):
+    #     ''' 
+    #     Pre Condition: Valid board configuation and that "RESTORE" has already happened and "DEPLOY" phase has been simed.
+    #     This rolls out one play based on a game state which is in it's final modifed state before the first action frame
+    #     return:
+    #         GameState: with the game state at the end of the turn from our perspective.
+    #     '''
+    #     not_done = True
+    #     buildings_destroyed = False
+    #     current_frame_num = 0
+    #     gamelib.debug_write("Simulating one play forward.")
+    #     while(current_frame_num < 1000 and not_done):
+    #         current_frame_num, not_done, buildings_destroyed = self.simulate_one_action_frame(game_state, current_frame_num, buildings_destroyed)
+    #         self.print_map(game_state=game_state)
 
-        gamelib.debug_write("Frame Number: {}".format(frame_num))
-        gamelib.debug_write("Building Destoryed: {}".format(buildings_destroyed))
+    #     raise StopIteration
+
+
+    # def simulate_one_action_frame(self, game_state, frame_num, buildings_destroyed):
+    #     ''' 
+    #     Pre Condition: Valid board configuation.
+    #     Roll out one action frame using the game logic and return this
+    #     return: 
+    #         GameState: after movements
+    #     '''
+
+    #     # To hold the new values 
+    #     updated_game_map = gamelib.GameMap(self.config)
+
+    #     gamelib.debug_write("Frame Number: {}".format(frame_num))
+    #     gamelib.debug_write("Building Destoryed: {}".format(buildings_destroyed))
         
-        # Add any health bonuses which I think should be done before. (STAGE 0.)
-        for loc in game_state.game_map:
-            if game_state.game_map.in_arena_bounds(loc) and len(game_state.game_map[loc]) == 1 and game_state.game_map[loc][0].unit_type == SUPPORT:
-                # Get the locations within range:
-                supported_locations = game_state.game_map.get_locations_in_range(loc, game_state.game_map[loc][0].shieldRange)
-                for sup_loc in supported_locations:
-                    for unit in game_state.game_map[sup_loc]:
-                        if not unit.stationary and not unit.has_been_shielded:
-                            unit.health += game_state.game_map[loc][0].shieldPerUnit
-                            gamelib.debug_write("Adding health to unit at location ({}, {})".format(sup_loc[0], sup_loc[1]))
+    #     # Add any health bonuses which I think should be done before. (STAGE 0.)
+    #     for loc in game_state.game_map:
+    #         if game_state.game_map.in_arena_bounds(loc) and len(game_state.game_map[loc]) == 1 and game_state.game_map[loc][0].unit_type == SUPPORT:
+    #             # Get the locations within range:
+    #             supported_locations = game_state.game_map.get_locations_in_range(loc, game_state.game_map[loc][0].shieldRange)
+    #             for sup_loc in supported_locations:
+    #                 for unit in game_state.game_map[sup_loc]:
+    #                     if not unit.stationary and not unit.has_been_shielded:
+    #                         unit.health += game_state.game_map[loc][0].shieldPerUnit
+    #                         gamelib.debug_write("Adding health to unit at location ({}, {})".format(sup_loc[0], sup_loc[1]))
 
-        gamelib.debug_write("End of adding health bonuses")
+    #     gamelib.debug_write("End of adding health bonuses")
     
-        # All units take a step if it is their turn. (STAGE 1).
-        movement = False
-        troops_alive = False
-        self_destruct_list = []         # List[x, y] locations for self destruct. Have to be done together as a location.
-        for loc in [[x,y] for x in range(28) for y in range(28)]:
-            if game_state.game_map.in_arena_bounds(loc):
-                # We have at least one unit here, so run through them, and find the target.
-                for unit in game_state.game_map[loc]:
+    #     # All units take a step if it is their turn. (STAGE 1).
+    #     movement = False
+    #     troops_alive = False
+    #     self_destruct_list = []         # List[x, y] locations for self destruct. Have to be done together as a location.
+    #     for loc in [[x,y] for x in range(28) for y in range(28)]:
+    #         if game_state.game_map.in_arena_bounds(loc):
+    #             # We have at least one unit here, so run through them, and find the target.
+    #             for unit in game_state.game_map[loc]:
 
-                    # If unit is stationary, then copy onto the new map. Otherwise apply the update logic.
-                    if unit.stationary:
-                        updated_game_map.add_existing_unit(unit, location=loc)
-                    else:
-                        troops_alive = True
-                        # Remove the unit from the current location and add to the path.
-                        if not buildings_destroyed:
-                            path = unit.current_path
-                            gamelib.debug_write("Unit at location: ({}, {}) no need to repath.".format(loc[0], loc[1]))
-                        else:
-                            # Need to repath the path now.
-                            unit.current_path = game_state.find_path_based_on_initial(unit)
-                            path = unit.current_path
-                            gamelib.debug_write("Unit at location: ({}, {}) repathing.".format(loc[0], loc[1]))
+    #                 # If unit is stationary, then copy onto the new map. Otherwise apply the update logic.
+    #                 if unit.stationary:
+    #                     updated_game_map.add_existing_unit(unit, location=loc)
+    #                 else:
+    #                     troops_alive = True
+    #                     # Remove the unit from the current location and add to the path.
+    #                     if not buildings_destroyed:
+    #                         path = unit.current_path
+    #                         gamelib.debug_write("Unit at location: ({}, {}) no need to repath.".format(loc[0], loc[1]))
+    #                     else:
+    #                         # Need to repath the path now.
+    #                         unit.current_path = game_state.find_path_based_on_initial(unit)
+    #                         path = unit.current_path
+    #                         gamelib.debug_write("Unit at location: ({}, {}) repathing.".format(loc[0], loc[1]))
 
-                        # Should only move when it is there multiple
-                        gamelib.debug_write("Unit at location: ({}, {}). Path to end: {}".format(loc[0], loc[1], path))
-                        gamelib.debug_write("Unit Location: ({}, {}). FrameNum: {}. Speed: {}".format(loc[0], loc[1],frame_num, unit.speed))
-                        if frame_num == 0 or int(frame_num) % int(1.0 / unit.speed) == 0:
+    #                     # Should only move when it is there multiple
+    #                     gamelib.debug_write("Unit at location: ({}, {}). Path to end: {}".format(loc[0], loc[1], path))
+    #                     gamelib.debug_write("Unit Location: ({}, {}). FrameNum: {}. Speed: {}".format(loc[0], loc[1],frame_num, unit.speed))
+    #                     if frame_num == 0 or int(frame_num) % int(1.0 / unit.speed) == 0:
                             
-                            if loc == path[-1]:
-                                gamelib.debug_write("Unit at location: ({}, {}) is at the end of the path.".format(loc[0],loc[1]))
-                                # We are at the end of the path. Either we are at an edge which means we can remove health, or we are in the middle of the board which means we need to self-destruct.
-                                if unit.player_index == 0 and loc in game_state.game_map.get_edge_locations(game_state.game_map.TOP_LEFT) + game_state.game_map.get_edge_locations(game_state.game_map.TOP_RIGHT):
-                                    # Score on enemy.
-                                    # game_state.game_map.remove_one_unit(location=[loc[0], loc[1]], unit=unit)
-                                    game_state.enemy_health -= 1
-                                    gamelib.debug_write("Removing points from enemy because of unit at location ({}, {})".format(loc[0], loc[1]))
-                                elif unit.player_index == 1 and loc in game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_LEFT) + game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_RIGHT):
-                                    # Score on us.
-                                    # game_state.game_map.remove_one_unit(location=[loc[0], loc[1]], unit=unit)
-                                    game_state.my_health -= 1
-                                    gamelib.debug_write("Removing points from enemy because of unit at location ({}, {})".format(loc[0], loc[1]))
-                                else:
-                                    # This is now a self destruct so will need handling.
-                                    # TODO - These units should be allowed to attack first.
-                                    gamelib.debug_write("Calling the self destruct logic for location: ({}, {})".format(loc[0], loc[1]))
-                                    successfully_updated = updated_game_map.add_existing_unit(unit, location=loc)
-                                    self_destruct_list.append(loc)
-                            else:
-                                # Find the next location in the path
-                                for index, path_loc in enumerate(path):
-                                    # gamelib.debug_write('Searching for path element matching. Currently {}, looking for {}'.format(path_loc, loc))
-                                    if path_loc == loc:
-                                        break
+    #                         if loc == path[-1]:
+    #                             gamelib.debug_write("Unit at location: ({}, {}) is at the end of the path.".format(loc[0],loc[1]))
+    #                             # We are at the end of the path. Either we are at an edge which means we can remove health, or we are in the middle of the board which means we need to self-destruct.
+    #                             if unit.player_index == 0 and loc in game_state.game_map.get_edge_locations(game_state.game_map.TOP_LEFT) + game_state.game_map.get_edge_locations(game_state.game_map.TOP_RIGHT):
+    #                                 # Score on enemy.
+    #                                 # game_state.game_map.remove_one_unit(location=[loc[0], loc[1]], unit=unit)
+    #                                 game_state.enemy_health -= 1
+    #                                 gamelib.debug_write("Removing points from enemy because of unit at location ({}, {})".format(loc[0], loc[1]))
+    #                             elif unit.player_index == 1 and loc in game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_LEFT) + game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_RIGHT):
+    #                                 # Score on us.
+    #                                 # game_state.game_map.remove_one_unit(location=[loc[0], loc[1]], unit=unit)
+    #                                 game_state.my_health -= 1
+    #                                 gamelib.debug_write("Removing points from enemy because of unit at location ({}, {})".format(loc[0], loc[1]))
+    #                             else:
+    #                                 # This is now a self destruct so will need handling.
+    #                                 # TODO - These units should be allowed to attack first.
+    #                                 gamelib.debug_write("Calling the self destruct logic for location: ({}, {})".format(loc[0], loc[1]))
+    #                                 successfully_updated = updated_game_map.add_existing_unit(unit, location=loc)
+    #                                 self_destruct_list.append(loc)
+    #                         else:
+    #                             # Find the next location in the path
+    #                             for index, path_loc in enumerate(path):
+    #                                 # gamelib.debug_write('Searching for path element matching. Currently {}, looking for {}'.format(path_loc, loc))
+    #                                 if path_loc == loc:
+    #                                     break
 
-                                if index == len(path) - 1:
-                                    # This signals an error that we could not find a match so throw an error
-                                    gamelib.debug_write("BIG PROBLMEMMMMMMMMO. Could not find current location in the path which is very bad.")
-                                else:
-                                    # Should be able to get next term. No need to check i+1 is valid because above loop would have caught path[-1] == loc.
-                                    # successfully_removed = updated_game_map.remove_one_unit(location=loc, unit=unit)
-                                    unit.x, unit.y = path[index+1]
-                                    # Add to the updated game map.
-                                    successfully_updated = updated_game_map.add_existing_unit(unit, location=path[index+1])
-                                    gamelib.debug_write("Updated: {}".format(successfully_updated))
+    #                             if index == len(path) - 1:
+    #                                 # This signals an error that we could not find a match so throw an error
+    #                                 gamelib.debug_write("BIG PROBLMEMMMMMMMMO. Could not find current location in the path which is very bad.")
+    #                             else:
+    #                                 # Should be able to get next term. No need to check i+1 is valid because above loop would have caught path[-1] == loc.
+    #                                 # successfully_removed = updated_game_map.remove_one_unit(location=loc, unit=unit)
+    #                                 unit.x, unit.y = path[index+1]
+    #                                 # Add to the updated game map.
+    #                                 successfully_updated = updated_game_map.add_existing_unit(unit, location=path[index+1])
+    #                                 gamelib.debug_write("Updated: {}".format(successfully_updated))
                                     
-                                    # SHOULD WE REMOVE FROM OUR GAME MAP? 
-                                    # game_state.game_map.move_unit(unit=unit, location=path[index+1])
-                                    movement = True
-                                    gamelib.debug_write("Moved Unit form ({}, {}) old map to ({}, {}) new map".format(loc[0], loc[1], unit.x, unit.y))
-                        else:
-                            # None moving piece this turn so just copy over.
-                            updated_game_map.add_existing_unit(unit, location=loc)
+    #                                 # SHOULD WE REMOVE FROM OUR GAME MAP? 
+    #                                 # game_state.game_map.move_unit(unit=unit, location=path[index+1])
+    #                                 movement = True
+    #                                 gamelib.debug_write("Moved Unit form ({}, {}) old map to ({}, {}) new map".format(loc[0], loc[1], unit.x, unit.y))
+    #                     else:
+    #                         # None moving piece this turn so just copy over.
+    #                         updated_game_map.add_existing_unit(unit, location=loc)
 
-        # We now have an updated game_map, so we can use this to perform the attacks.
-        # Set the new game_map to our game_state.                
-        game_state.game_map = updated_game_map
-        buildings_destroyed = False     
+    #     # We now have an updated game_map, so we can use this to perform the attacks.
+    #     # Set the new game_map to our game_state.                
+    #     game_state.game_map = updated_game_map
+    #     buildings_destroyed = False     
 
-        # For units in the self-destruct list we can call the logic.
-        for loc in self_destruct_list:
-            for unit in game_state.game_map[loc]:
-                buildings_destroyed = self.self_destruct_logic(game_state, unit, buildings_destroyed)
-                # Remove this unit from the game_map.
-                game_state.game_map.remove_one_unit(loc, unit)
+    #     # For units in the self-destruct list we can call the logic.
+    #     for loc in self_destruct_list:
+    #         for unit in game_state.game_map[loc]:
+    #             buildings_destroyed = self.self_destruct_logic(game_state, unit, buildings_destroyed)
+    #             # Remove this unit from the game_map.
+    #             game_state.game_map.remove_one_unit(loc, unit)
 
         
-        # Then look at all of the attacks.
-        # All units attack (STAGE 2).
-        for loc in game_state.game_map:
-            if game_state.game_map.in_arena_bounds(loc):
-                # We have at least one unit here, so run through them, and find the target.
-                for unit in game_state.game_map[loc]:
-                    # Find the target
-                    gamelib.debug_write("Unit currently attacking: {}".format(unit))
-                    target_unit = game_state.get_target(unit)
-                    gamelib.debug_write("Target : {}".format(target_unit))
-                    if target_unit is not None:
-                        # Remove health from these units picking whether to use the damage to stationary and moving units
-                        # IMPORTANT: NEED TO REFER TO THESE USING THE UNITS ARE GAME_MAP CAN HAVE MORE THAN ONE ELEMENT IN THE LIST AT EACH LOCATION 
-                        if(target_unit.stationary):
-                            target_unit.health -= unit.damage_f
-                            gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_f))
-                        else:
-                            target_unit.health -= unit.damage_i
-                            gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_i))
+    #     # Then look at all of the attacks.
+    #     # All units attack (STAGE 2).
+    #     for loc in game_state.game_map:
+    #         if game_state.game_map.in_arena_bounds(loc):
+    #             # We have at least one unit here, so run through them, and find the target.
+    #             for unit in game_state.game_map[loc]:
+    #                 # Find the target
+    #                 gamelib.debug_write("Unit currently attacking: {}".format(unit))
+    #                 target_unit = game_state.get_target(unit)
+    #                 gamelib.debug_write("Target : {}".format(target_unit))
+    #                 if target_unit is not None:
+    #                     # Remove health from these units picking whether to use the damage to stationary and moving units
+    #                     # IMPORTANT: NEED TO REFER TO THESE USING THE UNITS ARE GAME_MAP CAN HAVE MORE THAN ONE ELEMENT IN THE LIST AT EACH LOCATION 
+    #                     if(target_unit.stationary):
+    #                         target_unit.health -= unit.damage_f
+    #                         gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_f))
+    #                     else:
+    #                         target_unit.health -= unit.damage_i
+    #                         gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_i))
                         
-                        # Remove if health has fallen below zero. (STAGE 3). (techincally in stage 3 but I think it works here)
-                        if target_unit.health <= 0:
-                            # Remove from the list.
-                            # TODO - Check this works, unsure it deffo will.
-                            game_state.game_map.remove_one_unit(location=[target_unit.x, target_unit.y], unit=target_unit)
-                            gamelib.debug_write("Removing unit at location ({}, {})".format(loc[0], loc[1]))
-                            if target_unit.stationary:
-                                buildings_destroyed = True      # This is to trigger a repathing.
+    #                     # Remove if health has fallen below zero. (STAGE 3). (techincally in stage 3 but I think it works here)
+    #                     if target_unit.health <= 0:
+    #                         # Remove from the list.
+    #                         # TODO - Check this works, unsure it deffo will.
+    #                         game_state.game_map.remove_one_unit(location=[target_unit.x, target_unit.y], unit=target_unit)
+    #                         gamelib.debug_write("Removing unit at location ({}, {})".format(loc[0], loc[1]))
+    #                         if target_unit.stationary:
+    #                             buildings_destroyed = True      # This is to trigger a repathing.
 
 
-        gamelib.debug_write("Finished rolling forward one step.")
-        gamelib.debug_write("Passing back values. Movement: {}, BuildingDest: {}".format(movement, buildings_destroyed))
-        # Return with next frame and whether done or not.
-        return (frame_num + 1, movement or troops_alive, buildings_destroyed)
+    #     gamelib.debug_write("Finished rolling forward one step.")
+    #     gamelib.debug_write("Passing back values. Movement: {}, BuildingDest: {}".format(movement, buildings_destroyed))
+    #     # Return with next frame and whether done or not.
+    #     return (frame_num + 1, movement or troops_alive, buildings_destroyed)
 
 
-    def self_destruct_logic(self, game_state, unit, buildings_destroyed):
-        '''
-        Args: 
-            unit: GameUnit which is self-destructing.
-        '''
-        # First need to check that the unit has moved at least 5 squares.
-        if(abs(unit.x - unit.initial_x) + abs(unit.y - unit.initial_y) >= 5):
-            damage = unit.max_health * 1.5
-            damage_locations = game_state.game_map.get_locations_in_range(location=[unit.x, unit.y], radius=1.5)
-            for loc in damage_locations:
-                if loc != [unit.x, unit.y]:
-                    for targeted_unit in game_state.game_map[loc]:
-                        targeted_unit.health -= damage
-                        if targeted_unit.health <= 0:
-                            game_state.game_map.remove_one_unit([targeted_unit.x, targeted_unit.y], targeted_unit)
-                            buildings_destroyed = True
-        return buildings_destroyed
+    # def self_destruct_logic(self, game_state, unit, buildings_destroyed):
+    #     '''
+    #     Args: 
+    #         unit: GameUnit which is self-destructing.
+    #     '''
+    #     # First need to check that the unit has moved at least 5 squares.
+    #     if(abs(unit.x - unit.initial_x) + abs(unit.y - unit.initial_y) >= 5):
+    #         damage = unit.max_health * 1.5
+    #         damage_locations = game_state.game_map.get_locations_in_range(location=[unit.x, unit.y], radius=1.5)
+    #         for loc in damage_locations:
+    #             if loc != [unit.x, unit.y]:
+    #                 for targeted_unit in game_state.game_map[loc]:
+    #                     targeted_unit.health -= damage
+    #                     if targeted_unit.health <= 0:
+    #                         game_state.game_map.remove_one_unit([targeted_unit.x, targeted_unit.y], targeted_unit)
+    #                         buildings_destroyed = True
+    #     return buildings_destroyed
                             
        
 
