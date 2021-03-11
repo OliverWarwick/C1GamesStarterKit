@@ -1,0 +1,131 @@
+Random seed: 5050881448335265242
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Popped off the queue: P_Value: -1  Item: Building(name='DF', x=3, y=12)
+Attempting to spawn DF at location (3, 12). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='DF', x=11, y=4)
+Attempting to spawn DF at location (11, 4). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='DF', x=16, y=4)
+Attempting to spawn DF at location (16, 4). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='DF', x=24, y=12)
+Attempting to spawn DF at location (24, 12). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='FF', x=3, y=13)
+Attempting to spawn FF at location (3, 13). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='FF', x=11, y=5)
+Attempting to spawn FF at location (11, 5). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='FF', x=16, y=5)
+Attempting to spawn FF at location (16, 5). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='FF', x=24, y=13)
+Attempting to spawn FF at location (24, 13). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='upgrade', x=3, y=12)
+Attempting to spawn upgrade at location (3, 12). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='upgrade', x=11, y=4)
+Attempting to spawn upgrade at location (11, 4). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='upgrade', x=16, y=4)
+Attempting to spawn upgrade at location (16, 4). Number placed: 1
+Popped off the queue: P_Value: -1  Item: Building(name='upgrade', x=24, y=12)
+Attempting to spawn upgrade at location (24, 12). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=0, y=13)
+Attempting to spawn FF at location (0, 13). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=1, y=13)
+Attempting to spawn FF at location (1, 13). Number placed: 1
+Performing turn 1 of your custom algo strategy
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+{Building(name='DF', x=3, y=12): -1, Building(name='DF', x=11, y=4): -1, Building(name='DF', x=16, y=4): -1, Building(name='DF', x=24, y=12): -1, Building(name='FF', x=3, y=13): -1, Building(name='FF', x=11, y=5): -1, Building(name='FF', x=16, y=5): -1, Building(name='FF', x=24, y=13): -1, Building(name='upgrade', x=3, y=12): -1, Building(name='upgrade', x=11, y=4): -1, Building(name='upgrade', x=16, y=4): -1, Building(name='upgrade', x=24, y=12): -1, Building(name='FF', x=0, y=13): -0.6, Building(name='FF', x=1, y=13): -0.6}
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Placing back into prioity queue: 0
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=2, y=13)
+Attempting to spawn FF at location (2, 13). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=4, y=12)
+Attempting to spawn FF at location (4, 12). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=23, y=12)
+Attempting to spawn FF at location (23, 12). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=25, y=13)
+Attempting to spawn FF at location (25, 13). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=26, y=13)
+Attempting to spawn FF at location (26, 13). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='FF', x=27, y=13)
+Attempting to spawn FF at location (27, 13). Number placed: 1
+Popped off the queue: P_Value: -0.5  Item: Building(name='DF', x=4, y=11)
+Attempting to spawn DF at location (4, 11). Number placed: 0
+Popped off the queue: P_Value: -0.5  Item: Building(name='DF', x=7, y=8)
+Attempting to spawn DF at location (7, 8). Number placed: 0
+Popped off the queue: P_Value: -0.5  Item: Building(name='DF', x=20, y=8)
+Attempting to spawn DF at location (20, 8). Number placed: 0
+Popped off the queue: P_Value: -0.5  Item: Building(name='DF', x=23, y=11)
+Attempting to spawn DF at location (23, 11). Number placed: 0
+Popped off the queue: P_Value: -0.4  Item: Building(name='upgrade', x=4, y=11)
+Attempting to spawn upgrade at location (4, 11). Number placed: 0
+Popped off the queue: P_Value: -0.4  Item: Building(name='upgrade', x=7, y=8)
+Attempting to spawn upgrade at location (7, 8). Number placed: 0
+Popped off the queue: P_Value: -0.4  Item: Building(name='upgrade', x=20, y=8)
+Attempting to spawn upgrade at location (20, 8). Number placed: 0
+Popped off the queue: P_Value: -0.4  Item: Building(name='upgrade', x=23, y=11)
+Attempting to spawn upgrade at location (23, 11). Number placed: 0
+Popped off the queue: P_Value: -0.3  Item: Building(name='FF', x=5, y=11)
+Attempting to spawn FF at location (5, 11). Number placed: 1
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/blank-algo/algo_strategy.py", line 269, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/blank-algo/gamelib/algocore.py", line 59, in start
+    game_state_string = get_command()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/blank-algo/gamelib/util.py", line 12, in get_command
+    ret = sys.stdin.readline()
+KeyboardInterrupt
