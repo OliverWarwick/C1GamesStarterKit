@@ -385,6 +385,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         return attack_set_list
 
 
+    def prepare_attack_sets_for_us(self, game_state):
+        ''' return List[Attacker] '''
+        pass
+
+
     def find_oppo_best_attack_no_interceptors(self, game_state, attack_sets):
         ''' 
         Needs to be a copied game state object
