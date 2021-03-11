@@ -55,8 +55,13 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.p_queue = PriorityQueue()
         self.defence_priority_map = dict()
 
-        self.critical_turrets = []
-        self.crtical_walls = []
+        self.critical_turrets_non_hammer = []
+        self.crtical_walls_non_hammer = []
+        self.critical_turrets_hammer = []
+        self.critical_walls_hammer = []
+        self.critical_supports_non_hammer = []
+        self.critical_supports_hammer = []
+
         self.throw_interceptors = True
 
         self.verbose = False
@@ -74,6 +79,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         game_state.suppress_warnings(True)  #Comment or remove this line to enable warnings.
 
         self.base_strategy(game_state)
+        self.print_map(game_state)
 
         game_state.submit_turn()
 
@@ -87,13 +93,13 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         if game_state.turn_number == 0:
             self.inital_add_to_p_queue(game_state)
-            self.build_queued_defences(game_state)
-            if self.throw_interceptors:
-                copied_game_state = copy.deepcopy(game_state)
-                interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
-                self.place_attackers(game_state, interceptor_placement)
-        else:
-            raise StopIteration()
+        
+        self.build_queued_defences(game_state)
+        if self.throw_interceptors:
+            copied_game_state = copy.deepcopy(game_state)
+            interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
+            self.place_attackers(game_state, interceptor_placement)
+       
 
         
         
@@ -103,8 +109,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Round 0
         inital_turrets = [[3, 12], [24, 12], [7, 8], [20, 8]]
         inital_walls = [[3, 13], [24, 13], [7, 9], [20, 9]]
-        self.critical_turrets += inital_turrets
-        self.crtical_walls += inital_walls
+        self.critical_turrets_non_hammer += inital_turrets
+        self.crtical_walls_non_hammer += inital_walls
 
         # Round 1
         for index, turret in enumerate(inital_turrets):
@@ -115,9 +121,77 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Round 3
         next_walls = [[0, 13], [1, 13], [2, 13], [25, 13], [26, 13], [27, 13]]
-        self.crtical_walls += next_walls
+        self.crtical_walls_non_hammer += [[2, 13], [25, 13]]
+        self.critical_walls_hammer += [[0, 13], [1, 13], [26, 13], [27, 13]]
         for wall in next_walls:
             self.p_queue.put((-0.8, building(name=WALL, x=wall[0], y=wall[1])))
+
+        # DAVID / HENRY LOOK
+        # TODO
+        next_turrets = [[4, 11], [23, 11]]
+        self.critical_turrets_non_hammer += next_turrets
+        for index, turret in enumerate(next_turrets):
+            self.p_queue.put((-0.7 + int(index) * 0.01, building(name=TURRET, x=turret[0], y=turret[1])))
+            self.p_queue.put((-0.7 + int(index) * 0.015, building(name='upgrade', x=turret[0], y=turret[1])))
+        
+        next_walls = [[4, 12], [23, 12], [5, 11], [22, 11]]
+        self.crtical_walls_non_hammer += next_walls
+        for wall in next_walls:
+            self.p_queue.put((-0.65, building(name=WALL, x=wall[0], y=wall[1])))
+        
+        next_turrets = [[6, 9], [21, 9], [11, 4], [16, 4]]
+        self.critical_turrets_non_hammer += next_turrets
+        for turret in next_turrets:
+            self.p_queue.put((-0.6, building(name=TURRET, x=turret[0], y=turret[1])))
+        
+        next_walls = [[8, 8], [19, 8], [11, 5], [16, 5]]
+        self.crtical_walls_non_hammer += next_walls
+        for wall in next_walls:
+            self.p_queue.put((-0.55, building(name=WALL, x=wall[0], y=wall[1])))
+
+        # Upgrade those next_turrets
+        for turret in next_turrets:
+            self.p_queue.put((-0.5, building(name='upgrade', x=turret[0], y=turret[1])))
+
+        next_turrets = [[1, 12], [26, 12], [8, 7], [2, 12], [25, 12], [19, 7]] 
+        self.critical_turrets_hammer += [[1, 12], [2, 12], [25, 12], [26, 12]]
+        self.critical_turrets_non_hammer += [[8, 7], [19, 7]]
+        for turret in next_turrets:
+            self.p_queue.put((-0.45, building(name=TURRET, x=turret[0], y=turret[1])))
+
+        next_walls = [[9, 7], [18, 7], [10, 6], [17, 6], [12, 4], [13, 4], [14, 4], [15, 4], [6, 10]]
+        self.crtical_walls_non_hammer += next_walls
+        for wall in next_walls:
+            self.p_queue.put((-0.4, building(name=WALL, x=wall[0], y=wall[1])))
+
+        for turr in [[8, 7], [19, 7]]:
+            self.p_queue.put((-0.35, building(name='upgrade', x=turr[0], y=turr[1])))
+        
+
+        supports = [[12, 3], [13, 3], [14, 3], [15, 3], [13, 2], [14, 2]]
+        self.critical_supports_non_hammer += supports
+        for supp in supports:
+            self.p_queue.put((-0.3, building(name=SUPPORT, x=supp[0], y=supp[1])))
+            
+        extra_turrets = [[22, 12], [6, 11], [20, 10], [8, 9]]
+        self.critical_turrets_non_hammer += extra_turrets
+        for turret in extra_turrets:
+            self.p_queue.put((-0.25, building(name=TURRET, x=turret[0], y=turret[1])))
+
+
+        extra_walls = [[21, 12], [7, 11], [19, 11], [9, 10], [19, 10], [9, 9]]
+        self.crtical_walls_non_hammer += extra_walls
+        for wall in next_walls:
+            self.p_queue.put((-0.2, building(name=WALL, x=wall[0], y=wall[1])))
+
+        
+
+
+
+
+
+        
+
 
 
     def build_queued_defences(self, game_state):
@@ -238,7 +312,10 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # This will take in the game state from the updated_game_state_while... function which will have added what we would do in the next round.
         # We can then prepare some attckers and check whether they are feasible.
+
         # TODO - Need to prep for the oppo actual defences.
+
+        # DAVID / HENRY LOOK
 
         oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
         attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], [], [attacker(name=SCOUT, x=14, y=27, num=4)]]

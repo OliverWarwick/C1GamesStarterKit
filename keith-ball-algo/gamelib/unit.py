@@ -50,6 +50,7 @@ class GameUnit:
         self.current_path = None
         self.initial_x = None
         self.initial_y = None
+        self.has_been_shielded = False
 
     def __serialize_type(self):
         from .game_state import STRUCTURE_TYPES, UNIT_TYPE_TO_INDEX, SUPPORT
@@ -83,6 +84,7 @@ class GameUnit:
         self.current_path = path
         self.initial_x = x
         self.initial_y = y
+        self.has_been_shielded = False
 
 
     def __toString(self):

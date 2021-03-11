@@ -29,6 +29,8 @@ class Simulator:
 
         self.start_time = None
 
+        # DAVID / HENRY LOOK
+
         self.health_weighting = 1
         self.turret_weighting = 0.5
         self.support_weighting = 0.25
@@ -186,6 +188,12 @@ class Simulator:
 
         if self.verbose: gamelib.debug_write("Frame Number: {}".format(frame_num))
         if self.verbose: gamelib.debug_write("Building Destoryed: {}".format(buildings_destroyed))
+
+        for loc in game_state.game_map:
+            if game_state.game_map.in_arena_bounds(loc):
+                for unit in game_state.game_map[loc]:
+                    if not unit.stationary: 
+                        unit.has_been_shielded = False
         
         # Add any health bonuses which I think should be done before. (STAGE 0.)
         for loc in game_state.game_map:
@@ -196,6 +204,7 @@ class Simulator:
                     for unit in game_state.game_map[sup_loc]:
                         if not unit.stationary and not unit.has_been_shielded:
                             unit.health += game_state.game_map[loc][0].shieldPerUnit
+                            unit.has_been_shielded = True
                             if self.verbose: gamelib.debug_write("Adding health to unit at location ({}, {})".format(sup_loc[0], sup_loc[1]))
 
         if self.verbose: gamelib.debug_write("End of adding health bonuses")

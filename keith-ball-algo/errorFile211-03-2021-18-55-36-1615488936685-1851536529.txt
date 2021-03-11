@@ -1,0 +1,1051 @@
+Random seed: 153466262310873359
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Popped off the queue: P_Value: -1.0  Item: Building(name='DF', x=3, y=12)
+Attempting to spawn DF at location (3, 12). Number placed: 1
+Popped off the queue: P_Value: -1.0  Item: Building(name='upgrade', x=3, y=12)
+Attempting to spawn upgrade at location (3, 12). Number placed: 1
+Popped off the queue: P_Value: -0.99  Item: Building(name='DF', x=24, y=12)
+Attempting to spawn DF at location (24, 12). Number placed: 1
+Popped off the queue: P_Value: -0.985  Item: Building(name='upgrade', x=24, y=12)
+Attempting to spawn upgrade at location (24, 12). Number placed: 1
+Popped off the queue: P_Value: -0.98  Item: Building(name='DF', x=7, y=8)
+Attempting to spawn DF at location (7, 8). Number placed: 1
+Popped off the queue: P_Value: -0.97  Item: Building(name='DF', x=20, y=8)
+Attempting to spawn DF at location (20, 8). Number placed: 1
+Popped off the queue: P_Value: -0.97  Item: Building(name='upgrade', x=7, y=8)
+Attempting to spawn upgrade at location (7, 8). Number placed: 1
+Popped off the queue: P_Value: -0.955  Item: Building(name='upgrade', x=20, y=8)
+Attempting to spawn upgrade at location (20, 8). Number placed: 1
+Popped off the queue: P_Value: -0.9  Item: Building(name='FF', x=3, y=13)
+Attempting to spawn FF at location (3, 13). Number placed: 1
+Popped off the queue: P_Value: -0.9  Item: Building(name='FF', x=7, y=9)
+Attempting to spawn FF at location (7, 9). Number placed: 1
+Popped off the queue: P_Value: -0.9  Item: Building(name='FF', x=20, y=9)
+Attempting to spawn FF at location (20, 9). Number placed: 1
+Popped off the queue: P_Value: -0.9  Item: Building(name='FF', x=24, y=13)
+Attempting to spawn FF at location (24, 13). Number placed: 1
+Popped off the queue: P_Value: -0.8  Item: Building(name='FF', x=0, y=13)
+Attempting to spawn FF at location (0, 13). Number placed: 1
+Popped off the queue: P_Value: -0.8  Item: Building(name='FF', x=1, y=13)
+Attempting to spawn FF at location (1, 13). Number placed: 1
+Original P Queue: [(-0.8, Building(name='FF', x=2, y=13)), (-0.8, Building(name='FF', x=25, y=13)), (-0.65, Building(name='FF', x=5, y=11)), (-0.8, Building(name='FF', x=26, y=13)), (-0.7, Building(name='upgrade', x=4, y=11)), (-0.65, Building(name='FF', x=22, y=11)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=11, y=5)), (-0.8, Building(name='FF', x=27, y=13)), (-0.69, Building(name='DF', x=23, y=11)), (-0.6849999999999999, Building(name='upgrade', x=23, y=11)), (-0.65, Building(name='FF', x=23, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.55, Building(name='FF', x=16, y=5)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.7, Building(name='DF', x=4, y=11)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=2, y=12)), (-0.45, Building(name='DF', x=19, y=7)), (-0.65, Building(name='FF', x=4, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.2, Building(name='FF', x=13, y=4)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=26, y=12)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.45, Building(name='DF', x=25, y=12)), (-0.2, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=14, y=2)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11))]
+New P Queue: [(-0.8, Building(name='FF', x=2, y=13)), (-0.8, Building(name='FF', x=25, y=13)), (-0.65, Building(name='FF', x=5, y=11)), (-0.8, Building(name='FF', x=26, y=13)), (-0.7, Building(name='upgrade', x=4, y=11)), (-0.65, Building(name='FF', x=22, y=11)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=11, y=5)), (-0.8, Building(name='FF', x=27, y=13)), (-0.69, Building(name='DF', x=23, y=11)), (-0.6849999999999999, Building(name='upgrade', x=23, y=11)), (-0.65, Building(name='FF', x=23, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.55, Building(name='FF', x=16, y=5)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.7, Building(name='DF', x=4, y=11)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=2, y=12)), (-0.45, Building(name='DF', x=19, y=7)), (-0.65, Building(name='FF', x=4, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.2, Building(name='FF', x=13, y=4)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=26, y=12)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.45, Building(name='DF', x=25, y=12)), (-0.2, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=14, y=2)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------                                          -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 600FF 60                            ----------------------------------------------------------------------
+|---------------------------------------------------------------                                                                      ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|------------------------------------------              0DF 600FF 60                                                                                    ------------------------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------                                                                                                                                                                        --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------                                                                                                                                                                        --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|------------------------------------------              0DF 600FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|---------------------------------------------------------------                                                                      ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 600FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------                                          -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------                            ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------              -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0025560855865478516
+Time elapsed after finding oppo attack set: 0.002586841583251953
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 0.6000000000000001
+Simulation iteration: 1. Attacker List: []. Score: 2.6
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 2.6
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 0.6000000000000001
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 0.6000000000000001
+Time elapsed after finding best oppo attack: 0.518251895904541
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.5182809829711914
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 0.5
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 1.6
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 3.6
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 3.6
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 3.6
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 3.6
+Time elapsed after finding our best response: 3.155754804611206
+Performing turn 1 of your custom algo strategy
+Popped off the queue: P_Value: -0.8  Item: Building(name='FF', x=2, y=13)
+Attempting to spawn FF at location (2, 13). Number placed: 1
+Popped off the queue: P_Value: -0.8  Item: Building(name='FF', x=25, y=13)
+Attempting to spawn FF at location (25, 13). Number placed: 1
+Popped off the queue: P_Value: -0.8  Item: Building(name='FF', x=26, y=13)
+Attempting to spawn FF at location (26, 13). Number placed: 1
+Popped off the queue: P_Value: -0.8  Item: Building(name='FF', x=27, y=13)
+Attempting to spawn FF at location (27, 13). Number placed: 1
+Popped off the queue: P_Value: -0.7  Item: Building(name='DF', x=4, y=11)
+Attempting to spawn DF at location (4, 11). Number placed: 1
+Original P Queue: [(-0.7, Building(name='upgrade', x=4, y=11)), (-0.69, Building(name='DF', x=23, y=11)), (-0.65, Building(name='FF', x=5, y=11)), (-0.55, Building(name='FF', x=11, y=5)), (-0.6849999999999999, Building(name='upgrade', x=23, y=11)), (-0.65, Building(name='FF', x=22, y=11)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=16, y=5)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=2, y=12)), (-0.65, Building(name='FF', x=4, y=12)), (-0.65, Building(name='FF', x=23, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=25, y=12)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=26, y=12)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=14, y=2)), (-0.35, Building(name='upgrade', x=19, y=7))]
+New P Queue: [(-0.7, Building(name='upgrade', x=4, y=11)), (-0.69, Building(name='DF', x=23, y=11)), (-0.65, Building(name='FF', x=5, y=11)), (-0.55, Building(name='FF', x=11, y=5)), (-0.6849999999999999, Building(name='upgrade', x=23, y=11)), (-0.65, Building(name='FF', x=22, y=11)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=16, y=5)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=2, y=12)), (-0.65, Building(name='FF', x=4, y=12)), (-0.65, Building(name='FF', x=23, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=25, y=12)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=26, y=12)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=14, y=2)), (-0.35, Building(name='upgrade', x=19, y=7))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 24                            ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 60                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------                                                                                                                                                                        --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------                                                                                                                                                                        --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|---------------------------------------------------------------                                                                      ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0018339157104492188
+Time elapsed after finding oppo attack set: 0.0018548965454101562
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 2.0
+Simulation iteration: 1. Attacker List: []. Score: 4.0
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 4.0
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 2.0
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 2.0
+Time elapsed after finding best oppo attack: 0.6055011749267578
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.605532169342041
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 1.9
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 1.9
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 5.0
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 5.0
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 5.0
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 5.0
+Time elapsed after finding our best response: 2.9727542400360107
+Performing turn 2 of your custom algo strategy
+Popped off the queue: P_Value: -0.7  Item: Building(name='upgrade', x=4, y=11)
+Attempting to spawn upgrade at location (4, 11). Number placed: 1
+Popped off the queue: P_Value: -0.69  Item: Building(name='DF', x=23, y=11)
+Attempting to spawn DF at location (23, 11). Number placed: 1
+Original P Queue: [(-0.6849999999999999, Building(name='upgrade', x=23, y=11)), (-0.65, Building(name='FF', x=4, y=12)), (-0.65, Building(name='FF', x=5, y=11)), (-0.55, Building(name='FF', x=11, y=5)), (-0.45, Building(name='DF', x=2, y=12)), (-0.65, Building(name='FF', x=22, y=11)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=16, y=5)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.65, Building(name='FF', x=23, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=17, y=6))]
+New P Queue: [(-0.6849999999999999, Building(name='upgrade', x=23, y=11)), (-0.65, Building(name='FF', x=4, y=12)), (-0.65, Building(name='FF', x=5, y=11)), (-0.55, Building(name='FF', x=11, y=5)), (-0.45, Building(name='DF', x=2, y=12)), (-0.65, Building(name='FF', x=22, y=11)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=16, y=5)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.65, Building(name='FF', x=23, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=17, y=6))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 2                            ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 54                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------                                                                                                                                                                        --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------                                                                                                                                                                        --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|---------------------------------------------------------------              0DF 60                                                 ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0036919116973876953
+Time elapsed after finding oppo attack set: 0.003712892532348633
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 3.4
+Simulation iteration: 1. Attacker List: []. Score: 5.5
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 5.4
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 3.4
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 3.4
+Time elapsed after finding best oppo attack: 0.7692668437957764
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.7694299221038818
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 3.3
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 3.3
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 6.4
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 6.4
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 6.4
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 6.4
+Time elapsed after finding our best response: 3.0573577880859375
+Performing turn 3 of your custom algo strategy
+Popped off the queue: P_Value: -0.6849999999999999  Item: Building(name='upgrade', x=23, y=11)
+Attempting to spawn upgrade at location (23, 11). Number placed: 1
+Popped off the queue: P_Value: -0.65  Item: Building(name='FF', x=4, y=12)
+Attempting to spawn FF at location (4, 12). Number placed: 1
+Popped off the queue: P_Value: -0.65  Item: Building(name='FF', x=5, y=11)
+Attempting to spawn FF at location (5, 11). Number placed: 1
+Original P Queue: [(-0.65, Building(name='FF', x=22, y=11)), (-0.55, Building(name='FF', x=11, y=5)), (-0.65, Building(name='FF', x=23, y=12)), (-0.55, Building(name='FF', x=16, y=5)), (-0.45, Building(name='DF', x=2, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.25, Building(name='DF', x=20, y=10)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4))]
+New P Queue: [(-0.65, Building(name='FF', x=22, y=11)), (-0.55, Building(name='FF', x=11, y=5)), (-0.65, Building(name='FF', x=23, y=12)), (-0.55, Building(name='FF', x=16, y=5)), (-0.45, Building(name='DF', x=2, y=12)), (-0.6, Building(name='DF', x=6, y=9)), (-0.6, Building(name='DF', x=11, y=4)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.6, Building(name='DF', x=21, y=9)), (-0.6, Building(name='DF', x=16, y=4)), (-0.25, Building(name='DF', x=20, y=10)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.55, Building(name='FF', x=8, y=8)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=22, y=12)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=12, y=4))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 88                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 940FF 60                                          ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------                                                                                                                                                                        --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------                                                                                                                                                                        --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|---------------------------------------------------------------              0DF 60                                                 ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0031549930572509766
+Time elapsed after finding oppo attack set: 0.0031859874725341797
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 4.6
+Simulation iteration: 1. Attacker List: []. Score: 6.6
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 6.6
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 4.6
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 4.6
+Time elapsed after finding best oppo attack: 0.5169250965118408
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.5169548988342285
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 4.5
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 4.5
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 7.6
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 7.6
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 7.6
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 7.6
+Time elapsed after finding our best response: 2.6669840812683105
+Performing turn 4 of your custom algo strategy
+Popped off the queue: P_Value: -0.65  Item: Building(name='FF', x=22, y=11)
+Attempting to spawn FF at location (22, 11). Number placed: 1
+Popped off the queue: P_Value: -0.65  Item: Building(name='FF', x=23, y=12)
+Attempting to spawn FF at location (23, 12). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='DF', x=6, y=9)
+Attempting to spawn DF at location (6, 9). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='DF', x=11, y=4)
+Attempting to spawn DF at location (11, 4). Number placed: 1
+Original P Queue: [(-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=11, y=5)), (-0.6, Building(name='DF', x=21, y=9)), (-0.55, Building(name='FF', x=16, y=5)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=6, y=10)), (-0.55, Building(name='FF', x=8, y=8)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.4, Building(name='FF', x=18, y=7))]
+New P Queue: [(-0.6, Building(name='DF', x=16, y=4)), (-0.55, Building(name='FF', x=11, y=5)), (-0.6, Building(name='DF', x=21, y=9)), (-0.55, Building(name='FF', x=16, y=5)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=6, y=10)), (-0.55, Building(name='FF', x=8, y=8)), (-0.55, Building(name='FF', x=19, y=8)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.4, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=14, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.4, Building(name='FF', x=18, y=7))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 88                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 940FF 44                                          ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 56                                                        --------------------------------------------------------
+|-------------------------------------------------              0DF 60                                                                             -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------              0DF 60                                                                                                                                                   --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------                                                                                                                                                                        --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0016071796417236328
+Time elapsed after finding oppo attack set: 0.0016260147094726562
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 8.8
+Simulation iteration: 1. Attacker List: []. Score: 8.8
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 8.8
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 8.8
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 8.8
+Time elapsed after finding best oppo attack: 0.5009579658508301
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.5009880065917969
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 8.7
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 8.7
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 9.8
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 9.8
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 9.8
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 9.8
+Time elapsed after finding our best response: 2.6120738983154297
+Performing turn 5 of your custom algo strategy
+Popped off the queue: P_Value: -0.6  Item: Building(name='DF', x=16, y=4)
+Attempting to spawn DF at location (16, 4). Number placed: 1
+Popped off the queue: P_Value: -0.6  Item: Building(name='DF', x=21, y=9)
+Attempting to spawn DF at location (21, 9). Number placed: 1
+Popped off the queue: P_Value: -0.55  Item: Building(name='FF', x=8, y=8)
+Attempting to spawn FF at location (8, 8). Number placed: 1
+Popped off the queue: P_Value: -0.55  Item: Building(name='FF', x=11, y=5)
+Attempting to spawn FF at location (11, 5). Number placed: 1
+Original P Queue: [(-0.55, Building(name='FF', x=16, y=5)), (-0.55, Building(name='FF', x=19, y=8)), (-0.4, Building(name='FF', x=6, y=10)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=13, y=3)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7))]
+New P Queue: [(-0.55, Building(name='FF', x=16, y=5)), (-0.55, Building(name='FF', x=19, y=8)), (-0.4, Building(name='FF', x=6, y=10)), (-0.5, Building(name='upgrade', x=6, y=9)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=13, y=3)), (-0.5, Building(name='upgrade', x=11, y=4)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=1, y=12)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=9, y=7))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 88                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 940FF 28                                          ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 52                                                        --------------------------------------------------------
+|-------------------------------------------------              0DF 60                                                                             -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------              0DF 600FF 60                                                                                                                                            --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------              0DF 60                                                                                                                                                   --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 60                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.002750873565673828
+Time elapsed after finding oppo attack set: 0.0027778148651123047
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 11.0
+Simulation iteration: 1. Attacker List: []. Score: 11.0
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 11.0
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 11.0
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 11.0
+Time elapsed after finding best oppo attack: 0.5085268020629883
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.5085568428039551
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 10.9
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 10.9
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 12.0
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 12.0
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 12.0
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 12.0
+Time elapsed after finding our best response: 2.735330820083618
+Performing turn 6 of your custom algo strategy
+Popped off the queue: P_Value: -0.55  Item: Building(name='FF', x=16, y=5)
+Attempting to spawn FF at location (16, 5). Number placed: 1
+Popped off the queue: P_Value: -0.55  Item: Building(name='FF', x=19, y=8)
+Attempting to spawn FF at location (19, 8). Number placed: 1
+Popped off the queue: P_Value: -0.5  Item: Building(name='upgrade', x=6, y=9)
+Attempting to spawn upgrade at location (6, 9). Number placed: 1
+Original P Queue: [(-0.5, Building(name='upgrade', x=11, y=4)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.3, Building(name='EF', x=14, y=2)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=9, y=7))]
+New P Queue: [(-0.5, Building(name='upgrade', x=11, y=4)), (-0.5, Building(name='upgrade', x=16, y=4)), (-0.4, Building(name='FF', x=6, y=10)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.3, Building(name='EF', x=14, y=2)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=9, y=7))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 88                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 940FF 12                                          ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 48                                                        --------------------------------------------------------
+|-------------------------------------------------              0DF 60                                                                             -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------              0DF 600FF 60                                                                                                                                            --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------              0DF 600FF 60                                                                                                                                            --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 60                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0015878677368164062
+Time elapsed after finding oppo attack set: 0.0016050338745117188
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 12.2
+Simulation iteration: 1. Attacker List: []. Score: 12.2
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 12.1
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=4)]     because of score 12.1
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: 12.1
+Time elapsed after finding best oppo attack: 0.5777480602264404
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.57778000831604
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 12.0
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 12.0
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 13.1
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 13.1
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 13.1
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 13.1
+Time elapsed after finding our best response: 2.812690258026123
+Performing turn 7 of your custom algo strategy
+Popped off the queue: P_Value: -0.5  Item: Building(name='upgrade', x=11, y=4)
+Attempting to spawn upgrade at location (11, 4). Number placed: 1
+Popped off the queue: P_Value: -0.5  Item: Building(name='upgrade', x=16, y=4)
+Original P Queue: [(-0.5, Building(name='upgrade', x=16, y=4)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.4, Building(name='FF', x=6, y=10)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.3, Building(name='EF', x=14, y=2)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11))]
+New P Queue: [(-0.5, Building(name='upgrade', x=16, y=4)), (-0.5, Building(name='upgrade', x=21, y=9)), (-0.4, Building(name='FF', x=6, y=10)), (-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=8, y=7)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.3, Building(name='EF', x=14, y=2)), (-0.45, Building(name='DF', x=26, y=12)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=13, y=4)), (-0.25, Building(name='DF', x=6, y=11))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 88                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 94                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 40                                                        --------------------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------              0DF 600FF 60                                                                                                                                            --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------              0DF 600FF 60                                                                                                                                            --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 60                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0019452571868896484
+Time elapsed after finding oppo attack set: 0.0019681453704833984
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 13.1
+Simulation iteration: 1. Attacker List: []. Score: 13.1
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 13.1
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 13.1
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 13.1
+Time elapsed after finding best oppo attack: 0.5627450942993164
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.5627760887145996
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 13.0
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 13.0
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 14.1
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 14.1
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 14.1
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 14.1
+Time elapsed after finding our best response: 2.704615354537964
+Performing turn 8 of your custom algo strategy
+Popped off the queue: P_Value: -0.5  Item: Building(name='upgrade', x=16, y=4)
+Attempting to spawn upgrade at location (16, 4). Number placed: 1
+Popped off the queue: P_Value: -0.5  Item: Building(name='upgrade', x=21, y=9)
+Attempting to spawn upgrade at location (21, 9). Number placed: 1
+Original P Queue: [(-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=6, y=10)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=8, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.45, Building(name='DF', x=25, y=12)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=26, y=12)), (-0.2, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=18, y=7))]
+New P Queue: [(-0.45, Building(name='DF', x=1, y=12)), (-0.45, Building(name='DF', x=2, y=12)), (-0.4, Building(name='FF', x=6, y=10)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=8, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.45, Building(name='DF', x=25, y=12)), (-0.45, Building(name='DF', x=19, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.45, Building(name='DF', x=26, y=12)), (-0.2, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=18, y=7))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 88                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 94                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 20                                                        --------------------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------              0DF 600FF 60                                                                                                                                            --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 60                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.001718759536743164
+Time elapsed after finding oppo attack set: 0.001748800277709961
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 14.1
+Simulation iteration: 1. Attacker List: []. Score: 14.1
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 14.1
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 14.1
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 14.1
+Time elapsed after finding best oppo attack: 0.7111847400665283
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.7112166881561279
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 14.0
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 14.0
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 15.1
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 15.1
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 15.1
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 15.1
+Time elapsed after finding our best response: 2.9431726932525635
+Performing turn 9 of your custom algo strategy
+Popped off the queue: P_Value: -0.45  Item: Building(name='DF', x=1, y=12)
+Attempting to spawn DF at location (1, 12). Number placed: 1
+Popped off the queue: P_Value: -0.45  Item: Building(name='DF', x=2, y=12)
+Attempting to spawn DF at location (2, 12). Number placed: 1
+Popped off the queue: P_Value: -0.45  Item: Building(name='DF', x=8, y=7)
+Attempting to spawn DF at location (8, 7). Number placed: 1
+Original P Queue: [(-0.45, Building(name='DF', x=19, y=7)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=6, y=10)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=26, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=9, y=7))]
+New P Queue: [(-0.45, Building(name='DF', x=19, y=7)), (-0.45, Building(name='DF', x=25, y=12)), (-0.4, Building(name='FF', x=6, y=10)), (-0.3, Building(name='EF', x=13, y=3)), (-0.45, Building(name='DF', x=26, y=12)), (-0.4, Building(name='FF', x=12, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=15, y=4)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=9, y=7))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 88                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 94                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------                     0FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0038340091705322266
+Time elapsed after finding oppo attack set: 0.003871917724609375
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 16.5
+Simulation iteration: 1. Attacker List: []. Score: 16.5
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 16.5
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 16.5
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 16.5
+Time elapsed after finding best oppo attack: 0.6006770133972168
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.6007070541381836
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 16.4
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 16.4
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 17.5
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 17.5
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 17.5
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 17.5
+Time elapsed after finding our best response: 2.886910915374756
+Performing turn 10 of your custom algo strategy
+Popped off the queue: P_Value: -0.45  Item: Building(name='DF', x=19, y=7)
+Attempting to spawn DF at location (19, 7). Number placed: 1
+Popped off the queue: P_Value: -0.45  Item: Building(name='DF', x=25, y=12)
+Attempting to spawn DF at location (25, 12). Number placed: 1
+Popped off the queue: P_Value: -0.45  Item: Building(name='DF', x=26, y=12)
+Attempting to spawn DF at location (26, 12). Number placed: 1
+Original P Queue: [(-0.4, Building(name='FF', x=6, y=10)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.3, Building(name='EF', x=13, y=3)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=15, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12))]
+New P Queue: [(-0.4, Building(name='FF', x=6, y=10)), (-0.4, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=12, y=4)), (-0.3, Building(name='EF', x=13, y=3)), (-0.4, Building(name='FF', x=10, y=6)), (-0.4, Building(name='FF', x=13, y=4)), (-0.4, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.4, Building(name='FF', x=15, y=4)), (-0.4, Building(name='FF', x=14, y=4)), (-0.4, Building(name='FF', x=18, y=7)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 76                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 94                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0025658607482910156
+Time elapsed after finding oppo attack set: 0.0025949478149414062
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 19.0
+Simulation iteration: 1. Attacker List: []. Score: 19.0
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 19.0
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 19.0
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 19.0
+Time elapsed after finding best oppo attack: 0.5204508304595947
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.5204811096191406
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 18.9
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 18.9
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 20.0
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 20.0
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 20.0
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 20.0
+Time elapsed after finding our best response: 3.229646921157837
+Performing turn 11 of your custom algo strategy
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=6, y=10)
+Attempting to spawn FF at location (6, 10). Number placed: 1
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=9, y=7)
+Attempting to spawn FF at location (9, 7). Number placed: 1
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=10, y=6)
+Attempting to spawn FF at location (10, 6). Number placed: 1
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=12, y=4)
+Attempting to spawn FF at location (12, 4). Number placed: 1
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=13, y=4)
+Attempting to spawn FF at location (13, 4). Number placed: 1
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=14, y=4)
+Attempting to spawn FF at location (14, 4). Number placed: 1
+Original P Queue: [(-0.4, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=13, y=3)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=14, y=2)), (-0.25, Building(name='DF', x=22, y=12)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9))]
+New P Queue: [(-0.4, Building(name='FF', x=15, y=4)), (-0.3, Building(name='EF', x=13, y=3)), (-0.4, Building(name='FF', x=17, y=6)), (-0.3, Building(name='EF', x=14, y=2)), (-0.25, Building(name='DF', x=22, y=12)), (-0.35, Building(name='upgrade', x=8, y=7)), (-0.4, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.2, Building(name='FF', x=12, y=4)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.25, Building(name='DF', x=8, y=9))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 60                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 92                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 60                                                                      -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------                     0FF 60                                                                                                                                                          -------
+|                            0FF 60
+|                            0FF 60
+|-------                                                                                                                                                                                      -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------                                                                                                                                            ----------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0016949176788330078
+Time elapsed after finding oppo attack set: 0.0017168521881103516
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 20.6
+Simulation iteration: 1. Attacker List: []. Score: 20.6
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 20.6
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 20.6
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 20.6
+Time elapsed after finding best oppo attack: 0.5227618217468262
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.522799015045166
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 20.5
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 20.5
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 21.6
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 20.6
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 21.6
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 21.6
+Time elapsed after finding our best response: 3.217555046081543
+Performing turn 12 of your custom algo strategy
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=15, y=4)
+Attempting to spawn FF at location (15, 4). Number placed: 1
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=17, y=6)
+Attempting to spawn FF at location (17, 6). Number placed: 1
+Popped off the queue: P_Value: -0.4  Item: Building(name='FF', x=18, y=7)
+Attempting to spawn FF at location (18, 7). Number placed: 1
+Popped off the queue: P_Value: -0.35  Item: Building(name='upgrade', x=8, y=7)
+Original P Queue: [(-0.35, Building(name='upgrade', x=8, y=7)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=2)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=12, y=4)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=13, y=4))]
+New P Queue: [(-0.35, Building(name='upgrade', x=8, y=7)), (-0.35, Building(name='upgrade', x=19, y=7)), (-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=14, y=2)), (-0.3, Building(name='EF', x=13, y=3)), (-0.2, Building(name='FF', x=12, y=4)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=13, y=4))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 44                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 90                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 60                                                                      -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------                     0FF 60                                                                                                                                                          -------
+|                            0FF 60
+|                            0FF 60
+|-------                     0FF 60                                                                                                                                                          -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0021457672119140625
+Time elapsed after finding oppo attack set: 0.002166748046875
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 21.9
+Simulation iteration: 1. Attacker List: []. Score: 21.9
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 21.9
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 21.9
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 21.9
+Time elapsed after finding best oppo attack: 0.6105868816375732
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.6106166839599609
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 21.8
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 21.8
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 22.9
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 22.9
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 22.9
+Time elapsed after finding our best response: 2.8690989017486572
+Performing turn 13 of your custom algo strategy
+Popped off the queue: P_Value: -0.35  Item: Building(name='upgrade', x=8, y=7)
+Attempting to spawn upgrade at location (8, 7). Number placed: 1
+Popped off the queue: P_Value: -0.35  Item: Building(name='upgrade', x=19, y=7)
+Attempting to spawn upgrade at location (19, 7). Number placed: 1
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=12, y=3)
+Original P Queue: [(-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=6, y=11)), (-0.3, Building(name='EF', x=13, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=8, y=9)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.3, Building(name='EF', x=14, y=3))]
+New P Queue: [(-0.3, Building(name='EF', x=12, y=3)), (-0.3, Building(name='EF', x=13, y=2)), (-0.25, Building(name='DF', x=6, y=11)), (-0.3, Building(name='EF', x=13, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=8, y=9)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=2)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3)), (-0.3, Building(name='EF', x=14, y=3))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 28                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 88                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 60                                                                      -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------                     0FF 60                                                                                                                                                          -------
+|                            0FF 60
+|                            0FF 60
+|-------                     0FF 60                                                                                                                                                          -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|-----------------------------------              0DF 600FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.00972604751586914
+Time elapsed after finding oppo attack set: 0.009757041931152344
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 22.9
+Simulation iteration: 1. Attacker List: []. Score: 22.9
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 22.9
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 22.9
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 22.9
+Time elapsed after finding best oppo attack: 0.9250597953796387
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.9250907897949219
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 22.8
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 22.8
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 23.9
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 22.9
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 23.9
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 23.9
+Time elapsed after finding our best response: 3.7421510219573975
+Performing turn 14 of your custom algo strategy
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=12, y=3)
+Attempting to spawn EF at location (12, 3). Number placed: 1
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=13, y=2)
+Original P Queue: [(-0.3, Building(name='EF', x=13, y=2)), (-0.3, Building(name='EF', x=13, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.3, Building(name='EF', x=14, y=2)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=8, y=9)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3))]
+New P Queue: [(-0.3, Building(name='EF', x=13, y=2)), (-0.3, Building(name='EF', x=13, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.3, Building(name='EF', x=14, y=2)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=8, y=9)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=14, y=3)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.3, Building(name='EF', x=15, y=3))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 12                                   ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 86                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 600DF 60                                                               -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------              0EF 10FF 60                                                                                                                                                          -------
+|                            0FF 60
+|                            0FF 60
+|-------                     0FF 60                                                                                                                                                          -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.003945827484130859
+Time elapsed after finding oppo attack set: 0.003966808319091797
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 24.65
+Simulation iteration: 1. Attacker List: []. Score: 24.65
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 24.65
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 24.65
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 24.65
+Time elapsed after finding best oppo attack: 0.5224850177764893
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.522514820098877
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 24.55
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 24.55
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 25.65
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 25.65
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 25.65
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 25.65
+Time elapsed after finding our best response: 3.510985851287842
+Performing turn 15 of your custom algo strategy
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=13, y=2)
+Attempting to spawn EF at location (13, 2). Number placed: 1
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=13, y=3)
+Attempting to spawn EF at location (13, 3). Number placed: 1
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=14, y=2)
+Original P Queue: [(-0.3, Building(name='EF', x=14, y=2)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=8, y=9)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10))]
+New P Queue: [(-0.3, Building(name='EF', x=14, y=2)), (-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=6, y=11)), (-0.3, Building(name='EF', x=15, y=3)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=8, y=9)), (-0.25, Building(name='DF', x=20, y=10)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=6, y=10))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 58                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------                                                        ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 82                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 60                                                                      -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------              0EF 10FF 60                                                                                                                                                          -------
+|              0EF 10EF 10FF 60
+|                            0FF 60
+|-------                     0FF 60                                                                                                                                                          -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.017229080200195312
+Time elapsed after finding oppo attack set: 0.01725316047668457
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 25.15
+Simulation iteration: 1. Attacker List: []. Score: 25.15
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 25.15
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 25.15
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 25.15
+Time elapsed after finding best oppo attack: 0.6644060611724854
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.6644401550292969
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 25.05
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 25.05
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 26.15
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 26.15
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 26.15
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 26.15
+Time elapsed after finding our best response: 4.242228984832764
+Performing turn 16 of your custom algo strategy
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=14, y=2)
+Attempting to spawn EF at location (14, 2). Number placed: 1
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=14, y=3)
+Original P Queue: [(-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=6, y=10)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.25, Building(name='DF', x=8, y=9))]
+New P Queue: [(-0.3, Building(name='EF', x=14, y=3)), (-0.25, Building(name='DF', x=20, y=10)), (-0.3, Building(name='EF', x=15, y=3)), (-0.2, Building(name='FF', x=6, y=10)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.25, Building(name='DF', x=6, y=11)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=17, y=6)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=15, y=4)), (-0.25, Building(name='DF', x=8, y=9))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 520FF 20                     -----------------------------------------------------------------------------
+|----------------------------------------------------------------------                                                        ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 78                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 600DF 60                                                               -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------              0EF 10FF 60                                                                                                                                                          -------
+|              0EF 10EF 10FF 60
+|              0EF 1       0FF 60
+|-------                     0FF 60                                                                                                                                                          -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.0052950382232666016
+Time elapsed after finding oppo attack set: 0.005316019058227539
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 26.9
+Simulation iteration: 1. Attacker List: []. Score: 26.9
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 26.8
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=4)]     because of score 26.8
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: 26.8
+Time elapsed after finding best oppo attack: 0.6823110580444336
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.6823420524597168
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 26.7
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 26.7
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 27.8
+Simulation iteration: 3. Interceptor List: [Attacker(name='SI', x=9, y=4, num=1)]. Score: 27.8
+Returing as our best attack: [Attacker(name='SI', x=18, y=4, num=1)]     because of score 27.8
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 27.8
+Time elapsed after finding our best response: 3.85575795173645
+Performing turn 17 of your custom algo strategy
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=14, y=3)
+Attempting to spawn EF at location (14, 3). Number placed: 1
+Popped off the queue: P_Value: -0.3  Item: Building(name='EF', x=15, y=3)
+Attempting to spawn EF at location (15, 3). Number placed: 1
+Popped off the queue: P_Value: -0.25  Item: Building(name='DF', x=6, y=11)
+Original P Queue: [(-0.25, Building(name='DF', x=6, y=11)), (-0.25, Building(name='DF', x=20, y=10)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=6, y=10)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=17, y=6))]
+New P Queue: [(-0.25, Building(name='DF', x=6, y=11)), (-0.25, Building(name='DF', x=20, y=10)), (-0.25, Building(name='DF', x=8, y=9)), (-0.2, Building(name='FF', x=6, y=10)), (-0.25, Building(name='DF', x=22, y=12)), (-0.2, Building(name='FF', x=12, y=4)), (-0.2, Building(name='FF', x=15, y=4)), (-0.2, Building(name='FF', x=14, y=4)), (-0.2, Building(name='FF', x=10, y=6)), (-0.2, Building(name='FF', x=13, y=4)), (-0.2, Building(name='FF', x=9, y=7)), (-0.2, Building(name='FF', x=18, y=7)), (-0.2, Building(name='FF', x=17, y=6))]
+After adding our next p queue elements
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 26                            -----------------------------------------------------------------------------
+|----------------------------------------------------------------------                                                        ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 74                                                 ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 60                                                                      -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|-------              0EF 10FF 60                                                                                                                                                          -------
+|              0EF 10EF 10FF 60
+|              0EF 10EF 10FF 60
+|-------              0EF 10FF 60                                                                                                                                                          -------
+|--------------              0DF 1000FF 60                                                                                                                                            --------------
+|---------------------                     0FF 60                                                                                                                              ---------------------
+|----------------------------                     0FF 60                                                                                                                ----------------------------
+|-----------------------------------              0DF 1000FF 60                                                                                                  -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------              0DF 100                                                                             -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                                        --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                                          ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60                     -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+Time elapsed after updating game state: 0.003595113754272461
+Time elapsed after finding oppo attack set: 0.003612995147705078
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]. Score: 27.8
+Simulation iteration: 1. Attacker List: []. Score: 27.8
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 27.8
+Returing as oppo best attack: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)]     because of score 27.8
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=2), Attacker(name='PI', x=23, y=18, num=2)] with score: 27.8
+Time elapsed after finding best oppo attack: 0.889477014541626
+Our possible interceptor responcses: [[Attacker(name='SI', x=0, y=13, num=1)], [Attacker(name='SI', x=27, y=13, num=1)], [Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=9, y=4, num=1)]]
+Time elapsed after getting our interceptor placements: 0.8895089626312256
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=0, y=13, num=1)]. Score: 27.7
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=27, y=13, num=1)]. Score: 27.7
+Simulation iteration: 2. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 28.8
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 979, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/algocore.py", line 74, in start
+    self.on_turn(game_state_string)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 81, in on_turn
+    self.base_strategy(game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 99, in base_strategy
+    interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 272, in find_oppo_best_strategy_and_interceptor_response
+    our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 405, in find_our_best_response
+    roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 74, in roll_out_one_turn
+    self.simulate_one_turn(self.simulated_game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 171, in simulate_one_turn
+    current_frame_num, not_done, buildings_destroyed = self.simulate_one_action_frame(game_state, current_frame_num, buildings_destroyed)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 307, in simulate_one_action_frame
+    target_unit = game_state.get_target(unit)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/game_state.py", line 614, in get_target
+    possible_locations = self.game_map.get_locations_in_range(attacker_location, attacking_unit.attackRange)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/game_map.py", line 260, in get_locations_in_range
+    search_radius = math.ceil(radius)
+KeyboardInterrupt
