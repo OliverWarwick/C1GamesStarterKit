@@ -9,6 +9,7 @@ import copy
 from collections import deque, namedtuple
 from simulator import Simulator
 from queue import PriorityQueue
+import time
 
 """
 Most of the algo code you write will be in this file unless you create new
@@ -52,6 +53,13 @@ class AlgoStrategy(gamelib.AlgoCore):
         # This is a good place to do initial setup
         self.scored_on_locations = []
         self.p_queue = PriorityQueue()
+        self.defence_priority_map = dict()
+
+        self.critical_turrets = []
+        self.crtical_walls = []
+        self.throw_interceptors = True
+
+        self.verbose = False
 
     def on_turn(self, turn_state):
         """
@@ -79,35 +87,120 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         if game_state.turn_number == 0:
             self.inital_add_to_p_queue(game_state)
+            self.build_queued_defences(game_state)
+            if self.throw_interceptors:
+                copied_game_state = copy.deepcopy(game_state)
+                interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
+                self.place_attackers(game_state, interceptor_placement)
+        else:
+            raise StopIteration()
 
-        # our_attackers = [attacker(name=SCOUT, x=6, y=7, num=1), attacker(name=DEMOLISHER, x=13, y=0, num=1)]
-        # oppo_attackers = []
-
-        # our_defences = []
-        # oppo_defences = [building(name=WALL, x=i, y=14) for i in range(0, 28) if i not in [13, 14, 15]]
-        # oppo_defences += [building(name=TURRET, x=20, y=20), building(name='upgrade', x=20,y=20)]
-
-        # gamelib.debug_write("Oppo Defences: {}".format(oppo_defences))
-
-        # self.roll_out_one_turn(game_state, our_attackers, oppo_attackers, our_defences, oppo_defences)
-        # sim = Simulator(game_state, self.config)
-        # sim.roll_out_one_turn(our_attackers, oppo_attackers, our_defences, oppo_defences)
-        # sim.reset()
-        copied_game_state = copy.deepcopy(game_state)
-        self.update_game_state_while_p_queue_unloading(copied_game_state)
-        self.prepare_attack_sets_for_oppo_during_first_stage(copied_game_state)
+        
+        
 
     def inital_add_to_p_queue(self, game_state):
+        
+        # Round 0
+        inital_turrets = [[3, 12], [24, 12], [7, 8], [20, 8]]
+        inital_walls = [[3, 13], [24, 13], [7, 9], [20, 9]]
+        self.critical_turrets += inital_turrets
+        self.crtical_walls += inital_walls
 
-        inital_turrets = [[3, 12], [24, 12], [11, 4], [16, 4]]
-        inital_walls = [[3, 13], [24, 13], [7, 8], [20, 8]]
-
-        for turret in inital_turrets:
-            self.p_queue.put((-1, building(name=TURRET, x=turret[0], y=turret[1])))
-            self.p_queue.put((-1, building(name='upgrade', x=turret[0], y=turret[1])))
+        # Round 1
+        for index, turret in enumerate(inital_turrets):
+            self.p_queue.put((-1 + int(index) * 0.01, building(name=TURRET, x=turret[0], y=turret[1])))
+            self.p_queue.put((-1 + int(index) * 0.015, building(name='upgrade', x=turret[0], y=turret[1])))
         for wall in inital_walls:
-            self.p_queue.put((-1, building(name=WALL, x=wall[0], y=wall[1])))
+            self.p_queue.put((-0.9, building(name=WALL, x=wall[0], y=wall[1])))
 
+        # Round 3
+        next_walls = [[0, 13], [1, 13], [2, 13], [25, 13], [26, 13], [27, 13]]
+        self.crtical_walls += next_walls
+        for wall in next_walls:
+            self.p_queue.put((-0.8, building(name=WALL, x=wall[0], y=wall[1])))
+
+
+    def build_queued_defences(self, game_state):
+        number_placed = 1
+        should_be_able_to_place = True
+        # Takes what on p queue.
+        while(not self.p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0) > 0):
+            defence_value, defence = self.p_queue.get()        # building object
+            gamelib.debug_write("Popped off the queue: P_Value: {}  Item: {}".format(defence_value, defence))
+
+            # Get the cost of the object if this is greater than the amount of SP points, then place back onto the queue and break.
+            # Add this to the dictionary of defences to prioities.
+            self.defence_priority_map[defence] = defence_value
+
+            # Need to careful here whether we decide to upgrade or build a new defence.
+            if(defence.name == 'upgrade'):
+                # should_be_able_to_place = True
+                if(game_state.type_cost(unit_type=game_state.game_map[defence.x, defence.y][0].unit_type, upgrade=True)[0] > game_state.get_resource(resource_type=SP, player_index=0)):
+                    # We cannot afford place back onto the queue and break.
+                    self.p_queue.put((defence_value, defence))
+                    break
+                else:
+                    number_placed = game_state.attempt_upgrade([defence.x, defence.y])
+            else: 
+                if(game_state.type_cost(unit_type=defence.name)[0] > game_state.get_resource(resource_type=SP, player_index=0)):
+                    self.p_queue.put((defence_value, defence))
+                    break
+                else:
+                    should_be_able_to_place = game_state.can_spawn(defence.name, [defence.x, defence.y])
+                    number_placed = game_state.attempt_spawn(defence.name, [defence.x, defence.y])
+                    if(number_placed==0 and should_be_able_to_place):
+                        self.p_queue.put((defence_value, defence))
+                        gamelib.debug_write("An error has occured here, where we should have been able to place and had credit but didn't. If so break the loop.")
+                        break
+
+            gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
+
+    def place_attackers(self, game_state, attacker_list):
+        '''
+        attacker_list: List[Attacker] where Attacker is the usual named_tuple.
+        attacker = namedtuple('Attacker', ['name', 'x', 'y', 'num'])
+        '''
+
+        for att in attacker_list:
+            if att.name != 'upgrade':
+                game_state.attempt_spawn(att.name, [att.x, att.y], att.num)
+            else: 
+                game_state.attempt_upgrade([att.x, att.y])
+
+
+
+
+    def find_oppo_best_strategy_and_interceptor_response(self, game_state):
+        ''' 
+        args: game_state: GameState should have been copied already.
+        returns: List[attacker] - best placement of interceptors.
+        '''
+        start_time = time.time()
+
+        # Update using the prioity queue
+        self.update_game_state_while_p_queue_unloading(game_state)
+        gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
+
+        # Get possible attacks for oppo
+        oppo_attack_set = self.prepare_attack_sets_for_oppo_during_first_stage(game_state)
+        gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
+
+        # Find their best attack
+        best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
+        gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
+        gamelib.debug_write("Time elapsed after finding best oppo attack: {}".format(time.time() - start_time))
+
+        # Get our possible interceptor placements based on the number of credits the oppo have.
+        our_interceptor_attacks = self.prepare_our_interceptors_to_respond(game_state)
+        gamelib.debug_write("Our possible interceptor responcses: {}".format(our_interceptor_attacks))
+        gamelib.debug_write("Time elapsed after getting our interceptor placements: {}".format(time.time() - start_time))
+
+
+        our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
+        gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
+        gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
+
+        return our_best_attack
 
 
     def update_game_state_while_p_queue_unloading(self, game_state):
@@ -124,7 +217,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Add to the defender list till we run out of credit.
         while(not copied_p_queue.empty() and game_state.get_resource(resource_type=SP, player_index=0) > 0):
 
-            defence_value, defence = copied_p_queue.get()
+            _, defence = copied_p_queue.get()
 
             if(defence.name == 'upgrade'):
                 should_be_able_to_place = True
@@ -136,21 +229,116 @@ class AlgoStrategy(gamelib.AlgoCore):
             if(number_placed==0 and should_be_able_to_place):
                 break
         # Game state should now contain as many elements as we can place ready to look at what attacks could be thrown.
+        gamelib.debug_write("After adding our next p queue elements")
+        self.print_map(game_state)
+
 
 
     def prepare_attack_sets_for_oppo_during_first_stage(self, game_state):
 
         # This will take in the game state from the updated_game_state_while... function which will have added what we would do in the next round.
         # We can then prepare some attckers and check whether they are feasible.
+        # TODO - Need to prep for the oppo actual defences.
 
         oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
-        attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], []]
+        attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], [], [attacker(name=SCOUT, x=14, y=27, num=4)]]
 
+        return attack_set_list
+
+
+    def find_oppo_best_attack_no_interceptors(self, game_state, attack_sets):
+        ''' 
+        Needs to be a copied game state object
+        args: game_state: - GameState object.
+        returns: [List[attacker], float]        this is the list of attackers which was the best play.
+        '''
+
+        # Start the timer.
+        start_time = time.time()
+
+        # Get the attack set list.
         sim = Simulator(game_state, self.config)
-        sim.roll_out_one_turn([], attack_set_list[0], [], [])
-        sim.reset()
-        sim.roll_out_one_turn([], attack_set_list[1], [], [])
+
+        current_worst_score = 1000
+        index_worst_score = 0
+
+        # Loop through the list and update.
+        for i in range(len(attack_sets)):
+            if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
+            if time.time() - start_time > 1:
+                # Too much time taken.
+                break
+            roll_out_score = sim.roll_out_one_turn([], attack_sets[i], [], [])
+            gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_sets[i], roll_out_score))
+
+            # Update if needed
+            if roll_out_score < current_worst_score:
+                current_worst_score = roll_out_score
+                index_worst_score = i
+
+            sim.reset()
         
+        gamelib.debug_write("Returing as oppo best attack: {}     because of score {}".format(attack_sets[index_worst_score], current_worst_score))
+        return [attack_sets[index_worst_score], current_worst_score]
+
+
+    def prepare_our_interceptors_to_respond(self, game_state):
+
+        oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
+        our_mp = game_state.get_resource(resource_type=MP, player_index=1)
+
+        if oppo_mp <= 6 or our_mp == 1:
+            # Then we can either place on the left, middle or right.
+            # 1 interceptors
+            return [[attacker(name=INTERCEPTOR, x=0, y=13, num=1)], 
+                [attacker(name=INTERCEPTOR, x=27, y=13, num=1)], 
+                [attacker(name=INTERCEPTOR, x=18, y=4, num=1)], 
+                [attacker(name=INTERCEPTOR, x=9, y=4, num=1)]]
+        elif oppo_mp <= 12 or our_mp == 2:
+            # 2 interceptors
+            return [[attacker(name=INTERCEPTOR, x=0, y=13, num=1), attacker(name=INTERCEPTOR, x=27, y=13, num=1)], 
+            [attacker(name=INTERCEPTOR, x=9, y=4, num=1), attacker(name=INTERCEPTOR, x=18, y=4, num=1)], 
+            [attacker(name=INTERCEPTOR, x=9, y=4, num=2)], 
+            [attacker(name=INTERCEPTOR, x=18, y=4, num=2)]]
+        else:
+            # 3 interceptors
+            return [[attacker(name=INTERCEPTOR, x=0, y=13, num=1), attacker(name=INTERCEPTOR, x=27, y=13, num=2)], 
+            [attacker(name=INTERCEPTOR, x=9, y=4, num=1), attacker(name=INTERCEPTOR, x=18, y=4, num=2)], 
+            [attacker(name=INTERCEPTOR, x=9, y=4, num=3)], 
+            [attacker(name=INTERCEPTOR, x=18, y=4, num=3)],
+            [attacker(name=INTERCEPTOR, x=0, y=13, num=3)], 
+            [attacker(name=INTERCEPTOR, x=27, y=13, num=3)]]
+
+    
+    def find_our_best_response(self, game_state, best_oppo_attack, our_responses):
+
+        start_time = time.time()
+
+        # Get the attack set list.
+        sim = Simulator(game_state, self.config)
+
+        current_best_score = -1000
+        index_best_score = 0
+
+        # Loop through the list and update.
+        for i in range(len(our_responses)):
+            if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
+            if time.time() - start_time > 2:
+                # Too much time taken.
+                break
+            roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
+            gamelib.debug_write("Simulation iteration: {}. Interceptor List: {}. Score: {}".format(i, our_responses[i], roll_out_score))
+
+            # Update if needed
+            if roll_out_score > current_best_score:
+                current_best_score = roll_out_score
+                index_best_score = i
+
+            sim.reset()
+
+        gamelib.debug_write("Returing as our best attack: {}     because of score {}".format(our_responses[index_best_score], current_best_score))
+        return [our_responses[index_best_score], current_best_score]
+
 
 
 

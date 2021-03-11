@@ -98,6 +98,8 @@ class GameState:
                 {'SP': 0, 'MP': 0}]  # player 1, which is the opponent
         self.__parse_state(serialized_string)
 
+        self.game_state_info = dict()
+
     def __parse_state(self, state_line):
         """
         Fills in map based on the serialized game state so that self.game_map[x,y] is a list of GameUnits at that location.
@@ -303,6 +305,7 @@ class GameState:
 
         return cost_base
 
+    # OW ADD
     
     def get_number_of_stationary_units_of_type(self, unit_type):
         ''' 
@@ -319,7 +322,20 @@ class GameState:
                     oppo_count += 1
         return [my_count, oppo_count]
     
+    # OW Add
+    def get_game_state_metrics(self):
 
+        self.game_state_info["my_health"] = self.my_health
+        self.game_state_info["enemy_health"] = self.enemy_health
+        my_wall_count, oppo_wall_count = self.get_number_of_stationary_units_of_type(WALL)
+        self.game_state_info["my_wall_count"] = my_wall_count
+        self.game_state_info["oppo_wall_count"] = oppo_wall_count
+        my_turret_count, oppo_turret_count = self.get_number_of_stationary_units_of_type(TURRET)
+        self.game_state_info['my_turret_count'] = my_turret_count
+        self.game_state_info['oppo_turret_count'] = oppo_turret_count
+        my_support_count, oppo_support_count = self.get_number_of_stationary_units_of_type(SUPPORT)
+        self.game_state_info['my_support_count'] = my_support_count
+        self.game_state_info['oppo_support_count'] = oppo_support_count
 
 
 

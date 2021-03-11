@@ -37,6 +37,8 @@ class GameMap:
         self.BOTTOM_RIGHT = 3
         self.__map = self.__empty_grid()
         self.__start = [13,0]
+
+        self.verbose = False
     
     def __getitem__(self, location):
         if len(location) == 2 and self.in_arena_bounds(location):
@@ -228,8 +230,8 @@ class GameMap:
             self._invalid_coordinates(location)
 
         x, y = location
-        debug_write("Attempting to remove at location ({}, {}) unit: {}".format(location[0], location[1], unit))
-        debug_write("Current List of Units: {}".format(self.__map[x][y]))
+        if self.verbose: debug_write("Attempting to remove at location ({}, {}) unit: {}".format(location[0], location[1], unit))
+        if self.verbose: debug_write("Current List of Units: {}".format(self.__map[x][y]))
         if(unit in self.__map[x][y]):
             self.__map[x][y].remove(unit)
             return True

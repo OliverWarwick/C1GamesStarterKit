@@ -108,9 +108,6 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         inital_turrets = [[3, 12], [24, 12], [11, 4], [16, 4]]
         inital_walls = [[3, 13], [24, 13], [7, 8], [20, 8]]
-
-        # TODO - OW: Add the rest of critcal infra.
-
         self.critical_turrets += inital_turrets
         self.crtical_walls += inital_walls
 
