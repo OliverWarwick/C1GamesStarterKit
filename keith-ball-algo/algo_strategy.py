@@ -17,6 +17,7 @@ modules yourself. Start by modifying the 'on_turn' function.
 
 Advanced strategy tips: 
 David
+Olly
   - You can analyze action frames by modifying on_action_frame function
 
   - The GameState.map object can be manually manipulated to create hypothetical 
