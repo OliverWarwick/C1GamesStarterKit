@@ -585,11 +585,11 @@ class AlgoStrategy(gamelib.AlgoCore):
                     attack_set_list.append(scout_demo_attack)
             
             #Case 5: Cheeky Interceptors NOTE will assume central placement for now but it's a lot more complicated than that in reality
-            gamelib.debug_write("INTERCEPTOR CASE")
-            #interceptorPos = self.estimate_enemy_interceptor_position(game_state)
-            #gamelib.debug_write(interceptorPos)
-            #if interceptorPos is not None:
-            #    attack_set_list.append([attacker(name=INTERCEPTOR, x=interceptorPos[0],y=interceptorPos[1],num=oppo_mp)])
+            if self.verbose: gamelib.debug_write("INTERCEPTOR CASE")
+            interceptorPos = self.estimate_enemy_interceptor_position(game_state)
+            if self.verbose: gamelib.debug_write(interceptorPos)
+            if interceptorPos is not None:
+                attack_set_list.append([attacker(name=INTERCEPTOR, x=interceptorPos[0],y=interceptorPos[1],num=oppo_mp)])
 
         elif (oppo_mp > 10 and oppo_mp <= 20): #MP between 10 and 21, so mid-range attack
             #Case 1: Big Scout Rush
@@ -656,6 +656,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
+                    gamelib.debug_write(testLeftPos)
                     if (game_state.contains_stationary_unit(testLeftPos) is False):
                         unitPath = game_state.find_path_to_edge(testLeftPos)
                         if(unitPath[-1][1]<=14):
@@ -665,7 +666,8 @@ class AlgoStrategy(gamelib.AlgoCore):
             if rightFound is False:
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
-                    testRightPos = [initRight[0]+offset*sideToggle, initRight[0]+offset*sideToggle]
+                    testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
+                    gamelib.debug_write(testRightPos)
                     if (game_state.contains_stationary_unit(testRightPos) is False):
                         unitPath = game_state.find_path_to_edge(testRightPos)
                         if(unitPath[-1][1]<=14):
@@ -690,7 +692,7 @@ class AlgoStrategy(gamelib.AlgoCore):
     def get_scout_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
         initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
         
-        finalPositions = [[-1,12], [-1,28]] #Worst possible position on far left/right corner
+        finalPositions = [[-1,13], [28,13]] #Worst possible position on far left/right corner
         
         #Start from the very back and basically BFS down
         for y in range(14):
