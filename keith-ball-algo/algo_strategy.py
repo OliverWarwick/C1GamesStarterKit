@@ -295,7 +295,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Get the attack set list.
         sim = Simulator(game_state, self.config)
-        sim.verbose = False
+        sim.verbose = True
 
         current_best_score = -1000
         index_best_score = None

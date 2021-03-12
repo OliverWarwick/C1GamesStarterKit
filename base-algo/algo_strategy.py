@@ -121,9 +121,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         # game_state.attempt_remove([14, 6])
 
         game_state.attempt_spawn(SCOUT, [[13, 0]], num=game_state.number_affordable(SCOUT))
-        for turr in [[2, 12], [25, 12], [4, 10], [23, 10], [6, 8], [21, 8], [8, 6], [19, 6], [10, 4], [17, 4], [12, 2], [15, 2]]:
+        for turr in [[1, 13], [26, 13], [2, 12], [25, 12], [3, 11], [24, 11], [4, 10], [23, 10], [5, 9], [22, 9], [6, 8], [21, 8], [7, 7], [20, 7], [8, 6], [19, 6], [9, 5], [18, 5], [10, 4], [17, 4], [11, 3], [16, 3], [12, 2], [15, 2], [13, 1], [14, 1]]:
             game_state.attempt_spawn(TURRET, turr)
-            game_state.attempt_upgrade(turr)
 
     
     
