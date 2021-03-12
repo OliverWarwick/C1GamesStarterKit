@@ -118,6 +118,10 @@ class AlgoStrategy(gamelib.AlgoCore):
             copied_game_state = copy.deepcopy(game_state)
             interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
             self.place_attackers(game_state, interceptor_placement)
+        
+        # We now want to search to see if we have a good attack in the one step case.
+        # OW now.
+
 
 
     def place_and_remove_blocking_wall(self, game_state):
@@ -366,6 +370,8 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             if self.verbose: gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
 
+
+
     def place_attackers(self, game_state, attacker_list):
         '''
         attacker_list: List[Attacker] where Attacker is the usual named_tuple.
@@ -373,10 +379,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         '''
 
         for att in attacker_list:
-            if att.name != 'upgrade':
-                game_state.attempt_spawn(att.name, [att.x, att.y], att.num)
-            else: 
-                game_state.attempt_upgrade([att.x, att.y])
+            game_state.attempt_spawn(att.name, [att.x, att.y], att.num)
 
 
 
@@ -530,8 +533,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         finalPositions = [[0,13], [0,27]] #Worst possible position on far left/right corner
         
         #Start from the very back and basically BFS down
-        for(y in range(14)):
-            for(i in range(2)):
+        for y in range(14):
+            for i in range(2):
                 if (game_state.contains_stationary_unit(initPositions[i]) == False): #Check if position is occupied if not, then we pick here
                     if(initPositions[i][1] >= finalPositions[i][1]): #Check y value of the position, if the one we're on is higher we spawn there
                         initPositions[i] = finalPositions[i] 
@@ -591,6 +594,16 @@ class AlgoStrategy(gamelib.AlgoCore):
         scout_demo_split = [ [1,1], [1,2], [1,3], [1,4], [1,5], [2,3], [2,4], [2,5], [2,6], [2,7], [3,5], [3,6], [3,7], [4,5], [4,6], [4,7], [4,8]] #I pray this is right
         return scout_demo_split[enemy_mp-4]
 
+
+
+
+
+
+
+
+
+
+
     def prepare_immediate_attack_sets_for_us(self, game_state):
         ''' return List[Attacker] '''
         
@@ -604,6 +617,8 @@ class AlgoStrategy(gamelib.AlgoCore):
             [attacker(name=SCOUT, x=13, y=0, num=int(my_mp))]
             [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
         ]
+
+        return attack_set_list
 
 
     def find_oppo_best_attack_no_interceptors(self, game_state, attack_sets):
