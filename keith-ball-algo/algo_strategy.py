@@ -607,12 +607,12 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             #Case 4 Scout-Demo split (only do if at least 4 credits)
             splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
-            splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
-            scout_demo_attack = []
-            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
-            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
-
-            attack_set_list.append(scout_demo_attack)
+            if splitPositions is not None:
+                splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
+                scout_demo_attack = []
+                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
+                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
+                attack_set_list.append(scout_demo_attack)
 
 
         else: # MP >20 big fucko wucko attack
