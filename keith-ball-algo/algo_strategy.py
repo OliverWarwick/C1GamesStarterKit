@@ -156,6 +156,8 @@ class AlgoStrategy(gamelib.AlgoCore):
 
     def prepare_immediate_attack_sets_for_us(self, game_state, my_mp):
         ''' return List[Attacker] '''
+
+        # DAVID / HENRY
         
 
         # Should have Pog scouts left, Pog scouts right, and then stack of Dems.
@@ -175,8 +177,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         returns: None if no attack was deemed good enough, otherwise: List[Attack]
         '''
 
-        # Copy the game state.
-        copied_game_state = copy.deepcopy(game_state)
 
         gamelib.debug_write("Attack list: {}".format(attack_set_list))
 
@@ -184,7 +184,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         start_time = time.time()
 
         # Get the attack set list.
-        sim = Simulator(copied_game_state, self.config)
+        sim = Simulator(game_state, self.config)
 
         current_best_score = -1000
         index_best_score = None
@@ -199,13 +199,13 @@ class AlgoStrategy(gamelib.AlgoCore):
             gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_set_list[i], roll_out_score))
 
             # Want to look at both the score and the end states.
-            if copied_game_state.enemy_health < 0:
-                gamelib.debug_write("Amount of enemy health: {}. Below zero so returning as the best attack list: {}".format(copied_game_state.enemy_health, attack_set_list[i]))
+            if sim.simulated_game_state.enemy_health < 0:
+                gamelib.debug_write("Amount of enemy health: {}. Below zero so returning as the best attack list: {}".format(sim.simulated_game_state.game_state_info["enemy_health"], attack_set_list[i]))
                 # This is a knock out blow, so return this.
                 return attack_set_list[i]
 
-            gamelib.debug_write("Amount of enemy_health after sim: {}  Amount before: {}".format(copied_game_state.enemy_health, game_state.enemy_health))
-            if copied_game_state.enemy_health - game_state.enemy_health > 0:
+            gamelib.debug_write("Amount of enemy_health after sim: {}  Amount before: {}".format(sim.simulated_game_state.game_state_info["enemy_health"], game_state.enemy_health))
+            if sim.simulated_game_state.game_state_info["enemy_health"] - game_state.enemy_health < 0:
                 gamelib.debug_write("Good enough to use as an attack. Score: {}".format(roll_out_score))
                 if roll_out_score > current_best_score:
                     index_best_score = i

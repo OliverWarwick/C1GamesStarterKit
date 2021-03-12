@@ -120,8 +120,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         # game_state.attempt_upgrade([14, 6])
         # game_state.attempt_remove([14, 6])
 
-        game_state.attempt_spawn(SCOUT, [[13, 0]], num=game_state.number_affordable(SCOUT))
-        game_state.attempt_spawn(TURRET, [[1,13]])
+        # game_state.attempt_spawn(SCOUT, [[13, 0]], num=game_state.number_affordable(SCOUT))
+        # game_state.attempt_spawn(TURRET, [[1,13]])
     
     
     def read_oppo_play(self, game_state):

@@ -1,4 +1,4 @@
-Random seed: 7140331185603615746
+Random seed: 3077844112203464932
 ---------------- Starting Your Algo --------------------
 Configuring your custom algo strategy...
 Turn: [0, 0, -1, 0]
@@ -241,12 +241,12 @@ Turn: [1, 0, 114, 115]
 Calling on_action_frame
 Turn: [1, 0, 115, 116]
 Calling on_action_frame
-Got scored on at: [22, 8]
-All locations: [[22, 8]]
+Got scored on at: [23, 9]
+All locations: [[23, 9]]
 Turn: [0, 1, -1, 117]
 Calling on_turn
 Starting on_turn
-My Health: 39.0 Enermy Health: 37.0
+My Health: 39.0 Enermy Health: 40.0
 Performing turn 1 of your custom algo strategy
 Starting base
 Finished base
@@ -483,12 +483,12 @@ Turn: [1, 1, 114, 232]
 Calling on_action_frame
 Turn: [1, 1, 115, 233]
 Calling on_action_frame
-Got scored on at: [13, 0]
-All locations: [[22, 8], [13, 0]]
+Got scored on at: [23, 9]
+All locations: [[23, 9], [23, 9]]
 Turn: [0, 2, -1, 234]
 Calling on_turn
 Starting on_turn
-My Health: 38.0 Enermy Health: 37.0
+My Health: 38.0 Enermy Health: 40.0
 Performing turn 2 of your custom algo strategy
 Starting base
 Finished base
@@ -551,6 +551,18 @@ Turn: [1, 2, 27, 262]
 Calling on_action_frame
 Turn: [1, 2, 28, 263]
 Calling on_action_frame
+Got scored on at: [2, 11]
+All locations: [[23, 9], [23, 9], [2, 11]]
+Got scored on at: [2, 11]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11]]
+Got scored on at: [2, 11]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11]]
+Got scored on at: [2, 11]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11]]
+Got scored on at: [2, 11]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11]]
+Got scored on at: [25, 11]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11]]
 Turn: [1, 2, 29, 264]
 Calling on_action_frame
 Turn: [1, 2, 30, 265]
@@ -725,12 +737,14 @@ Turn: [1, 2, 114, 349]
 Calling on_action_frame
 Turn: [1, 2, 115, 350]
 Calling on_action_frame
-Got scored on at: [13, 0]
-All locations: [[22, 8], [13, 0], [13, 0]]
+Got scored on at: [6, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7]]
+Got scored on at: [21, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7], [21, 7]]
 Turn: [0, 3, -1, 351]
 Calling on_turn
 Starting on_turn
-My Health: 37.0 Enermy Health: 37.0
+My Health: 30.0 Enermy Health: 39.0
 Performing turn 3 of your custom algo strategy
 Starting base
 Finished base
@@ -967,12 +981,14 @@ Turn: [1, 3, 114, 466]
 Calling on_action_frame
 Turn: [1, 3, 115, 467]
 Calling on_action_frame
-Got scored on at: [13, 0]
-All locations: [[22, 8], [13, 0], [13, 0], [13, 0]]
+Got scored on at: [6, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7], [21, 7], [6, 7]]
+Got scored on at: [21, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7], [21, 7], [6, 7], [21, 7]]
 Turn: [0, 4, -1, 468]
 Calling on_turn
 Starting on_turn
-My Health: 36.0 Enermy Health: 37.0
+My Health: 28.0 Enermy Health: 39.0
 Performing turn 4 of your custom algo strategy
 Starting base
 Finished base
@@ -1209,12 +1225,14 @@ Turn: [1, 4, 114, 583]
 Calling on_action_frame
 Turn: [1, 4, 115, 584]
 Calling on_action_frame
-Got scored on at: [13, 0]
-All locations: [[22, 8], [13, 0], [13, 0], [13, 0], [13, 0]]
+Got scored on at: [6, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7], [21, 7], [6, 7], [21, 7], [6, 7]]
+Got scored on at: [21, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7], [21, 7], [6, 7], [21, 7], [6, 7], [21, 7]]
 Turn: [0, 5, -1, 585]
 Calling on_turn
 Starting on_turn
-My Health: 35.0 Enermy Health: 37.0
+My Health: 26.0 Enermy Health: 39.0
 Performing turn 5 of your custom algo strategy
 Starting base
 Finished base
@@ -1451,255 +1469,15 @@ Turn: [1, 5, 114, 700]
 Calling on_action_frame
 Turn: [1, 5, 115, 701]
 Calling on_action_frame
-Got scored on at: [13, 0]
-All locations: [[22, 8], [13, 0], [13, 0], [13, 0], [13, 0], [13, 0]]
+Got scored on at: [6, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7], [21, 7], [6, 7], [21, 7], [6, 7], [21, 7], [6, 7]]
+Got scored on at: [21, 7]
+All locations: [[23, 9], [23, 9], [2, 11], [2, 11], [2, 11], [2, 11], [2, 11], [25, 11], [6, 7], [21, 7], [6, 7], [21, 7], [6, 7], [21, 7], [6, 7], [21, 7]]
 Turn: [0, 6, -1, 702]
 Calling on_turn
 Starting on_turn
-My Health: 34.0 Enermy Health: 37.0
+My Health: 24.0 Enermy Health: 39.0
 Performing turn 6 of your custom algo strategy
-Starting base
-Finished base
-Calling submit turn
-Turn: [1, 6, 0, 703]
-Calling on_action_frame
-Turn: [1, 6, 1, 704]
-Calling on_action_frame
-Turn: [1, 6, 2, 705]
-Calling on_action_frame
-Turn: [1, 6, 3, 706]
-Calling on_action_frame
-Turn: [1, 6, 4, 707]
-Calling on_action_frame
-Turn: [1, 6, 5, 708]
-Calling on_action_frame
-Turn: [1, 6, 6, 709]
-Calling on_action_frame
-Turn: [1, 6, 7, 710]
-Calling on_action_frame
-Turn: [1, 6, 8, 711]
-Calling on_action_frame
-Turn: [1, 6, 9, 712]
-Calling on_action_frame
-Turn: [1, 6, 10, 713]
-Calling on_action_frame
-Turn: [1, 6, 11, 714]
-Calling on_action_frame
-Turn: [1, 6, 12, 715]
-Calling on_action_frame
-Turn: [1, 6, 13, 716]
-Calling on_action_frame
-Turn: [1, 6, 14, 717]
-Calling on_action_frame
-Turn: [1, 6, 15, 718]
-Calling on_action_frame
-Turn: [1, 6, 16, 719]
-Calling on_action_frame
-Turn: [1, 6, 17, 720]
-Calling on_action_frame
-Turn: [1, 6, 18, 721]
-Calling on_action_frame
-Turn: [1, 6, 19, 722]
-Calling on_action_frame
-Turn: [1, 6, 20, 723]
-Calling on_action_frame
-Turn: [1, 6, 21, 724]
-Calling on_action_frame
-Turn: [1, 6, 22, 725]
-Calling on_action_frame
-Turn: [1, 6, 23, 726]
-Calling on_action_frame
-Turn: [1, 6, 24, 727]
-Calling on_action_frame
-Turn: [1, 6, 25, 728]
-Calling on_action_frame
-Turn: [1, 6, 26, 729]
-Calling on_action_frame
-Turn: [1, 6, 27, 730]
-Calling on_action_frame
-Turn: [1, 6, 28, 731]
-Calling on_action_frame
-Turn: [1, 6, 29, 732]
-Calling on_action_frame
-Turn: [1, 6, 30, 733]
-Calling on_action_frame
-Turn: [1, 6, 31, 734]
-Calling on_action_frame
-Turn: [1, 6, 32, 735]
-Calling on_action_frame
-Turn: [1, 6, 33, 736]
-Calling on_action_frame
-Turn: [1, 6, 34, 737]
-Calling on_action_frame
-Turn: [1, 6, 35, 738]
-Calling on_action_frame
-Turn: [1, 6, 36, 739]
-Calling on_action_frame
-Turn: [1, 6, 37, 740]
-Calling on_action_frame
-Turn: [1, 6, 38, 741]
-Calling on_action_frame
-Turn: [1, 6, 39, 742]
-Calling on_action_frame
-Turn: [1, 6, 40, 743]
-Calling on_action_frame
-Turn: [1, 6, 41, 744]
-Calling on_action_frame
-Turn: [1, 6, 42, 745]
-Calling on_action_frame
-Turn: [1, 6, 43, 746]
-Calling on_action_frame
-Turn: [1, 6, 44, 747]
-Calling on_action_frame
-Turn: [1, 6, 45, 748]
-Calling on_action_frame
-Turn: [1, 6, 46, 749]
-Calling on_action_frame
-Turn: [1, 6, 47, 750]
-Calling on_action_frame
-Turn: [1, 6, 48, 751]
-Calling on_action_frame
-Turn: [1, 6, 49, 752]
-Calling on_action_frame
-Turn: [1, 6, 50, 753]
-Calling on_action_frame
-Turn: [1, 6, 51, 754]
-Calling on_action_frame
-Turn: [1, 6, 52, 755]
-Calling on_action_frame
-Turn: [1, 6, 53, 756]
-Calling on_action_frame
-Turn: [1, 6, 54, 757]
-Calling on_action_frame
-Turn: [1, 6, 55, 758]
-Calling on_action_frame
-Turn: [1, 6, 56, 759]
-Calling on_action_frame
-Turn: [1, 6, 57, 760]
-Calling on_action_frame
-Turn: [1, 6, 58, 761]
-Calling on_action_frame
-Turn: [1, 6, 59, 762]
-Calling on_action_frame
-Turn: [1, 6, 60, 763]
-Calling on_action_frame
-Turn: [1, 6, 61, 764]
-Calling on_action_frame
-Turn: [1, 6, 62, 765]
-Calling on_action_frame
-Turn: [1, 6, 63, 766]
-Calling on_action_frame
-Turn: [1, 6, 64, 767]
-Calling on_action_frame
-Turn: [1, 6, 65, 768]
-Calling on_action_frame
-Turn: [1, 6, 66, 769]
-Calling on_action_frame
-Turn: [1, 6, 67, 770]
-Calling on_action_frame
-Turn: [1, 6, 68, 771]
-Calling on_action_frame
-Turn: [1, 6, 69, 772]
-Calling on_action_frame
-Turn: [1, 6, 70, 773]
-Calling on_action_frame
-Turn: [1, 6, 71, 774]
-Calling on_action_frame
-Turn: [1, 6, 72, 775]
-Calling on_action_frame
-Turn: [1, 6, 73, 776]
-Calling on_action_frame
-Turn: [1, 6, 74, 777]
-Calling on_action_frame
-Turn: [1, 6, 75, 778]
-Calling on_action_frame
-Turn: [1, 6, 76, 779]
-Calling on_action_frame
-Turn: [1, 6, 77, 780]
-Calling on_action_frame
-Turn: [1, 6, 78, 781]
-Calling on_action_frame
-Turn: [1, 6, 79, 782]
-Calling on_action_frame
-Turn: [1, 6, 80, 783]
-Calling on_action_frame
-Turn: [1, 6, 81, 784]
-Calling on_action_frame
-Turn: [1, 6, 82, 785]
-Calling on_action_frame
-Turn: [1, 6, 83, 786]
-Calling on_action_frame
-Turn: [1, 6, 84, 787]
-Calling on_action_frame
-Turn: [1, 6, 85, 788]
-Calling on_action_frame
-Turn: [1, 6, 86, 789]
-Calling on_action_frame
-Turn: [1, 6, 87, 790]
-Calling on_action_frame
-Turn: [1, 6, 88, 791]
-Calling on_action_frame
-Turn: [1, 6, 89, 792]
-Calling on_action_frame
-Turn: [1, 6, 90, 793]
-Calling on_action_frame
-Turn: [1, 6, 91, 794]
-Calling on_action_frame
-Turn: [1, 6, 92, 795]
-Calling on_action_frame
-Turn: [1, 6, 93, 796]
-Calling on_action_frame
-Turn: [1, 6, 94, 797]
-Calling on_action_frame
-Turn: [1, 6, 95, 798]
-Calling on_action_frame
-Turn: [1, 6, 96, 799]
-Calling on_action_frame
-Turn: [1, 6, 97, 800]
-Calling on_action_frame
-Turn: [1, 6, 98, 801]
-Calling on_action_frame
-Turn: [1, 6, 99, 802]
-Calling on_action_frame
-Turn: [1, 6, 100, 803]
-Calling on_action_frame
-Turn: [1, 6, 101, 804]
-Calling on_action_frame
-Turn: [1, 6, 102, 805]
-Calling on_action_frame
-Turn: [1, 6, 103, 806]
-Calling on_action_frame
-Turn: [1, 6, 104, 807]
-Calling on_action_frame
-Turn: [1, 6, 105, 808]
-Calling on_action_frame
-Turn: [1, 6, 106, 809]
-Calling on_action_frame
-Turn: [1, 6, 107, 810]
-Calling on_action_frame
-Turn: [1, 6, 108, 811]
-Calling on_action_frame
-Turn: [1, 6, 109, 812]
-Calling on_action_frame
-Turn: [1, 6, 110, 813]
-Calling on_action_frame
-Turn: [1, 6, 111, 814]
-Calling on_action_frame
-Turn: [1, 6, 112, 815]
-Calling on_action_frame
-Turn: [1, 6, 113, 816]
-Calling on_action_frame
-Turn: [1, 6, 114, 817]
-Calling on_action_frame
-Turn: [1, 6, 115, 818]
-Calling on_action_frame
-Got scored on at: [13, 0]
-All locations: [[22, 8], [13, 0], [13, 0], [13, 0], [13, 0], [13, 0], [13, 0]]
-Turn: [0, 7, -1, 819]
-Calling on_turn
-Starting on_turn
-My Health: 33.0 Enermy Health: 37.0
-Performing turn 7 of your custom algo strategy
 Starting base
 Finished base
 Calling submit turn

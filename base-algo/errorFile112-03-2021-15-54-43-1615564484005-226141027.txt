@@ -1,4 +1,4 @@
-Random seed: 8791891224677190798
+Random seed: 3588087529405690787
 ---------------- Starting Your Algo --------------------
 Configuring your custom algo strategy...
 Turn: [0, 0, -1, 0]
@@ -241,8 +241,8 @@ Turn: [1, 0, 114, 115]
 Calling on_action_frame
 Turn: [1, 0, 115, 116]
 Calling on_action_frame
-Got scored on at: [13, 0]
-All locations: [[13, 0]]
+Got scored on at: [23, 9]
+All locations: [[23, 9]]
 Turn: [0, 1, -1, 117]
 Calling on_turn
 Starting on_turn
