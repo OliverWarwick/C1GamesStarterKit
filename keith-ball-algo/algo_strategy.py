@@ -239,7 +239,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             for i in range(2):
                 #gamelib.debug_write(initPositions)
                 translationSign = pow(-1,i)
-                testPos = [initPositions[i][0]-y*translationSign,initPositions[1]+y]
+                testPos = [initPositions[i][0]-y*translationSign,initPositions[i][1]+y]
                 if(game_state.contains_stationary_unit(testPos) is False): #Check location is spawnable
                     unitPath = game_state.find_path_to_edge(testPos)
                     #gamelib.debug_write(unitPath)
