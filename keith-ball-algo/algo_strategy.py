@@ -117,7 +117,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         if self.throw_interceptors:
             copied_game_state = copy.deepcopy(game_state)
             interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
-            self.place_attackers(game_state, interceptor_placement)
+            if interceptor_placement is not None:
+                self.place_attackers(game_state, interceptor_placement)
         
         # We now want to search to see if we have a good attack in the one step case.
         # If there is execute this, otherwise do not and carry on.
@@ -135,35 +136,31 @@ class AlgoStrategy(gamelib.AlgoCore):
         args: game_state: GameState
         return: -. Will execute any instructions within this code.
         '''
+        my_mp = game_state.get_resource(resource_type=MP, player_index=0)
+        if(my_mp >= 6):
+            # Get us some attack sets
+            attack_sets = self.prepare_immediate_attack_sets_for_us(game_state, my_mp)
 
-        # Get us some attack sets
-        attack_sets = self.prepare_immediate_attack_sets_for_us(game_state)
+            # Look at each in turn to see which is the best.
+            best_attack = self.roll_out_our_attack_sets(game_state, attack_sets)
 
-        # Look at each in turn to see which is the best.
-        best_attack = self.roll_out_our_attack_sets(game_state, attack_sets)
-
-        # This function either Returns
-        # None - no good attack which is worth persueing, so we can therefore carry on.
-        # List[Attack] at which point we can then use to place these.
-        if best_attack is not None:
-            self.place_attackers(game_state, best_attack)
-
-
-
+            # This function either Returns
+            # None - no good attack which is worth persueing, so we can therefore carry on.
+            # List[Attack] at which point we can then use to place these.
+            if best_attack is not None:
+                self.place_attackers(game_state, best_attack)
 
 
-    def prepare_immediate_attack_sets_for_us(self, game_state):
+
+
+
+    def prepare_immediate_attack_sets_for_us(self, game_state, my_mp):
         ''' return List[Attacker] '''
         
 
         # Should have Pog scouts left, Pog scouts right, and then stack of Dems.
-        my_mp = game_state.get_resource(resource_type=MP, player_index=0)
 
-        attack_set_list = [
-            [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=min(0, int(my_mp - 5)))], 
-            [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=min(0, int(my_mp - 5)))], 
-            [attacker(name=SCOUT, x=13, y=0, num=int(my_mp))]
-            [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
+        attack_set_list = [[attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=13, y=0, num=int(my_mp))],[attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
         ]
 
         return attack_set_list
@@ -181,6 +178,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Copy the game state.
         copied_game_state = copy.deepcopy(game_state)
 
+        gamelib.debug_write("Attack list: {}".format(attack_set_list))
+
         # Start the timer.
         start_time = time.time()
 
@@ -196,7 +195,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             if time.time() - start_time > 1:
                 # Too much time taken.
                 break
-            roll_out_score = sim.roll_out_one_turn(attack_set_list, [], [], [])
+            roll_out_score = sim.roll_out_one_turn(attack_set_list[i], [], [], [])
             gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_set_list[i], roll_out_score))
 
             # Want to look at both the score and the end states.
@@ -206,7 +205,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 return attack_set_list[i]
 
             gamelib.debug_write("Amount of enemy_health after sim: {}  Amount before: {}".format(copied_game_state.enemy_health, game_state.enemy_health))
-            if copied_game_state.enemy_heath - game_state.enemy_health > 0.5 * game_state.get_resource(resource_type=MP, player_index=0):
+            if copied_game_state.enemy_health - game_state.enemy_health > 0:
                 gamelib.debug_write("Good enough to use as an attack. Score: {}".format(roll_out_score))
                 if roll_out_score > current_best_score:
                     index_best_score = i
@@ -496,6 +495,9 @@ class AlgoStrategy(gamelib.AlgoCore):
         gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
         gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
 
+        if len(oppo_attack_set) == 0:
+            return None
+
         # Find their best attack
         best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
         gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
@@ -731,7 +733,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         ''' 
         Needs to be a copied game state object
         args: game_state: - GameState object.
-        returns: [List[attacker], float]        this is the list of attackers which was the best play.
+        returns: [List[List[attacker]], float]        this is the list of attackers which was the best play.
         '''
 
         # Start the timer.
