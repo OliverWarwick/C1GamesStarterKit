@@ -170,7 +170,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.defence_priority_map[defence] = defence_value
             if defence_value > -0.25:
                 self.throw_interceptors = False
-            if defence_value < -0.#75:
+            if defence_value < -0.#375:
                 self.throw_interceptors = True
 
 
