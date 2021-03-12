@@ -183,6 +183,7 @@ class Simulator:
         Roll out one action frame using the game logic and return this
         return: 
             GameState: after movements
+        OW changint the targetting algo.
         '''
 
         # To hold the new values 

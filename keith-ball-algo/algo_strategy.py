@@ -317,7 +317,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 return attack_set_list[i]
 
             gamelib.debug_write("Amount of enemy_health after sim: {}  Amount before: {}".format(sim.simulated_game_state.game_state_info["enemy_health"], game_state.enemy_health))
-            if sim.simulated_game_state.game_state_info["enemy_health"] - game_state.enemy_health < 0:
+            if sim.simulated_game_state.game_state_info["enemy_health"] - game_state.enemy_health < -0.5:
                 gamelib.debug_write("Good enough to use as an attack. Score: {}".format(roll_out_score))
                 if roll_out_score > current_best_score:
                     index_best_score = i
