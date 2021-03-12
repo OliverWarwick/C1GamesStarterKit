@@ -66,6 +66,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.throw_interceptors = True
         self.thunder_striking = False
 
+        self.can_place = {(13, 0): False, (14, 0): False, (13, 1): False, (14, 1): False, (15, 1): False, (11, 2): False, (12, 2): False, (15, 2): False, (16, 2): False, (10, 3): False, (11, 3): False, (16, 3): False, (17, 3): False, (9, 4): False, (10, 4): False, (17, 4): False, (18, 4): False, (8, 5): False, (9, 5): False, (18, 5): False, (19, 5): False, (7, 6): False, (8, 6): False, (19, 6): False, (20, 6): False, (6, 7): False, (7, 7): False, (20, 7): False, (21, 7): False, (5, 8): False, (6, 8): False, (21, 8): False, (22, 8): False, (4, 9): False, (5, 9): False, (22, 9): False, (23, 9): False, (3, 10): False, (4, 10): False, (5, 10): False, (6, 10): False, (7, 10): False, (8, 10): False, (21, 10): False, (22, 10): False, (23, 10): False, (24, 10): False, (2, 11): False, (3, 11): False, (8, 11): False, (8, 12): False, (8, 13): False, (20, 11): False, (21, 11): False, (24, 11): False, (25, 11): False, (20, 12): False, (20, 13): False}
+
+        # This tracks which wall we are currently blocking off
+        self.blocking_wall_placement = "CENTER"
+
         self.verbose = False
 
     def on_turn(self, turn_state):
@@ -96,17 +101,84 @@ class AlgoStrategy(gamelib.AlgoCore):
         if game_state.turn_number == 0:
             self.inital_add_to_p_queue(game_state)
 
+        # Swap the sides of the blocking wall, if we have already built it.
+        self.place_and_remove_blocking_wall(game_state)
+
+        # Firstly repair any damage.
         self.queue_repair_of_critical(game_state)  
         
+        # Then build any queued defences.
         self.build_queued_defences(game_state)
+
+        # If the p_queue is empty then place extra turrets and walls.
+        if (self.p_queue.empty() and game_state.get_resource(MP, player_index=0) > 2):
+            self.continue_placing_walls_and_turrets(game_state)
 
         if self.throw_interceptors:
             copied_game_state = copy.deepcopy(game_state)
             interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
             self.place_attackers(game_state, interceptor_placement)
-       
 
-        
+
+    def place_and_remove_blocking_wall(self, game_state):
+        gamelib.debug_write("MOVING WALL")
+        if self.blocking_wall_placement != "CENTER":
+            # We need to alternate side to side.
+            if self.blocking_wall_placement == "LEFT":
+                # Wall is currently at [6, 10]
+                # Attempt to build here, and set blocking_wall to right.
+                game_state.attempt_spawn(WALL, locations=[6, 10])
+                # Attempt to remove
+                game_state.attempt_remove(locations=[6, 10])
+                self.blocking_wall_placement = "RIGHT"
+            else:
+                game_state.attempt_spawn(WALL, locations=[21, 10])
+                game_state.attempt_remove(locations=[21, 10])
+                self.blocking_wall_placement = "LEFT"
+        else:
+            # We can pass so long as we haven't built either.
+            if game_state.contains_stationary_unit([6, 10]):
+                self.blocking_wall_placement = "LEFT"
+            if game_state.contains_stationary_unit([21, 10]):
+                self.blocking_wall_placement = "RIGHT"
+
+
+    # Place walls and turrets once the p_queue is empty.
+    def continue_placing_walls_and_turrets(self, game_state):
+        ''' 
+        This function should only be called when 
+        a) Not thor's hammering
+        b) Once p_queue is empty and have left over credit.
+        Places them directly from within here.
+        '''
+        # Pick left and right placement by whether off or even turn.
+        if game_state.turn_number % 2 == 0:
+            mean_x, mean_y = 9, 18
+        else:
+            mean_x, mean_y = 18, 11
+
+        # Record time just to make sure we don't run too long.
+        start_time = time.time()
+        while(game_state.get_resource(MP, player_index=0) > 2 and time.time() - start_time < 0.25):
+            if self.verbose: gamelib.debug_write("Time elapsed since starting to place extra troops: {}".format(time.time() - start_time))
+
+            # Sample a location. Var grows with time. # DAVID / HENRY thoughts? 
+            x = int(random.gauss(mean_x, 3 + game_state.turn_number * 0.1))
+            y = int(random.gauss(mean_y, 3 + game_state.turn_number * 0.1))
+
+            if game_state.game_map.in_arena_bounds([x, y]) and self.can_place.get((x,y), True):
+                if game_state.can_spawn(TURRET, [x, y]):
+                    if random.random() > 0.3:
+                        game_state.attempt_spawn(TURRET, [x, y])
+                    else:
+                        game_state.attempt_spawn(WALL, [x, y])
+                elif len(game_state.game_map[x, y]) == 1:
+                    # Then attempt to upgrade what is already there.
+                    game_state.attempt_upgrade([x, y])
+                else:
+                    if self.verbose: gamelib.debug_write("Could not place at ({}, {})".format(x, y))
+
+
         
 
     def inital_add_to_p_queue(self, game_state):
@@ -131,8 +203,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         for wall in next_walls:
             self.p_queue.put((-0.8, building(name=WALL, x=wall[0], y=wall[1])))
 
-        # DAVID / HENRY LOOK
-        # TODO
         next_turrets = [[4, 11], [23, 11]]
         self.critical_turrets_non_hammer += next_turrets
         for index, turret in enumerate(next_turrets):
@@ -165,7 +235,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.p_queue.put((-0.45, building(name=TURRET, x=turret[0], y=turret[1])))
 
         next_walls = [[9, 7], [18, 7], [10, 6], [17, 6], [12, 4], [13, 4], [14, 4], [15, 4], [6, 10]]
-        self.crtical_walls_non_hammer += next_walls
+        self.crtical_walls_non_hammer += [[9, 7], [18, 7], [10, 6], [17, 6], [12, 4], [13, 4], [14, 4], [15, 4]]
         for wall in next_walls:
             self.p_queue.put((-0.4, building(name=WALL, x=wall[0], y=wall[1])))
 
@@ -270,13 +340,18 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             # Need to careful here whether we decide to upgrade or build a new defence.
             if(defence.name == 'upgrade'):
-                # should_be_able_to_place = True
-                if(game_state.type_cost(unit_type=game_state.game_map[defence.x, defence.y][0].unit_type, upgrade=True)[0] > game_state.get_resource(resource_type=SP, player_index=0)):
-                    # We cannot afford place back onto the queue and break.
-                    self.p_queue.put((defence_value, defence))
-                    break
+                # First check there is something there to upgrade.
+                if game_state.game_map[defence.x, defence.y] != []:
+                    # should_be_able_to_place = True
+                    if(game_state.type_cost(unit_type=game_state.game_map[defence.x, defence.y][0].unit_type, upgrade=True)[0] > game_state.get_resource(resource_type=SP, player_index=0)):
+                        # We cannot afford place back onto the queue and break.
+                        self.p_queue.put((defence_value, defence))
+                        break
+                    else:
+                        number_placed = game_state.attempt_upgrade([defence.x, defence.y])
                 else:
-                    number_placed = game_state.attempt_upgrade([defence.x, defence.y])
+                    # Need to queue the building first with high prioity.
+                    self.p_queue.put((defence_value - 0.01, building(name=TURRET, x=defence.x, y=defence.y)))
             else: 
                 if(game_state.type_cost(unit_type=defence.name)[0] > game_state.get_resource(resource_type=SP, player_index=0)):
                     self.p_queue.put((defence_value, defence))
@@ -385,9 +460,19 @@ class AlgoStrategy(gamelib.AlgoCore):
         return attack_set_list
 
 
-    def prepare_attack_sets_for_us(self, game_state):
+    def prepare_immediate_attack_sets_for_us(self, game_state):
         ''' return List[Attacker] '''
-        pass
+        
+
+        # Should have Pog scouts left, Pog scouts right, and then stack of Dems.
+        my_mp = game_state.get_resource(resource_type=MP, player_index=0)
+
+        attack_set_list = [
+            [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=min(0, int(my_mp - 5)))], 
+            [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=min(0, int(my_mp - 5)))], 
+            [attacker(name=SCOUT, x=13, y=0, num=int(my_mp))]
+            [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
+        ]
 
 
     def find_oppo_best_attack_no_interceptors(self, game_state, attack_sets):
@@ -431,28 +516,25 @@ class AlgoStrategy(gamelib.AlgoCore):
         oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
         our_mp = game_state.get_resource(resource_type=MP, player_index=1)
 
-        if oppo_mp <= 6 or our_mp == 1:
+        if oppo_mp <= 7 or our_mp == 1:
             # Then we can either place on the left, middle or right.
             # 1 interceptors
-            return [[attacker(name=INTERCEPTOR, x=0, y=13, num=1)], 
-                [attacker(name=INTERCEPTOR, x=27, y=13, num=1)], 
-                [attacker(name=INTERCEPTOR, x=18, y=4, num=1)], 
-                [attacker(name=INTERCEPTOR, x=9, y=4, num=1)]]
-        elif oppo_mp <= 12 or our_mp == 2:
+            return [[attacker(name=INTERCEPTOR, x=18, y=4, num=1)], 
+                [attacker(name=INTERCEPTOR, x=7, y=6, num=1)],
+                [attacker(name=INTERCEPTOR, x=13, y=0, num=1)], 
+                [attacker(name=INTERCEPTOR, x=14, y=0, num=1)]]
+        elif oppo_mp <= 15 or our_mp == 2:
             # 2 interceptors
-            return [[attacker(name=INTERCEPTOR, x=0, y=13, num=1), attacker(name=INTERCEPTOR, x=27, y=13, num=1)], 
-            [attacker(name=INTERCEPTOR, x=9, y=4, num=1), attacker(name=INTERCEPTOR, x=18, y=4, num=1)], 
-            [attacker(name=INTERCEPTOR, x=9, y=4, num=2)], 
-            [attacker(name=INTERCEPTOR, x=18, y=4, num=2)]]
+            return [[attacker(name=INTERCEPTOR, x=7, y=6, num=1), attacker(name=INTERCEPTOR, x=20, y=6, num=1)], 
+            [attacker(name=INTERCEPTOR, x=7, y=6, num=2)], 
+            [attacker(name=INTERCEPTOR, x=20, y=6, num=2)],
+            [attacker(name=INTERCEPTOR, x=13, y=0, num=2)]]
         else:
             # 3 interceptors
-            return [[attacker(name=INTERCEPTOR, x=0, y=13, num=1), attacker(name=INTERCEPTOR, x=27, y=13, num=2)], 
-            [attacker(name=INTERCEPTOR, x=9, y=4, num=1), attacker(name=INTERCEPTOR, x=18, y=4, num=2)], 
-            [attacker(name=INTERCEPTOR, x=9, y=4, num=3)], 
-            [attacker(name=INTERCEPTOR, x=18, y=4, num=3)],
-            [attacker(name=INTERCEPTOR, x=0, y=13, num=3)], 
-            [attacker(name=INTERCEPTOR, x=27, y=13, num=3)]]
-
+            return [[attacker(name=INTERCEPTOR, x=7, y=6, num=1), attacker(name=INTERCEPTOR, x=20, y=6, num=2)], 
+            [attacker(name=INTERCEPTOR, x=7, y=6, num=2), attacker(name=INTERCEPTOR, x=20, y=6, num=1)], 
+            [attacker(name=INTERCEPTOR, x=20, y=6, num=3)],
+            [attacker(name=INTERCEPTOR, x=7, y=6, num=3)]]
     
     def find_our_best_response(self, game_state, best_oppo_attack, our_responses):
 

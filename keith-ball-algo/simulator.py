@@ -32,8 +32,8 @@ class Simulator:
         # DAVID / HENRY LOOK
 
         self.health_weighting = 1
-        self.turret_weighting = 0.5
-        self.support_weighting = 0.25
+        self.turret_weighting = 0.3
+        self.support_weighting = 0.2
         self.wall_weighting = 0.1
 
         self.verbose = False
