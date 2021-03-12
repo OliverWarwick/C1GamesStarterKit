@@ -139,6 +139,18 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         return attack_set_list
 
+    def roll_out_our_attack(self, game_state, attack_set_list):
+
+        # List of attack sets, we then run each in a simulation to see which states they generate.
+
+        '''
+        args: game_state: GameState
+              attack_set_list: List[List[Attacker]]
+        returns: None if no attack was deemed good enough, otherwise: List[Attack]
+        '''
+
+
+
 
 
     def place_and_remove_blocking_wall(self, game_state):
