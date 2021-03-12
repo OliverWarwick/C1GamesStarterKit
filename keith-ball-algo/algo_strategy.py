@@ -586,9 +586,10 @@ class AlgoStrategy(gamelib.AlgoCore):
             
             #Case 5: Cheeky Interceptors NOTE will assume central placement for now but it's a lot more complicated than that in reality
             gamelib.debug_write("INTERCEPTOR CASE")
-            interceptorPos = self.estimate_enemy_interceptor_position(game_state)
-            if interceptorPos is not None:
-                attack_set_list.append([attacker(name=INTERCEPTOR, x=interceptorPos[0],y=interceptorPos[1],num=oppo_mp)])
+            #interceptorPos = self.estimate_enemy_interceptor_position(game_state)
+            #gamelib.debug_write(interceptorPos)
+            #if interceptorPos is not None:
+            #    attack_set_list.append([attacker(name=INTERCEPTOR, x=interceptorPos[0],y=interceptorPos[1],num=oppo_mp)])
 
         elif (oppo_mp > 10 and oppo_mp <= 20): #MP between 10 and 21, so mid-range attack
             #Case 1: Big Scout Rush
