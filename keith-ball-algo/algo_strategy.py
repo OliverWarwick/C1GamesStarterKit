@@ -198,8 +198,6 @@ class AlgoStrategy(gamelib.AlgoCore):
                     game_state.attempt_upgrade([x, y])
                 else:
                     if self.verbose: gamelib.debug_write("Could not place at ({}, {})".format(x, y))
-
-
         
 
     def inital_add_to_p_queue(self, game_state):
@@ -413,6 +411,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Get possible attacks for oppo
         oppo_attack_set = self.prepare_attack_sets_for_oppo_during_first_stage(game_state)
         gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
+        gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
 
         # Find their best attack
         best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
@@ -616,7 +615,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             return ([3*(d-1), d-1])
         if(enemy_mp == 20):
             return ([4,8]) if random.randint(0,1)==1 else ([5,5])
-        scout_demo_split = [ [1,1], [1,2], [1,3], [1,4], [1,5], [2,3], [2,4], [2,5], [2,6], [2,7], [3,5], [3,6], [3,7], [4,5], [4,6], [4,7], [4,8]] #I pray this is right
+        scout_demo_split = [[1,1], [1,2], [1,3], [1,4], [1,5], [2,3], [2,4], [2,5], [2,6], [2,7], [3,5], [3,6], [3,7], [4,5], [4,6], [4,7], [4,8]] #I pray this is right
         return scout_demo_split[enemy_mp-4]
 
 
@@ -686,6 +685,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             [attacker(name=INTERCEPTOR, x=20, y=6, num=3)],
             [attacker(name=INTERCEPTOR, x=7, y=6, num=3)]]
     
+
     def find_our_best_response(self, game_state, best_oppo_attack, our_responses):
 
         start_time = time.time()
