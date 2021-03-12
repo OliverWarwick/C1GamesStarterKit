@@ -321,6 +321,18 @@ class GameState:
                 if self.game_map[loc][0].unit_type == unit_type and self.game_map[loc][0].player_index == 1:
                     oppo_count += 1
         return [my_count, oppo_count]
+
+    def get_numer_of_upgraded_stationary_units(self, unit_type):
+        my_count = 0
+        oppo_count = 0
+        for loc in self.game_map:
+            if self.game_map.in_arena_bounds(loc) and self.contains_stationary_unit(loc):
+                if self.game_map[loc][0].unit_type == unit_type and self.game_map[loc][0].upgraded and self.game_map[loc][0].player_index == 0:
+                    my_count += 1
+                if self.game_map[loc][0].unit_type == unit_type and self.game_map[loc][0].upgraded and self.game_map[loc][0].player_index == 1:
+                    oppo_count += 1
+        return [my_count, oppo_count]
+
     
     # OW Add
     def get_game_state_metrics(self):
@@ -336,6 +348,7 @@ class GameState:
         my_support_count, oppo_support_count = self.get_number_of_stationary_units_of_type(SUPPORT)
         self.game_state_info['my_support_count'] = my_support_count
         self.game_state_info['oppo_support_count'] = oppo_support_count
+        my_upgraded_turrets, oppo_upgraded_turrets = self.get_numer_of_upgraded_stationary_units(TURRET)
 
 
 
