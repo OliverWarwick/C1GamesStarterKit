@@ -123,6 +123,23 @@ class AlgoStrategy(gamelib.AlgoCore):
         # OW now.
 
 
+    def prepare_immediate_attack_sets_for_us(self, game_state):
+        ''' return List[Attacker] '''
+        
+
+        # Should have Pog scouts left, Pog scouts right, and then stack of Dems.
+        my_mp = game_state.get_resource(resource_type=MP, player_index=0)
+
+        attack_set_list = [
+            [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=min(0, int(my_mp - 5)))], 
+            [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=min(0, int(my_mp - 5)))], 
+            [attacker(name=SCOUT, x=13, y=0, num=int(my_mp))]
+            [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
+        ]
+
+        return attack_set_list
+
+
 
     def place_and_remove_blocking_wall(self, game_state):
         gamelib.debug_write("MOVING WALL")
@@ -382,8 +399,6 @@ class AlgoStrategy(gamelib.AlgoCore):
             game_state.attempt_spawn(att.name, [att.x, att.y], att.num)
 
 
-
-
     def find_oppo_best_strategy_and_interceptor_response(self, game_state):
         ''' 
         args: game_state: GameState should have been copied already.
@@ -598,27 +613,6 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
 
-
-
-
-
-
-
-    def prepare_immediate_attack_sets_for_us(self, game_state):
-        ''' return List[Attacker] '''
-        
-
-        # Should have Pog scouts left, Pog scouts right, and then stack of Dems.
-        my_mp = game_state.get_resource(resource_type=MP, player_index=0)
-
-        attack_set_list = [
-            [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=min(0, int(my_mp - 5)))], 
-            [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=min(0, int(my_mp - 5)))], 
-            [attacker(name=SCOUT, x=13, y=0, num=int(my_mp))]
-            [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
-        ]
-
-        return attack_set_list
 
 
     def find_oppo_best_attack_no_interceptors(self, game_state, attack_sets):
