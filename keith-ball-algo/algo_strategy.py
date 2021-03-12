@@ -427,11 +427,27 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
         else: # MP >20 big fucko wucko attack
+            #Case 1/2: Scout Splits (this one I think we can improve the heuristic for than just 50-50, 25-75)
+
+            #Case 3: Big Scout Rush (one stack)
+            scoutPos = self.get_scout_attack_position(game_state)
+            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+
+            #Case 4: Big Demo Rush
             attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], [], [attacker(name=SCOUT, x=14, y=27, num=4)]]
 
+            #Case 5: Scout-Demo Split
+            splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
+            splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
+            scout_demo_attack = []
+            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
+            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+
+            attack_set_list.append(scout_demo_attack)
+            
         return attack_set_list
 
-    '''TODO, implement better heuristic for deciding the attacking side and factor in path of attack'''
+    '''TODO, implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right'''
 
     def get_scout_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
         initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
