@@ -162,10 +162,64 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Should have Pog scouts left, Pog scouts right, and then stack of Dems.
 
-        attack_set_list = [[attacker(name=SCOUT, x=13, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=14, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
-        ]
+        attack_set_list = [] #[[attacker(name=SCOUT, x=13, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=14, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]]
+
+        #Attack Profile 1: Big Demo Energy
+        demoPos = self.estimate_our_demo_placement(game_state)
+        gamelib.debug_write("Demolisher attack "+ str(demoPos))
+        if demoPos is not None:
+            attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(my_mp/3))])
+        #Attack Profile 2: Scout+Demo tomfoolery
 
         return attack_set_list
+    
+    def estimate_our_demo_placement(self, game_state):
+        validAttackPos = []
+        leftDev = 10000
+        rightDev = 10000
+        validLeftPos = []
+        validRightPos = []
+        leftFound = False
+        rightFound = False
+        #Left side
+        initLeft = [6,7]
+        initRight = [21,7]
+        for offset in range(7):
+
+            if leftFound is False:
+                for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
+                    sideToggle = pow(-1, side)
+                    testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
+                    if self.verbose: gamelib.debug_write(testLeftPos)
+                    if (game_state.contains_stationary_unit(testLeftPos) is False):
+                        unitPath = game_state.find_path_to_edge(testLeftPos)
+                        if(unitPath[-1][1]>=14):
+                            validLeftPos.append(testLeftPos)
+                            leftDev = offset
+                            leftFound = True
+            if rightFound is False:
+                for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
+                    sideToggle = pow(-1, side)
+                    testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
+                    if self.verbose: gamelib.debug_write(testRightPos)
+                    if (game_state.contains_stationary_unit(testRightPos) is False):
+                        unitPath = game_state.find_path_to_edge(testRightPos)
+                        if(unitPath[-1][1]>=14):
+                            validRightPos.append(testRightPos)
+                            rightDev = offset
+                            rightFound = True
+        
+        #Check that we found some valid attack position
+        if (not (leftFound or rightFound)):
+            return None
+        #After finding "valid" start positions for interceptors, we pick one of them
+        if leftDev < 10 and (leftDev <= rightDev):
+            validAttackPos.append(random.choice(validLeftPos))
+        if rightDev < 10 and (rightDev <= leftDev):
+            validAttackPos.append(random.choice(validRightPos))
+        
+        return random.choice(validAttackPos)
+
 
     def roll_out_our_attack_sets(self, game_state, attack_set_list):
 
