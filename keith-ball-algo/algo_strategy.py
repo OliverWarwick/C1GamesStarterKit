@@ -553,7 +553,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # DAVID / HENRY LOOK
 
         oppo_mp = int(game_state.get_resource(resource_type=MP, player_index=1))
-
+        gamelib.debug_write("Opponent MP :" + str(oppo_mp))
         attack_set_list = [] #Create an empty list of possible attacks
 
         #For now calculate opponent attack sets in three cases determined by their MP. MP <= 10, 10 < MP <= 20, MP >20 
@@ -572,11 +572,11 @@ class AlgoStrategy(gamelib.AlgoCore):
                 splitPositions = self.get_scout_demo_split_positions(game_state)
                 splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp)
                 scout_demo_attack = []
-                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
-                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
+                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
                 attack_set_list.append(scout_demo_attack)
             
-            #Case 5: Cheeky Interceptors
+            #Case 5: Cheeky Interceptors NOTE will assume central placement for now but it's a lot more complicated than that in reality
 
         elif (oppo_mp > 10 and oppo_mp <= 20): #MP between 10 and 21, so mid-range attack
             #Case 1: Big Scout Rush
@@ -594,8 +594,8 @@ class AlgoStrategy(gamelib.AlgoCore):
             splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
             splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
             scout_demo_attack = []
-            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
-            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
+            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
 
             attack_set_list.append(scout_demo_attack)
 
@@ -615,11 +615,12 @@ class AlgoStrategy(gamelib.AlgoCore):
             splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
             splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
             scout_demo_attack = []
-            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
-            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
+            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
 
             attack_set_list.append(scout_demo_attack)
 
+        gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
         return attack_set_list
 
     #TODO, implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right
@@ -634,7 +635,9 @@ class AlgoStrategy(gamelib.AlgoCore):
             for i in range(2):
                 if (game_state.contains_stationary_unit(initPositions[i]) == False): #Check if position is occupied if not, then we pick here
                     if(initPositions[i][1] >= finalPositions[i][1]): #Check y value of the position, if the one we're on is higher we spawn there
-                        finalPositions[i] = initPositions[i]
+                        unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
+                        if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on their last line (Kamikaze into our walls)
+                            finalPositions[i] = initPositions[i]
                 else:
                     initPositions[i][0]-= pow(-1,i) #If i=0, then left side so we subtract (-1)^i = 1 (i.e. decrease x), if i=1 then it adds 1 instead
                     initPositions[i][1]-= 1 #Decrease the y coordinate here
@@ -656,7 +659,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                     unitPath = game_state.find_path_to_edge(initPositions[i])
                     #gamelib.debug_write(unitPath)
                     #gamelib.debug_write(unitPath[-1])
-                    if(unitPath[-1][1] <= 13): #Check that this path ends on our side or on their last line
+                    if(unitPath[-1][1] <= 14): #Check that this path ends on our side or on their last line
                         newPath = [copy.deepcopy(initPositions[i]), len(unitPath)]
                         validPaths.append(newPath)
 
@@ -669,7 +672,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         validScoutPaths = []
         validDemoPaths = []
         for path in validPaths:
-            gamelib.debug_write(path)
             if (path[1] < minPathLength):
                 minPathLength = path[1]
                 validDemoPaths = []
@@ -684,17 +686,18 @@ class AlgoStrategy(gamelib.AlgoCore):
             elif (path[1] == maxPathLength):
                 validScoutPaths.append(path[0])
         #All paths in valid scoutpaths and validdemopaths are the same length, so we just pick a random start position amongst them and send that off.
-        gamelib.debug_write(validScoutPaths)
-        gamelib.debug_write(validDemoPaths)
+        if self.verbose: gamelib.debug_write(validScoutPaths)
+        if self.verbose: gamelib.debug_write(validDemoPaths)
         spawnPositions = [random.choice(validScoutPaths), random.choice(validDemoPaths)]
         return spawnPositions
 
+    #Retrieves the numbers in the split for scouts and demolishers, first number is for demos and second is for scouts.
     def get_enemy_scout_demo_split_numbers(self, enemy_mp): #This assumes enemy_mp >= 4
 
         enemy_mp = int(math.floor(enemy_mp)) #Going to round down to use a fat list for all cases from 4 <= mp < 20
         if(enemy_mp >= 21):
             d = math.floor((enemy_mp-1)/5)
-            return ([3*(d-1), d-1])
+            return ([d-1, 3*(d-1)])
         if(enemy_mp == 20):
             return ([4,8]) if random.randint(0,1)==1 else ([5,5])
         scout_demo_split = [[1,1], [1,2], [1,3], [1,4], [1,5], [2,3], [2,4], [2,5], [2,6], [2,7], [3,5], [3,6], [3,7], [4,5], [4,6], [4,7], [4,8]] #I pray this is right
