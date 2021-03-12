@@ -379,7 +379,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # DAVID / HENRY LOOK
 
-        oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
+        oppo_mp = int(game_state.get_resource(resource_type=MP, player_index=1))
 
         attack_set_list = [] #Create an empty list of possible attacks
 
@@ -387,12 +387,27 @@ class AlgoStrategy(gamelib.AlgoCore):
         if(oppo_mp <= 10): 
             #Case 1: Scout Rush
             scoutPos = self.get_scout_attack_position(game_state)
-            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=int(oppo_mp)))
-            pass
+            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+
+            #Case 2: Split Scout (successive attackers) TODO later as have had second thoughts on this
+
+            #Case 3: Full Demo Rush
+            attack_set_list.append(attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3))))  
+
+            #Case 4: Scout-Demo Split
+            if(oppo_mp >= 4):
+                splitPositions = self.get_scout_demo_split_positions(game_state)
+                splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp)
+                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
+                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+                attack_set_list.append(scout_demo_attack)
+            
+            #Case 5: Cheeky Interceptors
+
         elif (oppo_mp > 10 and oppo_mp <= 20): #MP between 10 and 21, so mid-range attack
             #Case 1: Big Scout Rush
             scoutPos = self.get_scout_attack_position(game_state)
-            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=int(oppo_mp)))
+            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
 
             #Case 2 25-75 Scout Split, TODO bc I think there's some extra stuff to check (I think this is a subset of Thor attacks):
             
@@ -402,14 +417,13 @@ class AlgoStrategy(gamelib.AlgoCore):
             attack_set_list.append(attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3))))  
 
             #Case 5 Scout-Demo split (only do if at least 4 credits)
-            if(oppo_mp >= 4): #We need at least 4 credits to send a scout-demo split
-                splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
-                splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
-                scout_demo_attack = []
-                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
-                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+            splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
+            splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
+            scout_demo_attack = []
+            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
+            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
 
-                attack_set_list.append(scout_demo_attack)
+            attack_set_list.append(scout_demo_attack)
 
 
         else: # MP >20 big fucko wucko attack
