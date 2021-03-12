@@ -162,7 +162,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Should have Pog scouts left, Pog scouts right, and then stack of Dems.
 
-        attack_set_list = [[attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=13, y=0, num=int(my_mp))],[attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
+        attack_set_list = [[attacker(name=SCOUT, x=13, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=14, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]
         ]
 
         return attack_set_list
@@ -185,6 +185,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Get the attack set list.
         sim = Simulator(game_state, self.config)
+        sim.verbose = False
 
         current_best_score = -1000
         index_best_score = None
@@ -224,7 +225,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
     def place_and_remove_blocking_wall(self, game_state):
-        gamelib.debug_write("MOVING WALL")
+        if self.verbose: gamelib.debug_write("MOVING WALL")
         if self.blocking_wall_placement != "CENTER":
             # We need to alternate side to side.
             if self.blocking_wall_placement == "LEFT":
@@ -488,30 +489,30 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Update using the prioity queue
         self.update_game_state_while_p_queue_unloading(game_state)
-        gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
+        if self.verbose: gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
 
         # Get possible attacks for oppo
         oppo_attack_set = self.prepare_attack_sets_for_oppo_during_first_stage(game_state)
-        gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
-        gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
+        if self.verbose: gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
+        if self.verbose: gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
 
         if len(oppo_attack_set) == 0:
             return None
 
         # Find their best attack
         best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
-        gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
-        gamelib.debug_write("Time elapsed after finding best oppo attack: {}".format(time.time() - start_time))
+        if self.verbose: gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
+        if self.verbose: gamelib.debug_write("Time elapsed after finding best oppo attack: {}".format(time.time() - start_time))
 
         # Get our possible interceptor placements based on the number of credits the oppo have.
         our_interceptor_attacks = self.prepare_our_interceptors_to_respond(game_state)
-        gamelib.debug_write("Our possible interceptor responcses: {}".format(our_interceptor_attacks))
-        gamelib.debug_write("Time elapsed after getting our interceptor placements: {}".format(time.time() - start_time))
+        if self.verbose: gamelib.debug_write("Our possible interceptor responcses: {}".format(our_interceptor_attacks))
+        if self.verbose: gamelib.debug_write("Time elapsed after getting our interceptor placements: {}".format(time.time() - start_time))
 
 
         our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
-        gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
-        gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
+        if self.verbose: gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
+        if self.verbose: gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
 
         return our_best_attack
 
@@ -543,7 +544,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 break
         # Game state should now contain as many elements as we can place ready to look at what attacks could be thrown.
         if self.verbose: gamelib.debug_write("After adding our next p queue elements")
-        self.print_map(game_state)
+        if self.verbose: self.print_map(game_state)
 
 
 
@@ -636,7 +637,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
                 attack_set_list.append(scout_demo_attack) #Send attack
 
-        gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
+        if self.verbose: gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
         return attack_set_list
 
     def estimate_enemy_interceptor_position(self, game_state): #Returns a list of coordinate and number pairs for interceptor spawns + 
@@ -656,7 +657,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
-                    gamelib.debug_write(testLeftPos)
+                    if self.verbose: gamelib.debug_write(testLeftPos)
                     if (game_state.contains_stationary_unit(testLeftPos) is False):
                         unitPath = game_state.find_path_to_edge(testLeftPos)
                         if(unitPath[-1][1]<=14):
@@ -667,7 +668,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
-                    gamelib.debug_write(testRightPos)
+                    if self.verbose: gamelib.debug_write(testRightPos)
                     if (game_state.contains_stationary_unit(testRightPos) is False):
                         unitPath = game_state.find_path_to_edge(testRightPos)
                         if(unitPath[-1][1]<=14):
@@ -734,7 +735,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
                 initPositions[i][0] -= pow(-1,i)
                 initPositions[i][1] -= 1
-        gamelib.debug_write(validPaths)
+        if self.verbose: gamelib.debug_write(validPaths)
         if len(validPaths)==0:
             return None
         #We've now got the starting point and length of each path to our side, we'll find the minimum/max of these and pick one at random for scout/demo
@@ -803,7 +804,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 # Too much time taken.
                 break
             roll_out_score = sim.roll_out_one_turn([], attack_sets[i], [], [])
-            gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_sets[i], roll_out_score))
+            if self.verbose: gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_sets[i], roll_out_score))
 
             # Update if needed
             if roll_out_score < current_worst_score:
@@ -812,7 +813,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             sim.reset()
         
-        gamelib.debug_write("Returing as oppo best attack: {}     because of score {}".format(attack_sets[index_worst_score], current_worst_score))
+        if self.verbose: gamelib.debug_write("Returing as oppo best attack: {}     because of score {}".format(attack_sets[index_worst_score], current_worst_score))
         return [attack_sets[index_worst_score], current_worst_score]
 
 
@@ -859,7 +860,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 # Too much time taken.
                 break
             roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
-            gamelib.debug_write("Simulation iteration: {}. Interceptor List: {}. Score: {}".format(i, our_responses[i], roll_out_score))
+            if self.verbose: gamelib.debug_write("Simulation iteration: {}. Interceptor List: {}. Score: {}".format(i, our_responses[i], roll_out_score))
 
             # Update if needed
             if roll_out_score > current_best_score:
@@ -868,7 +869,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             sim.reset()
 
-        gamelib.debug_write("Returing as our best attack: {}     because of score {}".format(our_responses[index_best_score], current_best_score))
+        if self.verbose: gamelib.debug_write("Returing as our best attack: {}     because of score {}".format(our_responses[index_best_score], current_best_score))
         return [our_responses[index_best_score], current_best_score]
 
 
@@ -1249,14 +1250,6 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
 
-
-
-
-
-
-
-
-
     def detect_enemy_unit(self, game_state, unit_type=None, valid_x = None, valid_y = None):
         total_units = 0
         for location in game_state.game_map:
@@ -1267,119 +1260,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         return total_units
 
 
-
-
-    ''' NORMAL CODE '''
-
-    def starter_strategy(self, game_state):
-        """
-        For defense we will use a spread out layout and some interceptors early on.
-        We will place turrets near locations the opponent managed to score on.
-        For offense we will use long range demolishers if they place stationary units near the enemy's front.
-        If there are no stationary units to attack in the front, we will send Scouts to try and score quickly.
-        """
-        # First, place basic defenses
-        self.build_defences(game_state)
-        # Now build reactive defenses based on where the enemy scored
-        self.build_reactive_defense(game_state)
-
-        # If the turn is less than 5, stall with interceptors and wait to see enemy's base
-        if game_state.turn_number < 5:
-            self.stall_with_interceptors(game_state)
-        else:
-            # Now let's analyze the enemy base to see where their defenses are concentrated.
-            # If they have many units in the front we can build a line for our demolishers to attack them at long range.
-            if self.detect_enemy_unit(game_state, unit_type=None, valid_x=None, valid_y=[14, 15]) > 10:
-                self.demolisher_line_strategy(game_state)
-            else:
-                # They don't have many units in the front so lets figure out their least defended area and send Scouts there.
-
-                # Only spawn Scouts every other turn
-                # Sending more at once is better since attacks can only hit a single scout at a time
-                if game_state.turn_number % 2 == 1:
-                    # To simplify we will just check sending them from back left and right
-                    scout_spawn_location_options = [[13, 0], [14, 0]]
-                    best_location = self.least_damage_spawn_location(game_state, scout_spawn_location_options)
-                    game_state.attempt_spawn(SCOUT, best_location, 1000)
-
-                # Lastly, if we have spare SP, let's build some Factories to generate more resources
-                support_locations = [[13, 2], [14, 2], [13, 3], [14, 3]]
-                game_state.attempt_spawn(SUPPORT, support_locations)
-
-    def build_defences(self, game_state):
-        """
-        Build basic defenses using hardcoded locations.
-        Remember to defend corners and avoid placing units in the front where enemy demolishers can attack them.
-        """
-        # Useful tool for setting up your base locations: https://www.kevinbai.design/terminal-map-maker
-        # More community tools available at: https://terminal.c1games.com/rules#Download
-
-        # Place turrets that attack enemy units
-        turret_locations = [[0, 13], [27, 13], [8, 11], [19, 11], [13, 11], [14, 11]]
-        # attempt_spawn will try to spawn units if we have resources, and will check if a blocking unit is already there
-        game_state.attempt_spawn(TURRET, turret_locations)
-        
-        # Place walls in front of turrets to soak up damage for them
-        wall_locations = [[8, 12], [19, 12]]
-        game_state.attempt_spawn(WALL, wall_locations)
-        # upgrade walls so they soak more damage
-        game_state.attempt_upgrade(wall_locations)
-
-    def build_reactive_defense(self, game_state):
-        """
-        This function builds reactive defenses based on where the enemy scored on us from.
-        We can track where the opponent scored by looking at events in action frames 
-        as shown in the on_action_frame function
-        """
-        for location in self.scored_on_locations:
-            # Build turret one space above so that it doesn't block our own edge spawn locations
-            build_location = [location[0], location[1]+1]
-            game_state.attempt_spawn(TURRET, build_location)
-
-    def stall_with_interceptors(self, game_state):
-        """
-        Send out interceptors at random locations to defend our base from enemy moving units.
-        """
-        # We can spawn moving units on our edges so a list of all our edge locations
-        friendly_edges = game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_LEFT) + game_state.game_map.get_edge_locations(game_state.game_map.BOTTOM_RIGHT)
-        
-        # Remove locations that are blocked by our own structures 
-        # since we can't deploy units there.
-        deploy_locations = self.filter_blocked_locations(friendly_edges, game_state)
-        
-        # While we have remaining MP to spend lets send out interceptors randomly.
-        while game_state.get_resource(MP) >= game_state.type_cost(INTERCEPTOR)[MP] and len(deploy_locations) > 0:
-            # Choose a random deploy location.
-            deploy_index = random.randint(0, len(deploy_locations) - 1)
-            deploy_location = deploy_locations[deploy_index]
-            
-            game_state.attempt_spawn(INTERCEPTOR, deploy_location)
-            """
-            We don't have to remove the location since multiple mobile 
-            units can occupy the same space.
-            """
-
-    def demolisher_line_strategy(self, game_state):
-        """
-        Build a line of the cheapest stationary unit so our demolisher can attack from long range.
-        """
-        # First let's figure out the cheapest unit
-        # We could just check the game rules, but this demonstrates how to use the GameUnit class
-        stationary_units = [WALL, TURRET, SUPPORT]
-        cheapest_unit = WALL
-        for unit in stationary_units:
-            unit_class = gamelib.GameUnit(unit, game_state.config)
-            if unit_class.cost[game_state.MP] < gamelib.GameUnit(cheapest_unit, game_state.config).cost[game_state.MP]:
-                cheapest_unit = unit
-
-        # Now let's build out a line of stationary units. This will prevent our demolisher from running into the enemy base.
-        # Instead they will stay at the perfect distance to attack the front two rows of the enemy base.
-        for x in range(27, 5, -1):
-            game_state.attempt_spawn(cheapest_unit, [x, 11])
-
-        # Now spawn demolishers next to the line
-        # By asking attempt_spawn to spawn 1000 units, it will essentially spawn as many as we have resources for
-        game_state.attempt_spawn(DEMOLISHER, [24, 10], 1000)
 
     def least_damage_spawn_location(self, game_state, location_options):
         """
