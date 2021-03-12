@@ -120,7 +120,36 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.place_attackers(game_state, interceptor_placement)
         
         # We now want to search to see if we have a good attack in the one step case.
-        # OW now.
+        # If there is execute this, otherwise do not and carry on.
+        self.investigate_and_place_our_immediate_attacks(game_state)
+
+        # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could do enough damange.
+        # THUNDER STRIKE PREP
+
+
+
+    
+    def investigate_and_place_our_immediate_attacks(self, game_state):
+        '''
+        This should call to get a list of our attacks, and then simulate them to see which is most effective
+        args: game_state: GameState
+        return: -. Will execute any instructions within this code.
+        '''
+
+        # Get us some attack sets
+        attack_sets = self.prepare_immediate_attack_sets_for_us(game_state)
+
+        # Look at each in turn to see which is the best.
+        best_attack = self.roll_out_our_attack_sets(game_state, attack_sets)
+
+        # This function either Returns
+        # None - no good attack which is worth persueing, so we can therefore carry on.
+        # List[Attack] at which point we can then use to place these.
+        if best_attack is not None:
+            self.place_attackers(game_state, best_attack)
+
+
+
 
 
     def prepare_immediate_attack_sets_for_us(self, game_state):
@@ -139,7 +168,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         return attack_set_list
 
-    def roll_out_our_attack(self, game_state, attack_set_list):
+    def roll_out_our_attack_sets(self, game_state, attack_set_list):
 
         # List of attack sets, we then run each in a simulation to see which states they generate.
 
@@ -149,6 +178,48 @@ class AlgoStrategy(gamelib.AlgoCore):
         returns: None if no attack was deemed good enough, otherwise: List[Attack]
         '''
 
+        # Copy the game state.
+        copied_game_state = copy.deepcopy(game_state)
+
+        # Start the timer.
+        start_time = time.time()
+
+        # Get the attack set list.
+        sim = Simulator(copied_game_state, self.config)
+
+        current_best_score = -1000
+        index_best_score = None
+
+        # Loop through the list and update.
+        for i in range(len(attack_set_list)):
+            if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
+            if time.time() - start_time > 1:
+                # Too much time taken.
+                break
+            roll_out_score = sim.roll_out_one_turn(attack_set_list, [], [], [])
+            gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_set_list[i], roll_out_score))
+
+            # Want to look at both the score and the end states.
+            if copied_game_state.enemy_health < 0:
+                gamelib.debug_write("Amount of enemy health: {}. Below zero so returning as the best attack list: {}".format(copied_game_state.enemy_health, attack_set_list[i]))
+                # This is a knock out blow, so return this.
+                return attack_set_list[i]
+
+            gamelib.debug_write("Amount of enemy_health after sim: {}  Amount before: {}".format(copied_game_state.enemy_health, game_state.enemy_health))
+            if copied_game_state.enemy_heath - game_state.enemy_health > 0.5 * game_state.get_resource(resource_type=MP, player_index=0):
+                gamelib.debug_write("Good enough to use as an attack. Score: {}".format(roll_out_score))
+                if roll_out_score > current_best_score:
+                    index_best_score = i
+                    current_best_score = roll_out_score
+            
+            sim.reset()
+
+        if index_best_score is not None:
+            # We found a good enough attack so send this.
+            gamelib.debug_write("Best attack found and is good enough. Attack: {}".format(attack_set_list[index_best_score]))
+            return attack_set_list[index_best_score]
+        else:
+            return None
 
 
 
