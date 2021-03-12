@@ -491,12 +491,12 @@ class AlgoStrategy(gamelib.AlgoCore):
         if(oppo_mp <= 10): 
             #Case 1: Scout Rush
             scoutPos = self.get_scout_attack_position(game_state)
-            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+            attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
             #Case 2: Split Scout (successive attackers) TODO later as have had second thoughts on this
 
             #Case 3: Full Demo Rush
-            attack_set_list.append(attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3))))  
+            attack_set_list.append([attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3)))])  
 
             #Case 4: Scout-Demo Split
             if(oppo_mp >= 4):
@@ -512,14 +512,14 @@ class AlgoStrategy(gamelib.AlgoCore):
         elif (oppo_mp > 10 and oppo_mp <= 20): #MP between 10 and 21, so mid-range attack
             #Case 1: Big Scout Rush
             scoutPos = self.get_scout_attack_position(game_state)
-            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+            attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
             #Case 2 25-75 Scout Split, TODO bc I think there's some extra stuff to check (I think this is a subset of Thor attacks):
             
             #Case 3 50-50 Scout Split, TODO later for same reason as above
             
             #Case 4 All Demo attack NOTE will assume same position as scout attack case for now but might change
-            attack_set_list.append(attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3))))  
+            attack_set_list.append([attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3)))])  
 
             #Case 5 Scout-Demo split (only do if at least 4 credits)
             splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
@@ -536,10 +536,11 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             #Case 3: Big Scout Rush (one stack)
             scoutPos = self.get_scout_attack_position(game_state)
-            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+            attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
             #Case 4: Big Demo Rush
-            attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], [], [attacker(name=SCOUT, x=14, y=27, num=4)]]
+            scoutPos = self.get_scout_attack_position(game_state)
+            attack_set_list.append([attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3)))])  
 
             #Case 5: Scout-Demo Split
             splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
