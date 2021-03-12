@@ -567,7 +567,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             if scoutPos is not None:
                 attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
-            #Case 2: Split Scout (successive attackers) TODO later as have had second thoughts on this
+            #Case 2: Split Scout (Enemy Thor) TODO later as have had second thoughts on this
 
             #Case 3: Full Demo Rush
             demoPos = self.get_scout_attack_position(game_state)
@@ -585,6 +585,10 @@ class AlgoStrategy(gamelib.AlgoCore):
                     attack_set_list.append(scout_demo_attack)
             
             #Case 5: Cheeky Interceptors NOTE will assume central placement for now but it's a lot more complicated than that in reality
+            gamelib.debug_write("INTERCEPTOR CASE")
+            interceptorPos = self.estimate_enemy_interceptor_position(game_state)
+            if interceptorPos is not None:
+                attack_set_list.append([attacker(name=INTERCEPTOR, x=interceptorPos[0],y=interceptorPos[1],num=oppo_mp)])
 
         elif (oppo_mp > 10 and oppo_mp <= 20): #MP between 10 and 21, so mid-range attack
             #Case 1: Big Scout Rush
@@ -592,16 +596,14 @@ class AlgoStrategy(gamelib.AlgoCore):
             if scoutPos is not None:
                 attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
-            #Case 2 25-75 Scout Split, TODO bc I think there's some extra stuff to check (I think this is a subset of Thor attacks):
+            #Case 2 Split Scout (Enemy Thor)
             
-            #Case 3 50-50 Scout Split, TODO later for same reason as above
-            
-            #Case 4 All Demo attack NOTE will assume same position as scout attack case for now but might change
+            #Case 3 All Demo attack NOTE will assume same position as scout attack case for now but might change
             demoPos = self.get_scout_attack_position(game_state)
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
-            #Case 5 Scout-Demo split (only do if at least 4 credits)
+            #Case 4 Scout-Demo split (only do if at least 4 credits)
             splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
             splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
             scout_demo_attack = []
@@ -612,19 +614,19 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
         else: # MP >20 big fucko wucko attack
-            #Case 1/2: Scout Splits (this one I think we can improve the heuristic for than just 50-50, 25-75)
+            #Case 1: Scary Enemy Thor
 
-            #Case 3: Big Scout Rush (one stack)
+            #Case 2: Big Scout Rush (one stack)
             scoutPos = self.get_scout_attack_position(game_state)
             if scoutPos is not None:
                 attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
-            #Case 4: Big Demo Rush
+            #Case 3: Big Demo Rush
             demoPos = self.get_scout_attack_position(game_state)
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
-            #Case 5: Scout-Demo Split
+            #Case 4: Scout-Demo Split
             splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
             if splitPositions is not None:
                 splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
@@ -636,7 +638,53 @@ class AlgoStrategy(gamelib.AlgoCore):
         gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
         return attack_set_list
 
-    #TODO, implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right
+    def estimate_enemy_interceptor_position(self, game_state): #Returns a list of coordinate and number pairs for interceptor spawns + 
+        validAttackPos = []
+        leftDev = 10000
+        rightDev = 10000
+        validLeftPos = []
+        validRightPos = []
+        leftFound = False
+        rightFound = False
+        #Left side
+        initLeft = [6,20]
+        initRight = [21,20]
+        for offset in range(7):
+
+            if leftFound is False:
+                for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
+                    sideToggle = pow(-1, side)
+                    testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
+                    if (game_state.contains_stationary_unit(testLeftPos) is False):
+                        unitPath = game_state.find_path_to_edge(testLeftPos)
+                        if(unitPath[-1][1]<=14):
+                            validLeftPos.append(testLeftPos)
+                            leftDev = offset
+                            leftFound = True
+            if rightFound is False:
+                for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
+                    sideToggle = pow(-1, side)
+                    testRightPos = [initRight[0]+offset*sideToggle, initRight[0]+offset*sideToggle]
+                    if (game_state.contains_stationary_unit(testRightPos) is False):
+                        unitPath = game_state.find_path_to_edge(testRightPos)
+                        if(unitPath[-1][1]<=14):
+                            validRightPos.append(testRightPos)
+                            rightDev = offset
+                            rightFound = True
+        
+        #Check that we found some valid attack position
+        if (not (leftFound or rightFound)):
+            return None
+        #After finding "valid" start positions for interceptors, we pick one of them
+        if leftDev < 10 and (leftDev <= rightDev):
+            validAttackPos.append(random.choice(validLeftPos))
+        if rightDev < 10 and (rightDev <= leftDev):
+            validAttackPos.append(random.choice(validRightPos))
+        
+        return random.choice(validAttackPos)
+        
+
+    #TODO, possibly implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right
 
     def get_scout_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
         initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
@@ -646,7 +694,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         #Start from the very back and basically BFS down
         for y in range(14):
             for i in range(2):
-                if (game_state.contains_stationary_unit(initPositions[i]) == False): #Check if position is occupied if not, then we pick here
+                if (game_state.contains_stationary_unit(initPositions[i]) is False): #Check if position is occupied if not, then we pick here
                     if(initPositions[i][1] >= finalPositions[i][1]): #Check y value of the position, if the one we're on is higher we spawn there
                         unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
                         if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on their last line (Kamikaze into our walls)
