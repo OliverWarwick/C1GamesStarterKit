@@ -1,0 +1,2617 @@
+Random seed: 5729516616934165264
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Turn: [0, 0, -1, 0]
+Calling on_turn
+Starting on_turn
+My Health: 40.0 Enermy Health: 40.0
+Performing turn 0 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 0, 0, 1]
+Calling on_action_frame
+Turn: [1, 0, 1, 2]
+Calling on_action_frame
+Turn: [1, 0, 2, 3]
+Calling on_action_frame
+Turn: [1, 0, 3, 4]
+Calling on_action_frame
+Turn: [1, 0, 4, 5]
+Calling on_action_frame
+Turn: [1, 0, 5, 6]
+Calling on_action_frame
+Turn: [1, 0, 6, 7]
+Calling on_action_frame
+Turn: [1, 0, 7, 8]
+Calling on_action_frame
+Turn: [1, 0, 8, 9]
+Calling on_action_frame
+Turn: [1, 0, 9, 10]
+Calling on_action_frame
+Turn: [1, 0, 10, 11]
+Calling on_action_frame
+Turn: [1, 0, 11, 12]
+Calling on_action_frame
+Turn: [1, 0, 12, 13]
+Calling on_action_frame
+Turn: [1, 0, 13, 14]
+Calling on_action_frame
+Turn: [1, 0, 14, 15]
+Calling on_action_frame
+Turn: [1, 0, 15, 16]
+Calling on_action_frame
+Turn: [1, 0, 16, 17]
+Calling on_action_frame
+Turn: [1, 0, 17, 18]
+Calling on_action_frame
+Turn: [1, 0, 18, 19]
+Calling on_action_frame
+Turn: [1, 0, 19, 20]
+Calling on_action_frame
+Turn: [1, 0, 20, 21]
+Calling on_action_frame
+Turn: [1, 0, 21, 22]
+Calling on_action_frame
+Turn: [1, 0, 22, 23]
+Calling on_action_frame
+Turn: [1, 0, 23, 24]
+Calling on_action_frame
+Turn: [1, 0, 24, 25]
+Calling on_action_frame
+Turn: [1, 0, 25, 26]
+Calling on_action_frame
+Turn: [1, 0, 26, 27]
+Calling on_action_frame
+Turn: [1, 0, 27, 28]
+Calling on_action_frame
+Turn: [1, 0, 28, 29]
+Calling on_action_frame
+Turn: [1, 0, 29, 30]
+Calling on_action_frame
+Turn: [1, 0, 30, 31]
+Calling on_action_frame
+Turn: [1, 0, 31, 32]
+Calling on_action_frame
+Turn: [1, 0, 32, 33]
+Calling on_action_frame
+Turn: [1, 0, 33, 34]
+Calling on_action_frame
+Turn: [1, 0, 34, 35]
+Calling on_action_frame
+Turn: [1, 0, 35, 36]
+Calling on_action_frame
+Turn: [1, 0, 36, 37]
+Calling on_action_frame
+Turn: [1, 0, 37, 38]
+Calling on_action_frame
+Turn: [1, 0, 38, 39]
+Calling on_action_frame
+Turn: [1, 0, 39, 40]
+Calling on_action_frame
+Turn: [1, 0, 40, 41]
+Calling on_action_frame
+Turn: [1, 0, 41, 42]
+Calling on_action_frame
+Turn: [1, 0, 42, 43]
+Calling on_action_frame
+Turn: [1, 0, 43, 44]
+Calling on_action_frame
+Turn: [1, 0, 44, 45]
+Calling on_action_frame
+Turn: [1, 0, 45, 46]
+Calling on_action_frame
+Turn: [1, 0, 46, 47]
+Calling on_action_frame
+Turn: [1, 0, 47, 48]
+Calling on_action_frame
+Turn: [1, 0, 48, 49]
+Calling on_action_frame
+Turn: [1, 0, 49, 50]
+Calling on_action_frame
+Turn: [1, 0, 50, 51]
+Calling on_action_frame
+Turn: [1, 0, 51, 52]
+Calling on_action_frame
+Turn: [1, 0, 52, 53]
+Calling on_action_frame
+Turn: [1, 0, 53, 54]
+Calling on_action_frame
+Turn: [1, 0, 54, 55]
+Calling on_action_frame
+Turn: [1, 0, 55, 56]
+Calling on_action_frame
+Turn: [1, 0, 56, 57]
+Calling on_action_frame
+Turn: [1, 0, 57, 58]
+Calling on_action_frame
+Turn: [1, 0, 58, 59]
+Calling on_action_frame
+Turn: [1, 0, 59, 60]
+Calling on_action_frame
+Turn: [1, 0, 60, 61]
+Calling on_action_frame
+Turn: [1, 0, 61, 62]
+Calling on_action_frame
+Turn: [1, 0, 62, 63]
+Calling on_action_frame
+Turn: [1, 0, 63, 64]
+Calling on_action_frame
+Turn: [1, 0, 64, 65]
+Calling on_action_frame
+Turn: [1, 0, 65, 66]
+Calling on_action_frame
+Turn: [1, 0, 66, 67]
+Calling on_action_frame
+Turn: [1, 0, 67, 68]
+Calling on_action_frame
+Turn: [1, 0, 68, 69]
+Calling on_action_frame
+Turn: [1, 0, 69, 70]
+Calling on_action_frame
+Turn: [1, 0, 70, 71]
+Calling on_action_frame
+Turn: [1, 0, 71, 72]
+Calling on_action_frame
+Turn: [1, 0, 72, 73]
+Calling on_action_frame
+Turn: [1, 0, 73, 74]
+Calling on_action_frame
+Turn: [1, 0, 74, 75]
+Calling on_action_frame
+Turn: [1, 0, 75, 76]
+Calling on_action_frame
+Turn: [1, 0, 76, 77]
+Calling on_action_frame
+Turn: [1, 0, 77, 78]
+Calling on_action_frame
+Turn: [1, 0, 78, 79]
+Calling on_action_frame
+Turn: [1, 0, 79, 80]
+Calling on_action_frame
+Turn: [1, 0, 80, 81]
+Calling on_action_frame
+Turn: [1, 0, 81, 82]
+Calling on_action_frame
+Turn: [1, 0, 82, 83]
+Calling on_action_frame
+Turn: [1, 0, 83, 84]
+Calling on_action_frame
+Turn: [1, 0, 84, 85]
+Calling on_action_frame
+Turn: [1, 0, 85, 86]
+Calling on_action_frame
+Turn: [1, 0, 86, 87]
+Calling on_action_frame
+Turn: [1, 0, 87, 88]
+Calling on_action_frame
+Turn: [1, 0, 88, 89]
+Calling on_action_frame
+Turn: [1, 0, 89, 90]
+Calling on_action_frame
+Turn: [1, 0, 90, 91]
+Calling on_action_frame
+Turn: [1, 0, 91, 92]
+Calling on_action_frame
+Turn: [1, 0, 92, 93]
+Calling on_action_frame
+Turn: [0, 1, -1, 94]
+Calling on_turn
+Starting on_turn
+My Health: 40.0 Enermy Health: 40.0
+Performing turn 1 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 1, 0, 95]
+Calling on_action_frame
+Turn: [1, 1, 1, 96]
+Calling on_action_frame
+Turn: [1, 1, 2, 97]
+Calling on_action_frame
+Turn: [1, 1, 3, 98]
+Calling on_action_frame
+Turn: [1, 1, 4, 99]
+Calling on_action_frame
+Turn: [1, 1, 5, 100]
+Calling on_action_frame
+Turn: [1, 1, 6, 101]
+Calling on_action_frame
+Turn: [1, 1, 7, 102]
+Calling on_action_frame
+Turn: [1, 1, 8, 103]
+Calling on_action_frame
+Turn: [1, 1, 9, 104]
+Calling on_action_frame
+Turn: [1, 1, 10, 105]
+Calling on_action_frame
+Turn: [1, 1, 11, 106]
+Calling on_action_frame
+Turn: [1, 1, 12, 107]
+Calling on_action_frame
+Turn: [1, 1, 13, 108]
+Calling on_action_frame
+Turn: [1, 1, 14, 109]
+Calling on_action_frame
+Turn: [1, 1, 15, 110]
+Calling on_action_frame
+Turn: [1, 1, 16, 111]
+Calling on_action_frame
+Turn: [1, 1, 17, 112]
+Calling on_action_frame
+Turn: [1, 1, 18, 113]
+Calling on_action_frame
+Turn: [1, 1, 19, 114]
+Calling on_action_frame
+Turn: [1, 1, 20, 115]
+Calling on_action_frame
+Turn: [1, 1, 21, 116]
+Calling on_action_frame
+Turn: [1, 1, 22, 117]
+Calling on_action_frame
+Turn: [1, 1, 23, 118]
+Calling on_action_frame
+Turn: [1, 1, 24, 119]
+Calling on_action_frame
+Turn: [1, 1, 25, 120]
+Calling on_action_frame
+Turn: [1, 1, 26, 121]
+Calling on_action_frame
+Turn: [1, 1, 27, 122]
+Calling on_action_frame
+Turn: [1, 1, 28, 123]
+Calling on_action_frame
+Turn: [1, 1, 29, 124]
+Calling on_action_frame
+Turn: [1, 1, 30, 125]
+Calling on_action_frame
+Turn: [1, 1, 31, 126]
+Calling on_action_frame
+Turn: [1, 1, 32, 127]
+Calling on_action_frame
+Turn: [1, 1, 33, 128]
+Calling on_action_frame
+Turn: [1, 1, 34, 129]
+Calling on_action_frame
+Turn: [1, 1, 35, 130]
+Calling on_action_frame
+Turn: [1, 1, 36, 131]
+Calling on_action_frame
+Turn: [1, 1, 37, 132]
+Calling on_action_frame
+Turn: [1, 1, 38, 133]
+Calling on_action_frame
+Turn: [1, 1, 39, 134]
+Calling on_action_frame
+Turn: [1, 1, 40, 135]
+Calling on_action_frame
+Turn: [1, 1, 41, 136]
+Calling on_action_frame
+Turn: [1, 1, 42, 137]
+Calling on_action_frame
+Turn: [1, 1, 43, 138]
+Calling on_action_frame
+Turn: [1, 1, 44, 139]
+Calling on_action_frame
+Turn: [1, 1, 45, 140]
+Calling on_action_frame
+Turn: [1, 1, 46, 141]
+Calling on_action_frame
+Turn: [1, 1, 47, 142]
+Calling on_action_frame
+Turn: [1, 1, 48, 143]
+Calling on_action_frame
+Turn: [1, 1, 49, 144]
+Calling on_action_frame
+Turn: [1, 1, 50, 145]
+Calling on_action_frame
+Turn: [1, 1, 51, 146]
+Calling on_action_frame
+Turn: [1, 1, 52, 147]
+Calling on_action_frame
+Turn: [1, 1, 53, 148]
+Calling on_action_frame
+Turn: [1, 1, 54, 149]
+Calling on_action_frame
+Turn: [1, 1, 55, 150]
+Calling on_action_frame
+Turn: [1, 1, 56, 151]
+Calling on_action_frame
+Turn: [1, 1, 57, 152]
+Calling on_action_frame
+Turn: [1, 1, 58, 153]
+Calling on_action_frame
+Turn: [1, 1, 59, 154]
+Calling on_action_frame
+Turn: [1, 1, 60, 155]
+Calling on_action_frame
+Turn: [1, 1, 61, 156]
+Calling on_action_frame
+Turn: [1, 1, 62, 157]
+Calling on_action_frame
+Turn: [1, 1, 63, 158]
+Calling on_action_frame
+Turn: [1, 1, 64, 159]
+Calling on_action_frame
+Turn: [1, 1, 65, 160]
+Calling on_action_frame
+Turn: [1, 1, 66, 161]
+Calling on_action_frame
+Turn: [1, 1, 67, 162]
+Calling on_action_frame
+Turn: [1, 1, 68, 163]
+Calling on_action_frame
+Turn: [1, 1, 69, 164]
+Calling on_action_frame
+Turn: [1, 1, 70, 165]
+Calling on_action_frame
+Turn: [1, 1, 71, 166]
+Calling on_action_frame
+Turn: [1, 1, 72, 167]
+Calling on_action_frame
+Turn: [1, 1, 73, 168]
+Calling on_action_frame
+Turn: [1, 1, 74, 169]
+Calling on_action_frame
+Turn: [1, 1, 75, 170]
+Calling on_action_frame
+Turn: [1, 1, 76, 171]
+Calling on_action_frame
+Turn: [1, 1, 77, 172]
+Calling on_action_frame
+Turn: [1, 1, 78, 173]
+Calling on_action_frame
+Turn: [1, 1, 79, 174]
+Calling on_action_frame
+Turn: [1, 1, 80, 175]
+Calling on_action_frame
+Turn: [1, 1, 81, 176]
+Calling on_action_frame
+Turn: [1, 1, 82, 177]
+Calling on_action_frame
+Turn: [1, 1, 83, 178]
+Calling on_action_frame
+Turn: [1, 1, 84, 179]
+Calling on_action_frame
+Turn: [1, 1, 85, 180]
+Calling on_action_frame
+Turn: [1, 1, 86, 181]
+Calling on_action_frame
+Turn: [1, 1, 87, 182]
+Calling on_action_frame
+Turn: [1, 1, 88, 183]
+Calling on_action_frame
+Turn: [1, 1, 89, 184]
+Calling on_action_frame
+Turn: [1, 1, 90, 185]
+Calling on_action_frame
+Turn: [1, 1, 91, 186]
+Calling on_action_frame
+Turn: [1, 1, 92, 187]
+Calling on_action_frame
+Turn: [0, 2, -1, 188]
+Calling on_turn
+Starting on_turn
+My Health: 40.0 Enermy Health: 40.0
+Performing turn 2 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 2, 0, 189]
+Calling on_action_frame
+Turn: [1, 2, 1, 190]
+Calling on_action_frame
+Turn: [1, 2, 2, 191]
+Calling on_action_frame
+Turn: [1, 2, 3, 192]
+Calling on_action_frame
+Turn: [1, 2, 4, 193]
+Calling on_action_frame
+Turn: [1, 2, 5, 194]
+Calling on_action_frame
+Turn: [1, 2, 6, 195]
+Calling on_action_frame
+Turn: [1, 2, 7, 196]
+Calling on_action_frame
+Turn: [1, 2, 8, 197]
+Calling on_action_frame
+Turn: [1, 2, 9, 198]
+Calling on_action_frame
+Turn: [1, 2, 10, 199]
+Calling on_action_frame
+Turn: [1, 2, 11, 200]
+Calling on_action_frame
+Turn: [1, 2, 12, 201]
+Calling on_action_frame
+Turn: [1, 2, 13, 202]
+Calling on_action_frame
+Turn: [1, 2, 14, 203]
+Calling on_action_frame
+Turn: [1, 2, 15, 204]
+Calling on_action_frame
+Turn: [1, 2, 16, 205]
+Calling on_action_frame
+Turn: [1, 2, 17, 206]
+Calling on_action_frame
+Turn: [1, 2, 18, 207]
+Calling on_action_frame
+Turn: [1, 2, 19, 208]
+Calling on_action_frame
+Turn: [1, 2, 20, 209]
+Calling on_action_frame
+Turn: [1, 2, 21, 210]
+Calling on_action_frame
+Turn: [1, 2, 22, 211]
+Calling on_action_frame
+Turn: [1, 2, 23, 212]
+Calling on_action_frame
+Turn: [1, 2, 24, 213]
+Calling on_action_frame
+Turn: [1, 2, 25, 214]
+Calling on_action_frame
+Turn: [1, 2, 26, 215]
+Calling on_action_frame
+Turn: [1, 2, 27, 216]
+Calling on_action_frame
+Turn: [1, 2, 28, 217]
+Calling on_action_frame
+Turn: [1, 2, 29, 218]
+Calling on_action_frame
+Turn: [1, 2, 30, 219]
+Calling on_action_frame
+Turn: [1, 2, 31, 220]
+Calling on_action_frame
+Turn: [1, 2, 32, 221]
+Calling on_action_frame
+Turn: [1, 2, 33, 222]
+Calling on_action_frame
+Turn: [1, 2, 34, 223]
+Calling on_action_frame
+Turn: [1, 2, 35, 224]
+Calling on_action_frame
+Turn: [1, 2, 36, 225]
+Calling on_action_frame
+Turn: [1, 2, 37, 226]
+Calling on_action_frame
+Turn: [1, 2, 38, 227]
+Calling on_action_frame
+Turn: [1, 2, 39, 228]
+Calling on_action_frame
+Turn: [1, 2, 40, 229]
+Calling on_action_frame
+Turn: [1, 2, 41, 230]
+Calling on_action_frame
+Turn: [1, 2, 42, 231]
+Calling on_action_frame
+Turn: [1, 2, 43, 232]
+Calling on_action_frame
+Turn: [1, 2, 44, 233]
+Calling on_action_frame
+Turn: [1, 2, 45, 234]
+Calling on_action_frame
+Turn: [1, 2, 46, 235]
+Calling on_action_frame
+Turn: [1, 2, 47, 236]
+Calling on_action_frame
+Turn: [1, 2, 48, 237]
+Calling on_action_frame
+Turn: [1, 2, 49, 238]
+Calling on_action_frame
+Turn: [1, 2, 50, 239]
+Calling on_action_frame
+Turn: [1, 2, 51, 240]
+Calling on_action_frame
+Turn: [1, 2, 52, 241]
+Calling on_action_frame
+Turn: [1, 2, 53, 242]
+Calling on_action_frame
+Turn: [1, 2, 54, 243]
+Calling on_action_frame
+Turn: [1, 2, 55, 244]
+Calling on_action_frame
+Turn: [1, 2, 56, 245]
+Calling on_action_frame
+Turn: [1, 2, 57, 246]
+Calling on_action_frame
+Got scored on at: [8, 5]
+All locations: [[8, 5]]
+Got scored on at: [8, 5]
+All locations: [[8, 5], [8, 5]]
+Turn: [1, 2, 58, 247]
+Calling on_action_frame
+Turn: [1, 2, 59, 248]
+Calling on_action_frame
+Turn: [1, 2, 60, 249]
+Calling on_action_frame
+Turn: [1, 2, 61, 250]
+Calling on_action_frame
+Turn: [1, 2, 62, 251]
+Calling on_action_frame
+Turn: [1, 2, 63, 252]
+Calling on_action_frame
+Turn: [1, 2, 64, 253]
+Calling on_action_frame
+Turn: [1, 2, 65, 254]
+Calling on_action_frame
+Turn: [1, 2, 66, 255]
+Calling on_action_frame
+Turn: [1, 2, 67, 256]
+Calling on_action_frame
+Turn: [1, 2, 68, 257]
+Calling on_action_frame
+Turn: [1, 2, 69, 258]
+Calling on_action_frame
+Turn: [1, 2, 70, 259]
+Calling on_action_frame
+Turn: [1, 2, 71, 260]
+Calling on_action_frame
+Turn: [1, 2, 72, 261]
+Calling on_action_frame
+Turn: [1, 2, 73, 262]
+Calling on_action_frame
+Turn: [1, 2, 74, 263]
+Calling on_action_frame
+Turn: [1, 2, 75, 264]
+Calling on_action_frame
+Turn: [1, 2, 76, 265]
+Calling on_action_frame
+Turn: [1, 2, 77, 266]
+Calling on_action_frame
+Turn: [1, 2, 78, 267]
+Calling on_action_frame
+Turn: [1, 2, 79, 268]
+Calling on_action_frame
+Turn: [1, 2, 80, 269]
+Calling on_action_frame
+Turn: [1, 2, 81, 270]
+Calling on_action_frame
+Turn: [1, 2, 82, 271]
+Calling on_action_frame
+Turn: [1, 2, 83, 272]
+Calling on_action_frame
+Turn: [1, 2, 84, 273]
+Calling on_action_frame
+Turn: [1, 2, 85, 274]
+Calling on_action_frame
+Turn: [1, 2, 86, 275]
+Calling on_action_frame
+Turn: [1, 2, 87, 276]
+Calling on_action_frame
+Turn: [1, 2, 88, 277]
+Calling on_action_frame
+Turn: [1, 2, 89, 278]
+Calling on_action_frame
+Turn: [1, 2, 90, 279]
+Calling on_action_frame
+Turn: [1, 2, 91, 280]
+Calling on_action_frame
+Turn: [0, 3, -1, 281]
+Calling on_turn
+Starting on_turn
+My Health: 38.0 Enermy Health: 40.0
+Performing turn 3 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 3, 0, 282]
+Calling on_action_frame
+Turn: [1, 3, 1, 283]
+Calling on_action_frame
+Turn: [1, 3, 2, 284]
+Calling on_action_frame
+Turn: [1, 3, 3, 285]
+Calling on_action_frame
+Turn: [1, 3, 4, 286]
+Calling on_action_frame
+Turn: [1, 3, 5, 287]
+Calling on_action_frame
+Turn: [1, 3, 6, 288]
+Calling on_action_frame
+Turn: [1, 3, 7, 289]
+Calling on_action_frame
+Turn: [1, 3, 8, 290]
+Calling on_action_frame
+Turn: [1, 3, 9, 291]
+Calling on_action_frame
+Turn: [1, 3, 10, 292]
+Calling on_action_frame
+Turn: [1, 3, 11, 293]
+Calling on_action_frame
+Turn: [1, 3, 12, 294]
+Calling on_action_frame
+Turn: [1, 3, 13, 295]
+Calling on_action_frame
+Turn: [1, 3, 14, 296]
+Calling on_action_frame
+Turn: [1, 3, 15, 297]
+Calling on_action_frame
+Turn: [1, 3, 16, 298]
+Calling on_action_frame
+Turn: [1, 3, 17, 299]
+Calling on_action_frame
+Turn: [1, 3, 18, 300]
+Calling on_action_frame
+Turn: [1, 3, 19, 301]
+Calling on_action_frame
+Turn: [1, 3, 20, 302]
+Calling on_action_frame
+Turn: [1, 3, 21, 303]
+Calling on_action_frame
+Turn: [1, 3, 22, 304]
+Calling on_action_frame
+Turn: [1, 3, 23, 305]
+Calling on_action_frame
+Turn: [1, 3, 24, 306]
+Calling on_action_frame
+Turn: [1, 3, 25, 307]
+Calling on_action_frame
+Turn: [1, 3, 26, 308]
+Calling on_action_frame
+Turn: [1, 3, 27, 309]
+Calling on_action_frame
+Turn: [1, 3, 28, 310]
+Calling on_action_frame
+Turn: [1, 3, 29, 311]
+Calling on_action_frame
+Turn: [1, 3, 30, 312]
+Calling on_action_frame
+Turn: [1, 3, 31, 313]
+Calling on_action_frame
+Turn: [1, 3, 32, 314]
+Calling on_action_frame
+Turn: [1, 3, 33, 315]
+Calling on_action_frame
+Turn: [1, 3, 34, 316]
+Calling on_action_frame
+Turn: [1, 3, 35, 317]
+Calling on_action_frame
+Turn: [1, 3, 36, 318]
+Calling on_action_frame
+Turn: [1, 3, 37, 319]
+Calling on_action_frame
+Turn: [1, 3, 38, 320]
+Calling on_action_frame
+Turn: [1, 3, 39, 321]
+Calling on_action_frame
+Turn: [1, 3, 40, 322]
+Calling on_action_frame
+Turn: [1, 3, 41, 323]
+Calling on_action_frame
+Turn: [1, 3, 42, 324]
+Calling on_action_frame
+Turn: [1, 3, 43, 325]
+Calling on_action_frame
+Turn: [1, 3, 44, 326]
+Calling on_action_frame
+Turn: [1, 3, 45, 327]
+Calling on_action_frame
+Turn: [1, 3, 46, 328]
+Calling on_action_frame
+Turn: [1, 3, 47, 329]
+Calling on_action_frame
+Turn: [1, 3, 48, 330]
+Calling on_action_frame
+Turn: [1, 3, 49, 331]
+Calling on_action_frame
+Turn: [1, 3, 50, 332]
+Calling on_action_frame
+Turn: [1, 3, 51, 333]
+Calling on_action_frame
+Turn: [1, 3, 52, 334]
+Calling on_action_frame
+Turn: [1, 3, 53, 335]
+Calling on_action_frame
+Turn: [1, 3, 54, 336]
+Calling on_action_frame
+Turn: [1, 3, 55, 337]
+Calling on_action_frame
+Turn: [1, 3, 56, 338]
+Calling on_action_frame
+Turn: [1, 3, 57, 339]
+Calling on_action_frame
+Turn: [1, 3, 58, 340]
+Calling on_action_frame
+Turn: [1, 3, 59, 341]
+Calling on_action_frame
+Turn: [1, 3, 60, 342]
+Calling on_action_frame
+Turn: [1, 3, 61, 343]
+Calling on_action_frame
+Turn: [1, 3, 62, 344]
+Calling on_action_frame
+Turn: [1, 3, 63, 345]
+Calling on_action_frame
+Turn: [1, 3, 64, 346]
+Calling on_action_frame
+Turn: [1, 3, 65, 347]
+Calling on_action_frame
+Turn: [1, 3, 66, 348]
+Calling on_action_frame
+Turn: [1, 3, 67, 349]
+Calling on_action_frame
+Turn: [1, 3, 68, 350]
+Calling on_action_frame
+Turn: [1, 3, 69, 351]
+Calling on_action_frame
+Turn: [1, 3, 70, 352]
+Calling on_action_frame
+Turn: [1, 3, 71, 353]
+Calling on_action_frame
+Turn: [1, 3, 72, 354]
+Calling on_action_frame
+Turn: [1, 3, 73, 355]
+Calling on_action_frame
+Turn: [1, 3, 74, 356]
+Calling on_action_frame
+Turn: [1, 3, 75, 357]
+Calling on_action_frame
+Turn: [1, 3, 76, 358]
+Calling on_action_frame
+Turn: [1, 3, 77, 359]
+Calling on_action_frame
+Turn: [1, 3, 78, 360]
+Calling on_action_frame
+Turn: [1, 3, 79, 361]
+Calling on_action_frame
+Turn: [1, 3, 80, 362]
+Calling on_action_frame
+Turn: [1, 3, 81, 363]
+Calling on_action_frame
+Turn: [1, 3, 82, 364]
+Calling on_action_frame
+Turn: [1, 3, 83, 365]
+Calling on_action_frame
+Turn: [1, 3, 84, 366]
+Calling on_action_frame
+Turn: [1, 3, 85, 367]
+Calling on_action_frame
+Turn: [1, 3, 86, 368]
+Calling on_action_frame
+Turn: [1, 3, 87, 369]
+Calling on_action_frame
+Turn: [1, 3, 88, 370]
+Calling on_action_frame
+Turn: [1, 3, 89, 371]
+Calling on_action_frame
+Turn: [1, 3, 90, 372]
+Calling on_action_frame
+Turn: [1, 3, 91, 373]
+Calling on_action_frame
+Turn: [1, 3, 92, 374]
+Calling on_action_frame
+Turn: [1, 3, 93, 375]
+Calling on_action_frame
+Turn: [1, 3, 94, 376]
+Calling on_action_frame
+Turn: [1, 3, 95, 377]
+Calling on_action_frame
+Turn: [1, 3, 96, 378]
+Calling on_action_frame
+Turn: [1, 3, 97, 379]
+Calling on_action_frame
+Turn: [1, 3, 98, 380]
+Calling on_action_frame
+Turn: [1, 3, 99, 381]
+Calling on_action_frame
+Turn: [1, 3, 100, 382]
+Calling on_action_frame
+Turn: [0, 4, -1, 383]
+Calling on_turn
+Starting on_turn
+My Health: 38.0 Enermy Health: 40.0
+Performing turn 4 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 4, 0, 384]
+Calling on_action_frame
+Turn: [1, 4, 1, 385]
+Calling on_action_frame
+Turn: [1, 4, 2, 386]
+Calling on_action_frame
+Turn: [1, 4, 3, 387]
+Calling on_action_frame
+Turn: [1, 4, 4, 388]
+Calling on_action_frame
+Turn: [1, 4, 5, 389]
+Calling on_action_frame
+Turn: [1, 4, 6, 390]
+Calling on_action_frame
+Turn: [1, 4, 7, 391]
+Calling on_action_frame
+Turn: [1, 4, 8, 392]
+Calling on_action_frame
+Turn: [1, 4, 9, 393]
+Calling on_action_frame
+Turn: [1, 4, 10, 394]
+Calling on_action_frame
+Turn: [1, 4, 11, 395]
+Calling on_action_frame
+Turn: [1, 4, 12, 396]
+Calling on_action_frame
+Turn: [1, 4, 13, 397]
+Calling on_action_frame
+Turn: [1, 4, 14, 398]
+Calling on_action_frame
+Turn: [1, 4, 15, 399]
+Calling on_action_frame
+Turn: [1, 4, 16, 400]
+Calling on_action_frame
+Turn: [1, 4, 17, 401]
+Calling on_action_frame
+Turn: [1, 4, 18, 402]
+Calling on_action_frame
+Turn: [1, 4, 19, 403]
+Calling on_action_frame
+Turn: [1, 4, 20, 404]
+Calling on_action_frame
+Turn: [1, 4, 21, 405]
+Calling on_action_frame
+Turn: [1, 4, 22, 406]
+Calling on_action_frame
+Turn: [1, 4, 23, 407]
+Calling on_action_frame
+Turn: [1, 4, 24, 408]
+Calling on_action_frame
+Turn: [1, 4, 25, 409]
+Calling on_action_frame
+Turn: [1, 4, 26, 410]
+Calling on_action_frame
+Turn: [1, 4, 27, 411]
+Calling on_action_frame
+Turn: [1, 4, 28, 412]
+Calling on_action_frame
+Turn: [1, 4, 29, 413]
+Calling on_action_frame
+Turn: [1, 4, 30, 414]
+Calling on_action_frame
+Turn: [1, 4, 31, 415]
+Calling on_action_frame
+Turn: [1, 4, 32, 416]
+Calling on_action_frame
+Turn: [1, 4, 33, 417]
+Calling on_action_frame
+Turn: [1, 4, 34, 418]
+Calling on_action_frame
+Turn: [1, 4, 35, 419]
+Calling on_action_frame
+Turn: [1, 4, 36, 420]
+Calling on_action_frame
+Turn: [1, 4, 37, 421]
+Calling on_action_frame
+Turn: [1, 4, 38, 422]
+Calling on_action_frame
+Turn: [1, 4, 39, 423]
+Calling on_action_frame
+Turn: [1, 4, 40, 424]
+Calling on_action_frame
+Turn: [1, 4, 41, 425]
+Calling on_action_frame
+Turn: [1, 4, 42, 426]
+Calling on_action_frame
+Turn: [1, 4, 43, 427]
+Calling on_action_frame
+Turn: [1, 4, 44, 428]
+Calling on_action_frame
+Turn: [1, 4, 45, 429]
+Calling on_action_frame
+Turn: [1, 4, 46, 430]
+Calling on_action_frame
+Turn: [1, 4, 47, 431]
+Calling on_action_frame
+Turn: [1, 4, 48, 432]
+Calling on_action_frame
+Turn: [1, 4, 49, 433]
+Calling on_action_frame
+Turn: [1, 4, 50, 434]
+Calling on_action_frame
+Turn: [1, 4, 51, 435]
+Calling on_action_frame
+Turn: [1, 4, 52, 436]
+Calling on_action_frame
+Turn: [1, 4, 53, 437]
+Calling on_action_frame
+Turn: [1, 4, 54, 438]
+Calling on_action_frame
+Turn: [1, 4, 55, 439]
+Calling on_action_frame
+Turn: [1, 4, 56, 440]
+Calling on_action_frame
+Turn: [1, 4, 57, 441]
+Calling on_action_frame
+Turn: [1, 4, 58, 442]
+Calling on_action_frame
+Turn: [1, 4, 59, 443]
+Calling on_action_frame
+Turn: [1, 4, 60, 444]
+Calling on_action_frame
+Turn: [1, 4, 61, 445]
+Calling on_action_frame
+Turn: [1, 4, 62, 446]
+Calling on_action_frame
+Turn: [1, 4, 63, 447]
+Calling on_action_frame
+Turn: [1, 4, 64, 448]
+Calling on_action_frame
+Turn: [1, 4, 65, 449]
+Calling on_action_frame
+Turn: [1, 4, 66, 450]
+Calling on_action_frame
+Turn: [1, 4, 67, 451]
+Calling on_action_frame
+Turn: [1, 4, 68, 452]
+Calling on_action_frame
+Turn: [1, 4, 69, 453]
+Calling on_action_frame
+Turn: [1, 4, 70, 454]
+Calling on_action_frame
+Turn: [1, 4, 71, 455]
+Calling on_action_frame
+Turn: [1, 4, 72, 456]
+Calling on_action_frame
+Turn: [1, 4, 73, 457]
+Calling on_action_frame
+Turn: [1, 4, 74, 458]
+Calling on_action_frame
+Turn: [1, 4, 75, 459]
+Calling on_action_frame
+Turn: [1, 4, 76, 460]
+Calling on_action_frame
+Turn: [1, 4, 77, 461]
+Calling on_action_frame
+Turn: [1, 4, 78, 462]
+Calling on_action_frame
+Turn: [1, 4, 79, 463]
+Calling on_action_frame
+Turn: [1, 4, 80, 464]
+Calling on_action_frame
+Turn: [1, 4, 81, 465]
+Calling on_action_frame
+Turn: [1, 4, 82, 466]
+Calling on_action_frame
+Turn: [1, 4, 83, 467]
+Calling on_action_frame
+Turn: [1, 4, 84, 468]
+Calling on_action_frame
+Turn: [1, 4, 85, 469]
+Calling on_action_frame
+Turn: [1, 4, 86, 470]
+Calling on_action_frame
+Turn: [1, 4, 87, 471]
+Calling on_action_frame
+Turn: [1, 4, 88, 472]
+Calling on_action_frame
+Turn: [1, 4, 89, 473]
+Calling on_action_frame
+Turn: [1, 4, 90, 474]
+Calling on_action_frame
+Turn: [1, 4, 91, 475]
+Calling on_action_frame
+Turn: [0, 5, -1, 476]
+Calling on_turn
+Starting on_turn
+My Health: 38.0 Enermy Health: 40.0
+Performing turn 5 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 5, 0, 477]
+Calling on_action_frame
+Turn: [1, 5, 1, 478]
+Calling on_action_frame
+Turn: [1, 5, 2, 479]
+Calling on_action_frame
+Turn: [1, 5, 3, 480]
+Calling on_action_frame
+Turn: [1, 5, 4, 481]
+Calling on_action_frame
+Turn: [1, 5, 5, 482]
+Calling on_action_frame
+Turn: [1, 5, 6, 483]
+Calling on_action_frame
+Turn: [1, 5, 7, 484]
+Calling on_action_frame
+Turn: [1, 5, 8, 485]
+Calling on_action_frame
+Turn: [1, 5, 9, 486]
+Calling on_action_frame
+Turn: [1, 5, 10, 487]
+Calling on_action_frame
+Turn: [1, 5, 11, 488]
+Calling on_action_frame
+Turn: [1, 5, 12, 489]
+Calling on_action_frame
+Turn: [1, 5, 13, 490]
+Calling on_action_frame
+Turn: [1, 5, 14, 491]
+Calling on_action_frame
+Turn: [1, 5, 15, 492]
+Calling on_action_frame
+Turn: [1, 5, 16, 493]
+Calling on_action_frame
+Turn: [1, 5, 17, 494]
+Calling on_action_frame
+Turn: [1, 5, 18, 495]
+Calling on_action_frame
+Turn: [1, 5, 19, 496]
+Calling on_action_frame
+Turn: [1, 5, 20, 497]
+Calling on_action_frame
+Turn: [1, 5, 21, 498]
+Calling on_action_frame
+Turn: [1, 5, 22, 499]
+Calling on_action_frame
+Turn: [1, 5, 23, 500]
+Calling on_action_frame
+Turn: [1, 5, 24, 501]
+Calling on_action_frame
+Turn: [1, 5, 25, 502]
+Calling on_action_frame
+Turn: [1, 5, 26, 503]
+Calling on_action_frame
+Turn: [1, 5, 27, 504]
+Calling on_action_frame
+Turn: [1, 5, 28, 505]
+Calling on_action_frame
+Turn: [1, 5, 29, 506]
+Calling on_action_frame
+Turn: [1, 5, 30, 507]
+Calling on_action_frame
+Turn: [1, 5, 31, 508]
+Calling on_action_frame
+Turn: [1, 5, 32, 509]
+Calling on_action_frame
+Turn: [1, 5, 33, 510]
+Calling on_action_frame
+Turn: [1, 5, 34, 511]
+Calling on_action_frame
+Turn: [1, 5, 35, 512]
+Calling on_action_frame
+Turn: [1, 5, 36, 513]
+Calling on_action_frame
+Turn: [1, 5, 37, 514]
+Calling on_action_frame
+Turn: [1, 5, 38, 515]
+Calling on_action_frame
+Turn: [1, 5, 39, 516]
+Calling on_action_frame
+Turn: [1, 5, 40, 517]
+Calling on_action_frame
+Turn: [1, 5, 41, 518]
+Calling on_action_frame
+Turn: [1, 5, 42, 519]
+Calling on_action_frame
+Turn: [1, 5, 43, 520]
+Calling on_action_frame
+Turn: [1, 5, 44, 521]
+Calling on_action_frame
+Turn: [1, 5, 45, 522]
+Calling on_action_frame
+Turn: [1, 5, 46, 523]
+Calling on_action_frame
+Turn: [1, 5, 47, 524]
+Calling on_action_frame
+Turn: [1, 5, 48, 525]
+Calling on_action_frame
+Turn: [1, 5, 49, 526]
+Calling on_action_frame
+Turn: [1, 5, 50, 527]
+Calling on_action_frame
+Turn: [1, 5, 51, 528]
+Calling on_action_frame
+Turn: [1, 5, 52, 529]
+Calling on_action_frame
+Turn: [1, 5, 53, 530]
+Calling on_action_frame
+Turn: [1, 5, 54, 531]
+Calling on_action_frame
+Turn: [1, 5, 55, 532]
+Calling on_action_frame
+Turn: [1, 5, 56, 533]
+Calling on_action_frame
+Turn: [1, 5, 57, 534]
+Calling on_action_frame
+Got scored on at: [19, 5]
+All locations: [[8, 5], [8, 5], [19, 5]]
+Got scored on at: [19, 5]
+All locations: [[8, 5], [8, 5], [19, 5], [19, 5]]
+Turn: [1, 5, 58, 535]
+Calling on_action_frame
+Turn: [1, 5, 59, 536]
+Calling on_action_frame
+Turn: [1, 5, 60, 537]
+Calling on_action_frame
+Turn: [1, 5, 61, 538]
+Calling on_action_frame
+Turn: [1, 5, 62, 539]
+Calling on_action_frame
+Turn: [1, 5, 63, 540]
+Calling on_action_frame
+Turn: [1, 5, 64, 541]
+Calling on_action_frame
+Turn: [1, 5, 65, 542]
+Calling on_action_frame
+Turn: [1, 5, 66, 543]
+Calling on_action_frame
+Turn: [1, 5, 67, 544]
+Calling on_action_frame
+Turn: [1, 5, 68, 545]
+Calling on_action_frame
+Turn: [1, 5, 69, 546]
+Calling on_action_frame
+Turn: [1, 5, 70, 547]
+Calling on_action_frame
+Turn: [1, 5, 71, 548]
+Calling on_action_frame
+Turn: [1, 5, 72, 549]
+Calling on_action_frame
+Turn: [1, 5, 73, 550]
+Calling on_action_frame
+Turn: [1, 5, 74, 551]
+Calling on_action_frame
+Turn: [1, 5, 75, 552]
+Calling on_action_frame
+Turn: [1, 5, 76, 553]
+Calling on_action_frame
+Turn: [1, 5, 77, 554]
+Calling on_action_frame
+Turn: [1, 5, 78, 555]
+Calling on_action_frame
+Turn: [1, 5, 79, 556]
+Calling on_action_frame
+Turn: [1, 5, 80, 557]
+Calling on_action_frame
+Turn: [1, 5, 81, 558]
+Calling on_action_frame
+Turn: [1, 5, 82, 559]
+Calling on_action_frame
+Turn: [1, 5, 83, 560]
+Calling on_action_frame
+Turn: [1, 5, 84, 561]
+Calling on_action_frame
+Turn: [1, 5, 85, 562]
+Calling on_action_frame
+Turn: [1, 5, 86, 563]
+Calling on_action_frame
+Turn: [1, 5, 87, 564]
+Calling on_action_frame
+Turn: [1, 5, 88, 565]
+Calling on_action_frame
+Turn: [1, 5, 89, 566]
+Calling on_action_frame
+Turn: [1, 5, 90, 567]
+Calling on_action_frame
+Turn: [1, 5, 91, 568]
+Calling on_action_frame
+Turn: [1, 5, 92, 569]
+Calling on_action_frame
+Turn: [0, 6, -1, 570]
+Calling on_turn
+Starting on_turn
+My Health: 36.0 Enermy Health: 40.0
+Performing turn 6 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 6, 0, 571]
+Calling on_action_frame
+Turn: [1, 6, 1, 572]
+Calling on_action_frame
+Turn: [1, 6, 2, 573]
+Calling on_action_frame
+Turn: [1, 6, 3, 574]
+Calling on_action_frame
+Turn: [1, 6, 4, 575]
+Calling on_action_frame
+Turn: [1, 6, 5, 576]
+Calling on_action_frame
+Turn: [1, 6, 6, 577]
+Calling on_action_frame
+Turn: [1, 6, 7, 578]
+Calling on_action_frame
+Turn: [1, 6, 8, 579]
+Calling on_action_frame
+Turn: [1, 6, 9, 580]
+Calling on_action_frame
+Turn: [1, 6, 10, 581]
+Calling on_action_frame
+Turn: [1, 6, 11, 582]
+Calling on_action_frame
+Turn: [1, 6, 12, 583]
+Calling on_action_frame
+Turn: [1, 6, 13, 584]
+Calling on_action_frame
+Turn: [1, 6, 14, 585]
+Calling on_action_frame
+Turn: [1, 6, 15, 586]
+Calling on_action_frame
+Turn: [1, 6, 16, 587]
+Calling on_action_frame
+Turn: [1, 6, 17, 588]
+Calling on_action_frame
+Turn: [1, 6, 18, 589]
+Calling on_action_frame
+Turn: [1, 6, 19, 590]
+Calling on_action_frame
+Turn: [1, 6, 20, 591]
+Calling on_action_frame
+Turn: [1, 6, 21, 592]
+Calling on_action_frame
+Turn: [1, 6, 22, 593]
+Calling on_action_frame
+Turn: [1, 6, 23, 594]
+Calling on_action_frame
+Turn: [1, 6, 24, 595]
+Calling on_action_frame
+Turn: [1, 6, 25, 596]
+Calling on_action_frame
+Turn: [1, 6, 26, 597]
+Calling on_action_frame
+Turn: [1, 6, 27, 598]
+Calling on_action_frame
+Turn: [1, 6, 28, 599]
+Calling on_action_frame
+Turn: [1, 6, 29, 600]
+Calling on_action_frame
+Turn: [1, 6, 30, 601]
+Calling on_action_frame
+Turn: [1, 6, 31, 602]
+Calling on_action_frame
+Turn: [1, 6, 32, 603]
+Calling on_action_frame
+Turn: [1, 6, 33, 604]
+Calling on_action_frame
+Turn: [1, 6, 34, 605]
+Calling on_action_frame
+Turn: [1, 6, 35, 606]
+Calling on_action_frame
+Turn: [1, 6, 36, 607]
+Calling on_action_frame
+Turn: [1, 6, 37, 608]
+Calling on_action_frame
+Turn: [1, 6, 38, 609]
+Calling on_action_frame
+Turn: [1, 6, 39, 610]
+Calling on_action_frame
+Turn: [1, 6, 40, 611]
+Calling on_action_frame
+Turn: [1, 6, 41, 612]
+Calling on_action_frame
+Turn: [1, 6, 42, 613]
+Calling on_action_frame
+Turn: [1, 6, 43, 614]
+Calling on_action_frame
+Turn: [1, 6, 44, 615]
+Calling on_action_frame
+Turn: [1, 6, 45, 616]
+Calling on_action_frame
+Turn: [1, 6, 46, 617]
+Calling on_action_frame
+Turn: [1, 6, 47, 618]
+Calling on_action_frame
+Turn: [1, 6, 48, 619]
+Calling on_action_frame
+Turn: [1, 6, 49, 620]
+Calling on_action_frame
+Turn: [1, 6, 50, 621]
+Calling on_action_frame
+Turn: [1, 6, 51, 622]
+Calling on_action_frame
+Turn: [1, 6, 52, 623]
+Calling on_action_frame
+Turn: [1, 6, 53, 624]
+Calling on_action_frame
+Turn: [1, 6, 54, 625]
+Calling on_action_frame
+Turn: [1, 6, 55, 626]
+Calling on_action_frame
+Turn: [1, 6, 56, 627]
+Calling on_action_frame
+Turn: [1, 6, 57, 628]
+Calling on_action_frame
+Turn: [1, 6, 58, 629]
+Calling on_action_frame
+Turn: [1, 6, 59, 630]
+Calling on_action_frame
+Turn: [1, 6, 60, 631]
+Calling on_action_frame
+Turn: [1, 6, 61, 632]
+Calling on_action_frame
+Turn: [1, 6, 62, 633]
+Calling on_action_frame
+Turn: [1, 6, 63, 634]
+Calling on_action_frame
+Turn: [1, 6, 64, 635]
+Calling on_action_frame
+Turn: [1, 6, 65, 636]
+Calling on_action_frame
+Turn: [1, 6, 66, 637]
+Calling on_action_frame
+Turn: [1, 6, 67, 638]
+Calling on_action_frame
+Turn: [1, 6, 68, 639]
+Calling on_action_frame
+Turn: [1, 6, 69, 640]
+Calling on_action_frame
+Turn: [1, 6, 70, 641]
+Calling on_action_frame
+Turn: [1, 6, 71, 642]
+Calling on_action_frame
+Turn: [1, 6, 72, 643]
+Calling on_action_frame
+Turn: [1, 6, 73, 644]
+Calling on_action_frame
+Turn: [1, 6, 74, 645]
+Calling on_action_frame
+Turn: [1, 6, 75, 646]
+Calling on_action_frame
+Turn: [1, 6, 76, 647]
+Calling on_action_frame
+Turn: [1, 6, 77, 648]
+Calling on_action_frame
+Turn: [1, 6, 78, 649]
+Calling on_action_frame
+Turn: [1, 6, 79, 650]
+Calling on_action_frame
+Turn: [1, 6, 80, 651]
+Calling on_action_frame
+Turn: [1, 6, 81, 652]
+Calling on_action_frame
+Turn: [1, 6, 82, 653]
+Calling on_action_frame
+Turn: [1, 6, 83, 654]
+Calling on_action_frame
+Turn: [1, 6, 84, 655]
+Calling on_action_frame
+Turn: [1, 6, 85, 656]
+Calling on_action_frame
+Turn: [1, 6, 86, 657]
+Calling on_action_frame
+Turn: [1, 6, 87, 658]
+Calling on_action_frame
+Turn: [1, 6, 88, 659]
+Calling on_action_frame
+Turn: [1, 6, 89, 660]
+Calling on_action_frame
+Turn: [1, 6, 90, 661]
+Calling on_action_frame
+Turn: [1, 6, 91, 662]
+Calling on_action_frame
+Turn: [0, 7, -1, 663]
+Calling on_turn
+Starting on_turn
+My Health: 36.0 Enermy Health: 40.0
+Performing turn 7 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 7, 0, 664]
+Calling on_action_frame
+Turn: [1, 7, 1, 665]
+Calling on_action_frame
+Turn: [1, 7, 2, 666]
+Calling on_action_frame
+Turn: [1, 7, 3, 667]
+Calling on_action_frame
+Turn: [1, 7, 4, 668]
+Calling on_action_frame
+Turn: [1, 7, 5, 669]
+Calling on_action_frame
+Turn: [1, 7, 6, 670]
+Calling on_action_frame
+Turn: [1, 7, 7, 671]
+Calling on_action_frame
+Turn: [1, 7, 8, 672]
+Calling on_action_frame
+Turn: [1, 7, 9, 673]
+Calling on_action_frame
+Turn: [1, 7, 10, 674]
+Calling on_action_frame
+Turn: [1, 7, 11, 675]
+Calling on_action_frame
+Turn: [1, 7, 12, 676]
+Calling on_action_frame
+Turn: [1, 7, 13, 677]
+Calling on_action_frame
+Turn: [1, 7, 14, 678]
+Calling on_action_frame
+Turn: [1, 7, 15, 679]
+Calling on_action_frame
+Turn: [1, 7, 16, 680]
+Calling on_action_frame
+Turn: [1, 7, 17, 681]
+Calling on_action_frame
+Turn: [1, 7, 18, 682]
+Calling on_action_frame
+Turn: [1, 7, 19, 683]
+Calling on_action_frame
+Turn: [1, 7, 20, 684]
+Calling on_action_frame
+Turn: [1, 7, 21, 685]
+Calling on_action_frame
+Turn: [1, 7, 22, 686]
+Calling on_action_frame
+Turn: [1, 7, 23, 687]
+Calling on_action_frame
+Turn: [1, 7, 24, 688]
+Calling on_action_frame
+Turn: [1, 7, 25, 689]
+Calling on_action_frame
+Turn: [1, 7, 26, 690]
+Calling on_action_frame
+Turn: [1, 7, 27, 691]
+Calling on_action_frame
+Turn: [1, 7, 28, 692]
+Calling on_action_frame
+Turn: [1, 7, 29, 693]
+Calling on_action_frame
+Turn: [1, 7, 30, 694]
+Calling on_action_frame
+Turn: [1, 7, 31, 695]
+Calling on_action_frame
+Turn: [1, 7, 32, 696]
+Calling on_action_frame
+Turn: [1, 7, 33, 697]
+Calling on_action_frame
+Turn: [1, 7, 34, 698]
+Calling on_action_frame
+Turn: [1, 7, 35, 699]
+Calling on_action_frame
+Turn: [1, 7, 36, 700]
+Calling on_action_frame
+Turn: [1, 7, 37, 701]
+Calling on_action_frame
+Turn: [1, 7, 38, 702]
+Calling on_action_frame
+Turn: [1, 7, 39, 703]
+Calling on_action_frame
+Turn: [1, 7, 40, 704]
+Calling on_action_frame
+Turn: [1, 7, 41, 705]
+Calling on_action_frame
+Turn: [1, 7, 42, 706]
+Calling on_action_frame
+Turn: [1, 7, 43, 707]
+Calling on_action_frame
+Turn: [1, 7, 44, 708]
+Calling on_action_frame
+Turn: [1, 7, 45, 709]
+Calling on_action_frame
+Turn: [1, 7, 46, 710]
+Calling on_action_frame
+Turn: [1, 7, 47, 711]
+Calling on_action_frame
+Turn: [1, 7, 48, 712]
+Calling on_action_frame
+Turn: [1, 7, 49, 713]
+Calling on_action_frame
+Turn: [1, 7, 50, 714]
+Calling on_action_frame
+Turn: [1, 7, 51, 715]
+Calling on_action_frame
+Turn: [1, 7, 52, 716]
+Calling on_action_frame
+Turn: [1, 7, 53, 717]
+Calling on_action_frame
+Turn: [1, 7, 54, 718]
+Calling on_action_frame
+Turn: [1, 7, 55, 719]
+Calling on_action_frame
+Turn: [1, 7, 56, 720]
+Calling on_action_frame
+Turn: [1, 7, 57, 721]
+Calling on_action_frame
+Turn: [1, 7, 58, 722]
+Calling on_action_frame
+Turn: [1, 7, 59, 723]
+Calling on_action_frame
+Turn: [1, 7, 60, 724]
+Calling on_action_frame
+Turn: [1, 7, 61, 725]
+Calling on_action_frame
+Turn: [1, 7, 62, 726]
+Calling on_action_frame
+Turn: [1, 7, 63, 727]
+Calling on_action_frame
+Turn: [1, 7, 64, 728]
+Calling on_action_frame
+Turn: [1, 7, 65, 729]
+Calling on_action_frame
+Turn: [1, 7, 66, 730]
+Calling on_action_frame
+Turn: [1, 7, 67, 731]
+Calling on_action_frame
+Turn: [1, 7, 68, 732]
+Calling on_action_frame
+Turn: [1, 7, 69, 733]
+Calling on_action_frame
+Turn: [1, 7, 70, 734]
+Calling on_action_frame
+Turn: [1, 7, 71, 735]
+Calling on_action_frame
+Turn: [1, 7, 72, 736]
+Calling on_action_frame
+Turn: [1, 7, 73, 737]
+Calling on_action_frame
+Turn: [1, 7, 74, 738]
+Calling on_action_frame
+Turn: [1, 7, 75, 739]
+Calling on_action_frame
+Turn: [1, 7, 76, 740]
+Calling on_action_frame
+Turn: [1, 7, 77, 741]
+Calling on_action_frame
+Turn: [1, 7, 78, 742]
+Calling on_action_frame
+Turn: [1, 7, 79, 743]
+Calling on_action_frame
+Turn: [1, 7, 80, 744]
+Calling on_action_frame
+Turn: [1, 7, 81, 745]
+Calling on_action_frame
+Turn: [1, 7, 82, 746]
+Calling on_action_frame
+Turn: [1, 7, 83, 747]
+Calling on_action_frame
+Turn: [1, 7, 84, 748]
+Calling on_action_frame
+Turn: [1, 7, 85, 749]
+Calling on_action_frame
+Turn: [1, 7, 86, 750]
+Calling on_action_frame
+Turn: [1, 7, 87, 751]
+Calling on_action_frame
+Turn: [1, 7, 88, 752]
+Calling on_action_frame
+Turn: [1, 7, 89, 753]
+Calling on_action_frame
+Turn: [1, 7, 90, 754]
+Calling on_action_frame
+Turn: [1, 7, 91, 755]
+Calling on_action_frame
+Turn: [0, 8, -1, 756]
+Calling on_turn
+Starting on_turn
+My Health: 36.0 Enermy Health: 40.0
+Performing turn 8 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 8, 0, 757]
+Calling on_action_frame
+Turn: [1, 8, 1, 758]
+Calling on_action_frame
+Turn: [1, 8, 2, 759]
+Calling on_action_frame
+Turn: [1, 8, 3, 760]
+Calling on_action_frame
+Turn: [1, 8, 4, 761]
+Calling on_action_frame
+Turn: [1, 8, 5, 762]
+Calling on_action_frame
+Turn: [1, 8, 6, 763]
+Calling on_action_frame
+Turn: [1, 8, 7, 764]
+Calling on_action_frame
+Turn: [1, 8, 8, 765]
+Calling on_action_frame
+Turn: [1, 8, 9, 766]
+Calling on_action_frame
+Turn: [1, 8, 10, 767]
+Calling on_action_frame
+Turn: [1, 8, 11, 768]
+Calling on_action_frame
+Turn: [1, 8, 12, 769]
+Calling on_action_frame
+Turn: [1, 8, 13, 770]
+Calling on_action_frame
+Turn: [1, 8, 14, 771]
+Calling on_action_frame
+Turn: [1, 8, 15, 772]
+Calling on_action_frame
+Turn: [1, 8, 16, 773]
+Calling on_action_frame
+Turn: [1, 8, 17, 774]
+Calling on_action_frame
+Turn: [1, 8, 18, 775]
+Calling on_action_frame
+Turn: [1, 8, 19, 776]
+Calling on_action_frame
+Turn: [1, 8, 20, 777]
+Calling on_action_frame
+Turn: [1, 8, 21, 778]
+Calling on_action_frame
+Turn: [1, 8, 22, 779]
+Calling on_action_frame
+Turn: [1, 8, 23, 780]
+Calling on_action_frame
+Turn: [1, 8, 24, 781]
+Calling on_action_frame
+Turn: [1, 8, 25, 782]
+Calling on_action_frame
+Turn: [1, 8, 26, 783]
+Calling on_action_frame
+Turn: [1, 8, 27, 784]
+Calling on_action_frame
+Turn: [1, 8, 28, 785]
+Calling on_action_frame
+Turn: [1, 8, 29, 786]
+Calling on_action_frame
+Turn: [1, 8, 30, 787]
+Calling on_action_frame
+Turn: [1, 8, 31, 788]
+Calling on_action_frame
+Turn: [1, 8, 32, 789]
+Calling on_action_frame
+Turn: [1, 8, 33, 790]
+Calling on_action_frame
+Turn: [1, 8, 34, 791]
+Calling on_action_frame
+Turn: [1, 8, 35, 792]
+Calling on_action_frame
+Turn: [1, 8, 36, 793]
+Calling on_action_frame
+Turn: [1, 8, 37, 794]
+Calling on_action_frame
+Turn: [1, 8, 38, 795]
+Calling on_action_frame
+Turn: [1, 8, 39, 796]
+Calling on_action_frame
+Turn: [1, 8, 40, 797]
+Calling on_action_frame
+Turn: [1, 8, 41, 798]
+Calling on_action_frame
+Turn: [1, 8, 42, 799]
+Calling on_action_frame
+Turn: [1, 8, 43, 800]
+Calling on_action_frame
+Turn: [1, 8, 44, 801]
+Calling on_action_frame
+Turn: [1, 8, 45, 802]
+Calling on_action_frame
+Turn: [1, 8, 46, 803]
+Calling on_action_frame
+Turn: [1, 8, 47, 804]
+Calling on_action_frame
+Turn: [1, 8, 48, 805]
+Calling on_action_frame
+Turn: [1, 8, 49, 806]
+Calling on_action_frame
+Turn: [1, 8, 50, 807]
+Calling on_action_frame
+Turn: [1, 8, 51, 808]
+Calling on_action_frame
+Turn: [1, 8, 52, 809]
+Calling on_action_frame
+Turn: [1, 8, 53, 810]
+Calling on_action_frame
+Turn: [1, 8, 54, 811]
+Calling on_action_frame
+Turn: [1, 8, 55, 812]
+Calling on_action_frame
+Turn: [1, 8, 56, 813]
+Calling on_action_frame
+Turn: [1, 8, 57, 814]
+Calling on_action_frame
+Turn: [1, 8, 58, 815]
+Calling on_action_frame
+Turn: [1, 8, 59, 816]
+Calling on_action_frame
+Turn: [1, 8, 60, 817]
+Calling on_action_frame
+Turn: [1, 8, 61, 818]
+Calling on_action_frame
+Turn: [1, 8, 62, 819]
+Calling on_action_frame
+Turn: [1, 8, 63, 820]
+Calling on_action_frame
+Turn: [1, 8, 64, 821]
+Calling on_action_frame
+Turn: [1, 8, 65, 822]
+Calling on_action_frame
+Turn: [1, 8, 66, 823]
+Calling on_action_frame
+Turn: [1, 8, 67, 824]
+Calling on_action_frame
+Turn: [1, 8, 68, 825]
+Calling on_action_frame
+Turn: [1, 8, 69, 826]
+Calling on_action_frame
+Turn: [1, 8, 70, 827]
+Calling on_action_frame
+Turn: [1, 8, 71, 828]
+Calling on_action_frame
+Turn: [1, 8, 72, 829]
+Calling on_action_frame
+Turn: [1, 8, 73, 830]
+Calling on_action_frame
+Turn: [1, 8, 74, 831]
+Calling on_action_frame
+Turn: [1, 8, 75, 832]
+Calling on_action_frame
+Turn: [1, 8, 76, 833]
+Calling on_action_frame
+Turn: [1, 8, 77, 834]
+Calling on_action_frame
+Turn: [1, 8, 78, 835]
+Calling on_action_frame
+Turn: [1, 8, 79, 836]
+Calling on_action_frame
+Turn: [1, 8, 80, 837]
+Calling on_action_frame
+Turn: [1, 8, 81, 838]
+Calling on_action_frame
+Turn: [1, 8, 82, 839]
+Calling on_action_frame
+Turn: [1, 8, 83, 840]
+Calling on_action_frame
+Turn: [1, 8, 84, 841]
+Calling on_action_frame
+Turn: [1, 8, 85, 842]
+Calling on_action_frame
+Turn: [1, 8, 86, 843]
+Calling on_action_frame
+Turn: [1, 8, 87, 844]
+Calling on_action_frame
+Turn: [1, 8, 88, 845]
+Calling on_action_frame
+Turn: [1, 8, 89, 846]
+Calling on_action_frame
+Turn: [1, 8, 90, 847]
+Calling on_action_frame
+Turn: [1, 8, 91, 848]
+Calling on_action_frame
+Turn: [0, 9, -1, 849]
+Calling on_turn
+Starting on_turn
+My Health: 36.0 Enermy Health: 40.0
+Performing turn 9 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 9, 0, 850]
+Calling on_action_frame
+Turn: [1, 9, 1, 851]
+Calling on_action_frame
+Turn: [1, 9, 2, 852]
+Calling on_action_frame
+Turn: [1, 9, 3, 853]
+Calling on_action_frame
+Turn: [1, 9, 4, 854]
+Calling on_action_frame
+Turn: [1, 9, 5, 855]
+Calling on_action_frame
+Turn: [1, 9, 6, 856]
+Calling on_action_frame
+Turn: [1, 9, 7, 857]
+Calling on_action_frame
+Turn: [1, 9, 8, 858]
+Calling on_action_frame
+Turn: [1, 9, 9, 859]
+Calling on_action_frame
+Turn: [1, 9, 10, 860]
+Calling on_action_frame
+Turn: [1, 9, 11, 861]
+Calling on_action_frame
+Turn: [1, 9, 12, 862]
+Calling on_action_frame
+Turn: [1, 9, 13, 863]
+Calling on_action_frame
+Turn: [1, 9, 14, 864]
+Calling on_action_frame
+Turn: [1, 9, 15, 865]
+Calling on_action_frame
+Turn: [1, 9, 16, 866]
+Calling on_action_frame
+Turn: [1, 9, 17, 867]
+Calling on_action_frame
+Turn: [1, 9, 18, 868]
+Calling on_action_frame
+Turn: [1, 9, 19, 869]
+Calling on_action_frame
+Turn: [1, 9, 20, 870]
+Calling on_action_frame
+Turn: [1, 9, 21, 871]
+Calling on_action_frame
+Turn: [1, 9, 22, 872]
+Calling on_action_frame
+Turn: [1, 9, 23, 873]
+Calling on_action_frame
+Turn: [1, 9, 24, 874]
+Calling on_action_frame
+Turn: [1, 9, 25, 875]
+Calling on_action_frame
+Turn: [1, 9, 26, 876]
+Calling on_action_frame
+Turn: [1, 9, 27, 877]
+Calling on_action_frame
+Turn: [1, 9, 28, 878]
+Calling on_action_frame
+Turn: [1, 9, 29, 879]
+Calling on_action_frame
+Turn: [1, 9, 30, 880]
+Calling on_action_frame
+Turn: [1, 9, 31, 881]
+Calling on_action_frame
+Turn: [1, 9, 32, 882]
+Calling on_action_frame
+Turn: [1, 9, 33, 883]
+Calling on_action_frame
+Turn: [1, 9, 34, 884]
+Calling on_action_frame
+Turn: [1, 9, 35, 885]
+Calling on_action_frame
+Turn: [1, 9, 36, 886]
+Calling on_action_frame
+Turn: [1, 9, 37, 887]
+Calling on_action_frame
+Turn: [1, 9, 38, 888]
+Calling on_action_frame
+Turn: [1, 9, 39, 889]
+Calling on_action_frame
+Turn: [1, 9, 40, 890]
+Calling on_action_frame
+Turn: [1, 9, 41, 891]
+Calling on_action_frame
+Turn: [1, 9, 42, 892]
+Calling on_action_frame
+Turn: [1, 9, 43, 893]
+Calling on_action_frame
+Turn: [1, 9, 44, 894]
+Calling on_action_frame
+Turn: [1, 9, 45, 895]
+Calling on_action_frame
+Turn: [1, 9, 46, 896]
+Calling on_action_frame
+Turn: [1, 9, 47, 897]
+Calling on_action_frame
+Turn: [1, 9, 48, 898]
+Calling on_action_frame
+Turn: [1, 9, 49, 899]
+Calling on_action_frame
+Turn: [1, 9, 50, 900]
+Calling on_action_frame
+Turn: [1, 9, 51, 901]
+Calling on_action_frame
+Turn: [1, 9, 52, 902]
+Calling on_action_frame
+Turn: [1, 9, 53, 903]
+Calling on_action_frame
+Turn: [1, 9, 54, 904]
+Calling on_action_frame
+Turn: [1, 9, 55, 905]
+Calling on_action_frame
+Turn: [1, 9, 56, 906]
+Calling on_action_frame
+Turn: [1, 9, 57, 907]
+Calling on_action_frame
+Turn: [1, 9, 58, 908]
+Calling on_action_frame
+Turn: [1, 9, 59, 909]
+Calling on_action_frame
+Turn: [1, 9, 60, 910]
+Calling on_action_frame
+Turn: [1, 9, 61, 911]
+Calling on_action_frame
+Turn: [1, 9, 62, 912]
+Calling on_action_frame
+Turn: [1, 9, 63, 913]
+Calling on_action_frame
+Turn: [1, 9, 64, 914]
+Calling on_action_frame
+Turn: [1, 9, 65, 915]
+Calling on_action_frame
+Turn: [1, 9, 66, 916]
+Calling on_action_frame
+Turn: [1, 9, 67, 917]
+Calling on_action_frame
+Turn: [1, 9, 68, 918]
+Calling on_action_frame
+Turn: [1, 9, 69, 919]
+Calling on_action_frame
+Turn: [1, 9, 70, 920]
+Calling on_action_frame
+Turn: [1, 9, 71, 921]
+Calling on_action_frame
+Turn: [1, 9, 72, 922]
+Calling on_action_frame
+Turn: [1, 9, 73, 923]
+Calling on_action_frame
+Turn: [1, 9, 74, 924]
+Calling on_action_frame
+Turn: [1, 9, 75, 925]
+Calling on_action_frame
+Turn: [1, 9, 76, 926]
+Calling on_action_frame
+Turn: [1, 9, 77, 927]
+Calling on_action_frame
+Turn: [1, 9, 78, 928]
+Calling on_action_frame
+Turn: [1, 9, 79, 929]
+Calling on_action_frame
+Turn: [1, 9, 80, 930]
+Calling on_action_frame
+Turn: [1, 9, 81, 931]
+Calling on_action_frame
+Turn: [1, 9, 82, 932]
+Calling on_action_frame
+Turn: [1, 9, 83, 933]
+Calling on_action_frame
+Turn: [1, 9, 84, 934]
+Calling on_action_frame
+Turn: [1, 9, 85, 935]
+Calling on_action_frame
+Turn: [1, 9, 86, 936]
+Calling on_action_frame
+Turn: [1, 9, 87, 937]
+Calling on_action_frame
+Turn: [1, 9, 88, 938]
+Calling on_action_frame
+Turn: [1, 9, 89, 939]
+Calling on_action_frame
+Turn: [1, 9, 90, 940]
+Calling on_action_frame
+Turn: [1, 9, 91, 941]
+Calling on_action_frame
+Turn: [0, 10, -1, 942]
+Calling on_turn
+Starting on_turn
+My Health: 36.0 Enermy Health: 40.0
+Performing turn 10 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 10, 0, 943]
+Calling on_action_frame
+Turn: [1, 10, 1, 944]
+Calling on_action_frame
+Turn: [1, 10, 2, 945]
+Calling on_action_frame
+Turn: [1, 10, 3, 946]
+Calling on_action_frame
+Turn: [1, 10, 4, 947]
+Calling on_action_frame
+Turn: [1, 10, 5, 948]
+Calling on_action_frame
+Turn: [1, 10, 6, 949]
+Calling on_action_frame
+Turn: [1, 10, 7, 950]
+Calling on_action_frame
+Turn: [1, 10, 8, 951]
+Calling on_action_frame
+Turn: [1, 10, 9, 952]
+Calling on_action_frame
+Turn: [1, 10, 10, 953]
+Calling on_action_frame
+Turn: [1, 10, 11, 954]
+Calling on_action_frame
+Turn: [1, 10, 12, 955]
+Calling on_action_frame
+Turn: [1, 10, 13, 956]
+Calling on_action_frame
+Turn: [1, 10, 14, 957]
+Calling on_action_frame
+Turn: [1, 10, 15, 958]
+Calling on_action_frame
+Turn: [1, 10, 16, 959]
+Calling on_action_frame
+Turn: [1, 10, 17, 960]
+Calling on_action_frame
+Turn: [1, 10, 18, 961]
+Calling on_action_frame
+Turn: [1, 10, 19, 962]
+Calling on_action_frame
+Turn: [1, 10, 20, 963]
+Calling on_action_frame
+Turn: [1, 10, 21, 964]
+Calling on_action_frame
+Turn: [1, 10, 22, 965]
+Calling on_action_frame
+Turn: [1, 10, 23, 966]
+Calling on_action_frame
+Turn: [1, 10, 24, 967]
+Calling on_action_frame
+Turn: [1, 10, 25, 968]
+Calling on_action_frame
+Turn: [1, 10, 26, 969]
+Calling on_action_frame
+Turn: [1, 10, 27, 970]
+Calling on_action_frame
+Turn: [1, 10, 28, 971]
+Calling on_action_frame
+Turn: [1, 10, 29, 972]
+Calling on_action_frame
+Turn: [1, 10, 30, 973]
+Calling on_action_frame
+Turn: [1, 10, 31, 974]
+Calling on_action_frame
+Turn: [1, 10, 32, 975]
+Calling on_action_frame
+Turn: [1, 10, 33, 976]
+Calling on_action_frame
+Turn: [1, 10, 34, 977]
+Calling on_action_frame
+Turn: [1, 10, 35, 978]
+Calling on_action_frame
+Turn: [1, 10, 36, 979]
+Calling on_action_frame
+Turn: [1, 10, 37, 980]
+Calling on_action_frame
+Turn: [1, 10, 38, 981]
+Calling on_action_frame
+Turn: [1, 10, 39, 982]
+Calling on_action_frame
+Turn: [1, 10, 40, 983]
+Calling on_action_frame
+Turn: [1, 10, 41, 984]
+Calling on_action_frame
+Turn: [1, 10, 42, 985]
+Calling on_action_frame
+Turn: [1, 10, 43, 986]
+Calling on_action_frame
+Turn: [1, 10, 44, 987]
+Calling on_action_frame
+Turn: [1, 10, 45, 988]
+Calling on_action_frame
+Turn: [1, 10, 46, 989]
+Calling on_action_frame
+Turn: [1, 10, 47, 990]
+Calling on_action_frame
+Turn: [1, 10, 48, 991]
+Calling on_action_frame
+Turn: [1, 10, 49, 992]
+Calling on_action_frame
+Turn: [1, 10, 50, 993]
+Calling on_action_frame
+Turn: [1, 10, 51, 994]
+Calling on_action_frame
+Turn: [1, 10, 52, 995]
+Calling on_action_frame
+Turn: [1, 10, 53, 996]
+Calling on_action_frame
+Turn: [1, 10, 54, 997]
+Calling on_action_frame
+Turn: [1, 10, 55, 998]
+Calling on_action_frame
+Turn: [1, 10, 56, 999]
+Calling on_action_frame
+Turn: [1, 10, 57, 1000]
+Calling on_action_frame
+Turn: [1, 10, 58, 1001]
+Calling on_action_frame
+Turn: [1, 10, 59, 1002]
+Calling on_action_frame
+Turn: [1, 10, 60, 1003]
+Calling on_action_frame
+Turn: [1, 10, 61, 1004]
+Calling on_action_frame
+Turn: [1, 10, 62, 1005]
+Calling on_action_frame
+Turn: [1, 10, 63, 1006]
+Calling on_action_frame
+Turn: [1, 10, 64, 1007]
+Calling on_action_frame
+Turn: [1, 10, 65, 1008]
+Calling on_action_frame
+Turn: [1, 10, 66, 1009]
+Calling on_action_frame
+Turn: [1, 10, 67, 1010]
+Calling on_action_frame
+Turn: [1, 10, 68, 1011]
+Calling on_action_frame
+Turn: [1, 10, 69, 1012]
+Calling on_action_frame
+Turn: [1, 10, 70, 1013]
+Calling on_action_frame
+Turn: [1, 10, 71, 1014]
+Calling on_action_frame
+Turn: [1, 10, 72, 1015]
+Calling on_action_frame
+Turn: [1, 10, 73, 1016]
+Calling on_action_frame
+Turn: [1, 10, 74, 1017]
+Calling on_action_frame
+Turn: [1, 10, 75, 1018]
+Calling on_action_frame
+Turn: [1, 10, 76, 1019]
+Calling on_action_frame
+Turn: [1, 10, 77, 1020]
+Calling on_action_frame
+Turn: [1, 10, 78, 1021]
+Calling on_action_frame
+Turn: [1, 10, 79, 1022]
+Calling on_action_frame
+Turn: [1, 10, 80, 1023]
+Calling on_action_frame
+Turn: [1, 10, 81, 1024]
+Calling on_action_frame
+Turn: [1, 10, 82, 1025]
+Calling on_action_frame
+Turn: [1, 10, 83, 1026]
+Calling on_action_frame
+Turn: [1, 10, 84, 1027]
+Calling on_action_frame
+Turn: [1, 10, 85, 1028]
+Calling on_action_frame
+Turn: [1, 10, 86, 1029]
+Calling on_action_frame
+Turn: [1, 10, 87, 1030]
+Calling on_action_frame
+Turn: [1, 10, 88, 1031]
+Calling on_action_frame
+Turn: [1, 10, 89, 1032]
+Calling on_action_frame
+Turn: [1, 10, 90, 1033]
+Calling on_action_frame
+Turn: [1, 10, 91, 1034]
+Calling on_action_frame
+Turn: [0, 11, -1, 1035]
+Calling on_turn
+Starting on_turn
+My Health: 36.0 Enermy Health: 40.0
+Performing turn 11 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 11, 0, 1036]
+Calling on_action_frame
+Turn: [1, 11, 1, 1037]
+Calling on_action_frame
+Turn: [1, 11, 2, 1038]
+Calling on_action_frame
+Turn: [1, 11, 3, 1039]
+Calling on_action_frame
+Turn: [1, 11, 4, 1040]
+Calling on_action_frame
+Turn: [1, 11, 5, 1041]
+Calling on_action_frame
+Turn: [1, 11, 6, 1042]
+Calling on_action_frame
+Turn: [1, 11, 7, 1043]
+Calling on_action_frame
+Turn: [1, 11, 8, 1044]
+Calling on_action_frame
+Turn: [1, 11, 9, 1045]
+Calling on_action_frame
+Turn: [1, 11, 10, 1046]
+Calling on_action_frame
+Turn: [1, 11, 11, 1047]
+Calling on_action_frame
+Turn: [1, 11, 12, 1048]
+Calling on_action_frame
+Turn: [1, 11, 13, 1049]
+Calling on_action_frame
+Turn: [1, 11, 14, 1050]
+Calling on_action_frame
+Turn: [1, 11, 15, 1051]
+Calling on_action_frame
+Turn: [1, 11, 16, 1052]
+Calling on_action_frame
+Turn: [1, 11, 17, 1053]
+Calling on_action_frame
+Turn: [1, 11, 18, 1054]
+Calling on_action_frame
+Turn: [1, 11, 19, 1055]
+Calling on_action_frame
+Turn: [1, 11, 20, 1056]
+Calling on_action_frame
+Turn: [1, 11, 21, 1057]
+Calling on_action_frame
+Turn: [1, 11, 22, 1058]
+Calling on_action_frame
+Turn: [1, 11, 23, 1059]
+Calling on_action_frame
+Turn: [1, 11, 24, 1060]
+Calling on_action_frame
+Turn: [1, 11, 25, 1061]
+Calling on_action_frame
+Turn: [1, 11, 26, 1062]
+Calling on_action_frame
+Turn: [1, 11, 27, 1063]
+Calling on_action_frame
+Turn: [1, 11, 28, 1064]
+Calling on_action_frame
+Turn: [1, 11, 29, 1065]
+Calling on_action_frame
+Turn: [1, 11, 30, 1066]
+Calling on_action_frame
+Turn: [1, 11, 31, 1067]
+Calling on_action_frame
+Turn: [1, 11, 32, 1068]
+Calling on_action_frame
+Turn: [1, 11, 33, 1069]
+Calling on_action_frame
+Turn: [1, 11, 34, 1070]
+Calling on_action_frame
+Turn: [1, 11, 35, 1071]
+Calling on_action_frame
+Turn: [1, 11, 36, 1072]
+Calling on_action_frame
+Turn: [1, 11, 37, 1073]
+Calling on_action_frame
+Turn: [1, 11, 38, 1074]
+Calling on_action_frame
+Turn: [1, 11, 39, 1075]
+Calling on_action_frame
+Turn: [1, 11, 40, 1076]
+Calling on_action_frame
+Turn: [1, 11, 41, 1077]
+Calling on_action_frame
+Turn: [1, 11, 42, 1078]
+Calling on_action_frame
+Turn: [1, 11, 43, 1079]
+Calling on_action_frame
+Turn: [1, 11, 44, 1080]
+Calling on_action_frame
+Turn: [1, 11, 45, 1081]
+Calling on_action_frame
+Turn: [1, 11, 46, 1082]
+Calling on_action_frame
+Turn: [1, 11, 47, 1083]
+Calling on_action_frame
+Turn: [1, 11, 48, 1084]
+Calling on_action_frame
+Turn: [1, 11, 49, 1085]
+Calling on_action_frame
+Turn: [1, 11, 50, 1086]
+Calling on_action_frame
+Turn: [1, 11, 51, 1087]
+Calling on_action_frame
+Turn: [1, 11, 52, 1088]
+Calling on_action_frame
+Turn: [1, 11, 53, 1089]
+Calling on_action_frame
+Turn: [1, 11, 54, 1090]
+Calling on_action_frame
+Turn: [1, 11, 55, 1091]
+Calling on_action_frame
+Turn: [1, 11, 56, 1092]
+Calling on_action_frame
+Turn: [1, 11, 57, 1093]
+Calling on_action_frame
+Turn: [1, 11, 58, 1094]
+Calling on_action_frame
+Turn: [1, 11, 59, 1095]
+Calling on_action_frame
+Turn: [1, 11, 60, 1096]
+Calling on_action_frame
+Turn: [1, 11, 61, 1097]
+Calling on_action_frame
+Turn: [1, 11, 62, 1098]
+Calling on_action_frame
+Turn: [1, 11, 63, 1099]
+Calling on_action_frame
+Turn: [1, 11, 64, 1100]
+Calling on_action_frame
+Turn: [1, 11, 65, 1101]
+Calling on_action_frame
+Turn: [1, 11, 66, 1102]
+Calling on_action_frame
+Turn: [1, 11, 67, 1103]
+Calling on_action_frame
+Turn: [1, 11, 68, 1104]
+Calling on_action_frame
+Turn: [1, 11, 69, 1105]
+Calling on_action_frame
+Turn: [1, 11, 70, 1106]
+Calling on_action_frame
+Turn: [1, 11, 71, 1107]
+Calling on_action_frame
+Turn: [1, 11, 72, 1108]
+Calling on_action_frame
+Turn: [1, 11, 73, 1109]
+Calling on_action_frame
+Turn: [1, 11, 74, 1110]
+Calling on_action_frame
+Turn: [1, 11, 75, 1111]
+Calling on_action_frame
+Turn: [1, 11, 76, 1112]
+Calling on_action_frame
+Turn: [1, 11, 77, 1113]
+Calling on_action_frame
+Turn: [1, 11, 78, 1114]
+Calling on_action_frame
+Turn: [1, 11, 79, 1115]
+Calling on_action_frame
+Turn: [1, 11, 80, 1116]
+Calling on_action_frame
+Turn: [1, 11, 81, 1117]
+Calling on_action_frame
+Turn: [1, 11, 82, 1118]
+Calling on_action_frame
+Turn: [1, 11, 83, 1119]
+Calling on_action_frame
+Turn: [1, 11, 84, 1120]
+Calling on_action_frame
+Turn: [1, 11, 85, 1121]
+Calling on_action_frame
+Turn: [1, 11, 86, 1122]
+Calling on_action_frame
+Turn: [1, 11, 87, 1123]
+Calling on_action_frame
+Turn: [1, 11, 88, 1124]
+Calling on_action_frame
+Turn: [1, 11, 89, 1125]
+Calling on_action_frame
+Turn: [1, 11, 90, 1126]
+Calling on_action_frame
+Turn: [1, 11, 91, 1127]
+Calling on_action_frame
+Turn: [0, 12, -1, 1128]
+Calling on_turn
+Starting on_turn
+My Health: 36.0 Enermy Health: 40.0
+Performing turn 12 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Turn: [1, 12, 0, 1129]
+Calling on_action_frame
+Turn: [1, 12, 1, 1130]
+Calling on_action_frame
+Turn: [1, 12, 2, 1131]
+Calling on_action_frame
+Turn: [1, 12, 3, 1132]
+Calling on_action_frame
+Turn: [1, 12, 4, 1133]
+Calling on_action_frame
+Turn: [1, 12, 5, 1134]
+Calling on_action_frame
+Turn: [1, 12, 6, 1135]
+Calling on_action_frame
+Turn: [1, 12, 7, 1136]
+Calling on_action_frame
+Turn: [1, 12, 8, 1137]
+Calling on_action_frame
+Turn: [1, 12, 9, 1138]
+Calling on_action_frame
+Turn: [1, 12, 10, 1139]
+Calling on_action_frame
+Turn: [1, 12, 11, 1140]
+Calling on_action_frame
+Turn: [1, 12, 12, 1141]
+Calling on_action_frame
+Turn: [1, 12, 13, 1142]
+Calling on_action_frame
+Turn: [1, 12, 14, 1143]
+Calling on_action_frame
+Turn: [1, 12, 15, 1144]
+Calling on_action_frame
+Turn: [1, 12, 16, 1145]
+Calling on_action_frame
+Turn: [1, 12, 17, 1146]
+Calling on_action_frame
+Turn: [1, 12, 18, 1147]
+Calling on_action_frame
+Turn: [1, 12, 19, 1148]
+Calling on_action_frame
+Turn: [1, 12, 20, 1149]
+Calling on_action_frame
+Turn: [1, 12, 21, 1150]
+Calling on_action_frame
+Turn: [1, 12, 22, 1151]
+Calling on_action_frame
+Turn: [1, 12, 23, 1152]
+Calling on_action_frame
+Turn: [1, 12, 24, 1153]
+Calling on_action_frame
+Turn: [1, 12, 25, 1154]
+Calling on_action_frame
+Turn: [1, 12, 26, 1155]
+Calling on_action_frame
+Turn: [1, 12, 27, 1156]
+Calling on_action_frame
+Turn: [1, 12, 28, 1157]
+Calling on_action_frame
+Turn: [1, 12, 29, 1158]
+Calling on_action_frame
+Turn: [1, 12, 30, 1159]
+Calling on_action_frame
+Turn: [1, 12, 31, 1160]
+Calling on_action_frame
+Turn: [1, 12, 32, 1161]
+Calling on_action_frame
+Turn: [1, 12, 33, 1162]
+Calling on_action_frame
+Turn: [1, 12, 34, 1163]
+Calling on_action_frame
+Turn: [1, 12, 35, 1164]
+Calling on_action_frame
+Turn: [1, 12, 36, 1165]
+Calling on_action_frame
+Turn: [1, 12, 37, 1166]
+Calling on_action_frame
+Turn: [1, 12, 38, 1167]
+Calling on_action_frame
+Turn: [1, 12, 39, 1168]
+Calling on_action_frame
+Turn: [1, 12, 40, 1169]
+Calling on_action_frame
+Turn: [1, 12, 41, 1170]
+Calling on_action_frame
+Turn: [1, 12, 42, 1171]
+Calling on_action_frame
+Turn: [1, 12, 43, 1172]
+Calling on_action_frame
+Turn: [1, 12, 44, 1173]
+Calling on_action_frame
+Turn: [1, 12, 45, 1174]
+Calling on_action_frame
+Turn: [1, 12, 46, 1175]
+Calling on_action_frame
+Turn: [1, 12, 47, 1176]
+Calling on_action_frame
+Turn: [1, 12, 48, 1177]
+Calling on_action_frame
+Turn: [1, 12, 49, 1178]
+Calling on_action_frame
+Turn: [1, 12, 50, 1179]
+Calling on_action_frame
+Turn: [1, 12, 51, 1180]
+Calling on_action_frame
+Turn: [1, 12, 52, 1181]
+Calling on_action_frame
+Turn: [1, 12, 53, 1182]
+Calling on_action_frame
+Turn: [1, 12, 54, 1183]
+Calling on_action_frame
+Turn: [1, 12, 55, 1184]
+Calling on_action_frame
+Turn: [1, 12, 56, 1185]
+Calling on_action_frame
+Turn: [1, 12, 57, 1186]
+Calling on_action_frame
+Turn: [1, 12, 58, 1187]
+Calling on_action_frame
+Turn: [1, 12, 59, 1188]
+Calling on_action_frame
+Turn: [1, 12, 60, 1189]
+Calling on_action_frame
+Turn: [1, 12, 61, 1190]
+Calling on_action_frame
+Turn: [1, 12, 62, 1191]
+Calling on_action_frame
+Turn: [1, 12, 63, 1192]
+Calling on_action_frame
+Turn: [1, 12, 64, 1193]
+Calling on_action_frame
+Turn: [1, 12, 65, 1194]
+Calling on_action_frame
+Turn: [1, 12, 66, 1195]
+Calling on_action_frame
+Turn: [1, 12, 67, 1196]
+Calling on_action_frame
+Turn: [1, 12, 68, 1197]
+Calling on_action_frame
+Turn: [1, 12, 69, 1198]
+Calling on_action_frame
+Turn: [1, 12, 70, 1199]
+Calling on_action_frame
+Turn: [1, 12, 71, 1200]
+Calling on_action_frame
+Turn: [1, 12, 72, 1201]
+Calling on_action_frame
+Turn: [1, 12, 73, 1202]
+Calling on_action_frame
+Turn: [1, 12, 74, 1203]
+Calling on_action_frame
+Turn: [1, 12, 75, 1204]
+Calling on_action_frame
+Turn: [1, 12, 76, 1205]
+Calling on_action_frame
+Turn: [1, 12, 77, 1206]
+Calling on_action_frame
+Got scored on at: [2, 11]
+All locations: [[8, 5], [8, 5], [19, 5], [19, 5], [2, 11]]
+Got scored on at: [2, 11]
+All locations: [[8, 5], [8, 5], [19, 5], [19, 5], [2, 11], [2, 11]]
+Got scored on at: [2, 11]
+All locations: [[8, 5], [8, 5], [19, 5], [19, 5], [2, 11], [2, 11], [2, 11]]
+Turn: [1, 12, 78, 1207]
+Calling on_action_frame
+Turn: [1, 12, 79, 1208]
+Calling on_action_frame
+Turn: [1, 12, 80, 1209]
+Calling on_action_frame
+Turn: [1, 12, 81, 1210]
+Calling on_action_frame
+Turn: [1, 12, 82, 1211]
+Calling on_action_frame
+Turn: [1, 12, 83, 1212]
+Calling on_action_frame
+Turn: [1, 12, 84, 1213]
+Calling on_action_frame
+Turn: [1, 12, 85, 1214]
+Calling on_action_frame
+Turn: [1, 12, 86, 1215]
+Calling on_action_frame
+Turn: [1, 12, 87, 1216]
+Calling on_action_frame
+Turn: [1, 12, 88, 1217]
+Calling on_action_frame
+Turn: [1, 12, 89, 1218]
+Calling on_action_frame
+Turn: [1, 12, 90, 1219]
+Calling on_action_frame
+Turn: [1, 12, 91, 1220]
+Calling on_action_frame
+Turn: [1, 12, 92, 1221]
+Calling on_action_frame
+Turn: [1, 12, 93, 1222]
+Calling on_action_frame
+Turn: [1, 12, 94, 1223]
+Calling on_action_frame
+Turn: [1, 12, 95, 1224]
+Calling on_action_frame
+Turn: [1, 12, 96, 1225]
+Calling on_action_frame
+Turn: [1, 12, 97, 1226]
+Calling on_action_frame
+Turn: [1, 12, 98, 1227]
+Calling on_action_frame
+Turn: [1, 12, 99, 1228]
+Calling on_action_frame
+Turn: [1, 12, 100, 1229]
+Calling on_action_frame
+Turn: [1, 12, 101, 1230]
+Calling on_action_frame
+Turn: [1, 12, 102, 1231]
+Calling on_action_frame
+Turn: [1, 12, 103, 1232]
+Calling on_action_frame
+Turn: [1, 12, 104, 1233]
+Calling on_action_frame
+Turn: [1, 12, 105, 1234]
+Calling on_action_frame
+Turn: [1, 12, 106, 1235]
+Calling on_action_frame
+Turn: [1, 12, 107, 1236]
+Calling on_action_frame
+Turn: [1, 12, 108, 1237]
+Calling on_action_frame
+Turn: [1, 12, 109, 1238]
+Calling on_action_frame
+Turn: [1, 12, 110, 1239]
+Calling on_action_frame
+Turn: [1, 12, 111, 1240]
+Calling on_action_frame
+Turn: [1, 12, 112, 1241]
+Calling on_action_frame
+Turn: [1, 12, 113, 1242]
+Calling on_action_frame
+Turn: [1, 12, 114, 1243]
+Calling on_action_frame
+Turn: [1, 12, 115, 1244]
+Calling on_action_frame
+Turn: [1, 12, 116, 1245]
+Calling on_action_frame
+Turn: [1, 12, 117, 1246]
+Calling on_action_frame
+Turn: [1, 12, 118, 1247]
+Calling on_action_frame
+Turn: [1, 12, 119, 1248]
+Calling on_action_frame
+Turn: [1, 12, 120, 1249]
+Calling on_action_frame
+Turn: [1, 12, 121, 1250]
+Calling on_action_frame
+Turn: [1, 12, 122, 1251]
+Calling on_action_frame
+Turn: [1, 12, 123, 1252]
+Calling on_action_frame
+Turn: [0, 13, -1, 1253]
+Calling on_turn
+Starting on_turn
+My Health: 33.0 Enermy Health: 39.0
+Performing turn 13 of your custom algo strategy
+Starting base
+Finished base
+Calling submit turn
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/algo_strategy.py", line 167, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/gamelib/algocore.py", line 59, in start
+    game_state_string = get_command()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/base-algo/gamelib/util.py", line 12, in get_command
+    ret = sys.stdin.readline()
+KeyboardInterrupt
