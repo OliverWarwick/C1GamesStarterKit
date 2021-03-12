@@ -166,11 +166,21 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         #Attack Profile 1: Big Demo Energy
         demoPos = self.estimate_our_demo_placement(game_state)
-        gamelib.debug_write("Demolisher attack "+ str(demoPos))
+        if self.verbose: gamelib.debug_write("Demolisher attack "+ str(demoPos))
         if demoPos is not None:
             attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(my_mp/3))])
         #Attack Profile 2: Scout+Demo tomfoolery
-
+        scoutDemoPos = self.get_our_scout_demo_split(game_state)
+        if scoutDemoPos is not None and my_mp >= 4:
+            scoutPos = scoutDemoPos[0]
+            demoPos = scoutDemoPos[1]
+            attackSplit = self.get_enemy_scout_demo_split_numbers(my_mp)
+            demoNum = attackSplit[0]
+            scoutNum = attackSplit[1]
+            attack = []
+            attack.append(attacker(name=SCOUT,x=scoutPos[0],y=scoutPos[1],num=scoutNum))
+            attack.append(attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=demoNum))
+            attack_set_list.append(attack)
         return attack_set_list
     
     def estimate_our_demo_placement(self, game_state):
@@ -220,6 +230,52 @@ class AlgoStrategy(gamelib.AlgoCore):
         
         return random.choice(validAttackPos)
 
+    def get_our_scout_demo_split(self, game_state): #TODO
+        #Returns two positions, first is scout and second is for demo. Checks path length of all start positions and checks shortest and longest ones
+        initPositions = [[13,0],[14,0]]
+        validPaths = []
+
+        for y in range(14):
+            for i in range(2):
+                #gamelib.debug_write(initPositions)
+                translationSign = pow(-1,i)
+                testPos = [initPositions[i][0]-y*translationSign,initPositions[i][1]+y]
+                if(game_state.contains_stationary_unit(testPos) is False): #Check location is spawnable
+                    unitPath = game_state.find_path_to_edge(testPos)
+                    #gamelib.debug_write(unitPath)
+                    #gamelib.debug_write(unitPath[-1])
+                    if(unitPath[-1][1] >= 14): #Check that this path ends on our side or on their last line
+                        newPath = [testPos, len(unitPath)]
+                        validPaths.append(newPath)
+        if self.verbose: gamelib.debug_write(validPaths)
+        if len(validPaths)==0:
+            return None
+        #We've now got the starting point and length of each path to our side, we'll find the minimum/max of these and pick one at random for scout/demo
+        minPathLength = 10000
+        maxPathLength = -1
+        validScoutPaths = []
+        validDemoPaths = []
+        for path in validPaths:
+            if (path[1] < minPathLength):
+                minPathLength = path[1]
+                validDemoPaths = []
+                validDemoPaths.append(path[0])
+            elif (path[1] == minPathLength):
+                validDemoPaths.append(path[0])
+            
+            if (path[1] > maxPathLength):
+                maxPathLength = path[1]
+                validScoutPaths = []
+                validScoutPaths.append(path[0])
+            elif (path[1] == maxPathLength):
+                validScoutPaths.append(path[0])
+        #All paths in valid scoutpaths and validdemopaths are the same length, so we just pick a random start position amongst them and send that off.
+        if self.verbose: gamelib.debug_write(validScoutPaths)
+        if self.verbose: gamelib.debug_write(validDemoPaths)
+        if  float(maxPathLength) <= 1.6 * float(minPathLength):
+            return None
+        spawnPositions = [random.choice(validScoutPaths), random.choice(validDemoPaths)]
+        return spawnPositions
 
     def roll_out_our_attack_sets(self, game_state, attack_set_list):
 
@@ -612,7 +668,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # DAVID / HENRY LOOK
 
         oppo_mp = int(game_state.get_resource(resource_type=MP, player_index=1))
-        gamelib.debug_write("Opponent MP :" + str(oppo_mp))
+        if self.verbose: gamelib.debug_write("Opponent MP :" + str(oppo_mp))
         attack_set_list = [] #Create an empty list of possible attacks
 
         #For now calculate opponent attack sets in three cases determined by their MP. MP <= 10, 10 < MP <= 20, MP >20 
@@ -622,7 +678,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             if scoutPos is not None:
                 attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
-            #Case 2: Split Scout (Enemy Thor) TODO later as have had second thoughts on this
+            #Case 2: Split Scout (Enemy Thor) TODO later
 
             #Case 3: Full Demo Rush
             demoPos = self.get_scout_attack_position(game_state)
@@ -691,7 +747,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
                 attack_set_list.append(scout_demo_attack) #Send attack
 
-        if self.verbose: gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
+        gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
         return attack_set_list
 
     def estimate_enemy_interceptor_position(self, game_state): #Returns a list of coordinate and number pairs for interceptor spawns + 
@@ -706,11 +762,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         initLeft = [6,20]
         initRight = [21,20]
         for offset in range(7):
-
             if leftFound is False:
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
+                    gamelib.debug_write(testLeftPos)
                     if self.verbose: gamelib.debug_write(testLeftPos)
                     if (game_state.contains_stationary_unit(testLeftPos) is False):
                         unitPath = game_state.find_path_to_edge(testLeftPos)
@@ -722,6 +778,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
+                    gamelib.debug_write(testRightPos)
                     if self.verbose: gamelib.debug_write(testRightPos)
                     if (game_state.contains_stationary_unit(testRightPos) is False):
                         unitPath = game_state.find_path_to_edge(testRightPos)
@@ -772,23 +829,21 @@ class AlgoStrategy(gamelib.AlgoCore):
     #NOTE QUESTION, does the find path to edge take into account walls that will be destroyed in the coming turn? If not this becomes a bit messy?
     def get_scout_demo_split_positions(self, game_state):
         #Returns two positions, first is scout and second is for demo. Checks path length of all start positions and checks shortest and longest ones
-        #NOTE Remember to only include a path if it ends on our side of the board, if not it dies in their base and that's pointless!
         initPositions = [[13,27],[14,27]]
         validPaths = []
 
         for y in range(14):
             for i in range(2):
                 #gamelib.debug_write(initPositions)
-                if(game_state.contains_stationary_unit(initPositions[i])==False): #Check location is spawnable
-                    unitPath = game_state.find_path_to_edge(initPositions[i])
+                translationSign = pow(-1,i)
+                testPos = [initPositions[i][0]-y*translationSign,initPositions[i][1]-y]
+                if(game_state.contains_stationary_unit(testPos) is False): #Check location is spawnable
+                    unitPath = game_state.find_path_to_edge(testPos)
                     #gamelib.debug_write(unitPath)
                     #gamelib.debug_write(unitPath[-1])
                     if(unitPath[-1][1] <= 14): #Check that this path ends on our side or on their last line
-                        newPath = [copy.deepcopy(initPositions[i]), len(unitPath)]
+                        newPath = [testPos, len(unitPath)]
                         validPaths.append(newPath)
-
-                initPositions[i][0] -= pow(-1,i)
-                initPositions[i][1] -= 1
         if self.verbose: gamelib.debug_write(validPaths)
         if len(validPaths)==0:
             return None
