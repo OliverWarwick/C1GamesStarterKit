@@ -238,16 +238,15 @@ class AlgoStrategy(gamelib.AlgoCore):
         for y in range(14):
             for i in range(2):
                 #gamelib.debug_write(initPositions)
-                if(game_state.contains_stationary_unit(initPositions[i])==False): #Check location is spawnable
-                    unitPath = game_state.find_path_to_edge(initPositions[i])
+                translationSign = pow(-1,i)
+                testPos = [initPositions[i][0]-y*translationSign,initPositions[1]+y]
+                if(game_state.contains_stationary_unit(testPos) is False): #Check location is spawnable
+                    unitPath = game_state.find_path_to_edge(testPos)
                     #gamelib.debug_write(unitPath)
                     #gamelib.debug_write(unitPath[-1])
                     if(unitPath[-1][1] >= 14): #Check that this path ends on our side or on their last line
-                        newPath = [copy.deepcopy(initPositions[i]), len(unitPath)]
+                        newPath = [testPos, len(unitPath)]
                         validPaths.append(newPath)
-
-                initPositions[i][0] -= pow(-1,i)
-                initPositions[i][1] += 1
         if self.verbose: gamelib.debug_write(validPaths)
         if len(validPaths)==0:
             return None
@@ -763,11 +762,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         initLeft = [6,20]
         initRight = [21,20]
         for offset in range(7):
-
             if leftFound is False:
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
+                    gamelib.debug_write(testLeftPos)
                     if self.verbose: gamelib.debug_write(testLeftPos)
                     if (game_state.contains_stationary_unit(testLeftPos) is False):
                         unitPath = game_state.find_path_to_edge(testLeftPos)
@@ -779,6 +778,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
+                    gamelib.debug_write(testRightPos)
                     if self.verbose: gamelib.debug_write(testRightPos)
                     if (game_state.contains_stationary_unit(testRightPos) is False):
                         unitPath = game_state.find_path_to_edge(testRightPos)
@@ -835,16 +835,15 @@ class AlgoStrategy(gamelib.AlgoCore):
         for y in range(14):
             for i in range(2):
                 #gamelib.debug_write(initPositions)
-                if(game_state.contains_stationary_unit(initPositions[i])==False): #Check location is spawnable
-                    unitPath = game_state.find_path_to_edge(initPositions[i])
+                translationSign = pow(-1,i)
+                testPos = [initPositions[i][0]-y*translationSign,initPositions[i][1]-y]
+                if(game_state.contains_stationary_unit(testPos) is False): #Check location is spawnable
+                    unitPath = game_state.find_path_to_edge(testPos)
                     #gamelib.debug_write(unitPath)
                     #gamelib.debug_write(unitPath[-1])
                     if(unitPath[-1][1] <= 14): #Check that this path ends on our side or on their last line
-                        newPath = [copy.deepcopy(initPositions[i]), len(unitPath)]
+                        newPath = [testPos, len(unitPath)]
                         validPaths.append(newPath)
-
-                initPositions[i][0] -= pow(-1,i)
-                initPositions[i][1] -= 1
         if self.verbose: gamelib.debug_write(validPaths)
         if len(validPaths)==0:
             return None
