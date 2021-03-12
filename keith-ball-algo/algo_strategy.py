@@ -454,11 +454,142 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # DAVID / HENRY LOOK
 
-        oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
-        attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], [], [attacker(name=SCOUT, x=14, y=27, num=4)]]
+        oppo_mp = int(game_state.get_resource(resource_type=MP, player_index=1))
+
+        attack_set_list = [] #Create an empty list of possible attacks
+
+        #For now calculate opponent attack sets in three cases determined by their MP. MP <= 10, 10 < MP <= 20, MP >20 
+        if(oppo_mp <= 10): 
+            #Case 1: Scout Rush
+            scoutPos = self.get_scout_attack_position(game_state)
+            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+
+            #Case 2: Split Scout (successive attackers) TODO later as have had second thoughts on this
+
+            #Case 3: Full Demo Rush
+            attack_set_list.append(attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3))))  
+
+            #Case 4: Scout-Demo Split
+            if(oppo_mp >= 4):
+                splitPositions = self.get_scout_demo_split_positions(game_state)
+                splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp)
+                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
+                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+                attack_set_list.append(scout_demo_attack)
+            
+            #Case 5: Cheeky Interceptors
+
+        elif (oppo_mp > 10 and oppo_mp <= 20): #MP between 10 and 21, so mid-range attack
+            #Case 1: Big Scout Rush
+            scoutPos = self.get_scout_attack_position(game_state)
+            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+
+            #Case 2 25-75 Scout Split, TODO bc I think there's some extra stuff to check (I think this is a subset of Thor attacks):
+            
+            #Case 3 50-50 Scout Split, TODO later for same reason as above
+            
+            #Case 4 All Demo attack NOTE will assume same position as scout attack case for now but might change
+            attack_set_list.append(attacker(name=DEMOLISHER,x=scoutPos[0],y=scoutPos[1],num=int(math.floor(oppo_mp/3))))  
+
+            #Case 5 Scout-Demo split (only do if at least 4 credits)
+            splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
+            splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
+            scout_demo_attack = []
+            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
+            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+
+            attack_set_list.append(scout_demo_attack)
+
+
+        else: # MP >20 big fucko wucko attack
+            #Case 1/2: Scout Splits (this one I think we can improve the heuristic for than just 50-50, 25-75)
+
+            #Case 3: Big Scout Rush (one stack)
+            scoutPos = self.get_scout_attack_position(game_state)
+            attack_set_list.append(attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp))
+
+            #Case 4: Big Demo Rush
+            attack_set_list = [[attacker(name=SCOUT, x=14, y=27, num=2), attacker(name=SCOUT, x=23, y=18, num=2)], [], [attacker(name=SCOUT, x=14, y=27, num=4)]]
+
+            #Case 5: Scout-Demo Split
+            splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
+            splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
+            scout_demo_attack = []
+            scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
+            scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
+
+            attack_set_list.append(scout_demo_attack)
 
         return attack_set_list
 
+    #TODO, implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right
+
+    def get_scout_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
+        initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
+        
+        finalPositions = [[0,13], [0,27]] #Worst possible position on far left/right corner
+        
+        #Start from the very back and basically BFS down
+        for(y in range(14)):
+            for(i in range(2)):
+                if (game_state.contains_stationary_unit(initPositions[i]) == False): #Check if position is occupied if not, then we pick here
+                    if(initPositions[i][1] >= finalPositions[i][1]): #Check y value of the position, if the one we're on is higher we spawn there
+                        initPositions[i] = finalPositions[i] 
+                else:
+                    initPositions[i][0]-= pow(-1,i) #If i=0, then left side so we subtract (-1)^i = 1 (i.e. decrease x), if i=1 then it adds 1 instead
+                    initPositions[i][1]-= 1 #Decrease the y coordinate here
+
+        #After this point, first element of finalPositions is the "best" left attack, and the other is the "best" right attack
+        return finalPositions[random.randint(0,1)] #Coin flip the attack side for now
+
+    #NOTE QUESTION, does the find path to edge take into account walls that will be destroyed in the coming turn? If not this becomes a bit messy?
+    def get_scout_demo_split_positions(self, game_state):
+        #Returns two positions, first is scout and second is for demo. Checks path length of all start positions and checks shortest and longest ones
+        #NOTE Remember to only include a path if it ends on our side of the board, if not it dies in their base and that's pointless!
+        initPositions = [[13,27],[14,27]]
+        validPaths = []
+
+        for(y in range(14)):
+            for(i in range(2)):
+                if(game_state.contains_stationary_unit(initPositions[i])==False): #Check location is spawnable
+                    unitPath = game_state.find_path_to_edge(initPositions[i])
+                    if(unitPath[-1][1] <= 13): #Check that this path ends on our side or on their last line
+                        newPath = [initPositions[i], len(unitPath)]
+                        validPaths.append(newPath)
+
+                initPositions[i][0] -= pow(-1,i)
+                initPositions[i][1] -= 1
+
+        #We've now got the starting point and length of each path to our side, we'll find the minimum/max of these and pick one at random for scout/demo
+        minPathLength = 10000
+        maxPathLength = -1
+        validScoutPaths = []
+        validDemoPaths = []
+        for path in validPaths:
+            if (path[1] < minPathLength):
+                validDemoPaths = []
+                validDemoPaths.append(path[0])
+            elif (path[1] = minPathLength):
+                validDemoPaths.append(path[0])
+            elif (path[1] > maxPathLength):
+                validScoutPaths = []
+                validScoutPaths.append(path[0])
+            elif (path[1] = maxPathLength):
+                validScoutPaths.append(path[0])
+        #All paths in valid scoutpaths and validdemopaths are the same length, so we just pick a random start position amongst them and send that off.
+        spawnPositions = [validScoutPaths[random.randint(0,len(validScoutPaths)-1)], validDemoPaths[random.randint(0,len(validDemoPaths)-1)]]
+        return spawnPositions
+
+    def get_enemy_scout_demo_split_numbers(enemy_mp): #This assumes enemy_mp >= 4
+
+        enemy_mp = int(math.floor(enemy_mp)) #Going to round down to use a fat list for all cases from 4 <= mp < 20
+        if(enemy_mp >= 21):
+            d = math.floor((enemy_mp-1)/5)
+            return ([3*(d-1), d-1])
+        if(enemy_mp == 20):
+            return ([4,8]) if random.randint(0,1)==1 else ([5,5])
+        scout_demo_split = [ [1,1], [1,2], [1,3], [1,4], [1,5], [2,3], [2,4], [2,5], [2,6], [2,7], [3,5], [3,6], [3,7], [4,5], [4,6], [4,7], [4,8]] #I pray this is right
+        return scout_demo_split[enemy_mp-4]
 
     def prepare_immediate_attack_sets_for_us(self, game_state):
         ''' return List[Attacker] '''
