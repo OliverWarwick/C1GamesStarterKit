@@ -444,7 +444,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
 
             attack_set_list.append(scout_demo_attack)
-            
+
         return attack_set_list
 
     '''TODO, implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right'''
@@ -453,8 +453,9 @@ class AlgoStrategy(gamelib.AlgoCore):
         initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
         
         finalPositions = [[0,13], [0,27]] #Worst possible position on far left/right corner
-
-        for(y in range(14)): #Start from the very back
+        
+        #Start from the very back and basically BFS down
+        for(y in range(14)):
             for(i in range(2)):
                 if (game_state.contains_stationary_unit(initPositions[i]) == False): #Check if position is occupied if not, then we pick here
                     if(initPositions[i][1] >= finalPositions[i][1]): #Check y value of the position, if the one we're on is higher we spawn there
