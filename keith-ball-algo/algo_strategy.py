@@ -804,27 +804,47 @@ class AlgoStrategy(gamelib.AlgoCore):
     def get_scout_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
         initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
         
-        finalPositions = [[-1,13], [28,13]] #Worst possible position on far left/right corner
+        validPositions = []
         
         #Start from the very back and basically BFS down
         for y in range(14):
+            if len(validPositions) > 0:
+                break
             for i in range(2):
-                if (game_state.contains_stationary_unit(initPositions[i]) is False): #Check if position is occupied if not, then we pick here
-                    if(initPositions[i][1] >= finalPositions[i][1]): #Check y value of the position, if the one we're on is higher we spawn there
-                        unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
-                        if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on their last line (Kamikaze into our walls)
-                            finalPositions[i] = initPositions[i]
-                        elif (initPositions[i][0] == 0): #If the worst possible starting position doesn't have a valid attack then that side is dead
-                            finalPositions[i] = False
-                else:
-                    initPositions[i][0]-= pow(-1,i) #If i=0, then left side so we subtract (-1)^i = 1 (i.e. decrease x), if i=1 then it adds 1 instead
-                    initPositions[i][1]-= 1 #Decrease the y coordinate here
-        while(False in finalPositions): #Remove any sides that are impossible
-            finalPositions.remove(False)
-        if(len(finalPositions)==0): #If after this, there's no valid position, they can't launch an attack (without us destroying stuff)
-            return None
+                signToggle = pow(-1, i)
+                testPos = [initPositions[i][0]-y*signToggle, initPositions[i][1]-y]
+                if (game_state.contains_stationary_unit(testPos) is False): #Check if position is occupied if not, then we pick here
+                    unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
+                    if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on their last line (Kamikaze into our walls)
+                        validPositions.append(testPos)
+
+        if len(validPositions) == 0:
+             return None
         #After this point, first element of finalPositions is the "best" left attack, and the other is the "best" right attack
-        return random.choice(finalPositions) #Coin flip the attack side for now
+        return random.choice(validPositions) #Coin flip the attack side for now
+
+    def get_enemy_demo_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
+            initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
+            
+            validPositions = []
+            
+            #Start from the very back and basically BFS down
+            for y in range(14):
+                if len(validPositions) > 0:
+                    break
+                for i in range(2):
+                    signToggle = pow(-1, i)
+                    testPos = [initPositions[i][0]-y*signToggle, initPositions[i][1]-y]
+                    if (game_state.contains_stationary_unit(testPos) is False): #Check if position is occupied if not, then we pick here
+                        unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
+                        if(unitPath[-1][1] <= 17): #Check the attack actually ends on our side or on the max range of a Demo
+                            validPositions.append(testPos)
+
+            if len(validPositions) == 0:
+                return None
+            #After this point, first element of finalPositions is the "best" left attack, and the other is the "best" right attack
+            return random.choice(validPositions) #Coin flip the attack side for now
+
 
     #NOTE QUESTION, does the find path to edge take into account walls that will be destroyed in the coming turn? If not this becomes a bit messy?
     def get_scout_demo_split_positions(self, game_state):
