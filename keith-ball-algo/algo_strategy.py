@@ -447,7 +447,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         return attack_set_list
 
-    '''TODO, implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right'''
+    #TODO, implement better heuristic for deciding the attacking side and factor in path of attack, rn we randomly pick left/right
 
     def get_scout_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
         initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
@@ -469,7 +469,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
     #NOTE QUESTION, does the find path to edge take into account walls that will be destroyed in the coming turn? If not this becomes a bit messy?
     def get_scout_demo_split_positions(self, game_state):
-        '''Returns two positions, first is scout and second is for demo. Checks path length of all start positions and checks shortest and longest ones'''
+        #Returns two positions, first is scout and second is for demo. Checks path length of all start positions and checks shortest and longest ones
         #NOTE Remember to only include a path if it ends on our side of the board, if not it dies in their base and that's pointless!
         initPositions = [[13,27],[14,27]]
         validPaths = []
