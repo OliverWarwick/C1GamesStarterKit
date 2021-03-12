@@ -491,6 +491,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             if(oppo_mp >= 4):
                 splitPositions = self.get_scout_demo_split_positions(game_state)
                 splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp)
+                scout_demo_attack = []
                 scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[0]))
                 scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[1]))
                 attack_set_list.append(scout_demo_attack)
@@ -552,7 +553,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             for i in range(2):
                 if (game_state.contains_stationary_unit(initPositions[i]) == False): #Check if position is occupied if not, then we pick here
                     if(initPositions[i][1] >= finalPositions[i][1]): #Check y value of the position, if the one we're on is higher we spawn there
-                        initPositions[i] = finalPositions[i] 
+                        finalPositions[i] = initPositions[i]
                 else:
                     initPositions[i][0]-= pow(-1,i) #If i=0, then left side so we subtract (-1)^i = 1 (i.e. decrease x), if i=1 then it adds 1 instead
                     initPositions[i][1]-= 1 #Decrease the y coordinate here
@@ -569,36 +570,45 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         for y in range(14):
             for i in range(2):
+                #gamelib.debug_write(initPositions)
                 if(game_state.contains_stationary_unit(initPositions[i])==False): #Check location is spawnable
                     unitPath = game_state.find_path_to_edge(initPositions[i])
+                    #gamelib.debug_write(unitPath)
+                    #gamelib.debug_write(unitPath[-1])
                     if(unitPath[-1][1] <= 13): #Check that this path ends on our side or on their last line
-                        newPath = [initPositions[i], len(unitPath)]
+                        newPath = [copy.deepcopy(initPositions[i]), len(unitPath)]
                         validPaths.append(newPath)
 
                 initPositions[i][0] -= pow(-1,i)
                 initPositions[i][1] -= 1
-
+        gamelib.debug_write(validPaths)
         #We've now got the starting point and length of each path to our side, we'll find the minimum/max of these and pick one at random for scout/demo
         minPathLength = 10000
         maxPathLength = -1
         validScoutPaths = []
         validDemoPaths = []
         for path in validPaths:
+            gamelib.debug_write(path)
             if (path[1] < minPathLength):
+                minPathLength = path[1]
                 validDemoPaths = []
                 validDemoPaths.append(path[0])
             elif (path[1] == minPathLength):
                 validDemoPaths.append(path[0])
-            elif (path[1] > maxPathLength):
+            
+            if (path[1] > maxPathLength):
+                maxPathLength = path[1]
                 validScoutPaths = []
                 validScoutPaths.append(path[0])
             elif (path[1] == maxPathLength):
                 validScoutPaths.append(path[0])
         #All paths in valid scoutpaths and validdemopaths are the same length, so we just pick a random start position amongst them and send that off.
-        spawnPositions = [validScoutPaths[random.randint(0,len(validScoutPaths)-1)], validDemoPaths[random.randint(0,len(validDemoPaths)-1)]]
+        gamelib.debug_write(validScoutPaths)
+        gamelib.debug_write(validDemoPaths)
+        spawnPositions = [random.choice(validScoutPaths), random.choice(validDemoPaths)]
         return spawnPositions
 
-    def get_enemy_scout_demo_split_numbers(enemy_mp): #This assumes enemy_mp >= 4
+    def get_enemy_scout_demo_split_numbers(self, enemy_mp): #This assumes enemy_mp >= 4
 
         enemy_mp = int(math.floor(enemy_mp)) #Going to round down to use a fat list for all cases from 4 <= mp < 20
         if(enemy_mp >= 21):
