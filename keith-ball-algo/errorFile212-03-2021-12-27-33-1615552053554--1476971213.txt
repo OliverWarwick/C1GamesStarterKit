@@ -1,0 +1,4 @@
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 555
+    for(y in range(14)):
+                       ^
+SyntaxError: invalid syntax

@@ -552,8 +552,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         initPositions = [[13,27],[14,27]]
         validPaths = []
 
-        for(y in range(14)):
-            for(i in range(2)):
+        for y in range(14):
+            for i in range(2):
                 if(game_state.contains_stationary_unit(initPositions[i])==False): #Check location is spawnable
                     unitPath = game_state.find_path_to_edge(initPositions[i])
                     if(unitPath[-1][1] <= 13): #Check that this path ends on our side or on their last line
@@ -572,12 +572,12 @@ class AlgoStrategy(gamelib.AlgoCore):
             if (path[1] < minPathLength):
                 validDemoPaths = []
                 validDemoPaths.append(path[0])
-            elif (path[1] = minPathLength):
+            elif (path[1] == minPathLength):
                 validDemoPaths.append(path[0])
             elif (path[1] > maxPathLength):
                 validScoutPaths = []
                 validScoutPaths.append(path[0])
-            elif (path[1] = maxPathLength):
+            elif (path[1] == maxPathLength):
                 validScoutPaths.append(path[0])
         #All paths in valid scoutpaths and validdemopaths are the same length, so we just pick a random start position amongst them and send that off.
         spawnPositions = [validScoutPaths[random.randint(0,len(validScoutPaths)-1)], validDemoPaths[random.randint(0,len(validDemoPaths)-1)]]
