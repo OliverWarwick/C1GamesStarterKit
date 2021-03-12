@@ -117,7 +117,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         if self.throw_interceptors:
             copied_game_state = copy.deepcopy(game_state)
             interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
-            self.place_attackers(game_state, interceptor_placement)
+            if interceptor_placement is not None:
+                self.place_attackers(game_state, interceptor_placement)
         
         # We now want to search to see if we have a good attack in the one step case.
         # If there is execute this, otherwise do not and carry on.
@@ -494,6 +495,9 @@ class AlgoStrategy(gamelib.AlgoCore):
         gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
         gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
 
+        if len(oppo_attack_set) == 0:
+            return None
+
         # Find their best attack
         best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
         gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
@@ -713,7 +717,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         ''' 
         Needs to be a copied game state object
         args: game_state: - GameState object.
-        returns: [List[attacker], float]        this is the list of attackers which was the best play.
+        returns: [List[List[attacker]], float]        this is the list of attackers which was the best play.
         '''
 
         # Start the timer.
