@@ -72,6 +72,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         # This tracks which wall we are currently blocking off
         self.blocking_wall_placement = "CENTER"
 
+        self.
+
         self.verbose = False
 
     def on_turn(self, turn_state):
@@ -143,6 +145,30 @@ class AlgoStrategy(gamelib.AlgoCore):
         # THUNDER STRIKE PREP
 
 
+
+
+
+
+    def plan_thors_hammer(self, game_state, side, second_round_attack_units):
+
+        if side == "RIGHT":
+            
+            # remove the front two walls and turrets
+            # Should be a list of locations.
+            self.round_one_removal_buildings_instructions = [[25, 12], [26, 12], [26, 13], [27, 13]]
+
+            self.round_three_rebuild_instructions = []
+        elif side == "LEFT"
+            self.round_one_removal_buildings_instructions = [[1, 12], [2, 12], [0, 13], [1, 13]]
+
+        else:
+            gamelib.debug("Issue with thors")
+
+
+    def remove_buildings(self, game_state, remove_list):
+        ''' remove_list should be a load of locations '''
+        for build in remove_list:
+            game_state.attempt_remove(build)
 
 
 
