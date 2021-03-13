@@ -711,15 +711,15 @@ class AlgoStrategy(gamelib.AlgoCore):
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
-            #Case 4: Scout-Demo Split
-            if(oppo_mp >= 4):
-                splitPositions = self.get_scout_demo_split_positions(game_state)
-                if splitPositions is not None:
-                    splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp)
-                    scout_demo_attack = []
-                    scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
-                    scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
-                    attack_set_list.append(scout_demo_attack)
+            #Case 4: Scout-Demo Split REMOVED due to time
+            # if(oppo_mp >= 4):
+            #     splitPositions = self.get_scout_demo_split_positions(game_state)
+            #     if splitPositions is not None:
+            #         splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp)
+            #         scout_demo_attack = []
+            #         scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
+            #         scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
+            #         attack_set_list.append(scout_demo_attack)
             
             #Case 5: Cheeky Interceptors NOTE will assume central placement for now but it's a lot more complicated than that in reality
             if self.verbose: gamelib.debug_write("INTERCEPTOR CASE")
@@ -733,22 +733,22 @@ class AlgoStrategy(gamelib.AlgoCore):
             scoutPos = self.get_scout_attack_position(game_state)
             if scoutPos is not None:
                 attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
-
+            demoPos = scoutPos
             #Case 2 Split Scout (Enemy Thor)
             
             #Case 3 All Demo attack NOTE will assume same position as scout attack case for now but might change
-            demoPos = self.get_enemy_demo_attack_position(game_state)
+            
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
             #Case 4 Scout-Demo split (only do if at least 4 credits)
-            splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
-            if splitPositions is not None:
-                splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
-                scout_demo_attack = []
-                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
-                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
-                attack_set_list.append(scout_demo_attack)
+            # splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
+            # if splitPositions is not None:
+            #     splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
+            #     scout_demo_attack = []
+            #     scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
+            #     scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
+            #     attack_set_list.append(scout_demo_attack)
 
 
         else: # MP >20 big fucko wucko attack
@@ -760,18 +760,18 @@ class AlgoStrategy(gamelib.AlgoCore):
                 attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
             #Case 3: Big Demo Rush
-            demoPos = self.get_enemy_demo_attack_position(game_state)
+            demoPos = scoutPos
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
-            #Case 4: Scout-Demo Split
-            splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
-            if splitPositions is not None:
-                splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
-                scout_demo_attack = []
-                scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
-                scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
-                attack_set_list.append(scout_demo_attack) #Send attack
+            # #Case 4: Scout-Demo Split
+            # splitPositions = self.get_scout_demo_split_positions(game_state) #Calc best starting points for each unit
+            # if splitPositions is not None:
+            #     splitNumbers = self.get_enemy_scout_demo_split_numbers(oppo_mp) #Calc split based on credits
+            #     scout_demo_attack = []
+            #     scout_demo_attack.append(attacker(name=SCOUT, x= splitPositions[0][0],y=splitPositions[0][1],num=splitNumbers[1]))
+            #     scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
+            #     attack_set_list.append(scout_demo_attack) #Send attack
 
         if self.verbose: gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
         return attack_set_list
