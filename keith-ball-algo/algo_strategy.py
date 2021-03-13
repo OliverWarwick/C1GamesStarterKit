@@ -183,7 +183,12 @@ class AlgoStrategy(gamelib.AlgoCore):
         if self.verbose: gamelib.debug_write("Demolisher attack "+ str(demoPos))
         if demoPos is not None:
             attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(my_mp/3))])
-        #Attack Profile 2: Scout+Demo tomfoolery
+        
+        #Attack Profile 2: Scout Rush
+        scoutPos = demoPos
+        if scoutPos is not None:
+            attack_set_list.append([attacker(name=SCOUT,x=scoutPos[0],y=scoutPos[1],num=int(my_mp))])
+        #Attack Profile 3: Scout+Demo tomfoolery
         scoutDemoPos = self.get_our_scout_demo_split(game_state)
         if scoutDemoPos is not None and my_mp >= 4:
             scoutPos = scoutDemoPos[0]
