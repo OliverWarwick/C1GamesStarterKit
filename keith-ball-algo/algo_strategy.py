@@ -205,15 +205,24 @@ class AlgoStrategy(gamelib.AlgoCore):
         else:
             return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=game_state.number_affordable(SCOUT), player_index=0)]]
 
-    def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
+    def estimate_thors_hammer(self, left_game_state, right_game_state): #Return attack profile and side to Thor on.
+        game_state = left_game_state
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
         our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)
         our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
-        expected_supp_count = min(10, 7+int(our_expected_sp/3))
+        expected_supp_count = min(10, 4+int(our_expected_sp/3))
         expected_shield_value = 3*expected_supp_count
-
+        validSides = [False, False]
         scout_effective_hp = 15+expected_shield_value
+        leftCost = 1000
+        rightCost = 1000
+        leftValid = False
+        rightValid = False
+        desired_points = 5
+        targetSide = [[1,13],[26,13]]
+        
         for side in range(2):
+            
             sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
             lineMaxHP = 30
             totalAttackThreat = 0
@@ -244,7 +253,17 @@ class AlgoStrategy(gamelib.AlgoCore):
                 totalAttackThreat += offUnit.damage_i
             
             scout_deaths_per_frame = totalAttackThreat/scout_effective_hp
-            scout_deaths = 4
+            scout_deaths = 4*scout_deaths_per_frame
+            epsilon = 0
+            
+            #(num_front-scout_deaths)*15 + 2(num_front-scout_deaths)>= max_hp - epsilon
+            num_front = math.ceil((lineMaxHP-epsilon+17*scout_deaths)/17)
+            num_back=0
+            if(int(num_front)+scout_deaths + desired_points > our_mp):
+                validSides[side] = False
+            else:
+                num_back = int(our_mp-num_front)
+            
             
 
     def plan_thors_hammer(self, game_state, side):
