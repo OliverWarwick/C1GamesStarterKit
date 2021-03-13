@@ -10,6 +10,7 @@ from collections import deque, namedtuple
 from simulator import Simulator
 from queue import PriorityQueue
 import time
+import copy
 
 
 """
@@ -134,7 +135,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 gamelib.debug_write("Finished thor's attack. Repairing.")
                 self.build_buildings(game_state, self.round_three_rebuild_instructions)
                 self.complete_upgrades(game_state, self.round_three_upgrades)
-                self.thro_state = -1
+                self.thor_state = -1
                 # Empty out all the varibles.
                 self.round_one_removal_buildings_instructions = None
                 self.round_two_build_instructions = None
@@ -145,6 +146,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             else: 
                 return
         else:
+            l_game_state, r_game_state = self.prep_game_state_for_thor_check(self, game_state)
             should_thors = self.should_play_thors_hammer_OW(game_state)
             gamelib.debug_write("Should Thor: {}".format(should_thors))
 
@@ -199,11 +201,30 @@ class AlgoStrategy(gamelib.AlgoCore):
         # THUNDER STRIKE PREP
 
 
+    def prep_game_state_for_thor_check(self, game_state):
+        left_game_state = copy.deepcopy(game_state)
+        left_game_state.remove_unit([26, 13])
+        left_game_state.remove_unit([27, 13])
+        left_game_state.remove_unit([25, 12])
+        left_game_state.remove_unit([26, 12])
+        left_game_state.add_unit(unit_type=WALL, location=[22, 10])
+        right_game_state = copy.deepcopy(game_state)
+        left_game_state.remove_unit([0, 13])
+        left_game_state.remove_unit([1, 13])
+        left_game_state.remove_unit([1, 12])
+        left_game_state.remove_unit([2, 12])
+        left_game_state.add_unit(unit_type=WALL, location=[6, 10])
+        return [left_game_state, right_game_state]
+
+
+
+    # Extra Comment
+
     def should_play_thors_hammer_OW(self, game_state):
-        if game_state.turn_number < 15:
+        if game_state.turn_number < 15 or game_state.get_resource(MP, player_index=0) < 10:
             return None
         else:
-            return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=game_state.number_affordable(SCOUT), player_index=0)]]
+            return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=int(game_state.get_resource(MP, player_index=0)))]]
 
     def estimate_thors_hammer(self, left_game_state, right_game_state): #Return attack profile and side to Thor on.
         game_state = left_game_state
@@ -278,7 +299,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             self.round_two_build_instructions = [building(name=WALL, x=21, y=10), building(name=SUPPORT, x=11, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=16, y=4), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=22, y=10), building(name=SUPPORT, x=18, y=6), building(name=SUPPORT, x=17, y=5)]
             
-            self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 2]]
+            self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 2], [16, 4], [13, 3], [14, 3]]
 
             self.round_three_rebuild_instructions = [building(name=TURRET, x=25, y=12), building(name=TURRET, x=26, y=12), building(name=WALL, x=26, y=13), building(name=WALL, x=27, y=13)]
             self.round_three_upgrades = [[26, 13], [27, 13], [25, 12], [26, 12]]
@@ -291,9 +312,9 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Build the supports
             # Need wall, supports from the bottom up.
 
-            self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5)]
+            self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5), building(name=SUPPORT, x=11, y=4)]
 
-            self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5]]
+            self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3]]
 
             self.round_three_rebuild_instructions = [building(name=TURRET, x=1, y=12), building(name=TURRET, x=2, y=12), building(name=WALL, x=0, y=13), building(name=WALL, x=1, y=13)]
             self.round_three_upgrades = [[0, 13], [1, 13], [1, 12], [2, 12]]
@@ -307,17 +328,21 @@ class AlgoStrategy(gamelib.AlgoCore):
 
     def remove_buildings(self, game_state, remove_list):
         ''' remove_list should be a load of locations '''
+        gamelib.debug_write("Buildings to remove: {}".format(remove_list))
         for build in remove_list:
-            game_state.attempt_remove([build.x, build.y])
+            game_state.attempt_remove(build)
+
 
     def build_buildings(self, game_state, build_list):
+        gamelib.debug_write("Buildings to build: {}".format(build_list))
         for build in build_list:
             game_state.attempt_spawn(build.name, [build.x, build.y])
     
     def complete_upgrades(self, game_state, upgrade_list):
+        gamelib.debug_write("Upgrades to build: {}".format(upgrade_list))
         for upgrade in upgrade_list:
-            if game_state.contains_stationary_unit([upgrade.x, upgrade.y]):
-                game_state.attempt_upgrade([upgrade.x, upgrade.y])
+            if game_state.contains_stationary_unit(upgrade):
+                game_state.attempt_upgrade(upgrade)
 
 
 
