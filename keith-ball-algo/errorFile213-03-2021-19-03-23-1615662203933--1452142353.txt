@@ -1,0 +1,421 @@
+Random seed: 6670205709325436181
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0004961490631103516
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='SI', x=21, y=20, num=4)]]
+Time elapsed after finding oppo attack set: 0.06646347045898438
+Time elapsed: 0.006448268890380859
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 1.8
+Time elapsed: 0.0833284854888916
+Time elapsed: 0.0833284854888916
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: 1.8
+Time elapsed after finding best oppo attack: 0.0833284854888916
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006472587585449219
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 2.8000000000000003
+Time elapsed: 0.24802494049072266
+Time elapsed: 0.24802494049072266
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 2.8000000000000003
+Time elapsed after finding our best response: 0.24802494049072266
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0009922981262207031   Placing Extra Walls: 0.0  Placing interceptors: 0.3993048667907715
+Overall time taken for this turn: 0.4012889862060547
+Performing turn 1 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0004961490631103516
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.05902361869812012
+Time elapsed: 0.006944179534912109
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: -2.3
+Time elapsed: 0.10564804077148438
+Time elapsed: 0.10564804077148438
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: -2.3
+Time elapsed after finding best oppo attack: 0.10564804077148438
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006944179534912109
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.3
+Time elapsed: 0.3020899295806885
+Time elapsed: 0.3020899295806885
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.3
+Time elapsed after finding our best response: 0.302579402923584
+Time taken per stage: Queueing Repairs: 0.0014882087707519531   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.4687387943267822
+Overall time taken for this turn: 0.47072315216064453
+Performing turn 2 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.07539176940917969
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -2.6999999999999997
+Time elapsed: 0.13193583488464355
+Time elapsed: 0.13193583488464355
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -2.6999999999999997
+Time elapsed after finding best oppo attack: 0.13193583488464355
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.6999999999999997
+Time elapsed: 0.3724961280822754
+Time elapsed: 0.3724961280822754
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.6999999999999997
+Time elapsed after finding our best response: 0.3724961280822754
+Time taken per stage: Queueing Repairs: 0.0009915828704833984   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.5823037624359131
+Overall time taken for this turn: 0.5832953453063965
+Performing turn 3 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06299185752868652
+Time elapsed: 0.006944179534912109
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -3.2
+Time elapsed: 0.10713601112365723
+Time elapsed: 0.10713601112365723
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -3.2
+Time elapsed after finding best oppo attack: 0.10713601112365723
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.2
+Time elapsed: 0.34871602058410645
+Time elapsed: 0.34871602058410645
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.2
+Time elapsed after finding our best response: 0.34871602058410645
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.5208277702331543
+Overall time taken for this turn: 0.522315502166748
+Performing turn 4 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06745576858520508
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: -3.5
+Time elapsed: 0.10961604118347168
+Time elapsed: 0.10961604118347168
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: -3.5
+Time elapsed after finding best oppo attack: 0.10961604118347168
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.008464574813842773
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.5
+Time elapsed: 0.36607837677001953
+Time elapsed: 0.366544246673584
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.5
+Time elapsed after finding our best response: 0.366544246673584
+Time taken per stage: Queueing Repairs: 0.0014870166778564453   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.5460960865020752
+Overall time taken for this turn: 0.5475831031799316
+Performing turn 5 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.0803518295288086
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -3.6999999999999993
+Time elapsed: 0.11758279800415039
+Time elapsed: 0.11758279800415039
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -3.6999999999999993
+Time elapsed after finding best oppo attack: 0.11758279800415039
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.0074388980865478516
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.6999999999999993
+Time elapsed: 0.38784098625183105
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.6999999999999993
+Time elapsed after finding our best response: 0.38784098625183105
+Time taken per stage: Queueing Repairs: 0.0014879703521728516   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.5877594947814941
+Overall time taken for this turn: 0.5897436141967773
+Performing turn 6 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.11060857772827148
+Time elapsed: 0.00746464729309082
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.3
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.3
+Time elapsed after finding best oppo attack: 0.39136195182800293
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.0074460506439208984
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.3
+Time elapsed: 0.39975690841674805
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.3
+Time elapsed after finding our best response: 0.4002530574798584
+Time taken per stage: Queueing Repairs: 0.0009911060333251953   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.9047038555145264
+Overall time taken for this turn: 0.9061911106109619
+Performing turn 7 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.12399983406066895
+Time elapsed: 0.008431434631347656
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.0
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.0
+Time elapsed after finding best oppo attack: 0.4300506114959717
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007420539855957031
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.0
+Time elapsed: 0.39829397201538086
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.0
+Time elapsed after finding our best response: 0.39829397201538086
+Time taken per stage: Queueing Repairs: 0.0014879703521728516   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.9563126564025879
+Overall time taken for this turn: 0.9578006267547607
+Performing turn 8 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.12052798271179199
+Time elapsed: 0.00892782211303711
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.0
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.0
+Time elapsed after finding best oppo attack: 0.3963041305541992
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007960081100463867
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.0
+Time elapsed: 0.41515159606933594
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.0
+Time elapsed after finding our best response: 0.41515159606933594
+Time taken per stage: Queueing Repairs: 0.000990152359008789   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.9344639778137207
+Overall time taken for this turn: 0.9354541301727295
+Performing turn 9 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.15623998641967773
+Time elapsed: 0.007439613342285156
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -2.4000000000000004
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -2.4000000000000004
+Time elapsed after finding best oppo attack: 0.4022793769836426
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.0074422359466552734
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.4000000000000004
+Time elapsed: 0.4141361713409424
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.4000000000000004
+Time elapsed after finding our best response: 0.4141361713409424
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.9751355648040771
+Overall time taken for this turn: 0.97662353515625
+Performing turn 10 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0009918212890625
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.11956572532653809
+Time elapsed: 0.007409811019897461
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -1.6999999999999995
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -1.6999999999999995
+Time elapsed after finding best oppo attack: 0.4310150146484375
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007445335388183594
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -1.6999999999999995
+Time elapsed: 0.4424300193786621
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -1.6999999999999995
+Time elapsed after finding our best response: 0.4424300193786621
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.00049591064453125   Placing Extra Walls: 0.0  Placing interceptors: 0.9954910278320312
+Overall time taken for this turn: 0.996978759765625
+Performing turn 11 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.1314396858215332
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -1.2
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -1.2
+Time elapsed after finding best oppo attack: 0.4394562244415283
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007461071014404297
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -1.2
+Time elapsed: 0.46028804779052734
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -1.2
+Time elapsed after finding our best response: 0.4607832431793213
+Time taken per stage: Queueing Repairs: 0.0014874935150146484   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.034656047821045
+Overall time taken for this turn: 1.0361435413360596
+Performing turn 12 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.13094377517700195
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -2.9
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -2.9
+Time elapsed after finding best oppo attack: 0.5505602359771729
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007439613342285156
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.9
+Time elapsed: 0.5495891571044922
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.9
+Time elapsed after finding our best response: 0.5495891571044922
+Time taken per stage: Queueing Repairs: 0.0014882087707519531   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.234565258026123
+Overall time taken for this turn: 1.236053466796875
+Performing turn 13 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.11011123657226562
+Time elapsed: 0.007961511611938477
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -0.3999999999999999
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -0.3999999999999999
+Time elapsed after finding best oppo attack: 0.25198888778686523
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007934331893920898
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -0.3999999999999999
+Time elapsed: 0.28418707847595215
+Time elapsed: 0.28418707847595215
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -0.3999999999999999
+Time elapsed after finding our best response: 0.28418707847595215
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.00049591064453125   Placing Extra Walls: 0.0  Placing interceptors: 0.6487677097320557
+Overall time taken for this turn: 0.6507513523101807
+Performing turn 14 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0004961490631103516
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.12697577476501465
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -0.2999999999999998
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -0.2999999999999998
+Time elapsed after finding best oppo attack: 0.1696319580078125
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007936716079711914
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -0.2999999999999998
+Time elapsed: 0.5857958793640137
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -0.2999999999999998
+Time elapsed after finding our best response: 0.5857958793640137
+Time taken per stage: Queueing Repairs: 0.0014879703521728516   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.8853795528411865
+Overall time taken for this turn: 0.8868675231933594
+Performing turn 15 of your custom algo strategy
+Checking side LEFT
+Map:
+|-------------------------------------------------------------------------------------------              -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------              1DF 60       ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60       1DF 60       -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 860FF 40              1DF 60       ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 44                            1DF 60       ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 56                                          1DF 60       --------------------------------------------------------
+|-------------------------------------------------              0DF 1000FF 60                                                        1DF 60       -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                      1DF 60       ------------------------------------------
+|-----------------------------------              0DF 600FF 60                                                                                    1DF 60       -----------------------------------
+|----------------------------                     0FF 60                                                                                                  1DF 60       ----------------------------
+|---------------------                     0FF 60                                                                                                                1DF 60       ---------------------
+|--------------              0DF 600FF 60                                                                                                                              1DF 60       --------------
+|-------                     0FF 60                                                                                                                                            1DF 60       -------
+|                            0FF 60                                                                                                                                                   1DF 60
+|                            0FF 60                                                                                                                                                   1DF 60
+|-------                     0FF 60                                                                                                                                            1DF 60       -------
+|--------------       0EF 10DF 600FF 60                                                                                                                              1DF 60       --------------
+|---------------------                     0FF 60                                                                                                                1DF 60       ---------------------
+|----------------------------                     0FF 60                                                                                                  1DF 60       ----------------------------
+|-----------------------------------              0DF 600FF 60                                                                                    1DF 60       -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                      1DF 60       ------------------------------------------
+|-------------------------------------------------              0DF 100                                                               1DF 60       -------------------------------------------------
+|--------------------------------------------------------                     0FF 60                                          1DF 60       --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                            1DF 60       ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60              1DF 60       ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 1000FF 60       1DF 60       -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+[[14, 0], [14, 1], [13, 1], [13, 2], [12, 2], [12, 3], [11, 3], [10, 3], [10, 4], [9, 4], [9, 5], [8, 5], [8, 6], [7, 6], [7, 7], [6, 7], [6, 8], [5, 8], [5, 9], [4, 9], [4, 10], [3, 10], [3, 11], [2, 11], [2, 12], [1, 12], [1, 13], [0, 13], [0, 14]]
+[[16, 2], [15, 2], [15, 3], [14, 3], [13, 3], [12, 3], [11, 3], [10, 3], [10, 4], [9, 4], [9, 5], [8, 5], [8, 6], [7, 6], [7, 7], [6, 7], [6, 8], [5, 8], [5, 9], [4, 9], [4, 10], [3, 10], [3, 11], [2, 11], [2, 12], [1, 12], [1, 13], [0, 13], [0, 14]]
+[1, 13]
+[2, 12]
+[3, 12]
+[4, 12]
+[2, 13]
+[3, 13]
+[4, 13]
+HP to break through 60.0
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side LEFT is viable
+Checking side RIGHT
+Map:
+|-------------------------------------------------------------------------------------------0FF 200       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------0DF 600FF 601DF 60       ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------       0DF 600FF 60       1DF 60       -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 860FF 40              1DF 60       ----------------------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 44                            1DF 60       ---------------------------------------------------------------
+|--------------------------------------------------------                     0FF 56                                          1DF 60       --------------------------------------------------------
+|-------------------------------------------------              0DF 100                                                               1DF 60       -------------------------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                      1DF 60       ------------------------------------------
+|-----------------------------------              0DF 600FF 60                                                                                    1DF 60       -----------------------------------
+|----------------------------                     0FF 60                                                                                                  1DF 60       ----------------------------
+|---------------------                     0FF 60                                                                                                                1DF 60       ---------------------
+|--------------       0EF 10DF 600FF 60                                                                                                                              1DF 60       --------------
+|-------                     0FF 60                                                                                                                                            1DF 60       -------
+|                            0FF 60                                                                                                                                                   1DF 60
+|                            0FF 60                                                                                                                                                   1DF 60
+|-------                     0FF 60                                                                                                                                            1DF 60       -------
+|--------------              0DF 600FF 60                                                                                                                              1DF 60       --------------
+|---------------------                     0FF 60                                                                                                                1DF 60       ---------------------
+|----------------------------                     0FF 60                                                                                                  1DF 60       ----------------------------
+|-----------------------------------              0DF 600FF 60                                                                                    1DF 60       -----------------------------------
+|------------------------------------------              0DF 1000FF 60                                                                      1DF 60       ------------------------------------------
+|-------------------------------------------------              0DF 100                                                               1DF 60       -------------------------------------------------
+|--------------------------------------------------------              0FF 600FF 60                                          1DF 60       --------------------------------------------------------
+|---------------------------------------------------------------              0DF 1000FF 60                            1DF 60       ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 1000FF 60              1DF 60       ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------              0FF 60       1DF 60       -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------              1DF 60       ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------              -------------------------------------------------------------------------------------------
+[[13, 0], [13, 1], [14, 1], [14, 2], [15, 2], [15, 3], [16, 3], [17, 3], [17, 4], [18, 4], [18, 5], [19, 5], [19, 6], [20, 6], [20, 7], [21, 7], [21, 8], [22, 8], [22, 9], [23, 9], [23, 10], [24, 10], [24, 11], [25, 11], [25, 12], [26, 12], [26, 13], [27, 13], [27, 14]]
+[[11, 2], [12, 2], [12, 3], [13, 3], [14, 3], [15, 3], [16, 3], [17, 3], [17, 4], [18, 4], [18, 5], [19, 5], [19, 6], [20, 6], [20, 7], [21, 7], [21, 8], [22, 8], [22, 9], [23, 9], [23, 10], [24, 10], [24, 11], [25, 11], [25, 12], [26, 12], [26, 13], [27, 13], [27, 14]]
+[26, 13]
+[26, 12]
+[25, 12]
+[24, 12]
+[25, 13]
+[24, 13]
+[23, 13]
+HP to break through 60.0
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side RIGHT is viable
+[[17, [Attacker(name='PI', x=14, y=0, num=5), Attacker(name='PI', x=16, y=2, num=12)]], [17, [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=12)]]]
+[True, True]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=12)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=12)]
+Overall time taken for this turn: 0.017856597900390625
+Performing turn 16 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+Overall time taken for this turn: 0.0009915828704833984
+Performing turn 17 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.10862350463867188
+Time elapsed: 0.007936239242553711
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: 17.400000000000002
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: 17.400000000000002
+Time elapsed after finding best oppo attack: 0.4399709701538086
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007447481155395508
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 17.400000000000002
+Time elapsed: 0.8868486881256104
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 17.400000000000002
+Time elapsed after finding our best response: 0.8868486881256104
+Time taken per stage: Queueing Repairs: 0.0014879703521728516   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.44089937210083
+Overall time taken for this turn: 1.442387342453003
+Traceback (most recent call last):
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\algo_strategy.py", line 1761, in <module>
+    algo.start()
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\algocore.py", line 74, in start
+    self.on_turn(game_state_string)
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\algo_strategy.py", line 108, in on_turn
+    game_state.submit_turn()
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\game_state.py", line 182, in submit_turn
+    send_command(build_string)
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\util.py", line 30, in send_command
+    sys.stdout.flush()
+OSError: [Errno 22] Invalid argument
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='cp1252'>
+OSError: [Errno 22] Invalid argument

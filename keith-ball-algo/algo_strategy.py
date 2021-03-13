@@ -216,7 +216,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         right_game_state.game_map.remove_unit([2, 12])
         right_game_state.game_map.add_unit(unit_type=SUPPORT, location=[16, 3])
         right_game_state.game_map.add_unit(unit_type=WALL, location=[6, 10])
-        return [left_game_state, right_game_state]
+        return [right_game_state, left_game_state]
 
 
 
@@ -241,6 +241,8 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
     def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
+        if(game_state.turn_number < 15):
+            return None
         gamepair = self.prep_game_state_for_thor_check(game_state)
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
         our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)
@@ -250,7 +252,9 @@ class AlgoStrategy(gamelib.AlgoCore):
         validSides = [False, False]
         scout_effective_hp = 15+expected_shield_value
         desired_points = 5
-        targetSide = [[1,13],[26,13]]
+        leftValidSpots = [[1,13],[2,12],[3,12],[4,12]]
+        rightValidSpots = [[26,13],[26,12],[25,12],[24,12]]
+        targetSide = [leftValidSpots, rightValidSpots]
         frontScoutStart = [[14,0],[13,0]]
         rearScoutStart = [[16,2],[11,2]]
         sideNames = ["LEFT", "RIGHT"]
@@ -259,13 +263,24 @@ class AlgoStrategy(gamelib.AlgoCore):
         for side in range(2):
             gamelib.debug_write("Checking side " + str(sideNames[side]))
             test_state = gamepair[side]
+            self.print_map(test_state)
             test_start1 = frontScoutStart[side]
             test_start2 = rearScoutStart[side]
-            test_target = targetSide[side]
+            test_spots = targetSide[side]
             frontPath = test_state.find_path_to_edge(test_start1)
             rearPath = test_state.find_path_to_edge(test_start2)
-            if(not ((test_target in frontPath) or (test_target in rearPath))):
-                gamelib.debug_write("On side "+ str(sideNames[side])+ " we don't go through "+ str(test_target))
+            gamelib.debug_write(frontPath)
+            gamelib.debug_write(rearPath)
+            test_target1 = False
+            test_target2 = False
+            for ele in test_spots:
+                gamelib.debug_write(ele)
+                if ele in frontPath:
+                    test_target1 = True
+                if ele in rearPath:
+                    test_target2 = True
+            if(not (test_target1 and test_target2)):
+                gamelib.debug_write("On side "+ str(sideNames[side])+ " we don't go through "+ str(test_spots))
                 continue
             sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
             lineMaxHP = 30
@@ -312,6 +327,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             else:
                 gamelib.debug_write("Attacking on side " + sideNames[side] + " is viable")
+                validSides[side] = True
                 num_back = int(our_mp-num_front)
                 attack_cost = int(num_front + num_back)
                 attackset = []

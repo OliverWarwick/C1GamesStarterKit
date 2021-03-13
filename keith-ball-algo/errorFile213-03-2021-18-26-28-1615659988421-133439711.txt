@@ -1,0 +1,171 @@
+Random seed: 6574644043401648348
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Checking side LEFT
+[[14, 0], [14, 1], [13, 1], [13, 2], [12, 2], [12, 3], [12, 4], [11, 4], [11, 5], [10, 5], [10, 6], [9, 6], [9, 7], [8, 7], [8, 8], [7, 8], [7, 9], [6, 9], [6, 10], [5, 10], [5, 11], [4, 11], [4, 12], [3, 12], [3, 13], [2, 13], [2, 14], [1, 14], [1, 15]]
+[[16, 2], [16, 3], [15, 3], [15, 4], [14, 4], [14, 5], [13, 5], [13, 6], [12, 6], [12, 7], [11, 7], [11, 8], [10, 8], [10, 9], [9, 9], [9, 10], [8, 10], [8, 11], [7, 11], [7, 12], [6, 12], [6, 13], [5, 13], [5, 14], [4, 14], [4, 15], [3, 15], [3, 16], [2, 16]]
+On side LEFT we don't go through [1, 13]
+Checking side RIGHT
+[[13, 0], [13, 1], [14, 1], [14, 2], [15, 2], [15, 3], [15, 4], [16, 4], [16, 5], [17, 5], [17, 6], [18, 6], [18, 7], [19, 7], [19, 8], [20, 8], [20, 9], [21, 9], [21, 10], [22, 10], [22, 11], [23, 11], [23, 12], [24, 12], [24, 13], [25, 13], [25, 14], [26, 14], [26, 15]]
+[[11, 2], [11, 3], [12, 3], [12, 4], [13, 4], [13, 5], [14, 5], [14, 6], [15, 6], [15, 7], [16, 7], [16, 8], [17, 8], [17, 9], [18, 9], [18, 10], [19, 10], [19, 11], [20, 11], [20, 12], [21, 12], [21, 13], [22, 13], [22, 14], [23, 14], [23, 15], [24, 15], [24, 16], [25, 16]]
+On side RIGHT we don't go through [26, 13]
+[[1000, []], [1000, []]]
+[False, False]
+Should Thor: None
+Time elapsed after updating game state: 0.0004968643188476562
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='SI', x=6, y=20, num=4)]]
+Time elapsed after finding oppo attack set: 0.06497621536254883
+Time elapsed: 0.006447792053222656
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: 1.8
+Time elapsed: 0.08481621742248535
+Time elapsed: 0.08481621742248535
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: 1.8
+Time elapsed after finding best oppo attack: 0.0853118896484375
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.005952358245849609
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 2.8000000000000003
+Time elapsed: 0.2658560276031494
+Time elapsed: 0.2658560276031494
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 2.8000000000000003
+Time elapsed after finding our best response: 0.26635193824768066
+Time taken per stage: Queueing Repairs: 0.0009913444519042969   Building Defences: 0.0009922981262207031   Placing Extra Walls: 0.0  Placing interceptors: 0.4186234474182129
+Overall time taken for this turn: 0.4627673625946045
+Performing turn 1 of your custom algo strategy
+Checking side LEFT
+[[14, 0], [14, 1], [13, 1], [13, 2], [12, 2], [12, 3], [12, 4], [11, 4], [11, 5], [10, 5], [10, 6], [9, 6], [9, 7], [8, 7], [8, 8], [8, 9], [8, 10], [8, 11], [8, 12], [8, 13], [8, 14], [8, 15], [8, 16], [8, 17], [8, 18], [8, 19], [8, 20], [8, 21], [7, 21]]
+[[16, 2], [16, 3], [15, 3], [15, 4], [14, 4], [14, 5], [13, 5], [13, 6], [12, 6], [12, 7], [11, 7], [11, 8], [10, 8], [10, 9], [9, 9], [9, 10], [8, 10], [8, 11], [8, 12], [8, 13], [8, 14], [8, 15], [8, 16], [8, 17], [8, 18], [8, 19], [8, 20], [8, 21], [7, 21]]
+On side LEFT we don't go through [1, 13]
+Checking side RIGHT
+[[13, 0], [13, 1], [14, 1], [14, 2], [15, 2], [15, 3], [15, 4], [16, 4], [16, 5], [17, 5], [17, 6], [18, 6], [18, 7], [19, 7], [19, 8], [19, 9], [19, 10], [20, 10], [20, 11], [21, 11], [22, 11], [23, 11], [24, 11], [25, 11], [25, 12], [26, 12], [26, 13], [27, 13], [27, 14]]
+[[11, 2], [11, 3], [12, 3], [12, 4], [13, 4], [13, 5], [14, 5], [14, 6], [15, 6], [15, 7], [16, 7], [16, 8], [17, 8], [17, 9], [18, 9], [18, 10], [19, 10], [19, 11], [20, 11], [21, 11], [22, 11], [23, 11], [24, 11], [25, 11], [25, 12], [26, 12], [26, 13], [27, 13], [27, 14]]
+HP to break through 60.0
+Expect to lose around 1.3333333333333333 per platoon
+Attacking on side RIGHT is too expensive
+[[1000, []], [1000, []]]
+[False, False]
+Should Thor: None
+Time elapsed after updating game state: 0.0004947185516357422
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.05356645584106445
+Time elapsed: 0.006943702697753906
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: -2.3
+Time elapsed: 0.11308789253234863
+Time elapsed: 0.11308789253234863
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: -2.3
+Time elapsed after finding best oppo attack: 0.11308789253234863
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006972074508666992
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.3
+Time elapsed: 0.3323397636413574
+Time elapsed: 0.3323397636413574
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.3
+Time elapsed after finding our best response: 0.3323397636413574
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.0009920597076416016   Placing Extra Walls: 0.0  Placing interceptors: 0.500483512878418
+Overall time taken for this turn: 0.5451235771179199
+Performing turn 2 of your custom algo strategy
+Checking side LEFT
+[[14, 0], [14, 1], [13, 1], [13, 2], [12, 2], [12, 3], [12, 4], [11, 4], [11, 5], [10, 5], [10, 6], [9, 6], [9, 7], [9, 8], [9, 9], [9, 10], [9, 11], [9, 12], [9, 13], [9, 14], [9, 15], [9, 16], [9, 17], [9, 18], [9, 19], [9, 20], [9, 21], [9, 22], [8, 22]]
+[[16, 2], [16, 3], [15, 3], [15, 4], [14, 4], [14, 5], [13, 5], [13, 6], [12, 6], [12, 7], [11, 7], [11, 8], [10, 8], [10, 9], [9, 9], [9, 10], [9, 11], [9, 12], [9, 13], [9, 14], [9, 15], [9, 16], [9, 17], [9, 18], [9, 19], [9, 20], [9, 21], [9, 22], [8, 22]]
+On side LEFT we don't go through [1, 13]
+Checking side RIGHT
+[[13, 0], [13, 1], [14, 1], [14, 2], [15, 2], [15, 3], [15, 4], [16, 4], [16, 5], [17, 5], [17, 6], [17, 7], [17, 8], [17, 9], [17, 10], [17, 11], [17, 12], [17, 13], [17, 14], [17, 15], [17, 16], [17, 17], [17, 18], [17, 19], [17, 20], [17, 21], [17, 22], [17, 23], [18, 23]]
+[[11, 2], [11, 3], [12, 3], [12, 4], [13, 4], [13, 5], [14, 5], [14, 6], [15, 6], [15, 7], [16, 7], [16, 8], [17, 8], [17, 9], [17, 10], [17, 11], [17, 12], [17, 13], [17, 14], [17, 15], [17, 16], [17, 17], [17, 18], [17, 19], [17, 20], [17, 21], [17, 22], [17, 23], [18, 23]]
+On side RIGHT we don't go through [26, 13]
+[[1000, []], [1000, []]]
+[False, False]
+Should Thor: None
+Time elapsed after updating game state: 0.00049591064453125
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06547212600708008
+Time elapsed: 0.006943702697753906
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -2.6999999999999997
+Time elapsed: 0.13788771629333496
+Time elapsed: 0.13788771629333496
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -2.6999999999999997
+Time elapsed after finding best oppo attack: 0.13788771629333496
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.00647735595703125
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.6999999999999997
+Time elapsed: 0.3938736915588379
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.6999999999999997
+Time elapsed after finding our best response: 0.3938736915588379
+Time taken per stage: Queueing Repairs: 0.0014884471893310547   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.5997128486633301
+Overall time taken for this turn: 0.6393928527832031
+Performing turn 3 of your custom algo strategy
+Checking side LEFT
+[[14, 0], [14, 1], [13, 1], [13, 2], [12, 2], [12, 3], [12, 4], [11, 4], [11, 5], [11, 6], [11, 7], [11, 8], [11, 9], [11, 10], [11, 11], [11, 12], [11, 13], [11, 14], [11, 15], [11, 16], [11, 17], [11, 18], [11, 19], [11, 20], [11, 21], [11, 22], [11, 23], [11, 24], [10, 24]]
+[[16, 2], [16, 3], [15, 3], [15, 4], [14, 4], [14, 5], [13, 5], [13, 6], [12, 6], [12, 7], [11, 7], [11, 8], [11, 9], [11, 10], [11, 11], [11, 12], [11, 13], [11, 14], [11, 15], [11, 16], [11, 17], [11, 18], [11, 19], [11, 20], [11, 21], [11, 22], [11, 23], [11, 24], [10, 24]]
+On side LEFT we don't go through [1, 13]
+Checking side RIGHT
+[[13, 0], [13, 1], [14, 1], [14, 2], [15, 2], [15, 3], [15, 4], [16, 4], [16, 5], [16, 6], [16, 7], [16, 8], [16, 9], [16, 10], [16, 11], [16, 12], [16, 13], [16, 14], [16, 15], [16, 16], [16, 17], [16, 18], [16, 19], [16, 20], [16, 21], [16, 22], [16, 23], [16, 24], [17, 24]]
+[[11, 2], [11, 3], [12, 3], [12, 4], [13, 4], [13, 5], [14, 5], [14, 6], [15, 6], [15, 7], [16, 7], [16, 8], [16, 9], [16, 10], [16, 11], [16, 12], [16, 13], [16, 14], [16, 15], [16, 16], [16, 17], [16, 18], [16, 19], [16, 20], [16, 21], [16, 22], [16, 23], [16, 24], [17, 24]]
+On side RIGHT we don't go through [26, 13]
+[[1000, []], [1000, []]]
+[False, False]
+Should Thor: None
+Time elapsed after updating game state: 0.0004968643188476562
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.05852818489074707
+Time elapsed: 0.0069446563720703125
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: -3.2
+Time elapsed: 0.12551474571228027
+Time elapsed: 0.12551474571228027
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: -3.2
+Time elapsed after finding best oppo attack: 0.12551474571228027
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007413387298583984
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.2
+Time elapsed: 0.3848693370819092
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.2
+Time elapsed after finding our best response: 0.3848693370819092
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.00049591064453125   Placing Extra Walls: 0.0  Placing interceptors: 0.5704002380371094
+Overall time taken for this turn: 0.6071038246154785
+Performing turn 4 of your custom algo strategy
+Checking side LEFT
+[[14, 0], [14, 1], [13, 1], [13, 2], [12, 2], [12, 3], [12, 4], [12, 5], [12, 6], [12, 7], [12, 8], [12, 9], [12, 10], [12, 11], [12, 12], [12, 13], [12, 14], [12, 15], [12, 16], [12, 17], [12, 18], [12, 19], [12, 20], [12, 21], [12, 22], [12, 23], [12, 24], [12, 25], [11, 25]]
+[[16, 2], [16, 3], [15, 3], [15, 4], [14, 4], [14, 5], [13, 5], [13, 6], [12, 6], [12, 7], [12, 8], [12, 9], [12, 10], [12, 11], [12, 12], [12, 13], [12, 14], [12, 15], [12, 16], [12, 17], [12, 18], [12, 19], [12, 20], [12, 21], [12, 22], [12, 23], [12, 24], [12, 25], [11, 25]]
+On side LEFT we don't go through [1, 13]
+Checking side RIGHT
+[[13, 0], [13, 1], [14, 1], [14, 2], [15, 2], [15, 3], [15, 4], [15, 5], [15, 6], [15, 7], [15, 8], [15, 9], [15, 10], [15, 11], [15, 12], [15, 13], [15, 14], [15, 15], [15, 16], [15, 17], [15, 18], [15, 19], [15, 20], [15, 21], [15, 22], [15, 23], [15, 24], [15, 25], [16, 25]]
+[[11, 2], [11, 3], [12, 3], [12, 4], [13, 4], [13, 5], [14, 5], [14, 6], [15, 6], [15, 7], [15, 8], [15, 9], [15, 10], [15, 11], [15, 12], [15, 13], [15, 14], [15, 15], [15, 16], [15, 17], [15, 18], [15, 19], [15, 20], [15, 21], [15, 22], [15, 23], [15, 24], [15, 25], [16, 25]]
+On side RIGHT we don't go through [26, 13]
+[[1000, []], [1000, []]]
+[False, False]
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06200003623962402
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -3.5
+Time elapsed: 0.12400007247924805
+Time elapsed: 0.12400007247924805
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -3.5
+Time elapsed after finding best oppo attack: 0.12400007247924805
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.008928060531616211
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.5
+Time elapsed: 0.40971970558166504
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.5
+Time elapsed after finding our best response: 0.40971970558166504
+Time taken per stage: Queueing Repairs: 0.0014872550964355469   Building Defences: 0.00049591064453125   Placing Extra Walls: 0.0  Placing interceptors: 0.5981757640838623
+Overall time taken for this turn: 0.6363675594329834
+Traceback (most recent call last):
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\algo_strategy.py", line 1747, in <module>
+    algo.start()
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\algocore.py", line 74, in start
+    self.on_turn(game_state_string)
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\algo_strategy.py", line 108, in on_turn
+    game_state.submit_turn()
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\game_state.py", line 182, in submit_turn
+    send_command(build_string)
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\util.py", line 30, in send_command
+    sys.stdout.flush()
+OSError: [Errno 22] Invalid argument
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='cp1252'>
+OSError: [Errno 22] Invalid argument
