@@ -244,7 +244,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         frontScoutStart = [[14,0],[13,0]]
         rearScoutStart = [[16,2],[11,2]]
 
-        attackProfile [[1000,[]],[1000,[]]]
+        attackProfile = [[1000,[]],[1000,[]]]
         for side in range(2):
             test_state = gamepair[side]
             test_start1 = frontScoutStart[side]
