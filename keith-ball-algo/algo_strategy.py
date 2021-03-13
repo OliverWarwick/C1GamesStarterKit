@@ -837,7 +837,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 testPos = [initPositions[i][0]-y*signToggle, initPositions[i][1]-y]
                 if (game_state.contains_stationary_unit(testPos) is False): #Check if position is occupied if not, then we pick here
                     unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
-                    if(unitPath[-1][1] <= 17): #Check the attack actually ends on our side or on the max range of a Demo
+                    if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on the max range of a Demo
                         validPositions.append(testPos)
 
         if len(validPositions) == 0:
