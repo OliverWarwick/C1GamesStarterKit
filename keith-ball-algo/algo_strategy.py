@@ -77,6 +77,10 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.round_two_remove_instructions = None
         self.round_three_rebuild_instructions = None
         self.round_three_upgrades = None
+        self.thor_attack = None
+        self.thor_side = None
+
+        self.thor_state = -1
 
         self.verbose = False
 
@@ -113,6 +117,52 @@ class AlgoStrategy(gamelib.AlgoCore):
         if game_state.turn_number == 0:
             self.inital_add_to_p_queue(game_state)
 
+        # Check we are not in a special state.
+        if self.thor_state >= 2:
+            # In special state so handle.
+            if self.thor_state == 2:
+                gamelib.debug_write("Starting thor's attack:")
+                self.build_buildings(game_state, self.round_two_build_instructions)
+                self.remove_buildings(game_state, self.round_two_remove_instructions)
+                # Launch the attack
+                self.place_attackers(game_state, self.thor_attack)
+                self.thor_state = 3 
+                # Add some interceptors at random here.
+                return
+            elif self.thor_state == 3:
+                # Clean up now.
+                gamelib.debug_write("Finished thor's attack. Repairing.")
+                self.build_buildings(game_state, self.round_three_rebuild_instructions)
+                self.complete_upgrades(game_state, self.round_three_upgrades)
+                self.thro_state = -1
+                # Empty out all the varibles.
+                self.round_one_removal_buildings_instructions = None
+                self.round_two_build_instructions = None
+                self.round_two_remove_instructions = None
+                self.round_three_rebuild_instructions = None
+                self.round_three_upgrades = None
+                self.thor_attack = None
+            else: 
+                return
+        else:
+            should_thors = self.should_play_thors_hammer_OW(game_state)
+            gamelib.debug_write("Should Thor: {}".format(should_thors))
+
+            # Special Logic for the next few rounds
+            if should_thors is not None:
+                # Do thor's set up and return
+                self.thor_attack = should_thors[1]
+                self.plan_thors_hammer(game_state, should_thors[0])
+                self.thor_state = 1
+                # We can use the full up arrays to place our troops.
+                self.remove_buildings(game_state, self.round_one_removal_buildings_instructions)
+                # Done so set thor state to 1
+                self.thor_state = 2
+                gamelib.debug_write("Thor attack: {}".format(self.thor_attack))
+                return
+
+        # Otherwise carry on as normal :) 
+
         # Swap the sides of the blocking wall, if we have already built it.
         self.place_and_remove_blocking_wall(game_state)
 
@@ -137,12 +187,12 @@ class AlgoStrategy(gamelib.AlgoCore):
                 self.place_attackers(game_state, interceptor_placement)
 
         time_interceptor = time.time()
-        # We now want to search to see if we have a good attack in the one step case.
-        # If there is execute this, otherwise do not and carry on.
-        self.investigate_and_place_our_immediate_attacks(game_state)
-        time_our_attacks = time.time()
+        # # We now want to search to see if we have a good attack in the one step case.
+        # # If there is execute this, otherwise do not and carry on.
+        # self.investigate_and_place_our_immediate_attacks(game_state)
+        # time_our_attacks = time.time()
 
-        gamelib.debug_write("Time taken per stage: Queueing Repairs: {}   Building Defences: {}   Placing Extra Walls: {}  Placing interceptors: {}  Our attacks: {}".format(time_queuing - starting, time_building_defence - time_queuing, time_placing_extra_walls - time_building_defence, time_interceptor - time_placing_extra_walls, time_our_attacks - time_interceptor))
+        gamelib.debug_write("Time taken per stage: Queueing Repairs: {}   Building Defences: {}   Placing Extra Walls: {}  Placing interceptors: {}".format(time_queuing - starting, time_building_defence - time_queuing, time_placing_extra_walls - time_building_defence, time_interceptor - time_placing_extra_walls))
 
 
         # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
@@ -153,11 +203,12 @@ class AlgoStrategy(gamelib.AlgoCore):
         if game_state.turn_number < 15:
             return None
         else:
-            return ["RIGHT", [Attacker(name=SCOUNT, x=12, y=1, num=game_state.number_affordable(SCOUT), player_index=0)]]
+            if game_state.get_resource(MP, 0) >= 10:
+                return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=game_state.number_affordable(SCOUT), player_index=0)]]
 
 
 
-    def plan_thors_hammer(self, game_state, side, second_round_attack_units):
+    def plan_thors_hammer(self, game_state, side):
 
         if side == "RIGHT":
             
@@ -166,26 +217,26 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.round_one_removal_buildings_instructions = [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
             # Build the supports
             # Need wall, supports from the bottom up.
-            self.round_two_build_instructions = [Building(name=WALL, x=21, y=10]), Building(name=SUPPORT, x=11, y=2), Building(name=SUPPORT, x=12, y=3), Building(name=SUPPORT, x=13, y=3), Building(name=SUPPORT, x=14, y=3), Building(name=SUPPORT, x=15, y=3), Building(name=SUPPORT, x=13, y=2), Building(name=SUPPORT, x=16, y=4), Building(name=SUPPORT, x=14, y=2), Building(name=SUPPORT, x=22, y=10), Building(name=SUPPORT, x=18, y=6), Building(name=SUPPORT, x=17, y=5)]
+            self.round_two_build_instructions = [building(name=WALL, x=21, y=10), building(name=SUPPORT, x=11, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=16, y=4), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=22, y=10), building(name=SUPPORT, x=18, y=6), building(name=SUPPORT, x=17, y=5)]
             
             self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 2]]
 
-            self.round_three_rebuild_instructions = [Building(name=TURRET, x=25, y=12), Building(name=TURRET, x=26, y=12), Building(name=WALL, x=26, y=13), Building(name=WALL, x=27, y=13)]
-            self.round_three_upgrades = [[26, 13], [27, 13]]
+            self.round_three_rebuild_instructions = [building(name=TURRET, x=25, y=12), building(name=TURRET, x=26, y=12), building(name=WALL, x=26, y=13), building(name=WALL, x=27, y=13)]
+            self.round_three_upgrades = [[26, 13], [27, 13], [25, 12], [26, 12]]
 
             self.blocking_wall_placement = "RIGHT"
 
-        elif side == "LEFT"
+        elif side == "LEFT":
             self.round_one_removal_buildings_instructions = [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
 
             # Build the supports
             # Need wall, supports from the bottom up.
-            self.round_two_build_instructions = [Building(name=WALL, x=6, y=10]), Building(name=SUPPORT, x=16 y=2), Building(name=SUPPORT, x=12, y=3), Building(name=SUPPORT, x=13, y=3), Building(name=SUPPORT, x=14, y=3), Building(name=SUPPORT, x=15, y=3), Building(name=SUPPORT, x=13, y=2), Building(name=SUPPORT, x=14, y=2), Building(name=SUPPORT, x=5, y=10), Building(name=SUPPORT, x=9, y=6), Building(name=SUPPORT, x=10, y=5)]
+            self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5)]
             
             self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5]]
 
-            self.round_three_rebuild_instructions = [Building(name=TURRET, x=1, y=12), Building(name=TURRET, x=2, y=12), Building(name=WALL, x=0, y=13), Building(name=WALL, x=1, y=13)]
-            self.round_three_upgrades = [[0, 13], [1, 13]]
+            self.round_three_rebuild_instructions = [building(name=TURRET, x=1, y=12), building(name=TURRET, x=2, y=12), building(name=WALL, x=0, y=13), building(name=WALL, x=1, y=13)]
+            self.round_three_upgrades = [[0, 13], [1, 13], [1, 12], [2, 12]]
 
             self.blocking_wall_placement = "LEFT"
 
@@ -202,7 +253,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         for build in build_list:
             game_state.attempt_spawn(build.name, [build.x, build.y])
     
-    def complete upgrades(self, game_state, upgrade_list):
+    def complete_upgrades(self, game_state, upgrade_list):
         for upgrade in upgrade_list:
             if game_state.contains_stationary_unit([upgrade.x, upgrade.y]):
                 game_state.attempt_upgrade([upgrade.x, upgrade.y])

@@ -1,0 +1,63 @@
+Random seed: 6139567962969313707
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0004470348358154297
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=21, y=20, num=4)]]
+Time elapsed after finding oppo attack set: 0.32842588424682617
+Time elapsed: 0.02950310707092285
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: 1.8
+Time elapsed: 0.44980907440185547
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: 1.8
+Time elapsed after finding best oppo attack: 0.45000600814819336
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0002880096435546875
+Time elapsed: 0.12261581420898438
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 2.8000000000000003
+Time elapsed: 1.869952917098999
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 2.8000000000000003
+Time elapsed after finding our best response: 1.8711979389190674
+Time taken per stage: Queueing Repairs: 0.0038700103759765625   Building Defences: 0.0032057762145996094   Placing Extra Walls: 3.0994415283203125e-06  Placing interceptors: 2.654531240463257
+Overall time taken for this turn: 2.662855863571167
+Performing turn 1 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.00034689903259277344
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.4184091091156006
+Time elapsed: 0.0513453483581543
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -2.3
+Time elapsed: 0.5854520797729492
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -2.3
+Time elapsed after finding best oppo attack: 0.5856051445007324
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.00013184547424316406
+Time elapsed: 0.02605915069580078
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 1614, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/algocore.py", line 74, in start
+    self.on_turn(game_state_string)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 102, in on_turn
+    self.base_strategy(game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 185, in base_strategy
+    interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 782, in find_oppo_best_strategy_and_interceptor_response
+    our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 1161, in find_our_best_response
+    roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 77, in roll_out_one_turn
+    self.set_movement_paths(self.simulated_game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 168, in set_movement_paths
+    path = game_state.find_path_to_edge(loc)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/game_state.py", line 544, in find_path_to_edge
+    return self._shortest_path_finder.navigate_multiple_endpoints(start_location, end_points, self)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/navigation.py", line 78, in navigate_multiple_endpoints
+    ideal_endpoints = self._idealness_search(start_point, end_points)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/navigation.py", line 108, in _idealness_search
+    current.put(neighbor)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/queue.py", line 133, in put
+    with self.not_full:
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/threading.py", line 256, in __enter__
+    def __enter__(self):
+KeyboardInterrupt
