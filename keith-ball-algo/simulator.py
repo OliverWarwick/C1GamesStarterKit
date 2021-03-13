@@ -37,6 +37,7 @@ class Simulator:
         self.wall_weighting = 0.1
 
         self.verbose = False
+        self.timing_verbose = False
 
        
 
@@ -303,30 +304,30 @@ class Simulator:
             # We have at least one unit here, so run through them, and find the target.
             for unit in game_state.game_map[loc]:
                 # Find the target
-                gamelib.debug_write("Unit currently attacking: {}".format(unit))
+                if self.verbose: gamelib.debug_write("Unit currently attacking: {}".format(unit))
                 target_unit = game_state.get_target(unit)
-                gamelib.debug_write("Target : {}".format(target_unit))
+                if self.verbose: gamelib.debug_write("Target : {}".format(target_unit))
                 if target_unit is not None:
                     # Remove health from these units picking whether to use the damage to stationary and moving units
                     # IMPORTANT: NEED TO REFER TO THESE USING THE UNITS ARE GAME_MAP CAN HAVE MORE THAN ONE ELEMENT IN THE LIST AT EACH LOCATION 
                     if(target_unit.stationary):
                         target_unit.health -= unit.damage_f
-                        gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_f))
+                        if self.verbose: gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_f))
                     else:
                         target_unit.health -= unit.damage_i
-                        gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_i))
+                        if self.verbose: gamelib.debug_write("Unit at location ({}, {}) firing at target ({}, {}) doing damage {}".format(loc[0], loc[1], target_unit.x, target_unit.y, unit.damage_i))
                     
                     # Remove if health has fallen below zero. (STAGE 3). (techincally in stage 3 but I think it works here)
                     if target_unit.health <= 0:
                         # Remove from the list.
                         # TODO - Check this works, unsure it deffo will.
                         game_state.game_map.remove_one_unit(location=[target_unit.x, target_unit.y], unit=target_unit)
-                        gamelib.debug_write("Removing unit at location ({}, {})".format(loc[0], loc[1]))
+                        if self.verbose: gamelib.debug_write("Removing unit at location ({}, {})".format(loc[0], loc[1]))
                         if target_unit.stationary:
                             buildings_destroyed = True      # This is to trigger a repathing.
 
 
-        gamelib.debug_write("Finished rolling forward one step.")
+        if self.verbose: gamelib.debug_write("Finished rolling forward one step.")
         if self.verbose: gamelib.debug_write("Passing back values. Movement: {}, BuildingDest: {}".format(movement, buildings_destroyed))
         # Return with next frame and whether done or not.
         return (frame_num + 1, movement or troops_alive, buildings_destroyed)

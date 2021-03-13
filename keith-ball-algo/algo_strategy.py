@@ -109,27 +109,36 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Swap the sides of the blocking wall, if we have already built it.
         self.place_and_remove_blocking_wall(game_state)
 
+        starting = time.time()
         # Firstly repair any damage.
         self.queue_repair_of_critical(game_state)  
         
+        time_queuing = time.time()
         # Then build any queued defences.
         self.build_queued_defences(game_state)
 
+        time_building_defence = time.time()
         # If the p_queue is empty then place extra turrets and walls.
         if (self.p_queue.empty() and game_state.get_resource(MP, player_index=0) > 2):
             self.continue_placing_walls_and_turrets(game_state)
 
+        time_placing_extra_walls = time.time()
         if self.throw_interceptors:
             copied_game_state = copy.deepcopy(game_state)
             interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
             if interceptor_placement is not None:
                 self.place_attackers(game_state, interceptor_placement)
-        
+
+        time_interceptor = time.time()
         # We now want to search to see if we have a good attack in the one step case.
         # If there is execute this, otherwise do not and carry on.
         self.investigate_and_place_our_immediate_attacks(game_state)
+        time_our_attacks = time.time()
 
-        # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could do enough damange.
+        gamelib.debug_write("Time taken per stage: Queueing Repairs: {}   Building Defences: {}   Placing Extra Walls: {}  Placing interceptors: {}  Our attacks: {}".format(time_queuing - starting, time_building_defence - time_queuing, time_placing_extra_walls - time_building_defence, time_interceptor - time_placing_extra_walls, time_our_attacks - time_interceptor))
+
+
+        # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
         # THUNDER STRIKE PREP
 
 
@@ -603,30 +612,38 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Update using the prioity queue
         self.update_game_state_while_p_queue_unloading(game_state)
-        if self.verbose: gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
+        gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
+
+        start_time = time.time()        
 
         # Get possible attacks for oppo
         oppo_attack_set = self.prepare_attack_sets_for_oppo_during_first_stage(game_state)
-        if self.verbose: gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
-        if self.verbose: gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
+        gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
+        gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
+        
 
         if len(oppo_attack_set) == 0:
             return None
 
+        start_time = time.time()
+
         # Find their best attack
         best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
-        if self.verbose: gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
-        if self.verbose: gamelib.debug_write("Time elapsed after finding best oppo attack: {}".format(time.time() - start_time))
+        gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
+        gamelib.debug_write("Time elapsed after finding best oppo attack: {}".format(time.time() - start_time))
+
+        start_time = time.time()
 
         # Get our possible interceptor placements based on the number of credits the oppo have.
         our_interceptor_attacks = self.prepare_our_interceptors_to_respond(game_state)
-        if self.verbose: gamelib.debug_write("Our possible interceptor responcses: {}".format(our_interceptor_attacks))
-        if self.verbose: gamelib.debug_write("Time elapsed after getting our interceptor placements: {}".format(time.time() - start_time))
+        gamelib.debug_write("Our possible interceptor responcses: {}".format(our_interceptor_attacks))
+        gamelib.debug_write("Time elapsed after getting our interceptor placements: {}".format(time.time() - start_time))
 
+        start_time = time.time()
 
         our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
-        if self.verbose: gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
-        if self.verbose: gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
+        gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
+        gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
 
         return our_best_attack
 
@@ -751,7 +768,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 scout_demo_attack.append(attacker(name=DEMOLISHER, x= splitPositions[1][0], y=splitPositions[1][1], num=splitNumbers[0]))
                 attack_set_list.append(scout_demo_attack) #Send attack
 
-        gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
+        if self.verbose: gamelib.debug_write("Opponent Attack sets: "+ str(attack_set_list))
         return attack_set_list
 
     def estimate_enemy_interceptor_position(self, game_state): #Returns a list of coordinate and number pairs for interceptor spawns + 
@@ -770,7 +787,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
-                    gamelib.debug_write(testLeftPos)
+                    if self.verbose: gamelib.debug_write(testLeftPos)
                     if self.verbose: gamelib.debug_write(testLeftPos)
                     if (game_state.contains_stationary_unit(testLeftPos) is False):
                         unitPath = game_state.find_path_to_edge(testLeftPos)
@@ -782,7 +799,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
-                    gamelib.debug_write(testRightPos)
+                    if self.verbose: gamelib.debug_write(testRightPos)
                     if self.verbose: gamelib.debug_write(testRightPos)
                     if (game_state.contains_stationary_unit(testRightPos) is False):
                         unitPath = game_state.find_path_to_edge(testRightPos)
@@ -932,12 +949,12 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Loop through the list and update.
         for i in range(len(attack_sets)):
-            if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
+            gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
             if time.time() - start_time > 0.75:
                 # Too much time taken.
                 break
             roll_out_score = sim.roll_out_one_turn([], attack_sets[i], [], [])
-            if self.verbose: gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_sets[i], roll_out_score))
+            gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_sets[i], roll_out_score))
 
             # Update if needed
             if roll_out_score < current_worst_score:
@@ -988,12 +1005,12 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Loop through the list and update.
         for i in range(len(our_responses)):
-            if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
+            gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
             if time.time() - start_time > 0.75:
                 # Too much time taken.
                 break
             roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
-            if self.verbose: gamelib.debug_write("Simulation iteration: {}. Interceptor List: {}. Score: {}".format(i, our_responses[i], roll_out_score))
+            gamelib.debug_write("Simulation iteration: {}. Interceptor List: {}. Score: {}".format(i, our_responses[i], roll_out_score))
 
             # Update if needed
             if roll_out_score > current_best_score:
