@@ -85,8 +85,13 @@ class AlgoStrategy(gamelib.AlgoCore):
         gamelib.debug_write('Performing turn {} of your custom algo strategy'.format(game_state.turn_number))
         game_state.suppress_warnings(True)  #Comment or remove this line to enable warnings.
 
+        # Cal total time.
+        start_time = time.time()
+
         self.base_strategy(game_state)
         self.print_map(game_state)
+
+        gamelib.debug_write("Overall time taken for this turn: {}".format(time.time() - start_time))
 
         game_state.submit_turn()
 
@@ -295,7 +300,6 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Get the attack set list.
         sim = Simulator(game_state, self.config)
-        sim.verbose = True
 
         current_best_score = -1000
         index_best_score = None
@@ -303,7 +307,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Loop through the list and update.
         for i in range(len(attack_set_list)):
             if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
-            if time.time() - start_time > 1:
+            if time.time() - start_time > 0.75:
                 # Too much time taken.
                 break
             roll_out_score = sim.roll_out_one_turn(attack_set_list[i], [], [], [])
@@ -929,7 +933,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Loop through the list and update.
         for i in range(len(attack_sets)):
             if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
-            if time.time() - start_time > 1:
+            if time.time() - start_time > 0.75:
                 # Too much time taken.
                 break
             roll_out_score = sim.roll_out_one_turn([], attack_sets[i], [], [])
@@ -985,7 +989,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Loop through the list and update.
         for i in range(len(our_responses)):
             if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
-            if time.time() - start_time > 2:
+            if time.time() - start_time > 0.75:
                 # Too much time taken.
                 break
             roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
