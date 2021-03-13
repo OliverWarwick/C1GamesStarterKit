@@ -216,7 +216,7 @@ class Simulator:
                 for unit in game_state.game_map[loc]:
                     if not unit.stationary: 
                         unit.has_been_shielded = False
-        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to reset shielding: {}".format(time.time() - start_time))
+        if self.timing_verbose and frame_num == 50: gamelib.debug_write("Time to reset shielding: {}".format(time.time() - start_time))
         start_time = time.time()
 
         
@@ -232,7 +232,7 @@ class Simulator:
                             unit.has_been_shielded = True
                             if self.verbose: gamelib.debug_write("Adding health to unit at location ({}, {})".format(sup_loc[0], sup_loc[1]))
         
-        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to add shielding to units: {}".format(time.time() - start_time))
+        if self.timing_verbose and frame_num == 50: gamelib.debug_write("Time to add shielding to units: {}".format(time.time() - start_time))
         start_time = time.time()
 
         if self.verbose: gamelib.debug_write("End of adding health bonuses")
@@ -310,7 +310,7 @@ class Simulator:
                         # None moving piece this turn so just copy over.
                         updated_game_map.add_existing_unit(unit, location=loc)
 
-        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to do movements: {}".format(time.time() - start_time))
+        if self.timing_verbose and frame_num == 50: gamelib.debug_write("Time to do movements: {}".format(time.time() - start_time))
         start_time = time.time()
 
 
@@ -326,7 +326,7 @@ class Simulator:
                 # Remove this unit from the game_map.
                 game_state.game_map.remove_one_unit(loc, unit)
 
-        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to do self destruct: {}".format(time.time() - start_time))
+        if self.timing_verbose and frame_num == 50: gamelib.debug_write("Time to do self destruct: {}".format(time.time() - start_time))
         start_time = time.time()
 
         
@@ -341,9 +341,12 @@ class Simulator:
             # We have at least one unit here, so run through them, and find the target.
             for unit in units_at_loc:
                 # Find the target
+                targeting_time = time.time()
                 if self.verbose: gamelib.debug_write("Unit currently attacking: {}".format(unit))
                 target_unit = game_state.get_target(unit)
                 if self.verbose: gamelib.debug_write("Target : {}".format(target_unit))
+                if self.timing_verbose and frame_num == 50: gamelib.debug_write("Time to get target: {}".format(time.time() - targeting_time))
+                targeting_time = time.time()
                 if target_unit is not None:
                     # Remove health from these units picking whether to use the damage to stationary and moving units
                     # IMPORTANT: NEED TO REFER TO THESE USING THE UNITS ARE GAME_MAP CAN HAVE MORE THAN ONE ELEMENT IN THE LIST AT EACH LOCATION 
@@ -362,6 +365,9 @@ class Simulator:
                         if self.verbose: gamelib.debug_write("Removing unit at location ({}, {})".format(loc[0], loc[1]))
                         if target_unit.stationary:
                             buildings_destroyed = True      # This is to trigger a repathing.
+                if self.timing_verbose and frame_num == 50: gamelib.debug_write("Time to subtract health and remove if needed: {}".format(time.time() - targeting_time))
+
+                
         
         if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to preform attacks: {}".format(time.time() - start_time))
 

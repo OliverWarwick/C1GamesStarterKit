@@ -1,0 +1,1053 @@
+Random seed: 3880144767987225247
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Time elapsed after updating game state: 0.0004889965057373047
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='PI', x=0, y=14, num=1), Attacker(name='EI', x=15, y=26, num=1)], [Attacker(name='SI', x=21, y=20, num=4)]]
+Time elapsed after finding oppo attack set: 0.7000598907470703
+Time elapsed: 0.012571334838867188
+Starting sim
+Time to add units to map: 5.626678466796875e-05
+Time to set movement paths: 0.01682901382446289
+Time to simulate frame number: 1 is 0.003239870071411133
+Time to simulate frame number: 2 is 0.0031642913818359375
+Time to simulate frame number: 3 is 0.003412961959838867
+Time to simulate frame number: 4 is 0.003735065460205078
+Time to simulate frame number: 5 is 0.00430607795715332
+Time to reset shielding: 0.0004181861877441406
+Time to add shielding to units: 0.0008871555328369141
+Time to do movements: 0.00043392181396484375
+Time to do self destruct: 1.9073486328125e-05
+Time to get target: 0.00014734268188476562
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00014781951904296875
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00013399124145507812
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001468658447265625
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0001461505889892578
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00013184547424316406
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00014901161193847656
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.000141143798828125
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to preform attacks: 0.0018470287322998047
+Time to simulate frame number: 6 is 0.0038290023803710938
+Time to simulate frame number: 7 is 0.003286123275756836
+Time to simulate frame number: 8 is 0.0032520294189453125
+Time to simulate frame number: 9 is 0.004082918167114258
+Time to simulate frame number: 10 is 0.0033409595489501953
+Time to simulate frame number: 11 is 0.004165172576904297
+Time to simulate frame number: 12 is 0.00403904914855957
+Time to simulate frame number: 13 is 0.004174709320068359
+Time to simulate frame number: 14 is 0.003370046615600586
+Time to simulate frame number: 15 is 0.003245115280151367
+Time to simulate frame number: 16 is 0.003237009048461914
+Time to simulate frame number: 17 is 0.00397181510925293
+Time to simulate frame number: 18 is 0.004604816436767578
+Time to simulate frame number: 19 is 0.0032198429107666016
+Time to simulate frame number: 20 is 0.0035011768341064453
+Time to simulate frame number: 21 is 0.0032167434692382812
+Time to simulate frame number: 22 is 0.00422215461730957
+Time to simulate frame number: 23 is 0.0034859180450439453
+Time to simulate frame number: 24 is 0.0032057762145996094
+Time to simulate frame number: 25 is 0.004686832427978516
+Time to simulate frame number: 26 is 0.022640228271484375
+Time to simulate frame number: 27 is 0.008365869522094727
+Time to roll out: 0.12413787841796875
+Time to get update fields: 0.018271923065185547
+Time to get eval metrics: 7.867813110351562e-06
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: 1.8
+Time elapsed: 0.18509125709533691
+Starting sim
+Time to add units to map: 3.0994415283203125e-05
+Time to set movement paths: 0.018488645553588867
+Time to simulate frame number: 1 is 0.0031299591064453125
+Time to simulate frame number: 2 is 0.003206014633178711
+Time to simulate frame number: 3 is 0.002880096435546875
+Time to simulate frame number: 4 is 0.0027992725372314453
+Time to simulate frame number: 5 is 0.0029997825622558594
+Time to reset shielding: 0.0005080699920654297
+Time to add shielding to units: 0.0007219314575195312
+Time to do movements: 0.0005292892456054688
+Time to do self destruct: 2.002716064453125e-05
+Time to get target: 0.0001552104949951172
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00015282630920410156
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0002460479736328125
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0001468658447265625
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00014019012451171875
+Time to subtract health and remove if needed: 0.0
+Time to preform attacks: 0.0013670921325683594
+Time to simulate frame number: 6 is 0.0033769607543945312
+Time to simulate frame number: 7 is 0.0036542415618896484
+Time to simulate frame number: 8 is 0.003345012664794922
+Time to simulate frame number: 9 is 0.0030117034912109375
+Time to simulate frame number: 10 is 0.002933979034423828
+Time to simulate frame number: 11 is 0.002900838851928711
+Time to simulate frame number: 12 is 0.003036975860595703
+Time to simulate frame number: 13 is 0.008181095123291016
+Time to simulate frame number: 14 is 0.003961086273193359
+Time to simulate frame number: 15 is 0.0028760433197021484
+Time to simulate frame number: 16 is 0.0037391185760498047
+Time to simulate frame number: 17 is 0.003718137741088867
+Time to simulate frame number: 18 is 0.0029439926147460938
+Time to simulate frame number: 19 is 0.0030031204223632812
+Time to simulate frame number: 20 is 0.0029821395874023438
+Time to simulate frame number: 21 is 0.0043370723724365234
+Time to simulate frame number: 22 is 0.003916025161743164
+Time to simulate frame number: 23 is 0.0034117698669433594
+Time to simulate frame number: 24 is 0.002927064895629883
+Time to simulate frame number: 25 is 0.002856016159057617
+Time to simulate frame number: 26 is 0.003859996795654297
+Time to simulate frame number: 27 is 0.004554271697998047
+Time to simulate frame number: 28 is 0.0030939579010009766
+Time to simulate frame number: 29 is 0.0032930374145507812
+Time to simulate frame number: 30 is 0.003293752670288086
+Time to simulate frame number: 31 is 0.0034890174865722656
+Time to simulate frame number: 32 is 0.002978801727294922
+Time to simulate frame number: 33 is 0.0029761791229248047
+Time to simulate frame number: 34 is 0.0030677318572998047
+Time to simulate frame number: 35 is 0.0031900405883789062
+Time to simulate frame number: 36 is 0.005300998687744141
+Time to simulate frame number: 37 is 0.007802009582519531
+Time to simulate frame number: 38 is 0.007205009460449219
+Time to simulate frame number: 39 is 0.003939151763916016
+Time to simulate frame number: 40 is 0.0035858154296875
+Time to simulate frame number: 41 is 0.0029671192169189453
+Time to simulate frame number: 42 is 0.004008054733276367
+Time to simulate frame number: 43 is 0.0032858848571777344
+Time to simulate frame number: 44 is 0.002846956253051758
+Time to simulate frame number: 45 is 0.017467975616455078
+Time to simulate frame number: 46 is 0.0026471614837646484
+Time to roll out: 0.18285536766052246
+Time to get update fields: 0.011178970336914062
+Time to get eval metrics: 3.814697265625e-06
+Simulation iteration: 1. Attacker List: [Attacker(name='EI', x=14, y=27, num=1)]. Score: 1.7
+Time elapsed: 0.40781211853027344
+Starting sim
+Time to add units to map: 8.0108642578125e-05
+Time to set movement paths: 0.0329442024230957
+Time to simulate frame number: 1 is 0.003492116928100586
+Time to simulate frame number: 2 is 0.003675222396850586
+Time to simulate frame number: 3 is 0.0034101009368896484
+Time to simulate frame number: 4 is 0.0045549869537353516
+Time to simulate frame number: 5 is 0.0029311180114746094
+Time to reset shielding: 0.0006628036499023438
+Time to add shielding to units: 0.0007469654083251953
+Time to do movements: 0.0004489421844482422
+Time to do self destruct: 2.09808349609375e-05
+Time to get target: 0.00015306472778320312
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00014901161193847656
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00020623207092285156
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00031304359436035156
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00014495849609375
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to preform attacks: 0.00160980224609375
+Time to simulate frame number: 6 is 0.003816843032836914
+Time to simulate frame number: 7 is 0.004139900207519531
+Time to simulate frame number: 8 is 0.003289937973022461
+Time to simulate frame number: 9 is 0.002877950668334961
+Time to simulate frame number: 10 is 0.0058209896087646484
+Time to simulate frame number: 11 is 0.0031540393829345703
+Time to simulate frame number: 12 is 0.0029609203338623047
+Time to simulate frame number: 13 is 0.003859996795654297
+Time to simulate frame number: 14 is 0.004370927810668945
+Time to simulate frame number: 15 is 0.0035359859466552734
+Time to simulate frame number: 16 is 0.0030689239501953125
+Time to simulate frame number: 17 is 0.0031659603118896484
+Time to simulate frame number: 18 is 0.0028810501098632812
+Time to simulate frame number: 19 is 0.0034961700439453125
+Time to simulate frame number: 20 is 0.0040700435638427734
+Time to simulate frame number: 21 is 0.004560232162475586
+Time to simulate frame number: 22 is 0.003133058547973633
+Time to simulate frame number: 23 is 0.002862215042114258
+Time to simulate frame number: 24 is 0.005305051803588867
+Time to simulate frame number: 25 is 0.003341197967529297
+Time to simulate frame number: 26 is 0.004357099533081055
+Time to simulate frame number: 27 is 0.0067272186279296875
+Time to simulate frame number: 28 is 0.003565073013305664
+Time to simulate frame number: 29 is 0.004383087158203125
+Time to simulate frame number: 30 is 0.003860950469970703
+Time to simulate frame number: 31 is 0.0052793025970458984
+Time to simulate frame number: 32 is 0.004125833511352539
+Time to simulate frame number: 33 is 0.0030961036682128906
+Time to simulate frame number: 34 is 0.0032989978790283203
+Time to simulate frame number: 35 is 0.0028977394104003906
+Time to simulate frame number: 36 is 0.004080057144165039
+Time to simulate frame number: 37 is 0.0030601024627685547
+Time to simulate frame number: 38 is 0.0030279159545898438
+Time to simulate frame number: 39 is 0.0033490657806396484
+Time to simulate frame number: 40 is 0.004033088684082031
+Time to simulate frame number: 41 is 0.0030078887939453125
+Time to simulate frame number: 42 is 0.0038306713104248047
+Time to simulate frame number: 43 is 0.0027022361755371094
+Time to simulate frame number: 44 is 0.0030908584594726562
+Time to roll out: 0.16528797149658203
+Time to get update fields: 0.012099981307983398
+Time to get eval metrics: 6.9141387939453125e-06
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=0, y=14, num=1), Attacker(name='EI', x=15, y=26, num=1)]. Score: 1.8
+Time elapsed: 0.6349513530731201
+Starting sim
+Time to add units to map: 7.700920104980469e-05
+Time to set movement paths: 0.016839027404785156
+Time to simulate frame number: 1 is 0.0035920143127441406
+Time to simulate frame number: 2 is 0.004516124725341797
+Time to simulate frame number: 3 is 0.004334211349487305
+Time to simulate frame number: 4 is 0.004018068313598633
+Time to simulate frame number: 5 is 0.0038051605224609375
+Time to reset shielding: 0.00039887428283691406
+Time to add shielding to units: 0.0007011890411376953
+Time to do movements: 0.0005810260772705078
+Time to do self destruct: 2.2172927856445312e-05
+Time to get target: 0.00014495849609375
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 0.00017499923706054688
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.0002429485321044922
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.000431060791015625
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 0.0003719329833984375
+Time to subtract health and remove if needed: 2.86102294921875e-06
+Time to get target: 0.00043511390686035156
+Time to subtract health and remove if needed: 3.0994415283203125e-06
+Time to get target: 0.0004169940948486328
+Time to subtract health and remove if needed: 3.0994415283203125e-06
+Time to get target: 0.0003001689910888672
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to preform attacks: 0.003815889358520508
+Time to simulate frame number: 6 is 0.00579524040222168
+Time to simulate frame number: 7 is 0.004514217376708984
+Time to simulate frame number: 8 is 0.006433963775634766
+Time to simulate frame number: 9 is 0.00486302375793457
+Time to simulate frame number: 10 is 0.0037288665771484375
+Time to simulate frame number: 11 is 0.003929853439331055
+Time to simulate frame number: 12 is 0.0037250518798828125
+Time to simulate frame number: 13 is 0.005697727203369141
+Time to simulate frame number: 14 is 0.0037376880645751953
+Time to simulate frame number: 15 is 0.003621816635131836
+Time to simulate frame number: 16 is 0.003932952880859375
+Time to simulate frame number: 17 is 0.005611896514892578
+Time to simulate frame number: 18 is 0.00662684440612793
+Time to simulate frame number: 19 is 0.005023956298828125
+Time to simulate frame number: 20 is 0.006166219711303711
+Time to simulate frame number: 21 is 0.004029989242553711
+Time to simulate frame number: 22 is 0.003932952880859375
+Time to simulate frame number: 23 is 0.0046689510345458984
+Time to simulate frame number: 24 is 0.007186174392700195
+Time to simulate frame number: 25 is 0.0040950775146484375
+Time to simulate frame number: 26 is 0.007311820983886719
+Time to simulate frame number: 27 is 0.006443977355957031
+Time to simulate frame number: 28 is 0.0045680999755859375
+Time to simulate frame number: 29 is 0.004731893539428711
+Time to simulate frame number: 30 is 0.004515886306762695
+Time to simulate frame number: 31 is 0.003948211669921875
+Time to simulate frame number: 32 is 0.004065990447998047
+Time to simulate frame number: 33 is 0.005454063415527344
+Time to simulate frame number: 34 is 0.003693103790283203
+Time to simulate frame number: 35 is 0.003945827484130859
+Time to simulate frame number: 36 is 0.007562160491943359
+Time to simulate frame number: 37 is 0.005118131637573242
+Time to simulate frame number: 38 is 0.0039103031158447266
+Time to simulate frame number: 39 is 0.0045850276947021484
+Time to simulate frame number: 40 is 0.0047969818115234375
+Time to simulate frame number: 41 is 0.0040361881256103516
+Time to simulate frame number: 42 is 0.003785848617553711
+Time to simulate frame number: 43 is 0.0055980682373046875
+Time to simulate frame number: 44 is 0.003827810287475586
+Time to simulate frame number: 45 is 0.0038640499114990234
+Time to simulate frame number: 46 is 0.004069089889526367
+Time to simulate frame number: 47 is 0.0042552947998046875
+Time to simulate frame number: 48 is 0.006510019302368164
+Time to simulate frame number: 49 is 0.003863811492919922
+Time to simulate frame number: 50 is 0.003692150115966797
+Time to simulate frame number: 51 is 0.004994869232177734
+Time to simulate frame number: 52 is 0.0038909912109375
+Time to simulate frame number: 53 is 0.005362033843994141
+Time to simulate frame number: 54 is 0.004336833953857422
+Time to simulate frame number: 55 is 0.004815816879272461
+Time to simulate frame number: 56 is 0.0037147998809814453
+Time to simulate frame number: 57 is 0.0037691593170166016
+Time to simulate frame number: 58 is 0.005543947219848633
+Time to simulate frame number: 59 is 0.004656076431274414
+Time to simulate frame number: 60 is 0.004403114318847656
+Time to simulate frame number: 61 is 0.0037097930908203125
+Time to simulate frame number: 62 is 0.007346153259277344
+Time to simulate frame number: 63 is 0.004083871841430664
+Time to simulate frame number: 64 is 0.003961086273193359
+Time to simulate frame number: 65 is 0.00558018684387207
+Time to simulate frame number: 66 is 0.00522303581237793
+Time to simulate frame number: 67 is 0.005700111389160156
+Time to simulate frame number: 68 is 0.0045359134674072266
+Time to simulate frame number: 69 is 0.004401206970214844
+Time to simulate frame number: 70 is 0.0038461685180664062
+Time to simulate frame number: 71 is 0.0043430328369140625
+Time to simulate frame number: 72 is 0.0060880184173583984
+Time to simulate frame number: 73 is 0.0038661956787109375
+Time to simulate frame number: 74 is 0.003997087478637695
+Time to simulate frame number: 75 is 0.0036869049072265625
+Time to simulate frame number: 76 is 0.0051000118255615234
+Time to simulate frame number: 77 is 0.004261970520019531
+Time to simulate frame number: 78 is 0.0055730342864990234
+Time to simulate frame number: 79 is 0.004508018493652344
+Time to simulate frame number: 80 is 0.004250764846801758
+Time to simulate frame number: 81 is 0.003971099853515625
+Time to simulate frame number: 82 is 0.003968000411987305
+Time to simulate frame number: 83 is 0.006393909454345703
+Time to simulate frame number: 84 is 0.0038809776306152344
+Time to simulate frame number: 85 is 0.004288911819458008
+Time to simulate frame number: 86 is 0.0034270286560058594
+Time to simulate frame number: 87 is 0.0047910213470458984
+Time to simulate frame number: 88 is 0.003991842269897461
+Time to simulate frame number: 89 is 0.004077911376953125
+Time to simulate frame number: 90 is 0.003087759017944336
+Time to simulate frame number: 91 is 0.0039000511169433594
+Time to simulate frame number: 92 is 0.003100872039794922
+Time to simulate frame number: 93 is 0.0026848316192626953
+Time to roll out: 0.431121826171875
+Time to get update fields: 0.009127140045166016
+Time to get eval metrics: 3.814697265625e-06
+Simulation iteration: 3. Attacker List: [Attacker(name='SI', x=21, y=20, num=4)]. Score: 1.8
+Best attack from the oppo: [Attacker(name='EI', x=14, y=27, num=1)] with score: 1.7
+Time elapsed after finding best oppo attack: 1.102651834487915
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=13, y=0, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 2.7179718017578125e-05
+Time elapsed: 0.01283407211303711
+Starting sim
+Time to add units to map: 4.124641418457031e-05
+Time to set movement paths: 0.03135085105895996
+Time to simulate frame number: 1 is 0.003568887710571289
+Time to simulate frame number: 2 is 0.0030069351196289062
+Time to simulate frame number: 3 is 0.003042936325073242
+Time to simulate frame number: 4 is 0.005435943603515625
+Time to simulate frame number: 5 is 0.003119230270385742
+Time to reset shielding: 0.00039887428283691406
+Time to add shielding to units: 0.0007240772247314453
+Time to do movements: 0.0005369186401367188
+Time to do self destruct: 2.7179718017578125e-05
+Time to get target: 0.0003039836883544922
+Time to subtract health and remove if needed: 1.9073486328125e-06
+Time to get target: 0.0002727508544921875
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00019097328186035156
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00047397613525390625
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00015091896057128906
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00014019012451171875
+Time to subtract health and remove if needed: 0.0
+Time to preform attacks: 0.0022270679473876953
+Time to simulate frame number: 6 is 0.0041048526763916016
+Time to simulate frame number: 7 is 0.003551006317138672
+Time to simulate frame number: 8 is 0.0039081573486328125
+Time to simulate frame number: 9 is 0.004044055938720703
+Time to simulate frame number: 10 is 0.0035200119018554688
+Time to simulate frame number: 11 is 0.003390073776245117
+Time to simulate frame number: 12 is 0.0041141510009765625
+Time to simulate frame number: 13 is 0.0037050247192382812
+Time to simulate frame number: 14 is 0.0035829544067382812
+Time to simulate frame number: 15 is 0.004289865493774414
+Time to simulate frame number: 16 is 0.004405021667480469
+Time to simulate frame number: 17 is 0.004403829574584961
+Time to simulate frame number: 18 is 0.003201007843017578
+Time to simulate frame number: 19 is 0.0031588077545166016
+Time to simulate frame number: 20 is 0.0036399364471435547
+Time to simulate frame number: 21 is 0.004565000534057617
+Time to simulate frame number: 22 is 0.003182649612426758
+Time to simulate frame number: 23 is 0.0037069320678710938
+Time to simulate frame number: 24 is 0.003370046615600586
+Time to simulate frame number: 25 is 0.0067026615142822266
+Time to simulate frame number: 26 is 0.004143953323364258
+Time to simulate frame number: 27 is 0.005514860153198242
+Time to simulate frame number: 28 is 0.003425121307373047
+Time to simulate frame number: 29 is 0.003172159194946289
+Time to simulate frame number: 30 is 0.0047190189361572266
+Time to simulate frame number: 31 is 0.004122018814086914
+Time to simulate frame number: 32 is 0.00339508056640625
+Time to simulate frame number: 33 is 0.003406047821044922
+Time to simulate frame number: 34 is 0.003203153610229492
+Time to simulate frame number: 35 is 0.0032749176025390625
+Time to simulate frame number: 36 is 0.003306865692138672
+Time to simulate frame number: 37 is 0.006637096405029297
+Time to simulate frame number: 38 is 0.0032150745391845703
+Time to simulate frame number: 39 is 0.003152132034301758
+Time to simulate frame number: 40 is 0.003046274185180664
+Time to simulate frame number: 41 is 0.0034770965576171875
+Time to simulate frame number: 42 is 0.00406193733215332
+Time to simulate frame number: 43 is 0.0032129287719726562
+Time to simulate frame number: 44 is 0.004457950592041016
+Time to simulate frame number: 45 is 0.03333592414855957
+Time to simulate frame number: 46 is 0.005174875259399414
+Time to simulate frame number: 47 is 0.0034799575805664062
+Time to simulate frame number: 48 is 0.0040509700775146484
+Time to simulate frame number: 49 is 0.002942800521850586
+Time to simulate frame number: 50 is 0.0032472610473632812
+Time to simulate frame number: 51 is 0.003063201904296875
+Time to simulate frame number: 52 is 0.003763914108276367
+Time to simulate frame number: 53 is 0.0029850006103515625
+Time to simulate frame number: 54 is 0.0029458999633789062
+Time to simulate frame number: 55 is 0.0046460628509521484
+Time to simulate frame number: 56 is 0.0040569305419921875
+Time to simulate frame number: 57 is 0.003101825714111328
+Time to simulate frame number: 58 is 0.0028486251831054688
+Time to simulate frame number: 59 is 0.0029211044311523438
+Time to simulate frame number: 60 is 0.003056049346923828
+Time to simulate frame number: 61 is 0.0035300254821777344
+Time to simulate frame number: 62 is 0.0036721229553222656
+Time to simulate frame number: 63 is 0.0036962032318115234
+Time to simulate frame number: 64 is 0.0028238296508789062
+Time to simulate frame number: 65 is 0.002807140350341797
+Time to simulate frame number: 66 is 0.0037908554077148438
+Time to simulate frame number: 67 is 0.004187822341918945
+Time to simulate frame number: 68 is 0.002830982208251953
+Time to simulate frame number: 69 is 0.004168033599853516
+Time to simulate frame number: 70 is 0.004191875457763672
+Time to simulate frame number: 71 is 0.003505706787109375
+Time to simulate frame number: 72 is 0.0029561519622802734
+Time to simulate frame number: 73 is 0.004391908645629883
+Time to simulate frame number: 74 is 0.002832174301147461
+Time to simulate frame number: 75 is 0.004171848297119141
+Time to simulate frame number: 76 is 0.004127979278564453
+Time to simulate frame number: 77 is 0.0029611587524414062
+Time to simulate frame number: 78 is 0.0031099319458007812
+Time to simulate frame number: 79 is 0.002859830856323242
+Time to simulate frame number: 80 is 0.003602266311645508
+Time to simulate frame number: 81 is 0.003901958465576172
+Time to simulate frame number: 82 is 0.0030090808868408203
+Time to simulate frame number: 83 is 0.004183053970336914
+Time to simulate frame number: 84 is 0.003026247024536133
+Time to simulate frame number: 85 is 0.004132270812988281
+Time to simulate frame number: 86 is 0.002858877182006836
+Time to simulate frame number: 87 is 0.0036079883575439453
+Time to simulate frame number: 88 is 0.0029611587524414062
+Time to simulate frame number: 89 is 0.003798961639404297
+Time to simulate frame number: 90 is 0.003297090530395508
+Time to simulate frame number: 91 is 0.0028030872344970703
+Time to simulate frame number: 92 is 0.002780914306640625
+Time to simulate frame number: 93 is 0.002839803695678711
+Time to simulate frame number: 94 is 0.0030031204223632812
+Time to simulate frame number: 95 is 0.003977060317993164
+Time to simulate frame number: 96 is 0.005071878433227539
+Time to simulate frame number: 97 is 0.00339508056640625
+Time to simulate frame number: 98 is 0.002931833267211914
+Time to simulate frame number: 99 is 0.0039937496185302734
+Time to simulate frame number: 100 is 0.0032248497009277344
+Time to simulate frame number: 101 is 0.002780914306640625
+Time to simulate frame number: 102 is 0.0027899742126464844
+Time to simulate frame number: 103 is 0.00307464599609375
+Time to simulate frame number: 104 is 0.004818916320800781
+Time to simulate frame number: 105 is 0.0036749839782714844
+Time to simulate frame number: 106 is 0.0031669139862060547
+Time to simulate frame number: 107 is 0.0028810501098632812
+Time to simulate frame number: 108 is 0.002911090850830078
+Time to simulate frame number: 109 is 0.0036389827728271484
+Time to simulate frame number: 110 is 0.004087924957275391
+Time to simulate frame number: 111 is 0.002763986587524414
+Time to simulate frame number: 112 is 0.003297090530395508
+Time to simulate frame number: 113 is 0.0026738643646240234
+Time to simulate frame number: 114 is 0.002965211868286133
+Time to roll out: 0.4457378387451172
+Time to get update fields: 0.008230924606323242
+Time to get eval metrics: 5.9604644775390625e-06
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 2.7
+Time elapsed: 0.5116479396820068
+Starting sim
+Time to add units to map: 4.00543212890625e-05
+Time to set movement paths: 0.028870105743408203
+Time to simulate frame number: 1 is 0.003253936767578125
+Time to simulate frame number: 2 is 0.0035750865936279297
+Time to simulate frame number: 3 is 0.003954172134399414
+Time to simulate frame number: 4 is 0.003882884979248047
+Time to simulate frame number: 5 is 0.0039789676666259766
+Time to reset shielding: 0.0004220008850097656
+Time to add shielding to units: 0.0006871223449707031
+Time to do movements: 0.00039887428283691406
+Time to do self destruct: 1.7881393432617188e-05
+Time to get target: 0.0001399517059326172
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0001430511474609375
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00020885467529296875
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001800060272216797
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.000141143798828125
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001468658447265625
+Time to subtract health and remove if needed: 0.0
+Time to preform attacks: 0.0014889240264892578
+Time to simulate frame number: 6 is 0.003179788589477539
+Time to simulate frame number: 7 is 0.0033500194549560547
+Time to simulate frame number: 8 is 0.0039098262786865234
+Time to simulate frame number: 9 is 0.005343914031982422
+Time to simulate frame number: 10 is 0.003203868865966797
+Time to simulate frame number: 11 is 0.002978086471557617
+Time to simulate frame number: 12 is 0.0030329227447509766
+Time to simulate frame number: 13 is 0.003110170364379883
+Time to simulate frame number: 14 is 0.004559040069580078
+Time to simulate frame number: 15 is 0.0031287670135498047
+Time to simulate frame number: 16 is 0.004826068878173828
+Time to simulate frame number: 17 is 0.0030770301818847656
+Time to simulate frame number: 18 is 0.004005908966064453
+Time to simulate frame number: 19 is 0.003989219665527344
+Time to simulate frame number: 20 is 0.0031549930572509766
+Time to simulate frame number: 21 is 0.003270864486694336
+Time to simulate frame number: 22 is 0.00335693359375
+Time to simulate frame number: 23 is 0.0045850276947021484
+Time to simulate frame number: 24 is 0.003065824508666992
+Time to simulate frame number: 25 is 0.003668069839477539
+Time to simulate frame number: 26 is 0.003123044967651367
+Time to simulate frame number: 27 is 0.004623889923095703
+Time to simulate frame number: 28 is 0.0041849613189697266
+Time to simulate frame number: 29 is 0.0030629634857177734
+Time to simulate frame number: 30 is 0.0030350685119628906
+Time to simulate frame number: 31 is 0.003621816635131836
+Time to simulate frame number: 32 is 0.004170894622802734
+Time to simulate frame number: 33 is 0.003120899200439453
+Time to simulate frame number: 34 is 0.003384113311767578
+Time to simulate frame number: 35 is 0.0051271915435791016
+Time to simulate frame number: 36 is 0.005593061447143555
+Time to simulate frame number: 37 is 0.0031752586364746094
+Time to simulate frame number: 38 is 0.003065824508666992
+Time to simulate frame number: 39 is 0.0033049583435058594
+Time to simulate frame number: 40 is 0.003973960876464844
+Time to simulate frame number: 41 is 0.0038061141967773438
+Time to simulate frame number: 42 is 0.003576993942260742
+Time to simulate frame number: 43 is 0.0032889842987060547
+Time to simulate frame number: 44 is 0.0030646324157714844
+Time to simulate frame number: 45 is 0.03291010856628418
+Time to simulate frame number: 46 is 0.004815101623535156
+Time to simulate frame number: 47 is 0.0031380653381347656
+Time to simulate frame number: 48 is 0.0029129981994628906
+Time to simulate frame number: 49 is 0.002947092056274414
+Time to simulate frame number: 50 is 0.002852201461791992
+Time to simulate frame number: 51 is 0.003036022186279297
+Time to simulate frame number: 52 is 0.00638890266418457
+Time to simulate frame number: 53 is 0.0036830902099609375
+Time to simulate frame number: 54 is 0.0030541419982910156
+Time to simulate frame number: 55 is 0.003638029098510742
+Time to simulate frame number: 56 is 0.003197908401489258
+Time to simulate frame number: 57 is 0.002950906753540039
+Time to simulate frame number: 58 is 0.003482818603515625
+Time to simulate frame number: 59 is 0.0039408206939697266
+Time to simulate frame number: 60 is 0.004395008087158203
+Time to simulate frame number: 61 is 0.0030519962310791016
+Time to simulate frame number: 62 is 0.003152132034301758
+Time to simulate frame number: 63 is 0.0032088756561279297
+Time to simulate frame number: 64 is 0.0042629241943359375
+Time to simulate frame number: 65 is 0.003316164016723633
+Time to simulate frame number: 66 is 0.0029811859130859375
+Time to simulate frame number: 67 is 0.0029287338256835938
+Time to simulate frame number: 68 is 0.0028269290924072266
+Time to simulate frame number: 69 is 0.002804994583129883
+Time to simulate frame number: 70 is 0.0063588619232177734
+Time to simulate frame number: 71 is 0.004065036773681641
+Time to simulate frame number: 72 is 0.0031120777130126953
+Time to simulate frame number: 73 is 0.002907991409301758
+Time to simulate frame number: 74 is 0.0037949085235595703
+Time to simulate frame number: 75 is 0.0034630298614501953
+Time to simulate frame number: 76 is 0.002959012985229492
+Time to simulate frame number: 77 is 0.0034418106079101562
+Time to simulate frame number: 78 is 0.002941131591796875
+Time to simulate frame number: 79 is 0.002976655960083008
+Time to simulate frame number: 80 is 0.0039250850677490234
+Time to simulate frame number: 81 is 0.00380706787109375
+Time to simulate frame number: 82 is 0.005178928375244141
+Time to simulate frame number: 83 is 0.004381895065307617
+Time to simulate frame number: 84 is 0.005368709564208984
+Time to simulate frame number: 85 is 0.0028998851776123047
+Time to simulate frame number: 86 is 0.002808809280395508
+Time to simulate frame number: 87 is 0.003860950469970703
+Time to simulate frame number: 88 is 0.004130840301513672
+Time to simulate frame number: 89 is 0.0028259754180908203
+Time to simulate frame number: 90 is 0.0033059120178222656
+Time to simulate frame number: 91 is 0.0032341480255126953
+Time to simulate frame number: 92 is 0.004601240158081055
+Time to simulate frame number: 93 is 0.003069162368774414
+Time to simulate frame number: 94 is 0.0027780532836914062
+Time to simulate frame number: 95 is 0.003379344940185547
+Time to simulate frame number: 96 is 0.0038771629333496094
+Time to simulate frame number: 97 is 0.004495143890380859
+Time to simulate frame number: 98 is 0.004477977752685547
+Time to simulate frame number: 99 is 0.003596067428588867
+Time to simulate frame number: 100 is 0.0028412342071533203
+Time to simulate frame number: 101 is 0.004127979278564453
+Time to simulate frame number: 102 is 0.003498077392578125
+Time to simulate frame number: 103 is 0.0027871131896972656
+Time to simulate frame number: 104 is 0.0036039352416992188
+Time to simulate frame number: 105 is 0.003885030746459961
+Time to simulate frame number: 106 is 0.003957033157348633
+Time to simulate frame number: 107 is 0.0028879642486572266
+Time to simulate frame number: 108 is 0.0029952526092529297
+Time to simulate frame number: 109 is 0.0031342506408691406
+Time to simulate frame number: 110 is 0.003858804702758789
+Time to simulate frame number: 111 is 0.003941774368286133
+Time to simulate frame number: 112 is 0.002794027328491211
+Time to simulate frame number: 113 is 0.002605915069580078
+Time to simulate frame number: 114 is 0.0026721954345703125
+Time to roll out: 0.4440469741821289
+Time to get update fields: 0.008811712265014648
+Time to get eval metrics: 4.291534423828125e-06
+Simulation iteration: 1. Interceptor List: [Attacker(name='SI', x=7, y=6, num=1)]. Score: 2.7
+Time elapsed: 1.0042431354522705
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 2.7
+Time elapsed after finding our best response: 1.0043179988861084
+Time taken per stage: Queueing Repairs: 0.003077983856201172   Building Defences: 0.002045869827270508   Placing Extra Walls: 9.5367431640625e-07  Placing interceptors: 2.810711145401001  Our attacks: 2.1457672119140625e-06
+Map:
+|-------------------------------------------------------------------------------------------0FF 60       -------------------------------------------------------------------------------------------
+|------------------------------------------------------------------------------------       0FF 60              ------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------                                          -----------------------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 600FF 60                            ----------------------------------------------------------------------
+|---------------------------------------------------------------                                                                      ---------------------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|------------------------------------------              0DF 600FF 60                                                                                    ------------------------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|----------------------------                                                                                                                                            ----------------------------
+|---------------------                                                                                                                                                          ---------------------
+|--------------                                                                                                                                                                        --------------
+|-------                                                                                                                                                                                      -------
+|
+|
+|-------                                                                                                                                                                                      -------
+|--------------                                                                                                                                                                        --------------
+|---------------------                                                                                                                                                          ---------------------
+|----------------------------0SI 40                                                                                                                                     ----------------------------
+|-----------------------------------                                                                                                                              -----------------------------------
+|------------------------------------------              0DF 600FF 60                                                                                    ------------------------------------------
+|-------------------------------------------------                                                                                                  -------------------------------------------------
+|--------------------------------------------------------                                                                                    --------------------------------------------------------
+|---------------------------------------------------------------                                                                      ---------------------------------------------------------------
+|----------------------------------------------------------------------              0DF 600FF 60                            ----------------------------------------------------------------------
+|-----------------------------------------------------------------------------                                          -----------------------------------------------------------------------------
+|------------------------------------------------------------------------------------                            ------------------------------------------------------------------------------------
+|-------------------------------------------------------------------------------------------              -------------------------------------------------------------------------------------------
+Overall time taken for this turn: 2.8183631896972656
+Performing turn 1 of your custom algo strategy
+Time elapsed after updating game state: 0.0005478858947753906
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='PI', x=14, y=27, num=1), Attacker(name='EI', x=27, y=14, num=1)], [Attacker(name='SI', x=7, y=21, num=4)]]
+Time elapsed after finding oppo attack set: 0.7444901466369629
+Time elapsed: 0.011257648468017578
+Starting sim
+Time to add units to map: 4.8160552978515625e-05
+Time to set movement paths: 0.014532089233398438
+Time to simulate frame number: 1 is 0.0045511722564697266
+Time to simulate frame number: 2 is 0.008442878723144531
+Time to simulate frame number: 3 is 0.00930476188659668
+Time to simulate frame number: 4 is 0.004940032958984375
+Time to simulate frame number: 5 is 0.005355119705200195
+Time to reset shielding: 0.0004029273986816406
+Time to add shielding to units: 0.0007119178771972656
+Time to do movements: 0.0004220008850097656
+Time to do self destruct: 1.6927719116210938e-05
+Time to get target: 0.0001480579376220703
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 8.702278137207031e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001380443572998047
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.487701416015625e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 8.320808410644531e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.296966552734375e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00030422210693359375
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0001437664031982422
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 8.511543273925781e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00017881393432617188
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00012874603271484375
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001480579376220703
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0001289844512939453
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 8.416175842285156e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00014519691467285156
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 8.392333984375e-05
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 8.392333984375e-05
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 8.440017700195312e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.20159912109375e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001399517059326172
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.416175842285156e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.20159912109375e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 7.605552673339844e-05
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to preform attacks: 0.0037729740142822266
+Time to simulate frame number: 6 is 0.0055239200592041016
+Time to simulate frame number: 7 is 0.006597995758056641
+Time to simulate frame number: 8 is 0.004703044891357422
+Time to simulate frame number: 9 is 0.004940986633300781
+Time to simulate frame number: 10 is 0.0069468021392822266
+Time to simulate frame number: 11 is 0.007945060729980469
+Time to simulate frame number: 12 is 0.007704973220825195
+Time to simulate frame number: 13 is 0.0051457881927490234
+Time to simulate frame number: 14 is 0.006139278411865234
+Time to simulate frame number: 15 is 0.006649971008300781
+Time to simulate frame number: 16 is 0.00499415397644043
+Time to simulate frame number: 17 is 0.004812002182006836
+Time to simulate frame number: 18 is 0.008267879486083984
+Time to simulate frame number: 19 is 0.008239269256591797
+Time to simulate frame number: 20 is 0.004561185836791992
+Time to simulate frame number: 21 is 0.005867958068847656
+Time to simulate frame number: 22 is 0.004559993743896484
+Time to simulate frame number: 23 is 0.0068399906158447266
+Time to simulate frame number: 24 is 0.004770040512084961
+Time to simulate frame number: 25 is 0.003948211669921875
+Time to simulate frame number: 26 is 0.005292177200317383
+Time to roll out: 0.15821290016174316
+Time to get update fields: 0.014901161193847656
+Time to get eval metrics: 5.245208740234375e-06
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -2.3
+Time elapsed: 0.2109229564666748
+Starting sim
+Time to add units to map: 3.0040740966796875e-05
+Time to set movement paths: 0.015038013458251953
+Time to simulate frame number: 1 is 0.0046977996826171875
+Time to simulate frame number: 2 is 0.007735729217529297
+Time to simulate frame number: 3 is 0.0076792240142822266
+Time to simulate frame number: 4 is 0.004950046539306641
+Time to simulate frame number: 5 is 0.004830121994018555
+Time to reset shielding: 0.00039076805114746094
+Time to add shielding to units: 0.0007550716400146484
+Time to do movements: 0.0004048347473144531
+Time to do self destruct: 1.9788742065429688e-05
+Time to get target: 8.296966552734375e-05
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00011515617370605469
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00014019012451171875
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.392333984375e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.320808410644531e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 8.487701416015625e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.392333984375e-05
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00014209747314453125
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.416175842285156e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0001811981201171875
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.392333984375e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.00014209747314453125
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00010704994201660156
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 8.511543273925781e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.416175842285156e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.320808410644531e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00013899803161621094
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 8.296966552734375e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 8.296966552734375e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 7.700920104980469e-05
+Time to subtract health and remove if needed: 0.0
+Time to preform attacks: 0.002846956253051758
+Time to simulate frame number: 6 is 0.004625082015991211
+Time to simulate frame number: 7 is 0.005869865417480469
+Time to simulate frame number: 8 is 0.008092880249023438
+Time to simulate frame number: 9 is 0.007214069366455078
+Time to simulate frame number: 10 is 0.036347150802612305
+Time to simulate frame number: 11 is 0.008517742156982422
+Time to simulate frame number: 12 is 0.012575864791870117
+Time to simulate frame number: 13 is 0.007354021072387695
+Time to simulate frame number: 14 is 0.004185914993286133
+Time to simulate frame number: 15 is 0.0048999786376953125
+Time to simulate frame number: 16 is 0.006216287612915039
+Time to simulate frame number: 17 is 0.007359027862548828
+Time to simulate frame number: 18 is 0.0054018497467041016
+Time to simulate frame number: 19 is 0.004644155502319336
+Time to simulate frame number: 20 is 0.006879329681396484
+Time to simulate frame number: 21 is 0.005076169967651367
+Time to simulate frame number: 22 is 0.009016036987304688
+Time to simulate frame number: 23 is 0.005551815032958984
+Time to simulate frame number: 24 is 0.004152059555053711
+Time to simulate frame number: 25 is 0.0040857791900634766
+Time to simulate frame number: 26 is 0.023725032806396484
+Time to simulate frame number: 27 is 0.00944375991821289
+Time to simulate frame number: 28 is 0.004923105239868164
+Time to simulate frame number: 29 is 0.005573272705078125
+Time to simulate frame number: 30 is 0.008584976196289062
+Time to simulate frame number: 31 is 0.0051119327545166016
+Time to simulate frame number: 32 is 0.004307270050048828
+Time to simulate frame number: 33 is 0.005984067916870117
+Time to simulate frame number: 34 is 0.008660078048706055
+Time to simulate frame number: 35 is 0.009134054183959961
+Time to simulate frame number: 36 is 0.00884103775024414
+Time to simulate frame number: 37 is 0.005553007125854492
+Time to simulate frame number: 38 is 0.005223989486694336
+Time to simulate frame number: 39 is 0.004450798034667969
+Time to simulate frame number: 40 is 0.00866079330444336
+Time to simulate frame number: 41 is 0.022789955139160156
+Time to simulate frame number: 42 is 0.004355907440185547
+Time to simulate frame number: 43 is 0.005628108978271484
+Time to simulate frame number: 44 is 0.006638765335083008
+Time to roll out: 0.3479180335998535
+Time to get update fields: 0.008275032043457031
+Time to get eval metrics: 5.9604644775390625e-06
+Simulation iteration: 1. Attacker List: [Attacker(name='EI', x=14, y=27, num=1)]. Score: -2.4
+Time elapsed: 0.6102778911590576
+Starting sim
+Time to add units to map: 4.291534423828125e-05
+Time to set movement paths: 0.01569509506225586
+Time to simulate frame number: 1 is 0.006058931350708008
+Time to simulate frame number: 2 is 0.01090383529663086
+Time to simulate frame number: 3 is 0.007325172424316406
+Time to simulate frame number: 4 is 0.006515979766845703
+Time to simulate frame number: 5 is 0.006385087966918945
+Time to reset shielding: 0.0008220672607421875
+Time to add shielding to units: 0.0012967586517333984
+Time to do movements: 0.0006761550903320312
+Time to do self destruct: 4.6253204345703125e-05
+Time to get target: 0.00011801719665527344
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 9.989738464355469e-05
+Time to subtract health and remove if needed: 1.9073486328125e-06
+Time to get target: 0.0001552104949951172
+Time to subtract health and remove if needed: 0.0
+Time to get target: 9.679794311523438e-05
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 9.417533874511719e-05
+Time to subtract health and remove if needed: 1.9073486328125e-06
+Time to get target: 9.799003601074219e-05
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00013589859008789062
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.006214141845703125
+Time to subtract health and remove if needed: 1.9073486328125e-06
+Time to get target: 9.608268737792969e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00013375282287597656
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.702278137207031e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00014710426330566406
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.726119995117188e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.606910705566406e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.606910705566406e-05
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 8.535385131835938e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001430511474609375
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.606910705566406e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 8.511543273925781e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 7.915496826171875e-05
+Time to subtract health and remove if needed: 0.0
+Time to preform attacks: 0.009332895278930664
+Time to simulate frame number: 6 is 0.01276707649230957
+Time to simulate frame number: 7 is 0.007624149322509766
+Time to simulate frame number: 8 is 0.00728917121887207
+Time to simulate frame number: 9 is 0.009751081466674805
+Time to simulate frame number: 10 is 0.0066471099853515625
+Time to simulate frame number: 11 is 0.004262685775756836
+Time to simulate frame number: 12 is 0.004565000534057617
+Time to simulate frame number: 13 is 0.006067037582397461
+Time to simulate frame number: 14 is 0.004154205322265625
+Time to simulate frame number: 15 is 0.006414890289306641
+Time to simulate frame number: 16 is 0.008316993713378906
+Time to simulate frame number: 17 is 0.006598234176635742
+Time to simulate frame number: 18 is 0.005599021911621094
+Time to simulate frame number: 19 is 0.004377126693725586
+Time to simulate frame number: 20 is 0.005099058151245117
+Time to simulate frame number: 21 is 0.008101701736450195
+Time to simulate frame number: 22 is 0.004060029983520508
+Time to simulate frame number: 23 is 0.003950834274291992
+Time to roll out: 0.1542799472808838
+Time to get update fields: 0.014173030853271484
+Time to get eval metrics: 5.7220458984375e-06
+Simulation iteration: 2. Attacker List: [Attacker(name='PI', x=14, y=27, num=1), Attacker(name='EI', x=27, y=14, num=1)]. Score: -2.3
+Time elapsed: 0.8087706565856934
+Best attack from the oppo: [Attacker(name='EI', x=14, y=27, num=1)] with score: -2.4
+Time elapsed after finding best oppo attack: 0.8088881969451904
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=13, y=0, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 4.291534423828125e-05
+Time elapsed: 0.013511896133422852
+Starting sim
+Time to add units to map: 4.982948303222656e-05
+Time to set movement paths: 0.033097267150878906
+Time to simulate frame number: 1 is 0.0064618587493896484
+Time to simulate frame number: 2 is 0.004341840744018555
+Time to simulate frame number: 3 is 0.006773710250854492
+Time to simulate frame number: 4 is 0.004342794418334961
+Time to simulate frame number: 5 is 0.005544185638427734
+Time to reset shielding: 0.0006768703460693359
+Time to add shielding to units: 0.0016372203826904297
+Time to do movements: 0.0007519721984863281
+Time to do self destruct: 3.814697265625e-05
+Time to get target: 0.00035119056701660156
+Time to subtract health and remove if needed: 5.0067901611328125e-06
+Time to get target: 0.00021696090698242188
+Time to subtract health and remove if needed: 4.291534423828125e-06
+Time to get target: 0.0003399848937988281
+Time to subtract health and remove if needed: 1.6689300537109375e-06
+Time to get target: 0.0001838207244873047
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 0.00016689300537109375
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.0001671314239501953
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001659393310546875
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 0.0002779960632324219
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001659393310546875
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.00019121170043945312
+Time to subtract health and remove if needed: 0.0
+Time to get target: 0.0002429485321044922
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0004017353057861328
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001990795135498047
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0012700557708740234
+Time to subtract health and remove if needed: 1.1920928955078125e-06
+Time to get target: 0.00017404556274414062
+Time to subtract health and remove if needed: 7.152557373046875e-07
+Time to get target: 8.797645568847656e-05
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.702278137207031e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.0001437664031982422
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.58306884765625e-05
+Time to subtract health and remove if needed: 9.5367431640625e-07
+Time to get target: 0.004393815994262695
+Time to subtract health and remove if needed: 0.0
+Time to get target: 8.273124694824219e-05
+Time to subtract health and remove if needed: 0.0
+Time to preform attacks: 0.011198043823242188
+Time to simulate frame number: 6 is 0.014653921127319336
+Time to simulate frame number: 7 is 0.006532192230224609
+Time to simulate frame number: 8 is 0.0072479248046875
+Time to simulate frame number: 9 is 0.010416746139526367
+Time to simulate frame number: 10 is 0.004500865936279297
+Time to simulate frame number: 11 is 0.007122039794921875
+Time to simulate frame number: 12 is 0.008069038391113281
+Time to simulate frame number: 13 is 0.006768941879272461
+Time to simulate frame number: 14 is 0.006539106369018555
+Time to simulate frame number: 15 is 0.0060498714447021484
+Time to simulate frame number: 16 is 0.0046308040618896484
+Time to simulate frame number: 17 is 0.005734920501708984
+Time to simulate frame number: 18 is 0.004689931869506836
+Time to simulate frame number: 19 is 0.005424022674560547
+Time to simulate frame number: 20 is 0.00816488265991211
+Time to simulate frame number: 21 is 0.00737309455871582
+Time to simulate frame number: 22 is 0.005177974700927734
+Time to simulate frame number: 23 is 0.006883144378662109
+Time to simulate frame number: 24 is 0.004514932632446289
+Time to simulate frame number: 25 is 0.006247997283935547
+Time to simulate frame number: 26 is 0.004816770553588867
+Time to simulate frame number: 27 is 0.0058400630950927734
+Time to simulate frame number: 28 is 0.008209228515625
+Time to simulate frame number: 29 is 0.006433010101318359
+Time to simulate frame number: 30 is 0.004928112030029297
+Time to simulate frame number: 31 is 0.00574493408203125
+Time to simulate frame number: 32 is 0.005027055740356445
+Time to simulate frame number: 33 is 0.004521369934082031
+Time to simulate frame number: 34 is 0.00541377067565918
+Time to simulate frame number: 35 is 0.00461578369140625
+Time to simulate frame number: 36 is 0.005736112594604492
+Time to simulate frame number: 37 is 0.007719993591308594
+Time to simulate frame number: 38 is 0.00597381591796875
+Time to simulate frame number: 39 is 0.005167245864868164
+Time to simulate frame number: 40 is 0.006426095962524414
+Time to simulate frame number: 41 is 0.03946113586425781
+Time to simulate frame number: 42 is 0.00618433952331543
+Time to simulate frame number: 43 is 0.0044460296630859375
+Time to simulate frame number: 44 is 0.004615068435668945
+Time to simulate frame number: 45 is 0.004751920700073242
+Time to simulate frame number: 46 is 0.0072100162506103516
+Time to simulate frame number: 47 is 0.0043621063232421875
+Time to simulate frame number: 48 is 0.006951093673706055
+Time to simulate frame number: 49 is 0.00839090347290039
+Time to simulate frame number: 50 is 0.005087137222290039
+Time to simulate frame number: 51 is 0.005124092102050781
+Time to simulate frame number: 52 is 0.0048558712005615234
+Time to simulate frame number: 53 is 0.004324197769165039
+Time to simulate frame number: 54 is 0.004918098449707031
+Time to simulate frame number: 55 is 0.005573749542236328
+Time to simulate frame number: 56 is 0.004633188247680664
+Time to simulate frame number: 57 is 0.007004976272583008
+Time to simulate frame number: 58 is 0.005407094955444336
+Time to simulate frame number: 59 is 0.0060498714447021484
+Time to simulate frame number: 60 is 0.00521087646484375
+Time to simulate frame number: 61 is 0.004614114761352539
+Time to simulate frame number: 62 is 0.004686117172241211
+Time to simulate frame number: 63 is 0.004676103591918945
+Time to simulate frame number: 64 is 0.015579700469970703
+Time to simulate frame number: 65 is 0.007533073425292969
+Time to simulate frame number: 66 is 0.009428977966308594
+Time to simulate frame number: 67 is 0.0074863433837890625
+Time to simulate frame number: 68 is 0.0046100616455078125
+Time to simulate frame number: 69 is 0.004877805709838867
+Time to simulate frame number: 70 is 0.006766080856323242
+Time to simulate frame number: 71 is 0.00654292106628418
+Time to simulate frame number: 72 is 0.008101224899291992
+Time to simulate frame number: 73 is 0.006506919860839844
+Time to simulate frame number: 74 is 0.006949901580810547
+Time to simulate frame number: 75 is 0.0064029693603515625
+Time to simulate frame number: 76 is 0.0045778751373291016
+Time to simulate frame number: 77 is 0.005011081695556641
+Time to simulate frame number: 78 is 0.006524085998535156
+Traceback (most recent call last):
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 1465, in <module>
+    algo.start()
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/gamelib/algocore.py", line 74, in start
+    self.on_turn(game_state_string)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 91, in on_turn
+    self.base_strategy(game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 128, in base_strategy
+    interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 644, in find_oppo_best_strategy_and_interceptor_response
+    our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/algo_strategy.py", line 1012, in find_our_best_response
+    roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 84, in roll_out_one_turn
+    self.simulate_one_turn(self.simulated_game_state)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 190, in simulate_one_turn
+    current_frame_num, not_done, buildings_destroyed = self.simulate_one_action_frame(game_state, current_frame_num, buildings_destroyed)
+  File "/Users/student/Desktop/TermialGame/C1GamesStarterKit/keith-ball-algo/simulator.py", line 336, in simulate_one_action_frame
+    units_at_loc = game_state.game_map[loc]
+KeyboardInterrupt
