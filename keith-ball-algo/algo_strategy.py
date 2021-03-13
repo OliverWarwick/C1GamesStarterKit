@@ -237,6 +237,14 @@ class AlgoStrategy(gamelib.AlgoCore):
                         offUnit = game_state.game_map[xCoord,yCoord][0]
                         totalAttackThreat += offUnit.damage_i
             #One more turret position to check here
+            xCoord = 13 + (13-2)*sideToggle + side
+            yCoord = 16
+            if(game_state.contains_stationary_unit([xCoord,yCoord])):
+                offUnit = game_state.game_map[xCoord,yCoord][0]
+                totalAttackThreat += offUnit.damage_i
+            
+            scout_deaths_per_frame = totalAttackThreat/scout_effective_hp
+            scout_deaths = 4
             
 
     def plan_thors_hammer(self, game_state, side):
