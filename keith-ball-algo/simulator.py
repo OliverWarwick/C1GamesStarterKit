@@ -159,17 +159,18 @@ class Simulator:
         # After adding the units, run across the game map and set the path for each of units.
         # The inital coords will be used for mapping in the future.
         for loc in self.valid_board_coords:
-            for unit in game_state.game_map[loc]:
-                if not unit.stationary:
-                    # Get the initial path.
+            if len(game_state.game_map[loc]) > 0:
+                # If first unit is stationary we can skips
+                if game_state.game_map[loc][0].stationary: 
+                    path = None
+                else: 
+                    # Calcuate the path for the first unit and assign this to all the units.
                     path = game_state.find_path_to_edge(loc)
                     if path == None:
                         path = [loc]
-                    # This is a mobile unit so set the path, initial_x, and initial_y
+                for unit in game_state.game_map[loc]:
                     unit.set_extra_conditions(path=path, x=loc[0], y=loc[1])
-                else:
-                    path = None
-                    unit.set_extra_conditions(path=path, x=loc[0], y=loc[1])
+
 
 
 
@@ -185,8 +186,10 @@ class Simulator:
         current_frame_num = 0
         if self.verbose: gamelib.debug_write("Simulating one play forward.")
         while(current_frame_num < 1000 and not_done):
+            start_time = time.time()
             current_frame_num, not_done, buildings_destroyed = self.simulate_one_action_frame(game_state, current_frame_num, buildings_destroyed)
             if self.verbose: self.print_map(game_state=game_state)
+            if self.timing_verbose: gamelib.debug_write("Time to simulate frame number: {} is {}".format(current_frame_num, time.time() - start_time))
 
         if self.verbose: gamelib.debug_write("Time elpased to simulator 1 turn: {}".format(time.time() - self.start_time))
 
@@ -330,8 +333,13 @@ class Simulator:
         # Then look at all of the attacks.
         # All units attack (STAGE 2).
         for loc in self.valid_board_coords:
+            units_at_loc = game_state.game_map[loc]
+            if len(units_at_loc) == 0:
+                continue
+            if units_at_loc[0].stationary and (units_at_loc[0].unit_type == WALL or units_at_loc[0].unit_type == SUPPORT):
+                continue
             # We have at least one unit here, so run through them, and find the target.
-            for unit in game_state.game_map[loc]:
+            for unit in units_at_loc:
                 # Find the target
                 if self.verbose: gamelib.debug_write("Unit currently attacking: {}".format(unit))
                 target_unit = game_state.get_target(unit)

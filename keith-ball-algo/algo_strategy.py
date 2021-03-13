@@ -972,14 +972,14 @@ class AlgoStrategy(gamelib.AlgoCore):
         oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
         our_mp = game_state.get_resource(resource_type=MP, player_index=1)
 
-        if oppo_mp <= 7 or our_mp == 1:
+        if oppo_mp <= 9 or our_mp == 1:
             # Then we can either place on the left, middle or right.
             # 1 interceptors
             return [[attacker(name=INTERCEPTOR, x=18, y=4, num=1)], 
                 [attacker(name=INTERCEPTOR, x=7, y=6, num=1)],
                 [attacker(name=INTERCEPTOR, x=13, y=0, num=1)], 
                 [attacker(name=INTERCEPTOR, x=14, y=0, num=1)]]
-        elif oppo_mp <= 15 or our_mp == 2:
+        elif oppo_mp <= 16 or our_mp == 2:
             # 2 interceptors
             return [[attacker(name=INTERCEPTOR, x=7, y=6, num=1), attacker(name=INTERCEPTOR, x=20, y=6, num=1)], 
             [attacker(name=INTERCEPTOR, x=7, y=6, num=2)], 
