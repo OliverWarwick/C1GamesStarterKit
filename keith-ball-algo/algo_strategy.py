@@ -239,7 +239,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             #One more turret position to check here
             
 
-      def plan_thors_hammer(self, game_state, side):
+    def plan_thors_hammer(self, game_state, side):
 
         if side == "RIGHT":
             
@@ -248,6 +248,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.round_one_removal_buildings_instructions = [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
             # Build the supports
             # Need wall, supports from the bottom up.
+
             self.round_two_build_instructions = [building(name=WALL, x=21, y=10), building(name=SUPPORT, x=11, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=16, y=4), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=22, y=10), building(name=SUPPORT, x=18, y=6), building(name=SUPPORT, x=17, y=5)]
             
             self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 2]]
@@ -262,8 +263,9 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             # Build the supports
             # Need wall, supports from the bottom up.
+
             self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5)]
-            
+
             self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5]]
 
             self.round_three_rebuild_instructions = [building(name=TURRET, x=1, y=12), building(name=TURRET, x=2, y=12), building(name=WALL, x=0, y=13), building(name=WALL, x=1, y=13)]
@@ -272,7 +274,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.blocking_wall_placement = "LEFT"
 
         else:
-            gamelib.debug("Issue with thors")
+            gamelib.debug_write("Issue with thors")
 
 
 
