@@ -279,8 +279,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                     test_target1 = True
                 if ele in rearPath:
                     test_target2 = True
-            if(not (test_target1 and test_target2)):
-                gamelib.debug_write("On side "+ str(sideNames[side])+ " we don't go through "+ str(test_spots))
+            if((not (test_target1 and test_target2)) or frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16):
                 continue
             sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
             lineMaxHP = 30
