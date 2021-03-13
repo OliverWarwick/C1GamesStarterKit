@@ -72,7 +72,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         # This tracks which wall we are currently blocking off
         self.blocking_wall_placement = "CENTER"
 
-        self.
+        self.round_one_removal_buildings_instructions = None
+        self.round_two_build_instructions = None
+        self.round_two_remove_instructions = None
+        self.round_three_rebuild_instructions = None
+        self.round_three_upgrades = None
 
         self.verbose = False
 
@@ -145,7 +149,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         # THUNDER STRIKE PREP
 
 
-
+    def should_play_thors_hammer_OW(self, game_state):
+        if game_state.turn_number < 15:
+            return None
+        else:
+            return ["RIGHT", [Attacker(name=SCOUNT, x=12, y=1, num=game_state.number_affordable(SCOUT), player_index=0)]]
 
 
 
@@ -155,11 +163,31 @@ class AlgoStrategy(gamelib.AlgoCore):
             
             # remove the front two walls and turrets
             # Should be a list of locations.
-            self.round_one_removal_buildings_instructions = [[25, 12], [26, 12], [26, 13], [27, 13]]
+            self.round_one_removal_buildings_instructions = [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+            # Build the supports
+            # Need wall, supports from the bottom up.
+            self.round_two_build_instructions = [Building(name=WALL, x=21, y=10]), Building(name=SUPPORT, x=11, y=2), Building(name=SUPPORT, x=12, y=3), Building(name=SUPPORT, x=13, y=3), Building(name=SUPPORT, x=14, y=3), Building(name=SUPPORT, x=15, y=3), Building(name=SUPPORT, x=13, y=2), Building(name=SUPPORT, x=16, y=4), Building(name=SUPPORT, x=14, y=2), Building(name=SUPPORT, x=22, y=10), Building(name=SUPPORT, x=18, y=6), Building(name=SUPPORT, x=17, y=5)]
+            
+            self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 2]]
 
-            self.round_three_rebuild_instructions = []
+            self.round_three_rebuild_instructions = [Building(name=TURRET, x=25, y=12), Building(name=TURRET, x=26, y=12), Building(name=WALL, x=26, y=13), Building(name=WALL, x=27, y=13)]
+            self.round_three_upgrades = [[26, 13], [27, 13]]
+
+            self.blocking_wall_placement = "RIGHT"
+
         elif side == "LEFT"
-            self.round_one_removal_buildings_instructions = [[1, 12], [2, 12], [0, 13], [1, 13]]
+            self.round_one_removal_buildings_instructions = [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+
+            # Build the supports
+            # Need wall, supports from the bottom up.
+            self.round_two_build_instructions = [Building(name=WALL, x=6, y=10]), Building(name=SUPPORT, x=16 y=2), Building(name=SUPPORT, x=12, y=3), Building(name=SUPPORT, x=13, y=3), Building(name=SUPPORT, x=14, y=3), Building(name=SUPPORT, x=15, y=3), Building(name=SUPPORT, x=13, y=2), Building(name=SUPPORT, x=14, y=2), Building(name=SUPPORT, x=5, y=10), Building(name=SUPPORT, x=9, y=6), Building(name=SUPPORT, x=10, y=5)]
+            
+            self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5]]
+
+            self.round_three_rebuild_instructions = [Building(name=TURRET, x=1, y=12), Building(name=TURRET, x=2, y=12), Building(name=WALL, x=0, y=13), Building(name=WALL, x=1, y=13)]
+            self.round_three_upgrades = [[0, 13], [1, 13]]
+
+            self.blocking_wall_placement = "LEFT"
 
         else:
             gamelib.debug("Issue with thors")
@@ -168,7 +196,17 @@ class AlgoStrategy(gamelib.AlgoCore):
     def remove_buildings(self, game_state, remove_list):
         ''' remove_list should be a load of locations '''
         for build in remove_list:
-            game_state.attempt_remove(build)
+            game_state.attempt_remove([build.x, build.y])
+
+    def build_buildings(self, game_state, build_list):
+        for build in build_list:
+            game_state.attempt_spawn(build.name, [build.x, build.y])
+    
+    def complete upgrades(self, game_state, upgrade_list):
+        for upgrade in upgrade_list:
+            if game_state.contains_stationary_unit([upgrade.x, upgrade.y]):
+                game_state.attempt_upgrade([upgrade.x, upgrade.y])
+
 
 
 
