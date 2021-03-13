@@ -237,7 +237,40 @@ class AlgoStrategy(gamelib.AlgoCore):
     #         sim = Simulator(left_game_state)
 
 
-
+    def verify_thor_path(self, game_state, side_name): #Boolean function, returns True if the path is a valid Thor Path, False otherwise
+        gamelib.debug_write(side_name)
+        side = 0
+        if side_name == "RIGHT":
+            side = 1
+        elif side_name == "LEFT":
+            side = 0
+        testIndex = side
+        leftValidSpots = [[1,13],[2,12],[3,12],[4,12]]
+        rightValidSpots = [[26,13],[26,12],[25,12],[24,12]]
+        leftBadSpots = [[4,13]]
+        rightBadSpots = [[23,13]]
+        targetSide = [leftValidSpots, rightValidSpots]
+        targetDangers = [leftBadSpots,rightBadSpots]
+        frontScoutStart = [[14,0],[13,0]]
+        rearScoutStart = [[16,2],[11,2]]
+        frontPath = game_state.find_path_to_edge(frontScoutStart[testIndex])
+        rearPath = game_state.find_path_to_edge(rearScoutStart[testIndex])
+        test_spots = targetSide[side]
+        test_badspots = targetDangers[side]
+        test_target1 = False
+        test_target2 = False
+        for ele in test_spots:
+                if ele in frontPath:
+                    test_target1 = True
+                if ele in rearPath:
+                    test_target2 = True
+        for ele in test_badspots:
+            if ele in frontPath:
+                test_target1=False
+            if ele in rearPath:
+                test_target2=False
+        distCondition = (frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16)
+        return (not ((not (test_target1 and test_target2)) or distCondition)) #Either path goes through a bad spot or too far
 
 
     def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
@@ -247,14 +280,17 @@ class AlgoStrategy(gamelib.AlgoCore):
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
         our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)
         our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
-        expected_supp_count = min(10, 4+int(our_expected_sp/3))
+        expected_supp_count = min(10, 3+int(our_expected_sp/3))
         expected_shield_value = 3*expected_supp_count
         validSides = [False, False]
         scout_effective_hp = 15+expected_shield_value
         desired_points = 5
         leftValidSpots = [[1,13],[2,12],[3,12],[4,12]]
         rightValidSpots = [[26,13],[26,12],[25,12],[24,12]]
+        leftBadSpots = [[4,13]]
+        rightBadSpots = [[23,13]]
         targetSide = [leftValidSpots, rightValidSpots]
+        targetDangers = [leftBadSpots,rightBadSpots]
         frontScoutStart = [[14,0],[13,0]]
         rearScoutStart = [[16,2],[11,2]]
         sideNames = ["LEFT", "RIGHT"]
@@ -263,37 +299,45 @@ class AlgoStrategy(gamelib.AlgoCore):
         for side in range(2):
             gamelib.debug_write("Checking side " + str(sideNames[side]))
             test_state = gamepair[side]
-            self.print_map(test_state)
             test_start1 = frontScoutStart[side]
             test_start2 = rearScoutStart[side]
             test_spots = targetSide[side]
+            test_badspots = targetDangers[side]
             frontPath = test_state.find_path_to_edge(test_start1)
             rearPath = test_state.find_path_to_edge(test_start2)
-            gamelib.debug_write(frontPath)
-            gamelib.debug_write(rearPath)
+            if self.verbose: gamelib.debug_write(frontPath)
+            if self.verbose: gamelib.debug_write(rearPath)
             test_target1 = False
             test_target2 = False
             for ele in test_spots:
-                gamelib.debug_write(ele)
+                if self.verbose: gamelib.debug_write(ele)
                 if ele in frontPath:
                     test_target1 = True
                 if ele in rearPath:
                     test_target2 = True
-            if((not (test_target1 and test_target2)) or frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16):
+            for ele in test_badspots:
+                if ele in frontPath:
+                    test_target1=False
+                if ele in rearPath:
+                    test_target2 = False
+            if(not self.verify_thor_path(test_state,sideNames[side]))#(not (test_target1 and test_target2)) or frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16):
                 continue
+            gamelib.debug_write("True on original")
+            if self.verbose: gamelib.debug_write(self.verify_thor_path(test_state,sideNames[side]))
             sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
-            lineMaxHP = 30
+            lineMaxHP = 60
             totalAttackThreat = 0
             #Work out opponent HP for the suicide squad
             for row in range(2):
                 xCoord = 13 + (13-row)*sideToggle + side
                 yCoord = 14
+                if self.verbose: gamelib.debug_write(str([xCoord,yCoord]))
                 if(game_state.contains_stationary_unit([xCoord,yCoord])):
                     defUnit = game_state.game_map[xCoord,yCoord][0]
-                    defCurrHP = defUnit.health
-                    defMaxHP = defUnit.max_health
+                    defCurrHP = float(defUnit.health)
+                    defMaxHP = float(defUnit.max_health)
                     totalAttackThreat += defUnit.damage_i
-                    testHealth = defCurrHP if defCurrHP/defMaxHP > 0.5 else defMaxHP
+                    testHealth = defCurrHP if defCurrHP/defMaxHP > 0.7 else defMaxHP
                     lineMaxHP = max(lineMaxHP, testHealth)
             
             gamelib.debug_write("HP to break through " + str(lineMaxHP))
@@ -311,14 +355,17 @@ class AlgoStrategy(gamelib.AlgoCore):
             if(game_state.contains_stationary_unit([xCoord,yCoord])):
                 offUnit = game_state.game_map[xCoord,yCoord][0]
                 totalAttackThreat += offUnit.damage_i
-            
-            scout_deaths_per_frame = totalAttackThreat/scout_effective_hp
-            scout_deaths = 4*scout_deaths_per_frame
+            gamelib.debug_write("Offensive threat is " + str(totalAttackThreat))
+            scout_deaths_per_frame = float(totalAttackThreat)/float(scout_effective_hp)
+            scout_deaths = 4.2*scout_deaths_per_frame
             gamelib.debug_write("Expect to lose around " + str(scout_deaths) + " per platoon")
-            epsilon = 0
+            epsilon = 1
             epsilon_1 = 0
             #(num_front-scout_deaths)*15 + 2(num_front-scout_deaths)>= max_hp - epsilon
-            num_front = math.ceil((lineMaxHP-epsilon+17*scout_deaths)/17)
+            num_front = math.ceil((lineMaxHP+17*scout_deaths)/17 + epsilon)
+            gamelib.debug_write(scout_deaths)
+            gamelib.debug_write(lineMaxHP)
+            gamelib.debug_write(num_front)
             num_back=0
             if(int(num_front)+scout_deaths-epsilon_1 + desired_points > our_mp):
                 gamelib.debug_write("Attacking on side " + sideNames[side] + " is too expensive")
@@ -336,15 +383,22 @@ class AlgoStrategy(gamelib.AlgoCore):
                 attackProfile[side][1] = attackset
         
         gamelib.debug_write(attackProfile)
-        gamelib.debug_write(validSides)
+        if self.verbose: gamelib.debug_write(validSides)
         if (True not in validSides):
             return None
         else:
-            if(attackProfile[0][0]<attackProfile[1][0]):
-                return ["LEFT", attackProfile[0][1]]
+            if (False in validSides):
+                if(attackProfile[0][0]<attackProfile[1][0]):
+                    return ["LEFT", attackProfile[0][1]]
+                else:
+                    return ["RIGHT",attackProfile[1][1]]
+            elif (abs(attackProfile[0][0]-attackProfile[1][0])<3):
+                attackGuess = random.randint(0,1)
+                return [sideNames[attackGuess],attackProfile[attackGuess][1]]
+            elif(attackProfile[0][0]<attackProfile[1][0]):
+                    return ["LEFT", attackProfile[0][1]]
             else:
-                return ["RIGHT",attackProfile[1][1]]
-                
+                return ["RIGHT",attackProfile[1][1]] 
             
 
     def plan_thors_hammer(self, game_state, side):
@@ -876,6 +930,18 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             if self.verbose: gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
 
+    def probability_of_demoplay(self, game_state):
+        my_mp = int(game_state.get_resource(resource_type=MP, player_index=0))
+        if my_mp== 1:
+            return 1.0/7.0
+        elif my_mp == 2:
+            return 1.0/4.0
+        elif my_mp == 3:
+            return 1.0/2.5
+        elif my_mp == 4:
+            return 1.0/6.0
+        else:
+            return 1.0/(1.0*my_mp+4.0)
 
 
     def place_attackers(self, game_state, attacker_list):
