@@ -226,8 +226,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         else:
             return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=int(game_state.get_resource(MP, player_index=0)))]]
 
-    def estimate_thors_hammer(self, left_game_state, right_game_state): #Return attack profile and side to Thor on.
-        game_state = left_game_state
+    def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
+        gamepair = prep_game_state_for_thor_check(game_state)
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
         our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)
         our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
@@ -241,9 +241,20 @@ class AlgoStrategy(gamelib.AlgoCore):
         rightValid = False
         desired_points = 5
         targetSide = [[1,13],[26,13]]
-        
+        frontScoutStart = [[14,0],[13,0]]
+        rearScoutStart = [[16,2],[11,2]]
+
+        attackProfile [[1000,[]],[1000,[]]]
         for side in range(2):
-            
+            test_state = gamepair[side]
+            test_start1 = frontScoutStart[side]
+            test_start2 = rearScoutStart[side]
+            test_target = targetSide[side]
+            frontPath = test_state.find_path_to_edge(test_start1)
+            rearPath = test_state.find_path_to_edge(test_start2)
+            if(not ((test_target in frontPath) or (test_target in rearPath))):
+                gamelib.debug_write("On side "+ str(side)+ " we don't go through "+ str(test_target))
+                continue
             sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
             lineMaxHP = 30
             totalAttackThreat = 0
@@ -284,6 +295,12 @@ class AlgoStrategy(gamelib.AlgoCore):
                 validSides[side] = False
             else:
                 num_back = int(our_mp-num_front)
+            attack_cost = int(num_front + num_back)
+            attackset = []
+            attackset.append(attacker(name=SCOUT,x=test_start1[0],y=test_start1[1],num=num_front))
+            attackset.append(attackset(name=SCOUT, x= test_start2[0],y=test_start2[1],num=num_back))
+            attackProfile[side][0] = attack_cost
+            attackProfile[side][1] = attackset
             
             
 
