@@ -226,7 +226,19 @@ class AlgoStrategy(gamelib.AlgoCore):
         if game_state.turn_number < 15 or game_state.get_resource(MP, player_index=0) < 10:
             return None
         else:
-            return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=int(game_state.get_resource(MP, player_index=0)))]]
+            return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=5), attacker(name=SCOUT, x=12, y=1, num=int(game_state.get_resource(MP, player_index=0)))]]
+
+
+    # def should_play_thors_hammer_OW_extended(self, left_game_state, right_game_state):
+    #     if left_game_state.turn_number < 15 or left_game_state.get_resource(MP, player_index=0) < 10:
+    #         return None
+    #     else:
+    #         # Run out a sim for the left and right to see whether either work.
+    #         sim = Simulator(left_game_state)
+
+
+
+
 
     def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
         gamepair = self.prep_game_state_for_thor_check(game_state)
@@ -748,7 +760,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
         # Upgrade the walls and turrets near the front
-        walls_to_upgrade = [[3, 13], [24, 13], [7, 9], [20, 9], [23, 12]]
+        walls_to_upgrade = [[3, 13], [24, 13], [7, 9], [20, 9], [23, 12], [4, 12], [5, 11], [22, 11]]
         for wall in walls_to_upgrade:
             self.p_queue.put((-0.15, building(name='upgrade', x=wall[0], y=wall[1])))
         
