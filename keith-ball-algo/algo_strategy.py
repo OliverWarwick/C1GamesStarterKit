@@ -11,6 +11,7 @@ from simulator import Simulator
 from queue import PriorityQueue
 import time
 
+
 """
 Most of the algo code you write will be in this file unless you create new
 modules yourself. Start by modifying the 'on_turn' function.
@@ -89,7 +90,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         start_time = time.time()
 
         self.base_strategy(game_state)
-        self.print_map(game_state)
+        # self.print_map(game_state)
 
         gamelib.debug_write("Overall time taken for this turn: {}".format(time.time() - start_time))
 
@@ -140,6 +141,9 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
         # THUNDER STRIKE PREP
+
+
+
 
 
 
@@ -311,6 +315,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Start the timer.
         start_time = time.time()
+        prev_run_time = 0
 
         # Get the attack set list.
         sim = Simulator(game_state, self.config)
@@ -318,12 +323,20 @@ class AlgoStrategy(gamelib.AlgoCore):
         current_best_score = -1000
         index_best_score = None
 
+        # OW - Could just swap this to time_elapsed < 0.5.
+
         # Loop through the list and update.
         for i in range(len(attack_set_list)):
-            if self.verbose: gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
-            if time.time() - start_time > 0.75:
-                # Too much time taken.
-                break
+            if i >= 1:
+                # Previous run time.
+                prev_run_time = time.time() - start_of_loop_time
+                if time.time() - start_time + prev_run_time < 0.75:
+                    continue
+                else:
+                    break
+
+            start_of_loop_time = time.time()
+
             roll_out_score = sim.roll_out_one_turn(attack_set_list[i], [], [], [])
             gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_set_list[i], roll_out_score))
 
@@ -338,7 +351,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 gamelib.debug_write("Good enough to use as an attack. Score: {}".format(roll_out_score))
                 if roll_out_score > current_best_score:
                     index_best_score = i
-                    current_best_score = roll_out_score
+                    current_best_score = roll_out_score 
             
             sim.reset()
 
@@ -501,9 +514,10 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
         # Upgrade the walls and turrets near the front
-        walls_to_upgrade = [[3, 13], [24, 13], [7, 9], [20, 9]]
+        walls_to_upgrade = [[3, 13], [24, 13], [7, 9], [20, 9], [23, 12]]
         for wall in walls_to_upgrade:
             self.p_queue.put((-0.15, building(name='upgrade', x=wall[0], y=wall[1])))
+        
 
         
 
@@ -568,6 +582,11 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Add this to the dictionary of defences to prioities.
             self.defence_priority_map[defence] = defence_value
 
+            if defence_value >= -0.25:
+                self.throw_interceptors = False
+            if defence_value <= -0.5:
+                self.throw_interceptors = True
+
             # Need to careful here whether we decide to upgrade or build a new defence.
             if(defence.name == 'upgrade'):
                 # First check there is something there to upgrade.
@@ -619,7 +638,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.update_game_state_while_p_queue_unloading(game_state)
         gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
 
-        start_time = time.time()        
 
         # Get possible attacks for oppo
         oppo_attack_set = self.prepare_attack_sets_for_oppo_during_first_stage(game_state)
@@ -955,16 +973,23 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Loop through the list and update.
         for i in range(len(attack_sets)):
             gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
-            if time.time() - start_time > 0.75:
-                # Too much time taken.
-                break
-            roll_out_score = sim.roll_out_one_turn([], attack_sets[i], [], [])
-            gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_sets[i], roll_out_score))
+            if i >= 1:
+                # Previous run time.
+                prev_run_time = time.time() - start_of_loop_time
+                if time.time() - start_time + prev_run_time < 0.75:
+                    continue
+                else:
+                    break
 
+            start_of_loop_time = time.time()
+
+            roll_out_score = sim.roll_out_one_turn([], attack_sets[i], [], [])
             # Update if needed
             if roll_out_score < current_worst_score:
                 current_worst_score = roll_out_score
                 index_worst_score = i
+
+            gamelib.debug_write("Simulation iteration: {}. Attacker List: {}. Score: {}".format(i, attack_sets[i], roll_out_score))
 
             sim.reset()
         
@@ -984,7 +1009,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 [attacker(name=INTERCEPTOR, x=7, y=6, num=1)], 
                 [attacker(name=INTERCEPTOR, x=14, y=0, num=1)]]
         elif oppo_mp <= 16 or our_mp == 2:
-            # 2 interceptors
+            # 2 interceptors d
             return [[attacker(name=INTERCEPTOR, x=7, y=6, num=1), attacker(name=INTERCEPTOR, x=20, y=6, num=1)], 
             [attacker(name=INTERCEPTOR, x=14, y=0, num=2)],
             [attacker(name=INTERCEPTOR, x=13, y=0, num=2)]]
@@ -1007,16 +1032,24 @@ class AlgoStrategy(gamelib.AlgoCore):
         # Loop through the list and update.
         for i in range(len(our_responses)):
             gamelib.debug_write('Time elapsed: {}'.format(time.time() - start_time))
-            if time.time() - start_time > 0.75:
-                # Too much time taken.
-                break
-            roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
-            gamelib.debug_write("Simulation iteration: {}. Interceptor List: {}. Score: {}".format(i, our_responses[i], roll_out_score))
 
+            if i >= 1:
+                # Previous run time.
+                prev_run_time = time.time() - start_of_loop_time
+                if time.time() - start_time + prev_run_time < 0.75:
+                    continue
+                else:
+                    break
+
+            start_of_loop_time = time.time()
+            
+            roll_out_score = sim.roll_out_one_turn(our_responses[i], best_oppo_attack, [], [])
             # Update if needed
             if roll_out_score > current_best_score:
                 current_best_score = roll_out_score
-                index_best_score = i
+                index_best_score = i 
+        
+            gamelib.debug_write("Simulation iteration: {}. Interceptor List: {}. Score: {}".format(i, our_responses[i], roll_out_score))
 
             sim.reset()
 
