@@ -240,8 +240,8 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
 
-    def estimate_thors_hammer(self, left_game_state, right_game_state): #Return attack profile and side to Thor on.
-        game_state = left_game_state
+    def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
+        gamepair = self.prep_game_state_for_thor_check(game_state)
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
         our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)
         our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
@@ -249,15 +249,24 @@ class AlgoStrategy(gamelib.AlgoCore):
         expected_shield_value = 3*expected_supp_count
         validSides = [False, False]
         scout_effective_hp = 15+expected_shield_value
-        leftCost = 1000
-        rightCost = 1000
-        leftValid = False
-        rightValid = False
         desired_points = 5
         targetSide = [[1,13],[26,13]]
-        
+        frontScoutStart = [[14,0],[13,0]]
+        rearScoutStart = [[16,2],[11,2]]
+        sideNames = ["LEFT", "RIGHT"]
+        attackProfile = [[1000,[]],[1000,[]]]
+
         for side in range(2):
-            
+            gamelib.debug_write("Checking side " + str(sideNames[side]))
+            test_state = gamepair[side]
+            test_start1 = frontScoutStart[side]
+            test_start2 = rearScoutStart[side]
+            test_target = targetSide[side]
+            frontPath = test_state.find_path_to_edge(test_start1)
+            rearPath = test_state.find_path_to_edge(test_start2)
+            if(not ((test_target in frontPath) or (test_target in rearPath))):
+                gamelib.debug_write("On side "+ str(sideNames[side])+ " we don't go through "+ str(test_target))
+                continue
             sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
             lineMaxHP = 30
             totalAttackThreat = 0
@@ -272,6 +281,8 @@ class AlgoStrategy(gamelib.AlgoCore):
                     totalAttackThreat += defUnit.damage_i
                     testHealth = defCurrHP if defCurrHP/defMaxHP > 0.5 else defMaxHP
                     lineMaxHP = max(lineMaxHP, testHealth)
+            
+            gamelib.debug_write("HP to break through " + str(lineMaxHP))
             #Work out rough opponent offensive strength
             for row in range(2):
                 for turret in range(3):
@@ -289,16 +300,36 @@ class AlgoStrategy(gamelib.AlgoCore):
             
             scout_deaths_per_frame = totalAttackThreat/scout_effective_hp
             scout_deaths = 4*scout_deaths_per_frame
+            gamelib.debug_write("Expect to lose around " + str(scout_deaths) + " per platoon")
             epsilon = 0
-            
+            epsilon_1 = 0
             #(num_front-scout_deaths)*15 + 2(num_front-scout_deaths)>= max_hp - epsilon
             num_front = math.ceil((lineMaxHP-epsilon+17*scout_deaths)/17)
             num_back=0
-            if(int(num_front)+scout_deaths + desired_points > our_mp):
+            if(int(num_front)+scout_deaths-epsilon_1 + desired_points > our_mp):
+                gamelib.debug_write("Attacking on side " + sideNames[side] + " is too expensive")
                 validSides[side] = False
+
             else:
+                gamelib.debug_write("Attacking on side " + sideNames[side] + " is viable")
                 num_back = int(our_mp-num_front)
-            
+                attack_cost = int(num_front + num_back)
+                attackset = []
+                attackset.append(attacker(name=SCOUT,x=test_start1[0],y=test_start1[1],num=num_front))
+                attackset.append(attacker(name=SCOUT, x= test_start2[0],y=test_start2[1],num=num_back))
+                attackProfile[side][0] = attack_cost
+                attackProfile[side][1] = attackset
+        
+        gamelib.debug_write(attackProfile)
+        gamelib.debug_write(validSides)
+        if (True not in validSides):
+            return None
+        else:
+            if(attackProfile[0][0]<attackProfile[1][0]):
+                return ["LEFT", attackProfile[0][1]]
+            else:
+                return ["RIGHT",attackProfile[1][1]]
+                
             
 
     def plan_thors_hammer(self, game_state, side):
