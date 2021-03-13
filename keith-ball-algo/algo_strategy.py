@@ -976,21 +976,17 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Then we can either place on the left, middle or right.
             # 1 interceptors
             return [[attacker(name=INTERCEPTOR, x=18, y=4, num=1)], 
-                [attacker(name=INTERCEPTOR, x=7, y=6, num=1)],
-                [attacker(name=INTERCEPTOR, x=13, y=0, num=1)], 
+                [attacker(name=INTERCEPTOR, x=7, y=6, num=1)], 
                 [attacker(name=INTERCEPTOR, x=14, y=0, num=1)]]
         elif oppo_mp <= 16 or our_mp == 2:
             # 2 interceptors
             return [[attacker(name=INTERCEPTOR, x=7, y=6, num=1), attacker(name=INTERCEPTOR, x=20, y=6, num=1)], 
-            [attacker(name=INTERCEPTOR, x=7, y=6, num=2)], 
-            [attacker(name=INTERCEPTOR, x=20, y=6, num=2)],
+            [attacker(name=INTERCEPTOR, x=14, y=0, num=2)],
             [attacker(name=INTERCEPTOR, x=13, y=0, num=2)]]
         else:
             # 3 interceptors
-            return [[attacker(name=INTERCEPTOR, x=7, y=6, num=1), attacker(name=INTERCEPTOR, x=20, y=6, num=2)], 
-            [attacker(name=INTERCEPTOR, x=7, y=6, num=2), attacker(name=INTERCEPTOR, x=20, y=6, num=1)], 
-            [attacker(name=INTERCEPTOR, x=20, y=6, num=3)],
-            [attacker(name=INTERCEPTOR, x=7, y=6, num=3)]]
+            return [[attacker(name=INTERCEPTOR, x=13, y=0, num=3)],
+            [attacker(name=INTERCEPTOR, x=14, y=0, num=3)]]
     
 
     def find_our_best_response(self, game_state, best_oppo_attack, our_responses):

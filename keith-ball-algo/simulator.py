@@ -37,7 +37,7 @@ class Simulator:
         self.wall_weighting = 0.1
 
         self.verbose = False
-        self.timing_verbose = True
+        self.timing_verbose = False
 
        
 
