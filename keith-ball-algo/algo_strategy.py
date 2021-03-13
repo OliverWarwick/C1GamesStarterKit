@@ -203,12 +203,43 @@ class AlgoStrategy(gamelib.AlgoCore):
         if game_state.turn_number < 15:
             return None
         else:
-            if game_state.get_resource(MP, 0) >= 10:
-                return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=game_state.number_affordable(SCOUT), player_index=0)]]
+            return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=game_state.number_affordable(SCOUT), player_index=0)]]
 
+    def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
+        enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
+        our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)
+        our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
+        expected_supp_count = min(10, 7+int(our_expected_sp/3))
+        expected_shield_value = 3*expected_supp_count
 
+        scout_effective_hp = 15+expected_shield_value
+        for side in range(2):
+            sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
+            lineMaxHP = 30
+            totalAttackThreat = 0
+            #Work out opponent HP for the suicide squad
+            for row in range(2):
+                xCoord = 13 + (13-row)*sideToggle + side
+                yCoord = 14
+                if(game_state.contains_stationary_unit([xCoord,yCoord])):
+                    defUnit = game_state.game_map[xCoord,yCoord][0]
+                    defCurrHP = defUnit.health
+                    defMaxHP = defUnit.max_health
+                    totalAttackThreat += defUnit.damage_i
+                    testHealth = defCurrHP if defCurrHP/defMaxHP > 0.5 else defMaxHP
+                    lineMaxHP = max(lineMaxHP, testHealth)
+            #Work out rough opponent offensive strength
+            for row in range(2):
+                for turret in range(3):
+                    xCoord = 13 + (13 - 2 - turret)*sideToggle + side
+                    yCoord = 14 + row
+                    if(game_state.contains_stationary_unit([xCoord,yCoord])):
+                        offUnit = game_state.game_map[xCoord,yCoord][0]
+                        totalAttackThreat += offUnit.damage_i
+            #One more turret position to check here
+            
 
-    def plan_thors_hammer(self, game_state, side):
+      def plan_thors_hammer(self, game_state, side):
 
         if side == "RIGHT":
             
@@ -242,6 +273,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         else:
             gamelib.debug("Issue with thors")
+
 
 
     def remove_buildings(self, game_state, remove_list):
