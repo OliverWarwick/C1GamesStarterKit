@@ -298,7 +298,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             attack_cost = int(num_front + num_back)
             attackset = []
             attackset.append(attacker(name=SCOUT,x=test_start1[0],y=test_start1[1],num=num_front))
-            attackset.append(attackset(name=SCOUT, x= test_start2[0],y=test_start2[1],num=num_back))
+            attackset.append(attacker(name=SCOUT, x= test_start2[0],y=test_start2[1],num=num_back))
             attackProfile[side][0] = attack_cost
             attackProfile[side][1] = attackset
             
