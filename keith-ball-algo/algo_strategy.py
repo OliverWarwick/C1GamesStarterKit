@@ -199,6 +199,8 @@ class AlgoStrategy(gamelib.AlgoCore):
         # THUNDER STRIKE PREP
 
 
+    # Extra Comment
+
     def should_play_thors_hammer_OW(self, game_state):
         if game_state.turn_number < 15:
             return None
@@ -239,7 +241,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             #One more turret position to check here
             
 
-      def plan_thors_hammer(self, game_state, side):
+    def plan_thors_hammer(self, game_state, side):
 
         if side == "RIGHT":
             
@@ -272,7 +274,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.blocking_wall_placement = "LEFT"
 
         else:
-            gamelib.debug("Issue with thors")
+            gamelib.debug_write("Issue with thors")
 
 
 
