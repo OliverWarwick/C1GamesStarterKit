@@ -1064,7 +1064,7 @@ class AlgoStrategy(gamelib.AlgoCore):
     def prepare_our_interceptors_to_respond(self, game_state):
 
         oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
-        our_mp = game_state.get_resource(resource_type=MP, player_index=1)
+        our_mp = game_state.get_resource(resource_type=MP, player_index=0)
 
         if oppo_mp <= 9 or our_mp == 1:
             # Then we can either place on the left, middle or right.
