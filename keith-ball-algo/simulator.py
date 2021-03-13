@@ -37,7 +37,7 @@ class Simulator:
         self.wall_weighting = 0.1
 
         self.verbose = False
-        self.timing_verbose = False
+        self.timing_verbose = True
 
        
 
@@ -60,21 +60,30 @@ class Simulator:
 
         # Create a copy of the game state.
         if self.verbose: gamelib.debug_write("Beginning roll out")
+        if self.timing_verbose: gamelib.debug_write("Starting sim")
 
         if self.verbose: gamelib.debug_write("Before start of sim")
         if self.verbose: self.print_map(self.simulated_game_state)
-        self.start_time = time.time()
+        start_time = time.time()
         
         # Add the units.
         self.add_proposed_units_to_map(self.simulated_game_state, our_attacker_list, oppo_attacker_list, our_building_list, oppo_building_list)
         if self.verbose: gamelib.debug_write("Units on the map")
         if self.verbose: self.print_map(self.simulated_game_state)
+        if self.timing_verbose: gamelib.debug_write("Time to add units to map: {}".format(time.time() - start_time))
+        start_time = time.time()
 
         # Set up inital coords and movement paths.
         self.set_movement_paths(self.simulated_game_state)
+        if self.timing_verbose: gamelib.debug_write("Time to set movement paths: {}".format(time.time() - start_time))
+        start_time = time.time()
+
+
 
         # Simulate turn
         self.simulate_one_turn(self.simulated_game_state)
+        if self.timing_verbose: gamelib.debug_write("Time to roll out: {}".format(time.time() - start_time))
+        start_time = time.time() 
 
         if self.verbose: gamelib.debug_write("Finished roll out")
         if self.verbose: self.print_map(self.simulated_game_state)
@@ -85,9 +94,14 @@ class Simulator:
         # Here we return important data.
         self.simulated_game_state.get_game_state_metrics()
         if self.verbose: gamelib.debug_write("My Health: {}  Enemy Health: {} ".format(self.simulated_game_state.my_health, self.simulated_game_state.enemy_health))
+        if self.timing_verbose: gamelib.debug_write("Time to get update fields: {}".format(time.time() - start_time))
+        start_time = time.time()
 
         final_score = self.eval_updated_game_state(self.simulated_game_state.game_state_info)
         if self.verbose: gamelib.debug_write("Final Score: {}".format(final_score))
+        if self.timing_verbose: gamelib.debug_write("Time to get eval metrics: {}".format(time.time() - start_time))
+
+
         return final_score
 
 
@@ -192,11 +206,16 @@ class Simulator:
 
         if self.verbose: gamelib.debug_write("Frame Number: {}".format(frame_num))
         if self.verbose: gamelib.debug_write("Building Destoryed: {}".format(buildings_destroyed))
+        start_time = time.time()
+
 
         for loc in self.valid_board_coords:
                 for unit in game_state.game_map[loc]:
                     if not unit.stationary: 
                         unit.has_been_shielded = False
+        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to reset shielding: {}".format(time.time() - start_time))
+        start_time = time.time()
+
         
         # Add any health bonuses which I think should be done before. (STAGE 0.)
         for loc in self.valid_board_coords:
@@ -209,6 +228,9 @@ class Simulator:
                             unit.health += game_state.game_map[loc][0].shieldPerUnit
                             unit.has_been_shielded = True
                             if self.verbose: gamelib.debug_write("Adding health to unit at location ({}, {})".format(sup_loc[0], sup_loc[1]))
+        
+        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to add shielding to units: {}".format(time.time() - start_time))
+        start_time = time.time()
 
         if self.verbose: gamelib.debug_write("End of adding health bonuses")
     
@@ -285,6 +307,10 @@ class Simulator:
                         # None moving piece this turn so just copy over.
                         updated_game_map.add_existing_unit(unit, location=loc)
 
+        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to do movements: {}".format(time.time() - start_time))
+        start_time = time.time()
+
+
         # We now have an updated game_map, so we can use this to perform the attacks.
         # Set the new game_map to our game_state.                
         game_state.game_map = updated_game_map
@@ -296,6 +322,9 @@ class Simulator:
                 buildings_destroyed = self.self_destruct_logic(game_state, unit, buildings_destroyed)
                 # Remove this unit from the game_map.
                 game_state.game_map.remove_one_unit(loc, unit)
+
+        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to do self destruct: {}".format(time.time() - start_time))
+        start_time = time.time()
 
         
         # Then look at all of the attacks.
@@ -325,7 +354,8 @@ class Simulator:
                         if self.verbose: gamelib.debug_write("Removing unit at location ({}, {})".format(loc[0], loc[1]))
                         if target_unit.stationary:
                             buildings_destroyed = True      # This is to trigger a repathing.
-
+        
+        if self.timing_verbose and frame_num == 5: gamelib.debug_write("Time to preform attacks: {}".format(time.time() - start_time))
 
         if self.verbose: gamelib.debug_write("Finished rolling forward one step.")
         if self.verbose: gamelib.debug_write("Passing back values. Movement: {}, BuildingDest: {}".format(movement, buildings_destroyed))
