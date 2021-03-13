@@ -685,7 +685,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             #Case 2: Split Scout (Enemy Thor) TODO later
 
             #Case 3: Full Demo Rush
-            demoPos = self.get_scout_attack_position(game_state)
+            demoPos = self.get_enemy_demo_attack_position(game_state)
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
@@ -715,7 +715,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             #Case 2 Split Scout (Enemy Thor)
             
             #Case 3 All Demo attack NOTE will assume same position as scout attack case for now but might change
-            demoPos = self.get_scout_attack_position(game_state)
+            demoPos = self.get_enemy_demo_attack_position(game_state)
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
@@ -738,7 +738,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 attack_set_list.append([attacker(name=SCOUT, x=scoutPos[0],y=scoutPos[1],num=oppo_mp)])
 
             #Case 3: Big Demo Rush
-            demoPos = self.get_scout_attack_position(game_state)
+            demoPos = self.get_enemy_demo_attack_position(game_state)
             if demoPos is not None:
                 attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(math.floor(oppo_mp/3)))])  
 
@@ -828,26 +828,26 @@ class AlgoStrategy(gamelib.AlgoCore):
         return random.choice(validPositions) #Coin flip the attack side for now
 
     def get_enemy_demo_attack_position(self, game_state): #Try to place an enemy scout rush as close to the top as possible
-            initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
+        initPositions = [[13,27],[14,27]] #Best possible starts on the left and right
             
-            validPositions = []
+        validPositions = []
             
-            #Start from the very back and basically BFS down
-            for y in range(14):
-                if len(validPositions) > 0:
-                    break
-                for i in range(2):
-                    signToggle = pow(-1, i)
-                    testPos = [initPositions[i][0]-y*signToggle, initPositions[i][1]-y]
-                    if (game_state.contains_stationary_unit(testPos) is False): #Check if position is occupied if not, then we pick here
-                        unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
-                        if(unitPath[-1][1] <= 17): #Check the attack actually ends on our side or on the max range of a Demo
-                            validPositions.append(testPos)
+        #Start from the very back and basically BFS down
+        for y in range(14):
+            if len(validPositions) > 0:
+                break
+            for i in range(2):
+                signToggle = pow(-1, i)
+                testPos = [initPositions[i][0]-y*signToggle, initPositions[i][1]-y]
+                if (game_state.contains_stationary_unit(testPos) is False): #Check if position is occupied if not, then we pick here
+                    unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
+                    if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on the max range of a Demo
+                        validPositions.append(testPos)
 
-            if len(validPositions) == 0:
-                return None
-            #After this point, first element of finalPositions is the "best" left attack, and the other is the "best" right attack
-            return random.choice(validPositions) #Coin flip the attack side for now
+        if len(validPositions) == 0:
+            return None
+        #After this point, first element of finalPositions is the "best" left attack, and the other is the "best" right attack
+        return random.choice(validPositions) #Coin flip the attack side for now
 
 
     #NOTE QUESTION, does the find path to edge take into account walls that will be destroyed in the coming turn? If not this becomes a bit messy?
