@@ -146,7 +146,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             else: 
                 return
         else:
-            l_game_state, r_game_state = self.prep_game_state_for_thor_check(self, game_state)
+            l_game_state, r_game_state = self.prep_game_state_for_thor_check(game_state)
             should_thors = self.should_play_thors_hammer_OW(game_state)
             gamelib.debug_write("Should Thor: {}".format(should_thors))
 
