@@ -203,17 +203,19 @@ class AlgoStrategy(gamelib.AlgoCore):
 
     def prep_game_state_for_thor_check(self, game_state):
         left_game_state = copy.deepcopy(game_state)
-        left_game_state.remove_unit([26, 13])
-        left_game_state.remove_unit([27, 13])
-        left_game_state.remove_unit([25, 12])
-        left_game_state.remove_unit([26, 12])
-        left_game_state.add_unit(unit_type=WALL, location=[22, 10])
+        left_game_state.game_map.remove_unit([26, 13])
+        left_game_state.game_map.remove_unit([27, 13])
+        left_game_state.game_map.remove_unit([25, 12])
+        left_game_state.game_map.remove_unit([26, 12])
+        left_game_state.game_map.add_unit(unit_type=SUPPORT, location=[11, 3])
+        left_game_state.game_map.add_unit(unit_type=WALL, location=[22, 10])
         right_game_state = copy.deepcopy(game_state)
-        left_game_state.remove_unit([0, 13])
-        left_game_state.remove_unit([1, 13])
-        left_game_state.remove_unit([1, 12])
-        left_game_state.remove_unit([2, 12])
-        left_game_state.add_unit(unit_type=WALL, location=[6, 10])
+        right_game_state.game_map.remove_unit([0, 13])
+        right_game_state.game_map.remove_unit([1, 13])
+        right_game_state.game_map.remove_unit([1, 12])
+        right_game_state.game_map.remove_unit([2, 12])
+        right_game_state.game_map.add_unit(unit_type=SUPPORT, location=[16, 3])
+        right_game_state.game_map.add_unit(unit_type=WALL, location=[6, 10])
         return [left_game_state, right_game_state]
 
 
@@ -297,9 +299,9 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Build the supports
             # Need wall, supports from the bottom up.
 
-            self.round_two_build_instructions = [building(name=WALL, x=21, y=10), building(name=SUPPORT, x=11, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=16, y=4), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=22, y=10), building(name=SUPPORT, x=18, y=6), building(name=SUPPORT, x=17, y=5)]
+            self.round_two_build_instructions = [building(name=WALL, x=21, y=10), building(name=SUPPORT, x=11, y=3), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=16, y=4), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=22, y=10), building(name=SUPPORT, x=18, y=6), building(name=SUPPORT, x=17, y=5)]
             
-            self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 2], [16, 4], [13, 3], [14, 3]]
+            self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
 
             self.round_three_rebuild_instructions = [building(name=TURRET, x=25, y=12), building(name=TURRET, x=26, y=12), building(name=WALL, x=26, y=13), building(name=WALL, x=27, y=13)]
             self.round_three_upgrades = [[26, 13], [27, 13], [25, 12], [26, 12]]
@@ -312,9 +314,9 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Build the supports
             # Need wall, supports from the bottom up.
 
-            self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=2), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5), building(name=SUPPORT, x=11, y=4)]
+            self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=3), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5), building(name=SUPPORT, x=11, y=4)]
 
-            self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3]]
+            self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
 
             self.round_three_rebuild_instructions = [building(name=TURRET, x=1, y=12), building(name=TURRET, x=2, y=12), building(name=WALL, x=0, y=13), building(name=WALL, x=1, y=13)]
             self.round_three_upgrades = [[0, 13], [1, 13], [1, 12], [2, 12]]
