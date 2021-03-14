@@ -72,8 +72,19 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         #ANTI-CHEESE STATS
         #Tracking Opponent Structures played last turn for anti-cheese
+        self.oppo_last_mp = 0
         self.last_oppo_structure_count = 0
+        self.last_oppo_queued_removal = 0
+        self.last_oppo_support_count = 0
+        self.last_oppo_wall_count = 0
+        self.last_oppo_turret_count = 0
+
+        self.current_oppo_wall_count = 0
+        self.current_oppo_turret_count = 0
+        self.current_oppo_support_count = 0
         self.current_oppo_structure_count = 0
+        self.current_oppo_queued_removal = 0
+        
         self.anti_cheese_cost = 0
 
         # This tracks which wall we are currently blocking off
@@ -119,7 +130,7 @@ class AlgoStrategy(gamelib.AlgoCore):
     """
 
     def base_strategy(self, game_state):
-        self.current_oppo_structure_count = self.count_enemy_structures(game_state)
+        self.count_enemy_structures(game_state)
         if game_state.turn_number == 0:
             self.inital_add_to_p_queue(game_state)
 
@@ -175,6 +186,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             should_thors = self.estimate_thors_hammer(game_state)
             gamelib.debug_write("Should Thor: {}".format(should_thors))
 
+
             # Special Logic for the next few rounds
             if should_thors is not None:
                 # Do thor's set up and return
@@ -226,16 +238,71 @@ class AlgoStrategy(gamelib.AlgoCore):
         
         #END OF TURN: We update the structure count
         self.last_oppo_structure_count = self.current_oppo_structure_count
+        self.last_oppo_queued_removal = self.current_oppo_queued_removal
+        self.last_oppo_support_count = self.current_oppo_support_count
+        self.last_oppo_wall_count = self.current_oppo_wall_count
+        self.last_oppo_turret_count = self.current_oppo_turret_count
+        self.oppo_last_mp = game_state.get_resource(resource_type=MP, player_index=1)
 
     def count_enemy_structures(self, game_state):
         structure_count = 0
+        queued_removed_structures = 0
+        support_count = 0
+        wall_count = 0
+        turret_count = 0
         for x in range(28):
             for y in range(14):
                 if(y <= x or y < 28-x):
-                    if(game_state.contains_stationary_unit([x,y+14])):
+                    testPos = [x,y+14]
+                    gamelib.debug_write("Testing position " + str(testPos))
+                    testStructure = game_state.contains_stationary_unit(testPos)
+                    if(testStructure):
                         structure_count += 1
+                        if(testStructure.pending_removal):
+                            queued_removed_structures += 1
+                        if(testStructure.unit_type==TURRET):
+                            turret_count+=1
+                        if(testStructure.unit_type==SUPPORT):
+                            support_count+=1
+                        if(testStructure.unit_type==WALL):
+                            wall_count+=1
+        self.current_oppo_queued_removal = queued_removed_structures
+        self.current_oppo_structure_count = structure_count
+        self.current_oppo_support_count = support_count
+        self.current_oppo_turret_count = turret_count
+        self.current_oppo_wall_count = wall_count              
+                    
         gamelib.debug_write("The Structure Count is " + str(structure_count))
-        return structure_count
+        gamelib.debug_write("The Wall Count is " + str(wall_count))
+        gamelib.debug_write("The Turret Count is " + str(turret_count))
+        gamelib.debug_write("The Support Count is " + str(support_count))
+        gamelib.debug_write("The Removal Count is " + str(queued_removed_structures))
+
+        return
+
+
+    #Too tired right now but I've written some ideas for how many interceptors to send
+    #Needs to be tested and tweaked (maybe with some rule adjustments)
+    def calculate_anti_cheese_cost(self, game_state):
+        oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
+        lastOppoMP = self.oppo_last_mp
+        our_mp = game_state.get_resource(resource_type=MP, player_index=1)
+        currentQueuedRemoval = self.current_oppo_queued_removal
+        currrentOppo = self.current_oppo_structure_count
+        lastOppoStructures = self.last_oppo_structure_count
+        lastRemoval = self.last_oppo_queued_removal
+        oppoSupp = self.current_oppo_support_count
+        if(oppo_mp < 5):
+            return 0
+        elif (oppo_mp >= 5):
+            if(lastOppoStructures < 10):
+                if(abs(currrentOppo-lastOppoStructures) <= 5):
+                    if(oppo_mp-lastOppoMP > 0):
+                        return min(5, oppo_mp/4.2)
+            elif(float(lastRemoval)/lastOppoStructures > 0.75):
+                return min(5, int(oppo_mp/(4-max(float(oppoSupp),15)/15)), int(our_mp/2.0))
+
+            
     # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
     # THUNDER STRIKE PREP
 
@@ -283,10 +350,10 @@ class AlgoStrategy(gamelib.AlgoCore):
         elif side_name == "LEFT":
             side = 0
         testIndex = side
-        leftValidSpots = [[1,13],[2,12],[3,12],[4,12]]
+        leftValidSpots = [[1,13],[2,12],[3,12],[1,12]]
         rightValidSpots = [[26,13],[26,12],[25,12],[24,12]]
-        leftBadSpots = [[4,13]]
-        rightBadSpots = [[23,13]]
+        leftBadSpots = [[4,13],[4,12]]
+        rightBadSpots = [[23,13],[23,12]]
         targetSide = [leftValidSpots, rightValidSpots]
         targetDangers = [leftBadSpots,rightBadSpots]
         frontScoutStart = [[14,0],[13,0]]
@@ -441,7 +508,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Build the supports
             # Need wall, supports from the bottom up.
 
-            self.round_two_build_instructions = [building(name=WALL, x=21, y=10), building(name=SUPPORT, x=11, y=3), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=16, y=4), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=22, y=10), building(name=SUPPORT, x=18, y=6), building(name=SUPPORT, x=17, y=5)]
+            self.round_two_build_instructions = [building(name=WALL, x=21, y=10), building(name=SUPPORT, x=11, y=3), building(name=SUPPORT, x=12, y=3),building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3),  building(name=SUPPORT, x=16, y=4), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=22, y=10), building(name=SUPPORT, x=18, y=6), building(name=SUPPORT, x=17, y=5)]
             
             self.round_two_remove_instructions = [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
 
@@ -456,7 +523,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             # Build the supports
             # Need wall, supports from the bottom up.
 
-            self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=3), building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=14, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5), building(name=SUPPORT, x=11, y=4)]
+            self.round_two_build_instructions = [building(name=WALL, x=6, y=10), building(name=SUPPORT, x=16, y=3), building(name=SUPPORT, x=15, y=3), building(name=SUPPORT, x=14, y=2),   building(name=SUPPORT, x=12, y=3), building(name=SUPPORT, x=13, y=3), building(name=SUPPORT, x=14, y=3), building(name=SUPPORT, x=13, y=2), building(name=SUPPORT, x=5, y=10), building(name=SUPPORT, x=9, y=6), building(name=SUPPORT, x=10, y=5), building(name=SUPPORT, x=11, y=4)]
 
             self.round_two_remove_instructions = [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
 
