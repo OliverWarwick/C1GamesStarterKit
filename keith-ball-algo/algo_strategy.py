@@ -186,9 +186,10 @@ class AlgoStrategy(gamelib.AlgoCore):
             #l_game_state, r_game_state = self.prep_game_state_for_thor_check(game_state)
             should_thors = self.estimate_thors_hammer(game_state)
             gamelib.debug_write("Should Thor: {}".format(should_thors))
-
-            if self.calculate_anti_cheese_cost(game_state) < 2:
+            self.anti_cheese_cost = self.calculate_anti_cheese_cost(game_state)
+            if self.anti_cheese_cost < 2:
                 self.anti_cheese = False
+                self.anti_cheese_cost = 0
             # Special Logic for the next few rounds
                 if should_thors is not None:
                     # Do thor's set up and return
@@ -211,6 +212,8 @@ class AlgoStrategy(gamelib.AlgoCore):
 
             else:
                 self.anti_cheese = True
+                interceptorPos = [7,6] if self.blocking_wall_placement == "RIGHT" else [20,6]
+                self.place_attackers(game_state,[attacker(name=INTERCEPTOR,x=interceptorPos[0],y=interceptorPos[1],num=int(self.anti_cheese_cost))])
 
         # Otherwise carry on as normal :) 
 
@@ -1042,17 +1045,17 @@ class AlgoStrategy(gamelib.AlgoCore):
             if self.verbose: gamelib.debug_write('Attempting to spawn {} at location ({}, {}). Number placed: {}'.format(defence.name, defence.x, defence.y, number_placed))
 
     def probability_of_demoplay(self, game_state):
-        my_mp = int(game_state.get_resource(resource_type=MP, player_index=0))
+        my_mp = int(game_state.get_resource(resource_type=MP, player_index=0)/3.0)
         if my_mp== 1:
-            return 1.0/7.0
+            return 1.0/8.0
         elif my_mp == 2:
-            return 1.0/5.0
+            return 1.0/7.0
         elif my_mp == 3:
-            return 1.0/2.5
+            return 1.0/5.0
         elif my_mp == 4:
-            return 1.0/6.0
+            return 1.0/4.0
         else:
-            return 1.0/(1.0*my_mp+4.0)
+            return 1.0/3.0
 
 
     def place_attackers(self, game_state, attacker_list):
