@@ -146,6 +146,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 self.build_buildings(game_state, self.round_two_build_instructions)
                 self.remove_buildings(game_state, self.round_two_remove_instructions)
                 # Launch the attack
+                self.place_and_remove_blocking_wall(game_state)
                 if self.thor_side is not None:
                     my_mp = game_state.get_resource(resource_type=MP,player_index=0)
                     oppo_mp = game_state.get_resource(resource_type=MP,player_index=1)
@@ -303,9 +304,10 @@ class AlgoStrategy(gamelib.AlgoCore):
     #Too tired right now but I've written some ideas for how many interceptors to send
     #Needs to be tested and tweaked (maybe with some rule adjustments)
     def calculate_anti_cheese_cost(self, game_state):
+        gamelib.debug_write("Anti Cheese Cost Calc")
         oppo_mp = game_state.get_resource(resource_type=MP, player_index=1)
         lastOppoMP = self.oppo_last_mp
-        our_mp = game_state.get_resource(resource_type=MP, player_index=1)
+        our_mp = game_state.get_resource(resource_type=MP, player_index=0)
         currentQueuedRemoval = self.current_oppo_queued_removal
         currrentOppo = self.current_oppo_structure_count
         lastOppoStructures = self.last_oppo_structure_count
@@ -318,8 +320,12 @@ class AlgoStrategy(gamelib.AlgoCore):
                 if(abs(currrentOppo-lastOppoStructures) <= 5):
                     if(oppo_mp-lastOppoMP > 0):
                         return min(5, oppo_mp/4.2)
-            elif(float(lastRemoval)/lastOppoStructures > 0.75):
-                return min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0))
+                    gamelib.debug_write(lastRemoval)
+                    gamelib.debug_write(lastOppoStructures)
+                    structure_frac = float(lastRemoval)/lastOppoStructures
+                    gamelib.debug_write(structure_frac)
+                elif (structure_frac > 0.3):
+                    return max(min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0)),2)
             else:
                 return 0
         return 0
@@ -981,6 +987,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.critical_walls_hammer += [[0, 13], [1, 13], [26, 13], [27, 13]]
         for wall in next_walls:
             self.p_queue.put((-0.8, building(name=WALL, x=wall[0], y=wall[1])))
+            self.p_queue.put((-0.59, building(name='upgrade', x=wall[0], y=wall[1])))
 
         next_turrets = [[4, 11], [23, 11]]
         self.critical_turrets_non_hammer += next_turrets
@@ -1054,8 +1061,14 @@ class AlgoStrategy(gamelib.AlgoCore):
         for wall in walls_to_upgrade:
             self.p_queue.put((-0.15, building(name='upgrade', x=wall[0], y=wall[1])))
         
+        side_walls_important = [[11, 5], [16, 5], [12, 4], [13, 4], [14, 4], [15, 4]]
+        base_walls_less = [[5, 11], [22, 11], [7, 9], [20, 9], [8, 8], [19, 8], [9, 7], [18, 7], [10, 6], [17, 6]]
 
+        for wall in side_walls_important:
+            self.p_queue.put((-0.1, building(name='upgrade', x=wall[0], y=wall[1])))
         
+        for wall in base_walls_less:
+            self.p_queue.put((-0.05, building(name='upgrade', x=wall[0], y=wall[1])))
 
     def queue_repair_of_critical(self, game_state):
 
@@ -1161,7 +1174,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         elif my_mp == 3:
             return 1.0/6.0
         elif my_mp == 4:
-            return 1.0/5.0
+            return 1.0/6.0
         elif my_mp == 5:
             return 1.0/4.0
         elif my_mp <=7:
@@ -1222,6 +1235,9 @@ class AlgoStrategy(gamelib.AlgoCore):
             gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
             gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
         else:
+            if self.current_oppo_turret_count < 10:
+                my_mp = game_state.get_resource(MP,0)
+                our_best_attack = [attacker(name=DEMOLISHER,x=13,y=0,num=int(my_mp/3))]
             our_interceptor_attacks = self.prepare_our_interceptors_to_respond(game_state)
             if(len(our_interceptor_attacks) > 0):
                 our_best_attack = random.choice(our_interceptor_attacks)
