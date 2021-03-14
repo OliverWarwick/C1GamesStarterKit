@@ -80,7 +80,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.round_three_upgrades = None
         self.thor_attack = None
         self.thor_side = None
-
         self.thor_state = -1
 
         self.verbose = False
@@ -126,6 +125,25 @@ class AlgoStrategy(gamelib.AlgoCore):
                 self.build_buildings(game_state, self.round_two_build_instructions)
                 self.remove_buildings(game_state, self.round_two_remove_instructions)
                 # Launch the attack
+                if self.thor_side is not None:
+                    my_mp = game_state.get_resource(resource_type=MP,player_index=0)
+                    oppo_mp = game_state.get_resource(resource_type=MP,player_index=1)
+                    backupInterceptorNum = int(min(float(oppo_mp)/3, my_mp/4),5)
+                    remainingMP = my_mp - backupInterceptorNum
+
+                    if self.thor_side=="RIGHT":
+                        if not(self.verify_thor_path([13,0]) or self.verify_thor_path([11,2])):
+                            new_attack_list = []
+                            new_attack_list.append(attacker(name=INTERCEPTOR,x=13,y=0,num=int(backupInterceptorNum)))
+                            new_attack_list.append(attacker(name=DEMOLISHER,x=13,y=0,num=int(remainingMP/3)))
+                            self.thor_attack = new_attack_list
+                    else:
+                        if not(self.verify_thor_path([14,0]) or self.verify_thor_path([16,2])):
+                            new_attack_list = []
+                            new_attack_list.append(attacker(name=INTERCEPTOR,x=14,y=0,num=int(backupInterceptorNum)))
+                            new_attack_list.append(attacker(name=DEMOLISHER,x=14,y=0,num=int(remainingMP/3)))
+                            self.thor_attack = new_attack_list
+
                 self.place_attackers(game_state, self.thor_attack)
                 self.thor_state = 3 
                 # Add some interceptors at random here.
@@ -154,6 +172,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             if should_thors is not None:
                 # Do thor's set up and return
                 self.thor_attack = should_thors[1]
+                self.thor_side = should_thors[0]
                 self.plan_thors_hammer(game_state, should_thors[0])
                 self.thor_state = 1
                 # We can use the full up arrays to place our troops.
@@ -162,6 +181,8 @@ class AlgoStrategy(gamelib.AlgoCore):
                 self.thor_state = 2
                 gamelib.debug_write("Thor attack: {}".format(self.thor_attack))
                 return
+            else:
+                self.thor_side = None
 
         # Otherwise carry on as normal :) 
 
@@ -274,7 +295,7 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
     def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
-        if(game_state.turn_number < 15):
+        if(game_state.turn_number < 12):
             return None
         gamepair = self.prep_game_state_for_thor_check(game_state)
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
@@ -307,20 +328,20 @@ class AlgoStrategy(gamelib.AlgoCore):
             rearPath = test_state.find_path_to_edge(test_start2)
             if self.verbose: gamelib.debug_write(frontPath)
             if self.verbose: gamelib.debug_write(rearPath)
-            test_target1 = False
-            test_target2 = False
-            for ele in test_spots:
-                if self.verbose: gamelib.debug_write(ele)
-                if ele in frontPath:
-                    test_target1 = True
-                if ele in rearPath:
-                    test_target2 = True
-            for ele in test_badspots:
-                if ele in frontPath:
-                    test_target1=False
-                if ele in rearPath:
-                    test_target2 = False
-            if(not self.verify_thor_path(test_state,sideNames[side]))#(not (test_target1 and test_target2)) or frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16):
+            # test_target1 = False
+            # test_target2 = False
+            # for ele in test_spots:
+            #     if self.verbose: gamelib.debug_write(ele)
+            #     if ele in frontPath:
+            #         test_target1 = True
+            #     if ele in rearPath:
+            #         test_target2 = True
+            # for ele in test_badspots:
+            #     if ele in frontPath:
+            #         test_target1=False
+            #     if ele in rearPath:
+            #         test_target2 = False
+            if(not self.verify_thor_path(test_state,sideNames[side])):#(not (test_target1 and test_target2)) or frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16):
                 continue
             gamelib.debug_write("True on original")
             if self.verbose: gamelib.debug_write(self.verify_thor_path(test_state,sideNames[side]))
