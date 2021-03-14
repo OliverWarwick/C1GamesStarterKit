@@ -85,6 +85,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.current_oppo_structure_count = 0
         self.current_oppo_queued_removal = 0
         
+        self.anti_cheese = False
         self.anti_cheese_cost = 0
 
         # This tracks which wall we are currently blocking off
@@ -186,22 +187,30 @@ class AlgoStrategy(gamelib.AlgoCore):
             should_thors = self.estimate_thors_hammer(game_state)
             gamelib.debug_write("Should Thor: {}".format(should_thors))
 
-
+            if self.calculate_anti_cheese_cost(game_state) < 2:
+                self.anti_cheese = False
             # Special Logic for the next few rounds
-            if should_thors is not None:
-                # Do thor's set up and return
-                self.thor_attack = should_thors[1]
-                self.thor_side = should_thors[0]
-                self.plan_thors_hammer(game_state, should_thors[0])
-                self.thor_state = 1
-                # We can use the full up arrays to place our troops.
-                self.remove_buildings(game_state, self.round_one_removal_buildings_instructions)
-                # Done so set thor state to 1
-                self.thor_state = 2
-                gamelib.debug_write("Thor attack: {}".format(self.thor_attack))
-                return
+                if should_thors is not None:
+                    # Do thor's set up and return
+                    self.thor_attack = should_thors[1]
+                    self.thor_side = should_thors[0]
+                    self.plan_thors_hammer(game_state, should_thors[0])
+                    self.thor_state = 1
+                    # We can use the full up arrays to place our troops.
+                    self.remove_buildings(game_state, self.round_one_removal_buildings_instructions)
+                    # Done so set thor state to 1
+                    self.thor_state = 2
+                    gamelib.debug_write("Thor attack: {}".format(self.thor_attack))
+                    return
+                else:
+                    self.thor_side = None
+                    if(random.uniform(0,1) <= self.probability_of_demoplay(game_state)):
+                        demoPos = [14,0] if self.blocking_wall_placement == "LEFT" else [13,0]
+                        my_mp = game_state.get_resource(MP,0)
+                        self.place_attackers(game_state,[attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(my_mp/3))])
+
             else:
-                self.thor_side = None
+                self.anti_cheese = True
 
         # Otherwise carry on as normal :) 
 
@@ -222,11 +231,12 @@ class AlgoStrategy(gamelib.AlgoCore):
             self.continue_placing_walls_and_turrets(game_state)
 
         time_placing_extra_walls = time.time()
-        if self.throw_interceptors:
-            copied_game_state = copy.deepcopy(game_state)
-            interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
-            if interceptor_placement is not None:
-                self.place_attackers(game_state, interceptor_placement)
+        if not self.anti_cheese:
+            if self.throw_interceptors:
+                copied_game_state = copy.deepcopy(game_state)
+                interceptor_placement = self.find_oppo_best_strategy_and_interceptor_response(copied_game_state)
+                if interceptor_placement is not None:
+                    self.place_attackers(game_state, interceptor_placement)
 
         time_interceptor = time.time()
         # # We now want to search to see if we have a good attack in the one step case.
@@ -254,7 +264,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             for y in range(14):
                 if(y <= x or y < 28-x):
                     testPos = [x,y+14]
-                    gamelib.debug_write("Testing position " + str(testPos))
+                    if self.verbose: gamelib.debug_write("Testing position " + str(testPos))
                     testStructure = game_state.contains_stationary_unit(testPos)
                     if(testStructure):
                         structure_count += 1
@@ -294,14 +304,16 @@ class AlgoStrategy(gamelib.AlgoCore):
         oppoSupp = self.current_oppo_support_count
         if(oppo_mp < 5):
             return 0
-        elif (oppo_mp >= 5):
-            if(lastOppoStructures < 10):
+        else:
+            if(lastOppoStructures < 5):
                 if(abs(currrentOppo-lastOppoStructures) <= 5):
                     if(oppo_mp-lastOppoMP > 0):
                         return min(5, oppo_mp/4.2)
             elif(float(lastRemoval)/lastOppoStructures > 0.75):
                 return min(5, int(oppo_mp/(4-max(float(oppoSupp),15)/15)), int(our_mp/2.0))
-
+            else:
+                return 0
+        return 0
             
     # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
     # THUNDER STRIKE PREP
@@ -385,6 +397,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         if(game_state.turn_number < 12):
             return None
         gamepair = self.prep_game_state_for_thor_check(game_state)
+        enemy_hp = game_state.enemy_health
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
         our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)-self.anti_cheese_cost
         our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
@@ -392,7 +405,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         expected_shield_value = 3*expected_supp_count
         validSides = [False, False]
         scout_effective_hp = 15+expected_shield_value
-        desired_points = 5
+        desired_points = min(5, enemy_hp - 2)
         leftValidSpots = [[1,13],[2,12],[3,12],[4,12]]
         rightValidSpots = [[26,13],[26,12],[25,12],[24,12]]
         leftBadSpots = [[4,13]]
@@ -456,7 +469,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             scout_deaths_per_frame = float(totalAttackThreat)/float(scout_effective_hp)
             scout_deaths = 4.2*scout_deaths_per_frame
             gamelib.debug_write("Expect to lose around " + str(scout_deaths) + " per platoon")
-            epsilon = random.randint(0,2)
+            epsilon = random.randint(0,1)
             epsilon_1 = 0
             #(num_front-scout_deaths)*15 + 2(num_front-scout_deaths)>= max_hp - epsilon
             num_front = math.ceil((lineMaxHP+17*scout_deaths)/17 + epsilon)
@@ -595,27 +608,27 @@ class AlgoStrategy(gamelib.AlgoCore):
         attack_set_list = [] #[[attacker(name=SCOUT, x=13, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=14, y=0, num=int(my_mp))], [attacker(name=SCOUT, x=12, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=15, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=SCOUT, x=15, y=1, num=min(5, int(my_mp))), attacker(name=SCOUT, x=12, y=1, num=max(0, int(my_mp - 5)))], [attacker(name=DEMOLISHER, x=13, y=0, num=int(my_mp / 3))]]
 
         #Attack Profile 1: Big Demo Energy
-        demoPos = self.estimate_our_demo_placement(game_state)
+        demoPos = [14,0] if self.blocking_wall_placement == "LEFT" else [13,0] #self.estimate_our_demo_placement(game_state)
         if self.verbose: gamelib.debug_write("Demolisher attack "+ str(demoPos))
         if demoPos is not None:
             attack_set_list.append([attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=int(my_mp/3))])
         
-        #Attack Profile 2: Scout Rush
-        scoutPos = demoPos
-        if scoutPos is not None:
-            attack_set_list.append([attacker(name=SCOUT,x=scoutPos[0],y=scoutPos[1],num=int(my_mp))])
-        #Attack Profile 3: Scout+Demo tomfoolery
-        scoutDemoPos = self.get_our_scout_demo_split(game_state)
-        if scoutDemoPos is not None and my_mp >= 4:
-            scoutPos = scoutDemoPos[0]
-            demoPos = scoutDemoPos[1]
-            attackSplit = self.get_enemy_scout_demo_split_numbers(my_mp)
-            demoNum = attackSplit[0]
-            scoutNum = attackSplit[1]
-            attack = []
-            attack.append(attacker(name=SCOUT,x=scoutPos[0],y=scoutPos[1],num=scoutNum))
-            attack.append(attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=demoNum))
-            attack_set_list.append(attack)
+        # #Attack Profile 2: Scout Rush
+        # scoutPos = demoPos
+        # if scoutPos is not None:
+        #     attack_set_list.append([attacker(name=SCOUT,x=scoutPos[0],y=scoutPos[1],num=int(my_mp))])
+        # #Attack Profile 3: Scout+Demo tomfoolery
+        # scoutDemoPos = self.get_our_scout_demo_split(game_state)
+        # if scoutDemoPos is not None and my_mp >= 4:
+        #     scoutPos = scoutDemoPos[0]
+        #     demoPos = scoutDemoPos[1]
+        #     attackSplit = self.get_enemy_scout_demo_split_numbers(my_mp)
+        #     demoNum = attackSplit[0]
+        #     scoutNum = attackSplit[1]
+        #     attack = []
+        #     attack.append(attacker(name=SCOUT,x=scoutPos[0],y=scoutPos[1],num=scoutNum))
+        #     attack.append(attacker(name=DEMOLISHER,x=demoPos[0],y=demoPos[1],num=demoNum))
+        #     attack_set_list.append(attack)
         return attack_set_list
     
     def estimate_our_demo_placement(self, game_state):
@@ -953,6 +966,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 value = self.defence_priority_map.get(building(name=WALL, x=item[0], y=item[1]), 0)
                 if self.verbose: gamelib.debug_write("Placing back into prioity queue: {}".format(value))
                 self.p_queue.put((value, building(name=WALL, x=item[0], y=item[1])))
+                self.p_queue.put((value, building(name='upgrade', x=item[0], y=item[1])))
 
         for item in turrets:
             if building(name=TURRET, x=item[0], y=item[1]) not in current_stationary_units and self.defence_priority_map.get(building(name=TURRET, x=item[0], y=item[1]), False):
@@ -1032,7 +1046,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         if my_mp== 1:
             return 1.0/7.0
         elif my_mp == 2:
-            return 1.0/4.0
+            return 1.0/5.0
         elif my_mp == 3:
             return 1.0/2.5
         elif my_mp == 4:
