@@ -116,8 +116,11 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         # Cal total time.
         start_time = time.time()
+        try:
+            self.base_strategy(game_state)
+        except:
+            gamelib.debug_write("An Exception Occurred")
 
-        self.base_strategy(game_state)
         # self.print_map(game_state)
 
         gamelib.debug_write("Overall time taken for this turn: {}".format(time.time() - start_time))
@@ -148,15 +151,18 @@ class AlgoStrategy(gamelib.AlgoCore):
                     oppo_mp = game_state.get_resource(resource_type=MP,player_index=1)
                     backupInterceptorNum = int(min(float(oppo_mp)/3, my_mp/4,5))
                     remainingMP = my_mp - backupInterceptorNum
-                    if self.thor_side=="RIGHT":
-                        if not(self.verify_thor_path(game_state,"RIGHT") or self.verify_thor_path(game_state,"RIGHT")):        
+                    optimised_thor = self.optimise_new_thor(game_state)
+                    if optimised_thor is not None:
+                        self.thor_attack = optimised_thor
+                    else:
+                        if self.thor_side=="RIGHT":       
                             gamelib.debug_write("Thor no longer viable on right")
                             new_attack_list = []
                             new_attack_list.append(attacker(name=INTERCEPTOR,x=13,y=0,num=int(backupInterceptorNum)))
                             new_attack_list.append(attacker(name=DEMOLISHER,x=13,y=0,num=int(remainingMP/3)))
                             self.thor_attack = new_attack_list
-                    else:
-                        if not(self.verify_thor_path(game_state,"LEFT") or self.verify_thor_path(game_state,"LEFT")):
+                        else:
+                            #if not(self.verify_thor_path(game_state,"LEFT") or self.verify_thor_path(game_state,"LEFT")):
                             gamelib.debug_write("Thor no longer viable on left")
                             new_attack_list = []
                             new_attack_list.append(attacker(name=INTERCEPTOR,x=14,y=0,num=int(backupInterceptorNum)))
@@ -305,7 +311,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         lastOppoStructures = self.last_oppo_structure_count
         lastRemoval = self.last_oppo_queued_removal
         oppoSupp = self.current_oppo_support_count
-        if(oppo_mp < 5):
+        if(oppo_mp < 8):
             return 0
         else:
             if(lastOppoStructures < 5):
@@ -313,7 +319,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                     if(oppo_mp-lastOppoMP > 0):
                         return min(5, oppo_mp/4.2)
             elif(float(lastRemoval)/lastOppoStructures > 0.75):
-                return min(5, int(oppo_mp/(4-max(float(oppoSupp),15)/15)), int(our_mp/2.0))
+                return min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0))
             else:
                 return 0
         return 0
@@ -390,11 +396,113 @@ class AlgoStrategy(gamelib.AlgoCore):
             if ele in rearPath:
                 test_target2=False
         distCondition = (frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16)
+        if self.thor_state == 2:
+            if not distCondition:
+                if(random.uniform(0,1) < 1/3):
+                    distCondition = True
         return (not ((not (test_target1 and test_target2)) or distCondition)) #Either path goes through a bad spot or too far
 
     #New Function to recalibrate Thor to score points
     def optimise_new_thor(self, game_state):
-        pass
+        gamepair = [game_state,game_state]
+        enemy_hp = game_state.enemy_health
+        enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
+        our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)-self.anti_cheese_cost
+        our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
+        expected_supp_count = min(10, 3+int(our_expected_sp/3))
+        expected_shield_value = 3*expected_supp_count
+        validSides = [False, False]
+        scout_effective_hp = 15+expected_shield_value
+        desired_points = min(5, enemy_hp - 2)
+        leftValidSpots = [[1,13],[2,12],[3,12],[4,12]]
+        rightValidSpots = [[26,13],[26,12],[25,12],[24,12]]
+        leftBadSpots = [[4,13]]
+        rightBadSpots = [[23,13]]
+        targetSide = [leftValidSpots, rightValidSpots]
+        targetDangers = [leftBadSpots,rightBadSpots]
+        frontScoutStart = [[14,0],[13,0]]
+        rearScoutStart = [[16,2],[11,2]]
+        sideNames = ["LEFT", "RIGHT"]
+        attackProfile = [[1000,[]],[1000,[]]]
+        if (self.thor_side == "LEFT"):
+            side = 0
+        else:
+            side = 1
+        
+        gamelib.debug_write("Checking side " + str(sideNames[side]))
+        test_state = game_state
+        test_start1 = frontScoutStart[side]
+        test_start2 = rearScoutStart[side]
+            # test_spots = targetSide[side]
+            # test_badspots = targetDangers[side]
+        frontPath = test_state.find_path_to_edge(test_start1)
+        rearPath = test_state.find_path_to_edge(test_start2)
+        if self.verbose: gamelib.debug_write(frontPath)
+        if self.verbose: gamelib.debug_write(rearPath)
+
+        if(not self.verify_thor_path(test_state,sideNames[side])):
+            return None
+
+        sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
+        lineMaxHP = 60
+        totalAttackThreat = 0
+        #Work out opponent HP for the suicide squad
+        for row in range(2):
+            xCoord = 13 + (13-row)*sideToggle + side
+            yCoord = 14
+            if self.verbose: gamelib.debug_write(str([xCoord,yCoord]))
+            if(game_state.contains_stationary_unit([xCoord,yCoord])):
+                defUnit = game_state.game_map[xCoord,yCoord][0]
+                defCurrHP = float(defUnit.health)
+                defMaxHP = float(defUnit.max_health)
+                totalAttackThreat += defUnit.damage_i
+                testHealth = defCurrHP if defCurrHP/defMaxHP > 0.7 else defMaxHP
+                lineMaxHP = max(lineMaxHP, testHealth)
+            else:
+                lineMaxHP = 200 if (game_state.get_resource(resource_type=SP, player_index=1) > 2) else 0.5*(lineMaxHP+100)
+            
+        gamelib.debug_write("HP to break through " + str(lineMaxHP))
+            #Work out rough opponent offensive strength
+        for row in range(2):
+            for turret in range(3):
+                xCoord = 13 + (13 - 2 - turret)*sideToggle + side
+                yCoord = 14 + row
+                if(game_state.contains_stationary_unit([xCoord,yCoord])):
+                    offUnit = game_state.game_map[xCoord,yCoord][0]
+                    totalAttackThreat += offUnit.damage_i
+            #One more turret position to check here
+        xCoord = 13 + (13-2)*sideToggle + side
+        yCoord = 16
+        if(game_state.contains_stationary_unit([xCoord,yCoord])):
+            offUnit = game_state.game_map[xCoord,yCoord][0]
+            totalAttackThreat += offUnit.damage_i
+        gamelib.debug_write("Offensive threat is " + str(totalAttackThreat))
+        scout_deaths_per_frame = float(totalAttackThreat)/float(scout_effective_hp)
+        scout_deaths = 4.2*scout_deaths_per_frame
+        gamelib.debug_write("Expect to lose around " + str(scout_deaths) + " per platoon")
+        epsilon = random.randint(0,1)
+        epsilon_1 = 0
+        #(num_front-scout_deaths)*15 + 2(num_front-scout_deaths)>= max_hp - epsilon
+        num_front = math.ceil((lineMaxHP+17*scout_deaths)/17 + epsilon)
+        gamelib.debug_write(scout_deaths)
+        gamelib.debug_write(lineMaxHP)
+        gamelib.debug_write(num_front)
+        num_back=0
+        if(int(num_front)+scout_deaths-epsilon_1 + desired_points > our_mp):
+            gamelib.debug_write("Attacking on side " + sideNames[side] + " is too expensive")
+            return None
+
+        else:
+            gamelib.debug_write("Attacking on side " + sideNames[side] + " is viable")
+            validSides[side] = True
+            num_back = int(our_mp-num_front)
+            attack_cost = int(num_front + num_back)
+            attackset = []
+            attackset.append(attacker(name=SCOUT,x=test_start1[0],y=test_start1[1],num=num_front))
+            attackset.append(attacker(name=SCOUT, x= test_start2[0],y=test_start2[1],num=num_back))
+            attackProfile[side][0] = attack_cost
+            attackProfile[side][1] = attackset
+            return attackset
 
     def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
         if(game_state.turn_number < 12):
@@ -1051,11 +1159,15 @@ class AlgoStrategy(gamelib.AlgoCore):
         elif my_mp == 2:
             return 1.0/7.0
         elif my_mp == 3:
-            return 1.0/5.0
+            return 1.0/6.0
         elif my_mp == 4:
+            return 1.0/5.0
+        elif my_mp == 5:
             return 1.0/4.0
-        else:
+        elif my_mp <=7:
             return 1.0/3.0
+        else:
+            return 0.5
 
 
     def place_attackers(self, game_state, attacker_list):
@@ -1073,42 +1185,48 @@ class AlgoStrategy(gamelib.AlgoCore):
         args: game_state: GameState should have been copied already.
         returns: List[attacker] - best placement of interceptors.
         '''
-        start_time = time.time()
+        if game_state.turn_number <= 25:
+            start_time = time.time()
 
-        # Update using the prioity queue
-        self.update_game_state_while_p_queue_unloading(game_state)
-        gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
+            # Update using the prioity queue
+            self.update_game_state_while_p_queue_unloading(game_state)
+            gamelib.debug_write("Time elapsed after updating game state: {}".format(time.time() - start_time))
 
 
-        # Get possible attacks for oppo
-        oppo_attack_set = self.prepare_attack_sets_for_oppo_during_first_stage(game_state)
-        gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
-        gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
-        
+            # Get possible attacks for oppo
+            oppo_attack_set = self.prepare_attack_sets_for_oppo_during_first_stage(game_state)
+            gamelib.debug_write("Oppo Attack Set: {}".format(oppo_attack_set))
+            gamelib.debug_write("Time elapsed after finding oppo attack set: {}".format(time.time() - start_time))
+            
 
-        if len(oppo_attack_set) == 0:
-            return None
+            if len(oppo_attack_set) == 0:
+                return None
 
-        start_time = time.time()
+            start_time = time.time()
 
-        # Find their best attack
-        best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
-        gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
-        gamelib.debug_write("Time elapsed after finding best oppo attack: {}".format(time.time() - start_time))
+            # Find their best attack
+            best_oppo_attack, unintercepted_score = self.find_oppo_best_attack_no_interceptors(game_state, oppo_attack_set)
+            gamelib.debug_write("Best attack from the oppo: {} with score: {}".format(best_oppo_attack, unintercepted_score))
+            gamelib.debug_write("Time elapsed after finding best oppo attack: {}".format(time.time() - start_time))
 
-        start_time = time.time()
+            start_time = time.time()
 
-        # Get our possible interceptor placements based on the number of credits the oppo have.
-        our_interceptor_attacks = self.prepare_our_interceptors_to_respond(game_state)
-        gamelib.debug_write("Our possible interceptor responcses: {}".format(our_interceptor_attacks))
-        gamelib.debug_write("Time elapsed after getting our interceptor placements: {}".format(time.time() - start_time))
+            # Get our possible interceptor placements based on the number of credits the oppo have.
+            our_interceptor_attacks = self.prepare_our_interceptors_to_respond(game_state)
+            gamelib.debug_write("Our possible interceptor responcses: {}".format(our_interceptor_attacks))
+            gamelib.debug_write("Time elapsed after getting our interceptor placements: {}".format(time.time() - start_time))
 
-        start_time = time.time()
+            start_time = time.time()
 
-        our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
-        gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
-        gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
-
+            our_best_attack, interupted_score = self.find_our_best_response(game_state, best_oppo_attack, our_interceptor_attacks)
+            gamelib.debug_write("Best interceptors: {}   with score: {}".format(our_best_attack, interupted_score))
+            gamelib.debug_write("Time elapsed after finding our best response: {}".format(time.time() - start_time))
+        else:
+            our_interceptor_attacks = self.prepare_our_interceptors_to_respond(game_state)
+            if(len(our_interceptor_attacks) > 0):
+                our_best_attack = random.choice(our_interceptor_attacks)
+            else:
+                return []
         return our_best_attack
 
 
@@ -1452,12 +1570,12 @@ class AlgoStrategy(gamelib.AlgoCore):
         elif oppo_mp <= 16 or our_mp == 2:
             # 2 interceptors d
             return [[attacker(name=INTERCEPTOR, x=7, y=6, num=1), attacker(name=INTERCEPTOR, x=20, y=6, num=1)], 
-            [attacker(name=INTERCEPTOR, x=14, y=0, num=2)],
-            [attacker(name=INTERCEPTOR, x=13, y=0, num=2)]]
+            [attacker(name=INTERCEPTOR, x=7, y=6, num=2)],
+            [attacker(name=INTERCEPTOR, x=20, y=6, num=2)]]
         else:
             # 3 interceptors
-            return [[attacker(name=INTERCEPTOR, x=13, y=0, num=3)],
-            [attacker(name=INTERCEPTOR, x=14, y=0, num=3)]]
+            return [[attacker(name=INTERCEPTOR, x=7, y=6, num=3)],
+            [attacker(name=INTERCEPTOR, x=20, y=6, num=3)]]
     
 
     def find_our_best_response(self, game_state, best_oppo_attack, our_responses):
