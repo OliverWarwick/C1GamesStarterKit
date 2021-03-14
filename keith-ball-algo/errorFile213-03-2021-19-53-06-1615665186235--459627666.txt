@@ -1,0 +1,421 @@
+Random seed: 4777787606015224090
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=6, y=20, num=4)]]
+Time elapsed after finding oppo attack set: 0.06299138069152832
+Time elapsed: 0.0069446563720703125
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: 1.8
+Time elapsed: 0.07985663414001465
+Time elapsed: 0.07985663414001465
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: 1.8
+Time elapsed after finding best oppo attack: 0.07985663414001465
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006966590881347656
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 2.8000000000000003
+Time elapsed: 0.26337623596191406
+Time elapsed: 0.26337623596191406
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 2.8000000000000003
+Time elapsed after finding our best response: 0.26337623596191406
+Time taken per stage: Queueing Repairs: 0.0009911060333251953   Building Defences: 0.0009920597076416016   Placing Extra Walls: 0.0  Placing interceptors: 0.4077126979827881
+Overall time taken for this turn: 0.4096958637237549
+Performing turn 1 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.05753588676452637
+Time elapsed: 0.006943702697753906
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -2.3
+Time elapsed: 0.1022038459777832
+Time elapsed: 0.1022038459777832
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -2.3
+Time elapsed after finding best oppo attack: 0.1022038459777832
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.0069425106048583984
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.3
+Time elapsed: 0.29610323905944824
+Time elapsed: 0.29610323905944824
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.3
+Time elapsed after finding our best response: 0.29610323905944824
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.4578268527984619
+Overall time taken for this turn: 0.45931482315063477
+Performing turn 2 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.07588791847229004
+Time elapsed: 0.00843191146850586
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: -2.5999999999999996
+Time elapsed: 0.12400007247924805
+Time elapsed: 0.12400007247924805
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: -2.5999999999999996
+Time elapsed after finding best oppo attack: 0.1244959831237793
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.008432149887084961
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.5999999999999996
+Time elapsed: 0.33135437965393066
+Time elapsed: 0.33135437965393066
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.5999999999999996
+Time elapsed after finding our best response: 0.33135437965393066
+Time taken per stage: Queueing Repairs: 0.0009915828704833984   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.5337224006652832
+Overall time taken for this turn: 0.5347139835357666
+Performing turn 3 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.00049591064453125
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06100797653198242
+Time elapsed: 0.006943941116333008
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -3.2
+Time elapsed: 0.10815119743347168
+Time elapsed: 0.10815119743347168
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -3.2
+Time elapsed after finding best oppo attack: 0.10815119743347168
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0004963874816894531
+Time elapsed: 0.007416486740112305
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.2
+Time elapsed: 0.43050503730773926
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.2
+Time elapsed after finding our best response: 0.43050503730773926
+Time taken per stage: Queueing Repairs: 0.0009915828704833984   Building Defences: 0.0004963874816894531   Placing Extra Walls: 0.0  Placing interceptors: 0.6016480922698975
+Overall time taken for this turn: 0.6031360626220703
+Performing turn 4 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06894421577453613
+Time elapsed: 0.006943702697753906
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: -3.5
+Time elapsed: 0.11259269714355469
+Time elapsed: 0.11259269714355469
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: -3.5
+Time elapsed after finding best oppo attack: 0.11259269714355469
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006968021392822266
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.5
+Time elapsed: 0.3640632629394531
+Time elapsed: 0.3640632629394531
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.5
+Time elapsed after finding our best response: 0.3640632629394531
+Time taken per stage: Queueing Repairs: 0.0014884471893310547   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.548079252243042
+Overall time taken for this turn: 0.549567699432373
+Performing turn 5 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.10465621948242188
+Time elapsed: 0.010415792465209961
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -3.6999999999999993
+Time elapsed: 0.12650537490844727
+Time elapsed: 0.12650537490844727
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -3.6999999999999993
+Time elapsed after finding best oppo attack: 0.12650537490844727
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0004954338073730469
+Time elapsed: 0.006941318511962891
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.6999999999999993
+Time elapsed: 0.39429473876953125
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.6999999999999993
+Time elapsed after finding our best response: 0.39429473876953125
+Time taken per stage: Queueing Repairs: 0.002480030059814453   Building Defences: 0.0004963874816894531   Placing Extra Walls: 0.0  Placing interceptors: 0.6279354095458984
+Overall time taken for this turn: 0.6314089298248291
+Performing turn 6 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.11110329627990723
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.3
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.3
+Time elapsed after finding best oppo attack: 0.3982889652252197
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007439374923706055
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.3
+Time elapsed: 0.39782047271728516
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.3
+Time elapsed after finding our best response: 0.39782047271728516
+Time taken per stage: Queueing Repairs: 0.0009913444519042969   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.9091968536376953
+Overall time taken for this turn: 0.91068434715271
+Performing turn 7 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.1284627914428711
+Time elapsed: 0.007936239242553711
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.0
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.0
+Time elapsed after finding best oppo attack: 0.3874051570892334
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.008923768997192383
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.0
+Time elapsed: 0.3834078311920166
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.0
+Time elapsed after finding our best response: 0.3834078311920166
+Time taken per stage: Queueing Repairs: 0.0009915828704833984   Building Defences: 0.0004968643188476562   Placing Extra Walls: 0.0  Placing interceptors: 0.9017558097839355
+Overall time taken for this turn: 0.9032442569732666
+Performing turn 8 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.12796759605407715
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.0
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.0
+Time elapsed after finding best oppo attack: 0.42507243156433105
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007935762405395508
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.0
+Time elapsed: 0.39782094955444336
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.0
+Time elapsed after finding our best response: 0.39782094955444336
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.9533412456512451
+Overall time taken for this turn: 0.9543330669403076
+Performing turn 9 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.11358332633972168
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -2.4000000000000004
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -2.4000000000000004
+Time elapsed after finding best oppo attack: 0.4022562503814697
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.4000000000000004
+Time elapsed: 0.4052605628967285
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.4000000000000004
+Time elapsed after finding our best response: 0.4052605628967285
+Time taken per stage: Queueing Repairs: 0.0009913444519042969   Building Defences: 0.0004963874816894531   Placing Extra Walls: 0.0  Placing interceptors: 0.9230844974517822
+Overall time taken for this turn: 0.924572229385376
+Performing turn 10 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0004954338073730469
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.12449526786804199
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -1.6999999999999995
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -1.6999999999999995
+Time elapsed after finding best oppo attack: 0.4285721778869629
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.0074117183685302734
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -1.6999999999999995
+Time elapsed: 0.43645191192626953
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -1.6999999999999995
+Time elapsed after finding our best response: 0.43645191192626953
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0004963874816894531   Placing Extra Walls: 0.0  Placing interceptors: 0.9915037155151367
+Overall time taken for this turn: 0.9929919242858887
+Performing turn 11 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.12102413177490234
+Time elapsed: 0.006943941116333008
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -1.2
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -1.2
+Time elapsed after finding best oppo attack: 0.43697571754455566
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0004961490631103516
+Time elapsed: 0.006944179534912109
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -1.2
+Time elapsed: 0.45433640480041504
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -1.2
+Time elapsed after finding our best response: 0.45433640480041504
+Time taken per stage: Queueing Repairs: 0.0014908313751220703   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.0153095722198486
+Overall time taken for this turn: 1.0168004035949707
+Performing turn 12 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.11705517768859863
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -2.9
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -2.9
+Time elapsed after finding best oppo attack: 0.5312159061431885
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.9
+Time elapsed: 0.5361759662628174
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.9
+Time elapsed after finding our best response: 0.5361759662628174
+Time taken per stage: Queueing Repairs: 0.0009920597076416016   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 1.1869275569915771
+Overall time taken for this turn: 1.188415765762329
+Performing turn 13 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.12003183364868164
+Time elapsed: 0.007935762405395508
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -0.3999999999999999
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -0.3999999999999999
+Time elapsed after finding best oppo attack: 0.2529599666595459
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007935762405395508
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -0.3999999999999999
+Time elapsed: 0.2743184566497803
+Time elapsed: 0.2743184566497803
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -0.3999999999999999
+Time elapsed after finding our best response: 0.2743184566497803
+Time taken per stage: Queueing Repairs: 0.0009920597076416016   Building Defences: 0.0004966259002685547   Placing Extra Walls: 0.0  Placing interceptors: 0.6497898101806641
+Overall time taken for this turn: 0.6512784957885742
+Performing turn 14 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0004954338073730469
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.12895941734313965
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -0.2999999999999998
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -0.2999999999999998
+Time elapsed after finding best oppo attack: 0.1676487922668457
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007960081100463867
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -0.2999999999999998
+Time elapsed: 0.5719144344329834
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -0.2999999999999998
+Time elapsed after finding our best response: 0.5724096298217773
+Time taken per stage: Queueing Repairs: 0.0009920597076416016   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.8714978694915771
+Overall time taken for this turn: 0.8729860782623291
+Performing turn 15 of your custom algo strategy
+Checking side LEFT
+[0, 14]
+[1, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side LEFT is viable
+Checking side RIGHT
+[27, 14]
+[26, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side RIGHT is viable
+[[17, [Attacker(name='PI', x=14, y=0, num=5), Attacker(name='PI', x=16, y=2, num=12)]], [17, [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=12)]]]
+[True, True]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=5), Attacker(name='PI', x=16, y=2, num=12)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=5), Attacker(name='PI', x=16, y=2, num=12)]
+Overall time taken for this turn: 0.014383077621459961
+Performing turn 16 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+Overall time taken for this turn: 0.0009918212890625
+Performing turn 17 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time elapsed after updating game state: 0.0004963874816894531
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.1096494197845459
+Time elapsed: 0.0074350833892822266
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: 17.400000000000002
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: 17.400000000000002
+Time elapsed after finding best oppo attack: 0.17160654067993164
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007941722869873047
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 17.400000000000002
+Time elapsed: 0.6125359535217285
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 17.400000000000002
+Time elapsed after finding our best response: 0.6125359535217285
+Time taken per stage: Queueing Repairs: 0.0014882087707519531   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.8967678546905518
+Overall time taken for this turn: 0.8987522125244141
+Performing turn 18 of your custom algo strategy
+Checking side LEFT
+[0, 14]
+[1, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side LEFT is too expensive
+Checking side RIGHT
+[27, 14]
+[26, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side RIGHT is too expensive
+[[1000, []], [1000, []]]
+[False, False]
+Should Thor: None
+Time elapsed after updating game state: 0.001984834671020508
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.14780879020690918
+Time elapsed: 0.0074727535247802734
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: 17.1
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: 17.1
+Time elapsed after finding best oppo attack: 0.45235109329223633
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007936239242553711
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 17.1
+Time elapsed: 0.9225599765777588
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 17.1
+Time elapsed after finding our best response: 0.9225599765777588
+Time taken per stage: Queueing Repairs: 0.0014879703521728516   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.5251996517181396
+Overall time taken for this turn: 1.5420639514923096
+Performing turn 19 of your custom algo strategy
+Checking side LEFT
+[0, 14]
+[1, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side LEFT is viable
+Checking side RIGHT
+[27, 14]
+[26, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side RIGHT is viable
+[[13, [Attacker(name='PI', x=14, y=0, num=5), Attacker(name='PI', x=16, y=2, num=8)]], [13, [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=8)]]]
+[True, True]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=8)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=8)]
+Overall time taken for this turn: 0.01884770393371582
+Performing turn 20 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+Overall time taken for this turn: 0.0009920597076416016
+Performing turn 21 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time taken per stage: Queueing Repairs: 0.0014882087707519531   Building Defences: 0.00148773193359375   Placing Extra Walls: 0.0  Placing interceptors: 0.0
+Overall time taken for this turn: 0.002975940704345703
+Performing turn 22 of your custom algo strategy
+Checking side LEFT
+[0, 14]
+[1, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side LEFT is viable
+Checking side RIGHT
+[27, 14]
+[26, 14]
+HP to break through 60
+Expect to lose around 1.2307692307692308 per platoon
+Attacking on side RIGHT is viable
+[[14, [Attacker(name='PI', x=14, y=0, num=5), Attacker(name='PI', x=16, y=2, num=9)]], [14, [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=9)]]]
+[True, True]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=9)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=5), Attacker(name='PI', x=11, y=2, num=9)]
+Overall time taken for this turn: 0.014879703521728516
+Performing turn 23 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+Overall time taken for this turn: 0.0009922981262207031
+Got end state, game over. Stopping algo.

@@ -1,0 +1,1081 @@
+Random seed: 8112449808587409175
+---------------- Starting Your Algo --------------------
+Configuring your custom algo strategy...
+Performing turn 0 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.00049591064453125
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=6, y=20, num=4)]]
+Time elapsed after finding oppo attack set: 0.06398439407348633
+Time elapsed: 0.0069429874420166016
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: 1.8
+Time elapsed: 0.0912632942199707
+Time elapsed: 0.0912632942199707
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: 1.8
+Time elapsed after finding best oppo attack: 0.0912632942199707
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 2.8000000000000003
+Time elapsed: 0.2737917900085449
+Time elapsed: 0.2737917900085449
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 2.8000000000000003
+Time elapsed after finding our best response: 0.2737917900085449
+Time taken per stage: Queueing Repairs: 0.0009920597076416016   Building Defences: 0.0009920597076416016   Placing Extra Walls: 0.0  Placing interceptors: 0.4305276870727539
+Overall time taken for this turn: 0.43300724029541016
+Performing turn 1 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.00049591064453125
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.05803179740905762
+Time elapsed: 0.006944417953491211
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -2.3
+Time elapsed: 0.10663938522338867
+Time elapsed: 0.10663938522338867
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -2.3
+Time elapsed after finding best oppo attack: 0.10663938522338867
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006473541259765625
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.3
+Time elapsed: 0.3011007308959961
+Time elapsed: 0.3011007308959961
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.3
+Time elapsed after finding our best response: 0.3011007308959961
+Time taken per stage: Queueing Repairs: 0.0014874935150146484   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.4677567481994629
+Overall time taken for this turn: 0.4697403907775879
+Performing turn 2 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=14, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06348848342895508
+Time elapsed: 0.0069429874420166016
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -2.6999999999999997
+Time elapsed: 0.12848949432373047
+Time elapsed: 0.12848949432373047
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -2.6999999999999997
+Time elapsed after finding best oppo attack: 0.12848949432373047
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006918430328369141
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.6999999999999997
+Time elapsed: 0.3546142578125
+Time elapsed: 0.3546142578125
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.6999999999999997
+Time elapsed after finding our best response: 0.3546142578125
+Time taken per stage: Queueing Repairs: 0.0009899139404296875   Building Defences: 0.0004954338073730469   Placing Extra Walls: 0.0  Placing interceptors: 0.5480806827545166
+Overall time taken for this turn: 0.5495660305023193
+Performing turn 3 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.00049591064453125
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06695938110351562
+Time elapsed: 0.006944417953491211
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -3.2
+Time elapsed: 0.10713624954223633
+Time elapsed: 0.10713624954223633
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -3.2
+Time elapsed after finding best oppo attack: 0.10713624954223633
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.006943941116333008
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.2
+Time elapsed: 0.34967970848083496
+Time elapsed: 0.3501758575439453
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.2
+Time elapsed after finding our best response: 0.3501758575439453
+Time taken per stage: Queueing Repairs: 0.0009913444519042969   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.5262558460235596
+Overall time taken for this turn: 0.5277433395385742
+Performing turn 4 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=14, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.06943988800048828
+Time elapsed: 0.006944179534912109
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=14, y=27, num=4)]. Score: -3.5
+Time elapsed: 0.10911989212036133
+Time elapsed: 0.10911989212036133
+Best attack from the oppo: [Attacker(name='PI', x=14, y=27, num=4)] with score: -3.5
+Time elapsed after finding best oppo attack: 0.10911989212036133
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007440328598022461
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.5
+Time elapsed: 0.36406517028808594
+Time elapsed: 0.36406517028808594
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.5
+Time elapsed after finding our best response: 0.36406517028808594
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.5446090698242188
+Overall time taken for this turn: 0.5456008911132812
+Performing turn 5 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='PI', x=13, y=27, num=4)], [Attacker(name='EI', x=13, y=27, num=1)], [Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.07737565040588379
+Time elapsed: 0.008433103561401367
+Simulation iteration: 0. Attacker List: [Attacker(name='PI', x=13, y=27, num=4)]. Score: -3.6999999999999993
+Time elapsed: 0.11856913566589355
+Time elapsed: 0.11906552314758301
+Best attack from the oppo: [Attacker(name='PI', x=13, y=27, num=4)] with score: -3.6999999999999993
+Time elapsed after finding best oppo attack: 0.11906552314758301
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007415056228637695
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.6999999999999993
+Time elapsed: 0.4077155590057373
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.6999999999999993
+Time elapsed after finding our best response: 0.4077155590057373
+Time taken per stage: Queueing Repairs: 0.000993490219116211   Building Defences: 0.0004949569702148438   Placing Extra Walls: 0.0  Placing interceptors: 0.6066324710845947
+Overall time taken for this turn: 0.6081209182739258
+Performing turn 6 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.11060738563537598
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.3
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.3
+Time elapsed after finding best oppo attack: 0.394320011138916
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.00049591064453125
+Time elapsed: 0.0069675445556640625
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.3
+Time elapsed: 0.4007680416107178
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.3
+Time elapsed after finding our best response: 0.4007680416107178
+Time taken per stage: Queueing Repairs: 0.0014884471893310547   Building Defences: 0.0004963874816894531   Placing Extra Walls: 0.0  Placing interceptors: 0.9086711406707764
+Overall time taken for this turn: 0.9106559753417969
+Performing turn 7 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.11011147499084473
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.0
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.0
+Time elapsed after finding best oppo attack: 0.38492703437805176
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0004937648773193359
+Time elapsed: 0.006943702697753906
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.0
+Time elapsed: 0.42107605934143066
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.0
+Time elapsed after finding our best response: 0.42107605934143066
+Time taken per stage: Queueing Repairs: 0.000993967056274414   Building Defences: 0.0004935264587402344   Placing Extra Walls: 0.0  Placing interceptors: 0.9190888404846191
+Overall time taken for this turn: 0.9205763339996338
+Performing turn 8 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.14681625366210938
+Time elapsed: 0.00991964340209961
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -3.0
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -3.0
+Time elapsed after finding best oppo attack: 0.39183950424194336
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -3.0
+Time elapsed: 0.38985633850097656
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -3.0
+Time elapsed after finding our best response: 0.38985633850097656
+Time taken per stage: Queueing Repairs: 0.0009922981262207031   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.9309918880462646
+Overall time taken for this turn: 0.9319841861724854
+Performing turn 9 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=4)]]
+Time elapsed after finding oppo attack set: 0.11011099815368652
+Time elapsed: 0.006944179534912109
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=4)]. Score: -2.4000000000000004
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=4)] with score: -2.4000000000000004
+Time elapsed after finding best oppo attack: 0.39184021949768066
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0004961490631103516
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -2.4000000000000004
+Time elapsed: 0.4097251892089844
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -2.4000000000000004
+Time elapsed after finding our best response: 0.4097251892089844
+Time taken per stage: Queueing Repairs: 0.0009922981262207031   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.9151489734649658
+Overall time taken for this turn: 0.9161412715911865
+Performing turn 10 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0009920597076416016
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.1254875659942627
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -1.6999999999999995
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -1.6999999999999995
+Time elapsed after finding best oppo attack: 0.4325122833251953
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -1.6999999999999995
+Time elapsed: 0.45632028579711914
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -1.6999999999999995
+Time elapsed after finding our best response: 0.45632028579711914
+Time taken per stage: Queueing Repairs: 0.0014882087707519531   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.0167999267578125
+Overall time taken for this turn: 1.0182881355285645
+Performing turn 11 of your custom algo strategy
+Should Thor: None
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.12995100021362305
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -1.2
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -1.2
+Time elapsed after finding best oppo attack: 0.4429290294647217
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -1.2
+Time elapsed: 0.476656436920166
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -1.2
+Time elapsed after finding our best response: 0.476656436920166
+Time taken per stage: Queueing Repairs: 0.0009915828704833984   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 1.0525121688842773
+Overall time taken for this turn: 1.053999900817871
+Performing turn 12 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[16, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=10)]], [16, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=10)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=10)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=10)]
+Overall time taken for this turn: 0.06100821495056152
+Performing turn 13 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.014383316040039062
+Performing turn 14 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time elapsed after updating game state: 0.0004963874816894531
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.11606407165527344
+Time elapsed: 0.00843191146850586
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -1.1999999999999995
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -1.1999999999999995
+Time elapsed after finding best oppo attack: 0.47516775131225586
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007439851760864258
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -1.1999999999999995
+Time elapsed: 0.47417616844177246
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -1.1999999999999995
+Time elapsed after finding our best response: 0.47417616844177246
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.0678882598876953
+Overall time taken for this turn: 1.069375991821289
+Performing turn 15 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[17, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=11)]], [17, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=11)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=11)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=11)]
+Overall time taken for this turn: 0.06348729133605957
+Performing turn 16 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.013910770416259766
+Performing turn 17 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=5)]]
+Time elapsed after finding oppo attack set: 0.10713577270507812
+Time elapsed: 0.007440090179443359
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=5)]. Score: -0.5999999999999999
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=5)] with score: -0.5999999999999999
+Time elapsed after finding best oppo attack: 0.5019776821136475
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.0079345703125
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: -0.5999999999999999
+Time elapsed: 0.4955005645751953
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: -0.5999999999999999
+Time elapsed after finding our best response: 0.4955005645751953
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 1.1070940494537354
+Overall time taken for this turn: 1.108581781387329
+Performing turn 18 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[18, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=12)]], [18, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=12)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=12)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=12)]
+Overall time taken for this turn: 0.058554649353027344
+Performing turn 19 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.004959821701049805
+Performing turn 20 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time elapsed after updating game state: 0.0005190372467041016
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=6)]]
+Time elapsed after finding oppo attack set: 0.10517430305480957
+Time elapsed: 0.007936716079711914
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=6)]. Score: 0.10000000000000053
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=6)] with score: 0.10000000000000053
+Time elapsed after finding best oppo attack: 0.3630707263946533
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007443428039550781
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 0.10000000000000053
+Time elapsed: 0.37001824378967285
+Time elapsed: 0.37001824378967285
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 0.10000000000000053
+Time elapsed after finding our best response: 0.37001824378967285
+Time taken per stage: Queueing Repairs: 0.0009925365447998047   Building Defences: 0.0004954338073730469   Placing Extra Walls: 0.0  Placing interceptors: 0.8407442569732666
+Overall time taken for this turn: 0.8427269458770752
+Performing turn 21 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side RIGHT is viable
+[[21, [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=14)]], [21, [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=14)]]]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=14)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=14)]
+Overall time taken for this turn: 0.044144392013549805
+Performing turn 22 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+RIGHT
+Overall time taken for this turn: 0.014383792877197266
+Performing turn 23 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=6)]]
+Time elapsed after finding oppo attack set: 0.1383836269378662
+Time elapsed: 0.00843191146850586
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=6)]. Score: 0.3000000000000007
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=6)] with score: 0.3000000000000007
+Time elapsed after finding best oppo attack: 0.491560697555542
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.0074307918548583984
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 0.3000000000000007
+Time elapsed: 0.9790797233581543
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 0.3000000000000007
+Time elapsed after finding our best response: 0.9790797233581543
+Time taken per stage: Queueing Repairs: 0.0009920597076416016   Building Defences: 0.0004954338073730469   Placing Extra Walls: 0.0  Placing interceptors: 1.6120007038116455
+Overall time taken for this turn: 1.6139841079711914
+Performing turn 24 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[22, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=16)]], [22, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=16)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=16)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=16)]
+Overall time taken for this turn: 0.027279138565063477
+Performing turn 25 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.005455493927001953
+Performing turn 26 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time elapsed after updating game state: 0.0
+Oppo Attack Set: [[Attacker(name='SI', x=20, y=19, num=6)]]
+Time elapsed after finding oppo attack set: 0.13141751289367676
+Time elapsed: 0.008432149887084961
+Simulation iteration: 0. Attacker List: [Attacker(name='SI', x=20, y=19, num=6)]. Score: 0.3000000000000007
+Best attack from the oppo: [Attacker(name='SI', x=20, y=19, num=6)] with score: 0.3000000000000007
+Time elapsed after finding best oppo attack: 0.20387935638427734
+Our possible interceptor responcses: [[Attacker(name='SI', x=18, y=4, num=1)], [Attacker(name='SI', x=7, y=6, num=1)], [Attacker(name='SI', x=14, y=0, num=1)]]
+Time elapsed after getting our interceptor placements: 0.0
+Time elapsed: 0.007936954498291016
+Simulation iteration: 0. Interceptor List: [Attacker(name='SI', x=18, y=4, num=1)]. Score: 0.3000000000000007
+Time elapsed: 0.6566994190216064
+Best interceptors: [Attacker(name='SI', x=18, y=4, num=1)]   with score: 0.3000000000000007
+Time elapsed after finding our best response: 0.6566994190216064
+Time taken per stage: Queueing Repairs: 0.0009920597076416016   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.0  Placing interceptors: 0.9944992065429688
+Overall time taken for this turn: 0.9964830875396729
+Performing turn 27 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[22, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=16)]], [22, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=16)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=16)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=16)]
+Overall time taken for this turn: 0.02678370475769043
+Performing turn 28 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.005951404571533203
+Performing turn 29 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0009918212890625   Placing Extra Walls: 0.0  Placing interceptors: 0.0
+Overall time taken for this turn: 0.0024797916412353516
+Performing turn 30 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side RIGHT is viable
+[[25, [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=18)]], [25, [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=18)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=18)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=18)]
+Overall time taken for this turn: 0.026287555694580078
+Performing turn 31 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.005455970764160156
+Performing turn 32 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.0009922981262207031   Placing Extra Walls: 0.0  Placing interceptors: 0.0
+Overall time taken for this turn: 0.002480030059814453
+Performing turn 33 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[26, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=20)]], [26, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=20)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=20)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=20)]
+Overall time taken for this turn: 0.022319793701171875
+Performing turn 34 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.004959583282470703
+Performing turn 35 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.0   Placing Extra Walls: 0.0  Placing interceptors: 0.0
+Overall time taken for this turn: 0.0019838809967041016
+Performing turn 36 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[27, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=21)]], [27, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=21)]]]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=21)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=21)]
+Overall time taken for this turn: 0.021823406219482422
+Performing turn 37 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+RIGHT
+Overall time taken for this turn: 0.004959821701049805
+Performing turn 38 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.0   Placing Extra Walls: 0.25048017501831055  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25246381759643555
+Performing turn 39 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[28, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=22)]], [28, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=22)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=22)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=22)]
+Overall time taken for this turn: 0.023312091827392578
+Performing turn 40 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.0054547786712646484
+Performing turn 41 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.2500030994415283  Placing interceptors: 0.0
+Overall time taken for this turn: 0.2519867420196533
+Performing turn 42 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[30, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=24)]], [30, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=24)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=24)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=24)]
+Overall time taken for this turn: 0.024303436279296875
+Performing turn 43 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.005952119827270508
+Performing turn 44 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.0009922981262207031   Building Defences: 0.0004961490631103516   Placing Extra Walls: 0.25047945976257324  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25246381759643555
+Performing turn 45 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side RIGHT is viable
+[[31, [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=24)]], [31, [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=24)]]]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=24)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=24)]
+Overall time taken for this turn: 0.023807764053344727
+Performing turn 46 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+RIGHT
+Overall time taken for this turn: 0.004960536956787109
+Performing turn 47 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time taken per stage: Queueing Repairs: 0.0014879703521728516   Building Defences: 0.0   Placing Extra Walls: 0.25000834465026855  Placing interceptors: 0.0
+Overall time taken for this turn: 0.2514963150024414
+Performing turn 48 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[31, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=25)]], [31, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=25)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=25)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=25)]
+Overall time taken for this turn: 0.02333855628967285
+Performing turn 49 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.004990339279174805
+Performing turn 50 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.0014882087707519531   Building Defences: 0.0   Placing Extra Walls: 0.2500123977661133  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25150060653686523
+Performing turn 51 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side RIGHT is viable
+[[34, [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=27)]], [34, [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=27)]]]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=27)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=27)]
+Overall time taken for this turn: 0.02333688735961914
+Performing turn 52 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+RIGHT
+Overall time taken for this turn: 0.004464149475097656
+Performing turn 53 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time taken per stage: Queueing Repairs: 0.0009920597076416016   Building Defences: 0.00049591064453125   Placing Extra Walls: 0.2505018711090088  Placing interceptors: 0.0
+Overall time taken for this turn: 0.2524857521057129
+Performing turn 54 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side RIGHT is viable
+[[35, [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=28)]], [35, [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=28)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=28)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=28)]
+Overall time taken for this turn: 0.026311159133911133
+Performing turn 55 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.005455732345581055
+Performing turn 56 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.0009915828704833984   Building Defences: 0.0004966259002685547   Placing Extra Walls: 0.2500157356262207  Placing interceptors: 0.0
+Overall time taken for this turn: 0.2520003318786621
+Performing turn 57 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[35, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=29)]], [35, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=29)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=29)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=29)]
+Overall time taken for this turn: 0.024303674697875977
+Performing turn 58 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.0039958953857421875
+Performing turn 59 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.00148773193359375   Building Defences: 0.0   Placing Extra Walls: 0.2500033378601074  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25149106979370117
+Performing turn 60 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side RIGHT is viable
+[[37, [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=30)]], [37, [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=30)]]]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=30)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=30)]
+Overall time taken for this turn: 0.023312807083129883
+Performing turn 61 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+RIGHT
+Overall time taken for this turn: 0.004464149475097656
+Performing turn 62 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time taken per stage: Queueing Repairs: 0.0009918212890625   Building Defences: 0.00049591064453125   Placing Extra Walls: 0.25001001358032227  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25199389457702637
+Performing turn 63 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[39, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=33)]], [39, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=33)]]]
+Should Thor: ['RIGHT', [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=33)]]
+Buildings to remove: [[25, 12], [26, 12], [26, 13], [27, 13], [16, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=33)]
+Overall time taken for this turn: 0.02333688735961914
+Performing turn 64 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=21, y=10), Building(name='EF', x=11, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=16, y=4), Building(name='EF', x=14, y=2), Building(name='EF', x=22, y=10), Building(name='EF', x=18, y=6), Building(name='EF', x=17, y=5)]
+Buildings to remove: [[22, 10], [18, 6], [17, 5], [11, 3], [16, 4], [13, 3], [14, 3]]
+RIGHT
+Overall time taken for this turn: 0.006448030471801758
+Performing turn 65 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=25, y=12), Building(name='DF', x=26, y=12), Building(name='FF', x=26, y=13), Building(name='FF', x=27, y=13)]
+Upgrades to build: [[26, 13], [27, 13], [25, 12], [26, 12]]
+Time taken per stage: Queueing Repairs: 0.0009922981262207031   Building Defences: 0.00049591064453125   Placing Extra Walls: 0.25047969818115234  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25246357917785645
+Performing turn 66 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.5272727272727273 per platoon
+1.5272727272727273
+60
+7
+Attacking on side RIGHT is viable
+[[39, [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=32)]], [39, [Attacker(name='PI', x=13, y=0, num=7), Attacker(name='PI', x=11, y=2, num=32)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=32)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=7), Attacker(name='PI', x=16, y=2, num=32)]
+Overall time taken for this turn: 0.023808002471923828
+Performing turn 67 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.004959821701049805
+Performing turn 68 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.0014879703521728516   Building Defences: 0.0   Placing Extra Walls: 0.25047969818115234  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25246381759643555
+Performing turn 69 of your custom algo strategy
+Checking side LEFT
+LEFT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side LEFT is viable
+Checking side RIGHT
+RIGHT
+True on original
+HP to break through 60
+Offensive threat is 12.0
+Expect to lose around 1.4 per platoon
+1.4
+60
+6
+Attacking on side RIGHT is viable
+[[40, [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=34)]], [40, [Attacker(name='PI', x=13, y=0, num=6), Attacker(name='PI', x=11, y=2, num=34)]]]
+Should Thor: ['LEFT', [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=34)]]
+Buildings to remove: [[1, 12], [2, 12], [0, 13], [1, 13], [11, 4], [21, 10], [6, 10]]
+Thor attack: [Attacker(name='PI', x=14, y=0, num=6), Attacker(name='PI', x=16, y=2, num=34)]
+Overall time taken for this turn: 0.023832321166992188
+Performing turn 70 of your custom algo strategy
+Starting thor's attack:
+Buildings to build: [Building(name='FF', x=6, y=10), Building(name='EF', x=16, y=3), Building(name='EF', x=12, y=3), Building(name='EF', x=13, y=3), Building(name='EF', x=14, y=3), Building(name='EF', x=15, y=3), Building(name='EF', x=13, y=2), Building(name='EF', x=14, y=2), Building(name='EF', x=5, y=10), Building(name='EF', x=9, y=6), Building(name='EF', x=10, y=5), Building(name='EF', x=11, y=4)]
+Buildings to remove: [[6, 10], [5, 10], [18, 6], [17, 5], [11, 4], [13, 3], [14, 3], [16, 3]]
+LEFT
+Overall time taken for this turn: 0.004463672637939453
+Performing turn 71 of your custom algo strategy
+Finished thor's attack. Repairing.
+Buildings to build: [Building(name='DF', x=1, y=12), Building(name='DF', x=2, y=12), Building(name='FF', x=0, y=13), Building(name='FF', x=1, y=13)]
+Upgrades to build: [[0, 13], [1, 13], [1, 12], [2, 12]]
+Time taken per stage: Queueing Repairs: 0.0009927749633789062   Building Defences: 0.0004956722259521484   Placing Extra Walls: 0.25000929832458496  Placing interceptors: 0.0
+Overall time taken for this turn: 0.25199365615844727
+Traceback (most recent call last):
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\algo_strategy.py", line 1849, in <module>
+    algo.start()
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\algocore.py", line 74, in start
+    self.on_turn(game_state_string)
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\algo_strategy.py", line 107, in on_turn
+    game_state.submit_turn()
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\game_state.py", line 182, in submit_turn
+    send_command(build_string)
+  File "C:\Users\David\Documents\Terminal\C1GamesStarterKit\keith-ball-algo\gamelib\util.py", line 30, in send_command
+    sys.stdout.flush()
+OSError: [Errno 22] Invalid argument
+Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='cp1252'>
+OSError: [Errno 22] Invalid argument

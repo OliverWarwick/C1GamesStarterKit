@@ -70,6 +70,12 @@ class AlgoStrategy(gamelib.AlgoCore):
 
         self.can_place = {(13, 0): False, (14, 0): False, (13, 1): False, (14, 1): False, (15, 1): False, (11, 2): False, (12, 2): False, (15, 2): False, (16, 2): False, (10, 3): False, (11, 3): False, (16, 3): False, (17, 3): False, (9, 4): False, (10, 4): False, (17, 4): False, (18, 4): False, (8, 5): False, (9, 5): False, (18, 5): False, (19, 5): False, (7, 6): False, (8, 6): False, (19, 6): False, (20, 6): False, (6, 7): False, (7, 7): False, (20, 7): False, (21, 7): False, (5, 8): False, (6, 8): False, (21, 8): False, (22, 8): False, (4, 9): False, (5, 9): False, (22, 9): False, (23, 9): False, (3, 10): False, (4, 10): False, (5, 10): False, (6, 10): False, (7, 10): False, (8, 10): False, (21, 10): False, (22, 10): False, (23, 10): False, (24, 10): False, (2, 11): False, (3, 11): False, (8, 11): False, (8, 12): False, (8, 13): False, (20, 11): False, (21, 11): False, (24, 11): False, (25, 11): False, (20, 12): False, (20, 13): False}
 
+        #ANTI-CHEESE STATS
+        #Tracking Opponent Structures played last turn for anti-cheese
+        self.last_oppo_structure_count = 0
+        self.current_oppo_structure_count = 0
+        self.anti_cheese_cost = 0
+
         # This tracks which wall we are currently blocking off
         self.blocking_wall_placement = "CENTER"
 
@@ -113,7 +119,7 @@ class AlgoStrategy(gamelib.AlgoCore):
     """
 
     def base_strategy(self, game_state):
-
+        self.current_oppo_structure_count = self.count_enemy_structures(game_state)
         if game_state.turn_number == 0:
             self.inital_add_to_p_queue(game_state)
 
@@ -128,17 +134,18 @@ class AlgoStrategy(gamelib.AlgoCore):
                 if self.thor_side is not None:
                     my_mp = game_state.get_resource(resource_type=MP,player_index=0)
                     oppo_mp = game_state.get_resource(resource_type=MP,player_index=1)
-                    backupInterceptorNum = int(min(float(oppo_mp)/3, my_mp/4),5)
+                    backupInterceptorNum = int(min(float(oppo_mp)/3, my_mp/4,5))
                     remainingMP = my_mp - backupInterceptorNum
-
                     if self.thor_side=="RIGHT":
-                        if not(self.verify_thor_path([13,0]) or self.verify_thor_path([11,2])):
+                        if not(self.verify_thor_path(game_state,"RIGHT") or self.verify_thor_path(game_state,"RIGHT")):        
+                            gamelib.debug_write("Thor no longer viable on right")
                             new_attack_list = []
                             new_attack_list.append(attacker(name=INTERCEPTOR,x=13,y=0,num=int(backupInterceptorNum)))
                             new_attack_list.append(attacker(name=DEMOLISHER,x=13,y=0,num=int(remainingMP/3)))
                             self.thor_attack = new_attack_list
                     else:
-                        if not(self.verify_thor_path([14,0]) or self.verify_thor_path([16,2])):
+                        if not(self.verify_thor_path(game_state,"LEFT") or self.verify_thor_path(game_state,"LEFT")):
+                            gamelib.debug_write("Thor no longer viable on left")
                             new_attack_list = []
                             new_attack_list.append(attacker(name=INTERCEPTOR,x=14,y=0,num=int(backupInterceptorNum)))
                             new_attack_list.append(attacker(name=DEMOLISHER,x=14,y=0,num=int(remainingMP/3)))
@@ -216,11 +223,21 @@ class AlgoStrategy(gamelib.AlgoCore):
         # time_our_attacks = time.time()
 
         gamelib.debug_write("Time taken per stage: Queueing Repairs: {}   Building Defences: {}   Placing Extra Walls: {}  Placing interceptors: {}".format(time_queuing - starting, time_building_defence - time_queuing, time_placing_extra_walls - time_building_defence, time_interceptor - time_placing_extra_walls))
+        
+        #END OF TURN: We update the structure count
+        self.last_oppo_structure_count = self.current_oppo_structure_count
 
-
-        # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
-        # THUNDER STRIKE PREP
-
+    def count_enemy_structures(self, game_state):
+        structure_count = 0
+        for x in range(28):
+            for y in range(14):
+                if(y <= x or y < 28-x):
+                    if(game_state.contains_stationary_unit([x,y+14])):
+                        structure_count += 1
+        gamelib.debug_write("The Structure Count is " + str(structure_count))
+        return structure_count
+    # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
+    # THUNDER STRIKE PREP
 
     def prep_game_state_for_thor_check(self, game_state):
         left_game_state = copy.deepcopy(game_state)
@@ -293,13 +310,16 @@ class AlgoStrategy(gamelib.AlgoCore):
         distCondition = (frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16)
         return (not ((not (test_target1 and test_target2)) or distCondition)) #Either path goes through a bad spot or too far
 
+    #New Function to recalibrate Thor to score points
+    def optimise_new_thor(self, game_state):
+        pass
 
     def estimate_thors_hammer(self, game_state): #Return attack profile and side to Thor on.
         if(game_state.turn_number < 12):
             return None
         gamepair = self.prep_game_state_for_thor_check(game_state)
         enemy_mp = game_state.get_resource(resource_type=SP,player_index=1)
-        our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)
+        our_mp = game_state.project_future_MP(turns_in_future=1,player_index=0)-self.anti_cheese_cost
         our_expected_sp = game_state.get_resource(resource_type=SP, player_index=0)+5
         expected_supp_count = min(10, 3+int(our_expected_sp/3))
         expected_shield_value = 3*expected_supp_count
@@ -322,29 +342,16 @@ class AlgoStrategy(gamelib.AlgoCore):
             test_state = gamepair[side]
             test_start1 = frontScoutStart[side]
             test_start2 = rearScoutStart[side]
-            test_spots = targetSide[side]
-            test_badspots = targetDangers[side]
+            # test_spots = targetSide[side]
+            # test_badspots = targetDangers[side]
             frontPath = test_state.find_path_to_edge(test_start1)
             rearPath = test_state.find_path_to_edge(test_start2)
             if self.verbose: gamelib.debug_write(frontPath)
             if self.verbose: gamelib.debug_write(rearPath)
-            # test_target1 = False
-            # test_target2 = False
-            # for ele in test_spots:
-            #     if self.verbose: gamelib.debug_write(ele)
-            #     if ele in frontPath:
-            #         test_target1 = True
-            #     if ele in rearPath:
-            #         test_target2 = True
-            # for ele in test_badspots:
-            #     if ele in frontPath:
-            #         test_target1=False
-            #     if ele in rearPath:
-            #         test_target2 = False
-            if(not self.verify_thor_path(test_state,sideNames[side])):#(not (test_target1 and test_target2)) or frontPath[-1][1] >= 16 or rearPath[-1][1] >= 16):
+
+            if(not self.verify_thor_path(test_state,sideNames[side])):
                 continue
-            gamelib.debug_write("True on original")
-            if self.verbose: gamelib.debug_write(self.verify_thor_path(test_state,sideNames[side]))
+
             sideToggle = -pow(-1,side) #If side = 0, toggle = -1 (so negative on left side), if side = 1, toggle = +1, so +ive on right side
             lineMaxHP = 60
             totalAttackThreat = 0
@@ -360,6 +367,8 @@ class AlgoStrategy(gamelib.AlgoCore):
                     totalAttackThreat += defUnit.damage_i
                     testHealth = defCurrHP if defCurrHP/defMaxHP > 0.7 else defMaxHP
                     lineMaxHP = max(lineMaxHP, testHealth)
+                else:
+                    lineMaxHP = 200 if (game_state.get_resource(resource_type=SP, player_index=1) > 2) else 0.5*(lineMaxHP+100)
             
             gamelib.debug_write("HP to break through " + str(lineMaxHP))
             #Work out rough opponent offensive strength
@@ -380,7 +389,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             scout_deaths_per_frame = float(totalAttackThreat)/float(scout_effective_hp)
             scout_deaths = 4.2*scout_deaths_per_frame
             gamelib.debug_write("Expect to lose around " + str(scout_deaths) + " per platoon")
-            epsilon = 1
+            epsilon = random.randint(0,2)
             epsilon_1 = 0
             #(num_front-scout_deaths)*15 + 2(num_front-scout_deaths)>= max_hp - epsilon
             num_front = math.ceil((lineMaxHP+17*scout_deaths)/17 + epsilon)
@@ -555,23 +564,23 @@ class AlgoStrategy(gamelib.AlgoCore):
         initRight = [21,7]
         for offset in range(7):
 
-            if leftFound is False:
+            if not leftFound:
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
                     if self.verbose: gamelib.debug_write(testLeftPos)
-                    if (game_state.contains_stationary_unit(testLeftPos) is False):
+                    if (not game_state.contains_stationary_unit(testLeftPos)):
                         unitPath = game_state.find_path_to_edge(testLeftPos)
                         if(unitPath[-1][1]>=14):
                             validLeftPos.append(testLeftPos)
                             leftDev = offset
                             leftFound = True
-            if rightFound is False:
+            if not rightFound:
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
                     if self.verbose: gamelib.debug_write(testRightPos)
-                    if (game_state.contains_stationary_unit(testRightPos) is False):
+                    if (not game_state.contains_stationary_unit(testRightPos)):
                         unitPath = game_state.find_path_to_edge(testRightPos)
                         if(unitPath[-1][1]>=14):
                             validRightPos.append(testRightPos)
@@ -599,7 +608,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 #gamelib.debug_write(initPositions)
                 translationSign = pow(-1,i)
                 testPos = [initPositions[i][0]-y*translationSign,initPositions[i][1]+y]
-                if(game_state.contains_stationary_unit(testPos) is False): #Check location is spawnable
+                if(not game_state.contains_stationary_unit(testPos)): #Check location is spawnable
                     unitPath = game_state.find_path_to_edge(testPos)
                     #gamelib.debug_write(unitPath)
                     #gamelib.debug_write(unitPath[-1])
@@ -1154,25 +1163,25 @@ class AlgoStrategy(gamelib.AlgoCore):
         initLeft = [6,20]
         initRight = [21,20]
         for offset in range(7):
-            if leftFound is False:
+            if not leftFound:
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testLeftPos = [initLeft[0]-offset*sideToggle , initLeft[1]- offset*sideToggle]
                     if self.verbose: gamelib.debug_write(testLeftPos)
                     if self.verbose: gamelib.debug_write(testLeftPos)
-                    if (game_state.contains_stationary_unit(testLeftPos) is False):
+                    if (not game_state.contains_stationary_unit(testLeftPos)):
                         unitPath = game_state.find_path_to_edge(testLeftPos)
                         if(unitPath[-1][1]<=14):
                             validLeftPos.append(testLeftPos)
                             leftDev = offset
                             leftFound = True
-            if rightFound is False:
+            if not rightFound:
                 for side in range(2): #side = 0 means towards bottom, side=1 looks towards top
                     sideToggle = pow(-1, side)
                     testRightPos = [initRight[0]+offset*sideToggle, initRight[1]+offset*sideToggle]
                     if self.verbose: gamelib.debug_write(testRightPos)
                     if self.verbose: gamelib.debug_write(testRightPos)
-                    if (game_state.contains_stationary_unit(testRightPos) is False):
+                    if (not game_state.contains_stationary_unit(testRightPos)):
                         unitPath = game_state.find_path_to_edge(testRightPos)
                         if(unitPath[-1][1]<=14):
                             validRightPos.append(testRightPos)
@@ -1205,7 +1214,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             for i in range(2):
                 signToggle = pow(-1, i)
                 testPos = [initPositions[i][0]-y*signToggle, initPositions[i][1]-y]
-                if (game_state.contains_stationary_unit(testPos) is False): #Check if position is occupied if not, then we pick here
+                if (not game_state.contains_stationary_unit(testPos)): #Check if position is occupied if not, then we pick here
                     unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
                     if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on their last line (Kamikaze into our walls)
                         validPositions.append(testPos)
@@ -1227,7 +1236,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             for i in range(2):
                 signToggle = pow(-1, i)
                 testPos = [initPositions[i][0]-y*signToggle, initPositions[i][1]-y]
-                if (game_state.contains_stationary_unit(testPos) is False): #Check if position is occupied if not, then we pick here
+                if (not game_state.contains_stationary_unit(testPos)): #Check if position is occupied if not, then we pick here
                     unitPath = game_state.find_path_to_edge(initPositions[i]) #Also get the path of this attack
                     if(unitPath[-1][1] <= 14): #Check the attack actually ends on our side or on the max range of a Demo
                         validPositions.append(testPos)
@@ -1249,7 +1258,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 #gamelib.debug_write(initPositions)
                 translationSign = pow(-1,i)
                 testPos = [initPositions[i][0]-y*translationSign,initPositions[i][1]-y]
-                if(game_state.contains_stationary_unit(testPos) is False): #Check location is spawnable
+                if(not game_state.contains_stationary_unit(testPos)): #Check location is spawnable
                     unitPath = game_state.find_path_to_edge(testPos)
                     #gamelib.debug_write(unitPath)
                     #gamelib.debug_write(unitPath[-1])
