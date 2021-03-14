@@ -322,7 +322,7 @@ class AlgoStrategy(gamelib.AlgoCore):
                 return min(2, oppo_mp/4.2)
             structure_frac = lastRemoval/lastOppoStructures
             if(structure_frac > 0.3):
-                return max(min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0)),2)
+                return max(min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0)),3)
             # if(lastOppoStructures < 5 or lastOppoStructures < 0.2):
             #     return max(min(5, oppo_mp/4.2),2)
             # structure_frac = float(lastRemoval)/lastOppoStructures
