@@ -146,7 +146,7 @@ class AlgoStrategy(gamelib.AlgoCore):
             else: 
                 return
         else:
-            l_game_state, r_game_state = self.prep_game_state_for_thor_check(game_state)
+            # l_game_state, r_game_state = self.prep_game_state_for_thor_check(game_state)
             should_thors = self.should_play_thors_hammer_OW(game_state)
             gamelib.debug_write("Should Thor: {}".format(should_thors))
 
@@ -216,7 +216,7 @@ class AlgoStrategy(gamelib.AlgoCore):
         right_game_state.game_map.remove_unit([2, 12])
         right_game_state.game_map.add_unit(unit_type=SUPPORT, location=[16, 3])
         right_game_state.game_map.add_unit(unit_type=WALL, location=[6, 10])
-        return [left_game_state, right_game_state]
+        return [right_game_state, right_game_state]
 
 
 
@@ -226,7 +226,11 @@ class AlgoStrategy(gamelib.AlgoCore):
         if game_state.turn_number < 15 or game_state.get_resource(MP, player_index=0) < 10:
             return None
         else:
-            return ["RIGHT", [attacker(name=SCOUT, x=12, y=1, num=5), attacker(name=SCOUT, x=12, y=1, num=int(game_state.get_resource(MP, player_index=0)))]]
+            side = self.find_number_of_turrets_on_side(game_state)
+            if side == "RIGHT":
+                return ["RIGHT", [attacker(name=SCOUT, x=15, y=1, num=7), attacker(name=SCOUT, x=12, y=1, num=int(game_state.get_resource(MP, player_index=0)))]]
+            else: 
+                return ["LEFT", [attacker(name=SCOUT, x=12, y=1, num=7), attacker(name=SCOUT, x=15, y=1, num=int(game_state.get_resource(MP, player_index=0)))]]
 
 
     # def should_play_thors_hammer_OW_extended(self, left_game_state, right_game_state):
@@ -235,6 +239,21 @@ class AlgoStrategy(gamelib.AlgoCore):
     #     else:
     #         # Run out a sim for the left and right to see whether either work.
     #         sim = Simulator(left_game_state)
+
+    def find_number_of_turrets_on_side(self, game_state):
+        left_total = 0
+        right_total = 0
+        for loc in game_state.game_map:
+            if game_state.contains_stationary_unit(loc):
+                if loc[0] < 14:
+                    left_total += 1
+                else: 
+                    right_total += 1
+        if left_total < right_total:
+            return "LEFT"
+        else:
+            return "RIGHT"
+
 
 
 
