@@ -313,22 +313,31 @@ class AlgoStrategy(gamelib.AlgoCore):
         lastOppoStructures = self.last_oppo_structure_count
         lastRemoval = self.last_oppo_queued_removal
         oppoSupp = self.current_oppo_support_count
+        gamelib.debug_write(lastRemoval)
+        gamelib.debug_write(lastOppoStructures)
         if(oppo_mp < 8):
             return 0
         else:
             if(lastOppoStructures < 5):
-                if(abs(currrentOppo-lastOppoStructures) <= 5):
-                    if(oppo_mp-lastOppoMP > 0):
-                        return min(5, oppo_mp/4.2)
-                    gamelib.debug_write(lastRemoval)
-                    gamelib.debug_write(lastOppoStructures)
-                    structure_frac = float(lastRemoval)/lastOppoStructures
-                    gamelib.debug_write(structure_frac)
-                elif (structure_frac > 0.3):
-                    return max(min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0)),2)
-            else:
-                return 0
-        return 0
+                return min(2, oppo_mp/4.2)
+            structure_frac = lastRemoval/lastOppoStructures
+            if(structure_frac > 0.3):
+                return max(min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0)),2)
+            # if(lastOppoStructures < 5 or lastOppoStructures < 0.2):
+            #     return max(min(5, oppo_mp/4.2),2)
+            # structure_frac = float(lastRemoval)/lastOppoStructures
+            # if(abs(currrentOppo-lastOppoStructures) <= 5):
+            #         if(oppo_mp-lastOppoMP > 0 ):
+            #             return min(5, oppo_mp/4.2)
+            #         gamelib.debug_write(lastRemoval)
+            #         gamelib.debug_write(lastOppoStructures)
+                    
+            #         gamelib.debug_write(structure_frac)
+            # elif (structure_frac > 0.3):
+            #     return max(min(5, int(oppo_mp/(4-min(float(oppoSupp),15)/15)), int(our_mp/2.0)),2)
+            # else:
+            #     return 0
+        return min(2, int(our_mp/2))
             
     # Look ahead to thunder striking in the subsequent turn by rolling out play, and then seeing whether we could  - do enough damange.
     # THUNDER STRIKE PREP
